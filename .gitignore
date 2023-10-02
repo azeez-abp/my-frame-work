@@ -2,3 +2,5 @@ vendor
 crypro.html
 terraform/aws-test/\.terraform
 _.git
+vpn
+vpnbook-openvpn-ca222
