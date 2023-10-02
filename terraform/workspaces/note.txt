@@ -1,0 +1,7 @@
+Code re-useabilitty
+DRY
+
+terraform workspace new production => addd new workspace call production
+terraform workspace list => show list of workspace
+terraform workspace select production => get that production work space
+terraform workspace destroy

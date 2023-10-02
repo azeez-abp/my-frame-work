@@ -1,0 +1,72 @@
+The components of the Flyweight Design Pattern are:
+
+1. Flyweight: This is an interface that defines the methods that must be implemented by concrete flyweight objects.
+
+2. Concrete Flyweight: This implements the Flyweight interface and defines the properties that are intrinsic to the
+    objects,  such as their state.
+
+3. Flyweight Factory: This is responsible for creating and managing the flyweight objects. It ensures that
+    the objects are shared among multiple clients.
+
+
+4. Client: This is the object that makes use of the Flyweight objects. It provides the context that is extrinsic to
+the objects and passes it to the Flyweight objects for use in their operations.
+
+
+
+
+
+Flyweight design pattern can be implemented in the following steps:
+
+Identify the intrinsic and extrinsic state variables. Intrinsic state variables are common and shared among objects, while extrinsic state variables are unique and specific to each object.
+
+Create a factory class that acts as a cache for the objects, maintaining a pool of objects in memory.
+
+Create a Flyweight class that holds the intrinsic state variables and a factory method that returns the object from the cache, or creates a new object if it does not exist.
+
+In the client code, use the factory method to get the Flyweight object and set the extrinsic state variables as required.
+
+When the client no longer requires the Flyweight object, return it to the cache for reuse.
+
+Example code in Python:
+
+1. class that has properties to inherit
+2. class that inherit those properties
+
+1  A class
+2. A class that use existing class  or create another one
+
+
+class Flyweight:
+    def __init__(self, intrinsic_state):
+        self.intrinsic_state = intrinsic_state
+
+    def operation(self, extrinsic_state):
+        # Use intrinsic and extrinsic states to perform the operation
+        pass
+
+class FlyweightFactory:
+    flyweights = {}
+
+    @staticmethod
+    def get_flyweight(intrinsic_state):
+        if intrinsic_state not in FlyweightFactory.flyweights:
+            FlyweightFactory.flyweights[intrinsic_state] = Flyweight(intrinsic_state)
+        return FlyweightFactory.flyweights[intrinsic_state]
+
+A  = FlyweightFactory()
+A.flyweights['a']->operation()
+
+
+//////////////////////////////////////////////////////////////////////////
+The Flyweight pattern is a structural design pattern that is used to "minimize memory usage by sharing as much data(properties) as possible with other similar objects". It is often used when you have a large number of objects that are similar in nature and you want to reduce memory consumption by sharing data between them.
+
+The Flyweight pattern has the following key components:
+
+Flyweight: The interface or abstract class that defines the methods that a concrete flyweight class must implement.
+
+Concrete Flyweight: The class that implements the Flyweight interface and provides the shared data.
+
+Flyweight Factory: The class that manages the creation and storage of the flyweight objects.
+
+Here is an example implementation of the Flyweight pattern in PHP:

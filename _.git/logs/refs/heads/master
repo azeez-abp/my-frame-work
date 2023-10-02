@@ -1,0 +1,98 @@
+0000000000000000000000000000000000000000 4c8aed526d78641b006bf2fa8a6afcfb54cca018 azeez-abp <adioadeyoriazeez@gmail.com> 1664986608 +0100	commit (initial): First commit
+4c8aed526d78641b006bf2fa8a6afcfb54cca018 0fa6bb2bfede0ab1339346f1bee124af74e90287 azeez-abp <adioadeyoriazeez@gmail.com> 1664987055 +0100	commit: First commit
+0fa6bb2bfede0ab1339346f1bee124af74e90287 a15e0c025ff3d06000472b2c7159d94c796f4f21 azeez-abp <adioadeyoriazeez@gmail.com> 1667478611 +0100	commit: node algo
+a15e0c025ff3d06000472b2c7159d94c796f4f21 88a15da13a0bafac63551c3a934a775cd44364ff azeez-abp <adioadeyoriazeez@gmail.com> 1667482679 +0100	commit: node algo linkList doing
+88a15da13a0bafac63551c3a934a775cd44364ff f328996fa534dd2e2d2d2f08c6c7293e20d71e16 azeez-abp <adioadeyoriazeez@gmail.com> 1668325730 +0100	commit: algo in progress
+f328996fa534dd2e2d2d2f08c6c7293e20d71e16 c98360f2c3c11aabb4ba879034d95549d44d9e42 azeez-abp <adioadeyoriazeez@gmail.com> 1669124364 +0100	commit: FibMemo in Algo folder
+c98360f2c3c11aabb4ba879034d95549d44d9e42 d47f14e7e33f65b47a3c14eb1c2279638ae40d6e azeez-abp <adioadeyoriazeez@gmail.com> 1669125321 +0100	commit: FibMemo in Algo folder
+d47f14e7e33f65b47a3c14eb1c2279638ae40d6e 9355b5ff4548e55b766bbaf904648ceeb09134d6 azeez-abp <adioadeyoriazeez@gmail.com> 1669877156 +0100	commit: tree doing
+9355b5ff4548e55b766bbaf904648ceeb09134d6 363f8d674dc16c77570346d96b4ea8e1cbf4bdeb azeez-abp <adioadeyoriazeez@gmail.com> 1669986575 +0100	commit: Binary tree done
+363f8d674dc16c77570346d96b4ea8e1cbf4bdeb e0256eed0a7aa274cfa5358ee81f3f605f69f7bc azeez-abp <adioadeyoriazeez@gmail.com> 1670566920 +0100	commit: AVL doing
+e0256eed0a7aa274cfa5358ee81f3f605f69f7bc 6938dc5bead1d86c66973fc498513d36dd9c0a6c azeez-abp <adioadeyoriazeez@gmail.com> 1670950132 +0100	commit: cpa added
+6938dc5bead1d86c66973fc498513d36dd9c0a6c 31eb4fa9d6a476a896beac757c2e59c0fd205f14 azeez-abp <adioadeyoriazeez@gmail.com> 1671203217 +0100	commit: tree data structure building
+31eb4fa9d6a476a896beac757c2e59c0fd205f14 5deee57983010b6329d99c1d8016a9a66ebb8c5e azeez-abp <adioadeyoriazeez@gmail.com> 1671259473 +0100	commit: Rename Nodal
+5deee57983010b6329d99c1d8016a9a66ebb8c5e 3fc35dde9a7eb1c50a46697affda21bc5ff95232 azeez-abp <adioadeyoriazeez@gmail.com> 1671541783 +0100	commit: Threaded tree done
+3fc35dde9a7eb1c50a46697affda21bc5ff95232 ebc050bc3ec7a19ca6fc9a58100346a2a7930023 azeez-abp <adioadeyoriazeez@gmail.com> 1672113428 +0100	commit: nodel remain to nodal
+ebc050bc3ec7a19ca6fc9a58100346a2a7930023 82c9f09193947048e0eae162b452f1312930ce22 azeez-abp <adioadeyoriazeez@gmail.com> 1672215296 +0100	commit: crypo html added
+82c9f09193947048e0eae162b452f1312930ce22 f3decffbf6a4a4cadfe986039a76adcb13d87edf azeez-abp <adioadeyoriazeez@gmail.com> 1672463540 +0100	commit: save threading
+f3decffbf6a4a4cadfe986039a76adcb13d87edf 9627e855758780ebc6c33527f2d96e0a06ac9b03 azeez-abp <adioadeyoriazeez@gmail.com> 1672855239 +0100	commit: DevOps path added
+9627e855758780ebc6c33527f2d96e0a06ac9b03 8ba2dff40c7702e2fad94902aed812e2fd430a70 azeez-abp <adioadeyoriazeez@gmail.com> 1672856423 +0100	commit: Change to private
+8ba2dff40c7702e2fad94902aed812e2fd430a70 5e2a8b4d22a350a4b04fb6c7dd5526d9662582c5 azeez-abp <adioadeyoriazeez@gmail.com> 1673003956 +0100	commit: All subnet done
+5e2a8b4d22a350a4b04fb6c7dd5526d9662582c5 03153b41a8c67b2fdb1e8fad832e52f16fb4933a azeez-abp <adioadeyoriazeez@gmail.com> 1673344883 +0100	commit: tree diameter algo got right
+03153b41a8c67b2fdb1e8fad832e52f16fb4933a d20dd3a28eab1e711801d13f593bf7f55823d294 azeez-abp <adioadeyoriazeez@gmail.com> 1673512004 +0100	commit: Path to a node and co-ordinate power of top bottom left right view
+d20dd3a28eab1e711801d13f593bf7f55823d294 d811f96505e963f3c4e41075307ddf96259b9a34 azeez-abp <adioadeyoriazeez@gmail.com> 1674121790 +0100	commit: Permtation add
+d811f96505e963f3c4e41075307ddf96259b9a34 7b57bd84e7fc6311ff1ac291e2ba9432c323c327 azeez-abp <adioadeyoriazeez@gmail.com> 1674125786 +0100	commit: Permtation add
+7b57bd84e7fc6311ff1ac291e2ba9432c323c327 ee2eb5aa25cc439aa69d015374d7e853b3ecc12b azeez-abp <adioadeyoriazeez@gmail.com> 1674902821 +0100	commit: A lot happen
+ee2eb5aa25cc439aa69d015374d7e853b3ecc12b 3032dc5efe78dfaacb39b4116831c81fda1d5d2b azeez-abp <adioadeyoriazeez@gmail.com> 1675154417 +0100	commit: lara
+3032dc5efe78dfaacb39b4116831c81fda1d5d2b 323d3d3fcd075112b38173a21ff8ac5d15f460a5 azeez-abp <adioadeyoriazeez@gmail.com> 1676291156 +0100	commit: dashbaord updated
+323d3d3fcd075112b38173a21ff8ac5d15f460a5 8933253c499a5bc8ac8ee940215ec142d474e98f azeez-abp <adioadeyoriazeez@gmail.com> 1676554222 +0100	commit: design pattern in php
+8933253c499a5bc8ac8ee940215ec142d474e98f 3e82dc3fe16b117566dece4e1e1541fa265ce106 azeez-abp <adioadeyoriazeez@gmail.com> 1676556873 +0100	commit: Stop at decorator pattern
+3e82dc3fe16b117566dece4e1e1541fa265ce106 39c9d5623034a96b4f58ce4cbb3d17e7e103c6b9 azeez-abp <adioadeyoriazeez@gmail.com> 1676632232 +0100	commit: Creational pattern done
+39c9d5623034a96b4f58ce4cbb3d17e7e103c6b9 6f2286bcfbde240ad81d7f590c617fcb95c2c266 azeez-abp <adioadeyoriazeez@gmail.com> 1676829539 +0100	commit: router rewrite to match paht with regex maniplation
+6f2286bcfbde240ad81d7f590c617fcb95c2c266 31420bdd4f7d060d3342bf31420804bf9e4657c3 azeez-abp <adioadeyoriazeez@gmail.com> 1677068657 +0100	commit: stach the change
+31420bdd4f7d060d3342bf31420804bf9e4657c3 141ecd7c52d93aa0f5ad2f8c1fa1991d45207afb azeez-abp <adioadeyoriazeez@gmail.com> 1677808917 +0100	commit: borderpane added
+141ecd7c52d93aa0f5ad2f8c1fa1991d45207afb 98143b812eb0b2a909cca9dfad25890e71f4131d azeez-abp <adioadeyoriazeez@gmail.com> 1678073053 +0100	commit: design pattern deon
+98143b812eb0b2a909cca9dfad25890e71f4131d ab7f04b8ccae7c1f5468bd759ab24bcfbfd7f0ad azeez-abp <adioadeyoriazeez@gmail.com> 1678783869 +0100	commit: algo continue
+ab7f04b8ccae7c1f5468bd759ab24bcfbfd7f0ad 81176b6fdb8f51275994fd3dc15f5a31874f9bfd azeez-abp <adioadeyoriazeez@gmail.com> 1678910790 +0100	commit: This commit was done to compare the chatpGBT
+81176b6fdb8f51275994fd3dc15f5a31874f9bfd 605aa01873b7e8dfbb96e1bec675c4c6662d264f azeez-abp <adioadeyoriazeez@gmail.com> 1681059871 +0100	commit: Application Router completed
+605aa01873b7e8dfbb96e1bec675c4c6662d264f 810e21ddf024d3808565709d7d8b625c46e8ee0d azeez-abp <adioadeyoriazeez@gmail.com> 1681274156 +0100	merge temp-area: Fast-forward
+810e21ddf024d3808565709d7d8b625c46e8ee0d 9fb1fa4d23016cd13b187769bf6ce3b6160f11eb azeez-abp <adioadeyoriazeez@gmail.com> 1681299428 +0100	commit: Saving default change
+9fb1fa4d23016cd13b187769bf6ce3b6160f11eb b7e839b254fc5e686fafc2194d1ba8aa2805a4fe azeez-abp <adioadeyoriazeez@gmail.com> 1681973431 +0100	commit: bash note added
+b7e839b254fc5e686fafc2194d1ba8aa2805a4fe 6d49102057e9946548bc9ed92ee4eb63b1b364a1 azeez-abp <adioadeyoriazeez@gmail.com> 1683211262 +0100	commit: Interview point addede
+6d49102057e9946548bc9ed92ee4eb63b1b364a1 351ad9f9c1737ccbd3cc35aa162dd8b28c5414bf azeez-abp <adioadeyoriazeez@gmail.com> 1683752531 +0100	commit: data analysis done
+351ad9f9c1737ccbd3cc35aa162dd8b28c5414bf 6be636f2a3766658f704f5d48270e40681ef14c3 azeez-abp <adioadeyoriazeez@gmail.com> 1685021433 +0100	commit: azure note added
+6be636f2a3766658f704f5d48270e40681ef14c3 2e19c79f9abec076deaa30bea3d1929fed9d86a5 azeez-abp <adioadeyoriazeez@gmail.com> 1685083354 +0100	commit: Azure DevOps Doing
+2e19c79f9abec076deaa30bea3d1929fed9d86a5 f07ed5d4511f396fddf89110038bc586317643e1 azeez-abp <adioadeyoriazeez@gmail.com> 1685357243 +0100	commit: cloud vpn added
+f07ed5d4511f396fddf89110038bc586317643e1 91687a0f6fd2e505e5e8e3bf84e116bc1f335429 azeez-abp <adioadeyoriazeez@gmail.com> 1685463158 +0100	commit: fnctional programmes added callOnce
+91687a0f6fd2e505e5e8e3bf84e116bc1f335429 f91dd4f5fd4384c493bb25c1c8c6eb2d6a0353c7 azeez-abp <adioadeyoriazeez@gmail.com> 1685806788 +0100	commit: Key point about system design
+f91dd4f5fd4384c493bb25c1c8c6eb2d6a0353c7 7a6f3db017c4dd54887a9a002cd1f1cd50f9cfa0 azeez-abp <adioadeyoriazeez@gmail.com> 1685865087 +0100	commit: Key point about system design
+7a6f3db017c4dd54887a9a002cd1f1cd50f9cfa0 9e469a5436ce6b044779d0b02d02b75cd9443a66 azeez-abp <adioadeyoriazeez@gmail.com> 1685889123 +0100	commit: Key point about system design
+9e469a5436ce6b044779d0b02d02b75cd9443a66 6e87c70a0223922be4721ce402d147c59985f173 azeez-abp <adioadeyoriazeez@gmail.com> 1686646870 +0100	commit: Permutation algo added
+6e87c70a0223922be4721ce402d147c59985f173 48e0781f9f4711801137b9cb8a4c729d38255261 azeez-abp <adioadeyoriazeez@gmail.com> 1686794661 +0100	commit: infix to postfix algo added
+48e0781f9f4711801137b9cb8a4c729d38255261 22bad4902bd4436ae6d6a37ccd1edc4c2bee6d9e azeez-abp <adioadeyoriazeez@gmail.com> 1687776630 +0100	commit: Alx added
+22bad4902bd4436ae6d6a37ccd1edc4c2bee6d9e f5119cb081dee98b5bc75f1d5dd12e5ecf908ec0 azeez-abp <adioadeyoriazeez@gmail.com> 1687905947 +0100	commit: Vi and Emacs command added to ALX file
+f5119cb081dee98b5bc75f1d5dd12e5ecf908ec0 eb45162a76b930e3ae2f50d03ba469afd4c5ce3b azeez-abp <adioadeyoriazeez@gmail.com> 1688478039 +0100	commit: Alx project documents
+eb45162a76b930e3ae2f50d03ba469afd4c5ce3b 1c988e32dec2fd14c3fc14ce1de9833c6ca1dee4 azeez-abp <adioadeyoriazeez@gmail.com> 1688656495 +0100	commit: some commands added
+1c988e32dec2fd14c3fc14ce1de9833c6ca1dee4 3caf8323608a04b166e84bf87c469833e2a62a42 azeez-abp <adioadeyoriazeez@gmail.com> 1689341995 +0100	commit: c code add
+3caf8323608a04b166e84bf87c469833e2a62a42 623a261600f9edd596f3456417063f0ed6b086d6 azeez-abp <adioadeyoriazeez@gmail.com> 1689776819 +0100	commit: some c header explained
+623a261600f9edd596f3456417063f0ed6b086d6 d1785654f67ba075035ca1e24aa1a9ba5a633699 azeez-abp <adioadeyoriazeez@gmail.com> 1689778769 +0100	commit: dome with some C
+d1785654f67ba075035ca1e24aa1a9ba5a633699 4aab4c84b52166ae4d6ab54ae5dba39e0b25cbca azeez-abp <adioadeyoriazeez@gmail.com> 1690035856 +0100	commit: mongo db note added
+4aab4c84b52166ae4d6ab54ae5dba39e0b25cbca 0b98255ecda6911e8a72a2c31eb8c6680221abd9 azeez-abp <adioadeyoriazeez@gmail.com> 1690036686 +0100	commit: mongo db note added
+0b98255ecda6911e8a72a2c31eb8c6680221abd9 0e9d55094ac68eeb8a4f8f8db0a3eaaa1e2cffab azeez-abp <adioadeyoriazeez@gmail.com> 1690195980 +0100	commit: Memory layout
+0e9d55094ac68eeb8a4f8f8db0a3eaaa1e2cffab 9bf9a5d83eff124bad96a8eea38d74eb07cec397 azeez-abp <adioadeyoriazeez@gmail.com> 1690300837 +0100	commit: graphics tutoroal addede to c_note.txt in Cprgramm folder
+9bf9a5d83eff124bad96a8eea38d74eb07cec397 38f12631182dbb7018374f0a5a7c5240dd4ec057 azeez-abp <adioadeyoriazeez@gmail.com> 1690363935 +0100	commit: Design principles added
+38f12631182dbb7018374f0a5a7c5240dd4ec057 0e47bd8bc93fa2e5fa31ec758e93edea7625d812 azeez-abp <adioadeyoriazeez@gmail.com> 1690873391 +0100	commit: More test suit included
+0e47bd8bc93fa2e5fa31ec758e93edea7625d812 b1833269582d7862574d15c0f1b97fefc69c8a23 azeez-abp <adioadeyoriazeez@gmail.com> 1692088588 +0100	commit: php note added
+b1833269582d7862574d15c0f1b97fefc69c8a23 1a901015a7207e2296a522e280e434d22bc8e8dd azeez-abp <adioadeyoriazeez@gmail.com> 1692880446 +0100	commit: adding files
+1a901015a7207e2296a522e280e434d22bc8e8dd f131187ddb20d8de6b45394b2747124fc34c2521 azeez-abp <adioadeyoriazeez@gmail.com> 1692901660 +0100	commit: git permission for git
+f131187ddb20d8de6b45394b2747124fc34c2521 d8181808d5cc0dd9c74ba0c741f134bef04aec13 azeez-abp <adioadeyoriazeez@gmail.com> 1692932655 +0100	commit: done
+d8181808d5cc0dd9c74ba0c741f134bef04aec13 975c232cc46385f442fab1fad373d45c7f422537 azeez-abp <adioadeyoriazeez@gmail.com> 1693221788 +0100	commit: Save contents
+975c232cc46385f442fab1fad373d45c7f422537 8c9669c7dac5810ed0046796f161534dc6d83a2d azeez-abp <adioadeyoriazeez@gmail.com> 1693304831 +0100	commit: INterview expection
+8c9669c7dac5810ed0046796f161534dc6d83a2d 54502e62ea45235725493cb9b9a91fed0ebacf50 azeez-abp <adioadeyoriazeez@gmail.com> 1693393006 +0100	commit: Link list added in cprogram folder
+54502e62ea45235725493cb9b9a91fed0ebacf50 50a3dbada934f9819d070dd168c36bb7afdcd2c7 azeez-abp <adioadeyoriazeez@gmail.com> 1693556041 +0100	commit: k8s: added
+50a3dbada934f9819d070dd168c36bb7afdcd2c7 9ca52da97f3621dd16647b834efa86356a2e2d51 azeez-abp <adioadeyoriazeez@gmail.com> 1694062307 +0100	commit: more save
+9ca52da97f3621dd16647b834efa86356a2e2d51 7a6b68a58eac48e6cfae7380a7f76d4729ed027b azeez-abp <adioadeyoriazeez@gmail.com> 1694065131 +0100	commit: more save
+7a6b68a58eac48e6cfae7380a7f76d4729ed027b c95a969b93094ef5a787390b27940f4c21071d35 azeez-abp <adioadeyoriazeez@gmail.com> 1694065249 +0100	commit: more save
+c95a969b93094ef5a787390b27940f4c21071d35 646b72aaf5922ca643f378dba592cd52b0390945 azeez-abp <adioadeyoriazeez@gmail.com> 1694526014 +0100	commit: re-structure
+646b72aaf5922ca643f378dba592cd52b0390945 0dcc6a909e7508b46a1d3ec28f65f0a1c3f8bee1 azeez-abp <adioadeyoriazeez@gmail.com> 1694527828 +0100	commit: re-structure
+0dcc6a909e7508b46a1d3ec28f65f0a1c3f8bee1 d2b90ae6601686fe02d811c6b3b4a1b9e53cbb6d azeez-abp <adioadeyoriazeez@gmail.com> 1694766918 +0100	commit: vm k8s added
+d2b90ae6601686fe02d811c6b3b4a1b9e53cbb6d 615cc206d023dabbbd3cc4fea9f084b7b7904add azeez-abp <adioadeyoriazeez@gmail.com> 1694773236 +0100	commit: re-initailize
+615cc206d023dabbbd3cc4fea9f084b7b7904add 7d8108ec7db8f2dfa69f3b064cae66f1db90f783 azeez-abp <adioadeyoriazeez@gmail.com> 1694804904 +0100	commit: kube sink
+7d8108ec7db8f2dfa69f3b064cae66f1db90f783 36a2e8292e758e3f0c106a65a23b9636b398e78f azeez-abp <adioadeyoriazeez@gmail.com> 1695294641 +0100	commit: command k8s
+36a2e8292e758e3f0c106a65a23b9636b398e78f e01d20827ce1e8d4a4dce9c53ca380b7d913141c azeez-abp <adioadeyoriazeez@gmail.com> 1695301601 +0100	commit: kube token
+e01d20827ce1e8d4a4dce9c53ca380b7d913141c 045652a217bb0aaa774bef1f7f39f952634a8df2 azeez-abp <adioadeyoriazeez@gmail.com> 1695317283 +0100	commit: wall
+045652a217bb0aaa774bef1f7f39f952634a8df2 b0228d5e3d9cf3fb5b918a5a46484178451df54f azeez-abp <adioadeyoriazeez@gmail.com> 1695448954 +0100	commit: kubeadm inst
+b0228d5e3d9cf3fb5b918a5a46484178451df54f 53b2a45f9b3e4c0b2dbfbaf288964db90fa9bd03 azeez-abp <adioadeyoriazeez@gmail.com> 1695576535 +0100	commit: Clsuterdone
+53b2a45f9b3e4c0b2dbfbaf288964db90fa9bd03 6a63ab00f39cd34ce47637113165d60ead3cdca9 azeez-abp <adioadeyoriazeez@gmail.com> 1695799795 +0100	commit: Learming path begin
+6a63ab00f39cd34ce47637113165d60ead3cdca9 d38f51046f3bf3cd64ee4e5f790e112c1c8fc1a2 azeez-abp <adioadeyoriazeez@gmail.com> 1696133568 +0100	commit: istio-added
+d38f51046f3bf3cd64ee4e5f790e112c1c8fc1a2 2a5e6a0d6704f9825deaf04bfeb1434f2c6f7ee4 azeez-abp <adioadeyoriazeez@gmail.com> 1696133960 +0100	commit: istio-added
+2a5e6a0d6704f9825deaf04bfeb1434f2c6f7ee4 e924efe173fbdf31eff31244d786c5949b165865 azeez-abp <adioadeyoriazeez@gmail.com> 1696134259 +0100	commit: istio-added
+e924efe173fbdf31eff31244d786c5949b165865 d7dc76b030dcdb8444bb9596a8e356b258830c07 azeez-abp <adioadeyoriazeez@gmail.com> 1696134467 +0100	commit: istio-added
+d7dc76b030dcdb8444bb9596a8e356b258830c07 6e8e10eb443cb9a732d583943f4b8e396024aa50 azeez-abp <adioadeyoriazeez@gmail.com> 1696146123 +0100	commit: d doen
+6e8e10eb443cb9a732d583943f4b8e396024aa50 2166cceb1af0f27bbcd11cf05361d146ca8ea671 azeez-abp <adioadeyoriazeez@gmail.com> 1696210705 +0100	commit: istio-added
+2166cceb1af0f27bbcd11cf05361d146ca8ea671 92cafd2043538c473f2d70feafbd6eccbdbed1ab azeez-abp <adioadeyoriazeez@gmail.com> 1696213055 +0100	commit: terra-redo
+92cafd2043538c473f2d70feafbd6eccbdbed1ab ba3bed5d225edf07073e77be203dfc8e75e77712 azeez-abp <adioadeyoriazeez@gmail.com> 1696213950 +0100	commit: to previus commmi
+ba3bed5d225edf07073e77be203dfc8e75e77712 0944be6662e150445a2525a823569100a1a22cd9 azeez-abp <adioadeyoriazeez@gmail.com> 1696214629 +0100	commit: Recommit to remove exe file
+0944be6662e150445a2525a823569100a1a22cd9 573a4beae406227157f147fbaa9fde7026147d8d azeez-abp <adioadeyoriazeez@gmail.com> 1696214808 +0100	commit: Remove large exe file
+573a4beae406227157f147fbaa9fde7026147d8d 5cfe522427860e2c502ab2956399b7a3d1b12375 azeez-abp <adioadeyoriazeez@gmail.com> 1696215105 +0100	commit: b
+5cfe522427860e2c502ab2956399b7a3d1b12375 556ab7aa6c93dc171fe18e4a8e2962067f4c8d61 azeez-abp <adioadeyoriazeez@gmail.com> 1696215309 +0100	commit: Large fiels removed done

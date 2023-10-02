@@ -1,0 +1,19 @@
+Scanning the server for malware
+sudo yum install epel-release
+sudo yum update
+sudo yum install clamav
+
+updaye the clamav signature
+sudo freshclam
+
+Perform a system scan: Now you're ready to scan your CentOS
+system with ClamAV. Run the following command to perform a full system scan:
+
+sudo clamscan -r /
+
+Open the crontab file using the following command:
+
+crontab -e
+
+Add the following line to schedule a daily scan at a specific time (e.g., 2:00 AM):
+0 2 * * * /usr/bin/clamscan -r / --quiet

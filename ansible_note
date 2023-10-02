@@ -1,0 +1,50 @@
+#Run the following commands to configure Ansible on Centos:
+
+ #!/bin/bash
+
+ # Update all packages that have available updates.
+ sudo yum update -y
+
+ # Install Python 3 and pip.
+ sudo yum install -y python3-pip
+
+ # Upgrade pip3.
+ sudo pip3 install --upgrade pip
+
+ # Install Ansible.
+ pip3 install "ansible==2.9.17"
+
+ # Install Ansible azure_rm module for interacting with Azure.
+ pip3 install ansible[azure]
+
+
+#Now we must create a directory named .azure in the home directory and a credentials file under it. This local credentials file is to provide credentials to Ansible. Type the following commands to create them.
+mkdir ~/.azure
+
+nano ~/.azure/credentials
+
+
+Insert the following lines into the credentials file. Replace the placeholders with the information from the service principal details you copied in the previuous task. Press Ctrl+O to save the file and Ctrl+X to exit from the text editor.
+
+[default]
+
+subscription_id=<your-Azure-subscription_id>
+
+client_id=<azure service-principal-appid>
+
+secret=<azure service-principal-password>
+
+tenant=<azure serviceprincipal-tenant>
+
+Run nano ~/.bashrc and insert the following text into .bashrc. 
+Press Ctrl+O to save the file and Ctrl+X to exit from the text editor.
+add 
+PATH=$PATH:$HOME/.local/bin:$HOME/bin 
+into the file
+
+Ansible is an agentless architecture based automation tool . Only it needs 
+ssh authentication using Ansible Control Machine private/public key pair. 
+Now let us create a pair of private and public keys. Run the following command to
+ generate a 
+private/public key pair for ssh and to install the public key in the local machine.
+

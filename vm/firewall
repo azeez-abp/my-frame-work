@@ -1,0 +1,53 @@
+To allow traffic on port 8080 and view firewall rules, you'll need to use the appropriate commands for your operating system. Here are instructions for Linux (using `iptables` as an example) and Windows (using Windows Defender Firewall).
+
+### Linux (iptables):
+
+1. **Allow Port 8080**:
+
+   ```bash
+   sudo iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
+   ```
+
+   This command allows incoming traffic on port 8080.
+
+2. **Save the Rules**:
+
+   If you're using `iptables`, you'll need to save the rules to make them persist after a reboot:
+
+   ```bash
+   sudo iptables-save > /etc/iptables/rules.v4
+   ```
+
+   Note: This command might vary depending on your Linux distribution.
+
+3. **View Firewall Rules**:
+
+   To view the current `iptables` rules, you can use:
+
+   ```bash
+   sudo iptables -L
+   ```
+
+   This command will show you all the current rules.
+
+### Windows (Windows Defender Firewall):
+
+1. **Allow Port 8080**:
+
+   ```cmd
+   netsh advfirewall firewall add rule name="Allow Port 8080" dir=in action=allow protocol=TCP localport=8080
+   ```
+
+   This command adds a rule to allow incoming traffic on port 8080.
+
+2. **View Firewall Rules**:
+
+   To view the current firewall rules in Windows Defender Firewall, you can use the Control Panel:
+
+   - Open the Control Panel.
+   - Go to "System and Security" > "Windows Defender Firewall".
+   - Click on "Advanced settings" on the left-hand side.
+
+   This will open the Windows Defender Firewall with Advanced Security console, where you can view and manage rules.
+
+Keep in mind that on Linux, there are various firewall management tools (`iptables`, `ufw`, etc.), so the commands might vary based on the specific tool you're using. The examples provided here are based on `iptables`. If you're using a different tool, let me know, and I can provide instructions accordingly.

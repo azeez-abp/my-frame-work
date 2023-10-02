@@ -1,0 +1,72 @@
+Memory management
+JavaScript automatically allocates memory when objects are created and frees it when they are not used anymore (garbage collection).
+
+Memory life cycle
+    Regardless of the programming language, the memory life cycle is pretty much always the same:
+  1.  Allocate the memory you need
+  2.  Use the allocated memory (read, write)
+  3.  Release the allocated memory when it is not needed anymore
+  The second part is explicit(clear) in all languages
+
+JavaScript will automatically allocate memory when values are initially declared.
+
+```
+const n = 123; // allocates memory for a number
+const s = "azerty"; // allocates memory for a string
+
+const o = {
+  a: 1,
+  b: null,
+}; // allocates memory for an object and contained values
+
+// 
+const a = [1, null, "abra"];//(like object) allocates memory for the array and  contained values
+
+function f(a) {
+  return a + 2;
+} // allocates a function (which is a callable object)
+
+// function expressions also allocate an object
+someElement.addEventListener(
+  "click",
+  () => {
+    someElement.style.backgroundColor = "blue";
+  },
+  false, //bubbling
+);
+//event bubbling and capturing in javascript
+
+```
+When a value is used it means  reading and writing in allocated memory
+garbage collection: automatic memory management
+The purpose of a garbage collector is to monitor memory allocation and 
+determine when a block of allocated memory is no longer needed and reclaim it
+
+an object is said to reference another object if the former has access to the latter (either implicitly or explicitly).
+
+For instance, a JavaScript object has a reference to its prototype (implicit reference) and 
+to its properties values (explicit reference).
+An object is said to be "garbage", or collectible if there are zero references pointing to it.
+
+```
+let x = {
+  a: {
+    b: 2,
+  },
+};
+// 2 objects are created. One is referenced by the other as one of its properties.
+// The other is referenced by virtue of being assigned to the 'x' variable.
+// Obviously, none can be garbage-collected.
+
+let y = x;
+// The 'y' variable is the second thing that has a reference to the object.
+
+x = 1;
+// Now, the object that was originally in 'x' has a unique reference
+// embodied by the 'y' variable.
+
+let z = y.a;
+// Reference to 'a' property of the object.
+// This object now has 2 references: one as a property,
+// the other as the 'z' variable.
+```

@@ -1,0 +1,15 @@
+kubeadm reset (undo kubeadm init)
+The reset process does not clean CNI configuration. To do so, you must remove /etc/cni/net.d
+
+sudo apt-get remove docker docker-engine docker.io containerd runc (remove docker)
+
+sudo apt-get purge kubeadm kubectl kubelet kubernetes-cni (remove kubernete )
+
+rm -rf $HOME/.kube
+
+docker system prune -a -f (remove docker)
+sudo iptables -F && sudo iptables -t nat -F && sudo iptables -t mangle -F && sudo iptables -X
+sudo reboot
+ps -aux | grep kube
+
+certificateDir folder "/etc/kubernetes/pki"

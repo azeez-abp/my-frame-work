@@ -1,0 +1,84 @@
+ROUTE TABLE
+    A route table is a data structure
+    It constains rules(route) of how network is directed
+    It is used by the operating system to determine the next hop or gateway for sending packets to their destination
+
+NETWORK association
+    Subnet association refers to the process of assigning a subnet or network address to a specific network interface or device
+    It establishes the relationship between a subnet and the network interface, enabling communication between devices within the same subnet
+
+ip route   ==>show route table 
+
+default via 192.168.1.1 dev eth0 proto dhcp metric 100
+192.168.1.0/24 dev eth0 proto kernel scope link src 192.168.1.10 metric 100
+In this example above,
+the first line represents the default route where any traffic not matching other specific routes should be sent via the gateway IP address 192.168.1.1 through the eth0 interface. 
+The second line represents a specific route for the 192.168.1.0/24 network, which is directly connected to the eth0 interface with the source IP address of 192.168.1.10.
+"dev" stands for "device" and refers to the network interface associated with a specific route
+
+192.168.1.0/24 dev eth0 proto kernel scope link src 192.168.1.10 metric 100
+route for the 192.168.1.0/24 network is associated with the eth0 network interface.
+It means that any network traffic destined for the 192.168.1.0/24 network should be sent out through the eth0 interface
+
+I.E.: 192.168.1.0/24 (ip network) is connected to device eth0 
+proto kernel scope link = creates by kernel, has a limited scope within the local link (network they connected to directly)
+
+ARP => Table  = map IP to mac address
+
+MAC addr Table => map Port to mac address
+
+Route table =>map Ip network (CIDR subnet) to network drive(Interface)
+
+IP address is configured into  computer statically or dynamically
+In AWS VPC is a pool of Ip address
+
+1. Destination: This column indicates the destination network or IP address for which the routing entry is defined. 
+    It represents the network or specific IP range that the route applies to.
+
+2. Gateway: This column specifies the gateway or next hop IP address to which the network traffic should be forwarded. 
+    It denotes the IP address of the next device on the network path that will handle the traffic towards the destination.
+
+3. Genmask (or Netmask): This column represents the network mask or subnet mask associated with the destination network. 
+    It determines the network portion of the IP address and helps in identifying whether the destination IP falls within 
+    the same network or requires routing.
+
+4. Flags: This column displays various flags that provide additional information about the route. 
+    For example, "U" indicates the route is up, "G" indicates a gateway route, "H" represents a host-specific route, and "D" 
+    denotes a dynamic route.
+
+5. Metric: This column represents the metric or cost associated with the route. 
+    It is used by the routing algorithm to determine the preferred path for sending traffic when multiple 
+    routes to the same destination exist.
+
+Interface: This column specifies the network interface through which the traffic will be sent for the given destination. It denotes the network interface name (e.g., eth0, wlan0) associated with the route.
+
+MTU: This column displays the Maximum Transmission Unit (MTU) value for the interface. It represents the maximum size of a packet that can be transmitted over the interface without fragmentation.
+
+
+If you have created a Virtual Private Cloud (VPC) in AWS and it is not appearing under the networking tab of the EC2 instance creation process, it could be due to a few reasons. Here are a couple of potential causes:
+
+Region Mismatch: Ensure that you are creating the EC2 instance in the same AWS region where you have created the VPC. AWS resources, including VPCs, are region-specific. If the VPC and the EC2 instance are in different regions, they will not be visible to each other during the instance creation process.
+
+Subnet Availability: Verify that you have created at least one subnet within your VPC. EC2 instances must be associated with a subnet within the VPC to function properly. When creating an EC2 instance, you need to select the appropriate subnet in which you want to deploy the instance.
+
+If you haven't created any subnets within the VPC, you should create one or more subnets before attempting to launch an EC2 instance.
+
+VPC Configuration Issue: Double-check your VPC configuration to ensure that it is correctly set up and functioning properly. Confirm that the VPC has an internet gateway attached if you want the EC2 instance to have internet access. Additionally, verify that the VPC's route table and security groups are properly configured to allow the desired network traffic.
+
+If you have checked these points and are still experiencing difficulties, it may be helpful to provide more specific details about your VPC and EC2 instance configuration so that I can assist you further.
+https://www.site24x7.com/tools/ipv4-subnetcalculator.html
+
+"C:\Users\BONJOUREX\Downloads\youtube\youtube-dl.exe" -cit https://www.youtube.com/watch?v=7sOSkgWR2As&list=PLzde74P_a04d1roElg9DPWm5Bmavhi_97
+
+"C:\Users\BONJOUREX\Downloads\youtube\youtube-dl.exe" -i -f mp4 --yes-playlist https://www.youtube.com/watch?v=7sOSkgWR2As&list=PLzde74P_a04d1roElg9DPWm5Bmavhi_97
+
+Network interface => is the point of connecttion between two computer
+Network is as group of computer with ip
+You can use a NAT device to allow resources in private subnets to connect to the internet, other VPCs, or
+on-premises networks
+
+ NAT stands for network address translation. It's a way to map multiple private addresses
+inside a local network to a public IP address before transferring the information onto the internet
+
+https://www.davidc.net/sites/default/subnets/subnets.html. 
+VPC LECTURE https://www.youtube.com/watch?v=g2JOHLHh4rI&t=6494s

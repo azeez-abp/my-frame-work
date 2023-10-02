@@ -1,0 +1,100 @@
+Structural UML diagrams
+    Class diagram
+    Package diagram
+    Object diagram
+    Component diagram
+    Composite structure diagram
+    Deployment diagram
+
+Behavioral UML diagrams
+    Activity diagram
+    Sequence diagram
+    Use case diagram
+    State diagram
+    Communication diagram
+    Interaction overview diagram
+    Timing diagram
+
++ is public
+- is private
+# is protected
+/ is derived
+~ package
+
+Relationships between classes are
+
+
+1. Association ---------- solid line (it has cardinalities which sre 1 to 1; 1 to *; * to 1)
+(Association relationship indicates how objects know each other)
+    Aggregation Association (has-a) -----<>  light head ( property as a list,  private subject = [new Chemistry,new Physics])
+    Composition  Association (It is a “belongs-to” type of association)------<> dark head (set as a field private myState = new State('oyo'))
+
+2. Dependencies ---------> dependency is the only broken line, pass a class as augument to a method especially constructor
+   Abstraction dependency «abstraction», «derive», «refine», or «trace»
+   Binding dependency «bind»
+   Realization dependency	«realize»
+   Substitution	dependency «substitute»
+
+   For example, consider a class Car and a class Engine. A Car has an Engine,
+   so there is a dependency relationship between Car and Engine
+   the Car class depends on the Engine class, and the relationship is established through object composition,
+   where an instance of Engine is created and passed as an argument to the constructor of the Car class
+
+Inheritance (Generalization) is_a relation ------|> forward (extends)
+
+Multiplicity   --------->
+
+Properties     << >>
+
+https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/
+
+Command Pattern:  'encapsulates' a request as an object
+
+Chain of Responsibility Pattern: allows a request to be 'passed down' a chain of objects
+
+Observer Pattern:  allows an object to be 'notified'
+
+Iterator Pattern: provides a way to 'access' the elements of an aggregate object 
+
+Strategy Pattern: defines a family of 'algorithms'
+
+State Pattern: allows an object to 'change its behavior' when its internal state changes
+
+Template Method Pattern: defines the 'skeleton' of an algorithm in a method (deferring some steps to subclasses)
+COIST
+
+
+interface Mammals
+{
+    function getName();
+}
+
+
+class Animals /*implements Mammals*/
+{
+    private  $type;
+    private string $name;
+    public function __construct($name, $type)
+    {
+        $this->name  = $name;
+        $this->$type  = $type;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+}
+
+
+class Dog extends Animals implements Mammals
+{
+}
+
+
+function testA(Mammals & Animals $animals): string
+{
+    return $animals->getName();
+}
+
+echo testA(new Dog('xenus', 'quadrupodal'));

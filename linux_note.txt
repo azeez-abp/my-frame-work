@@ -1,0 +1,192 @@
+http://ftp.riken.jp/Linux/centos/8-stream/isos/x86_64/
+
+Here are some important directories in Linux and their functions:
+
+/ (Root Directory):
+
+The root directory is the top-level directory in the file system hierarchy.
+It contains all other directories and files in the system.
+Only the root user has write access to this directory.
+/bin (Binary Programs):
+
+This directory contains essential binary executables (programs) that are available to all users.
+Common commands like ls (list files), cp (copy files), and rm (remove files) are stored here.
+/etc (System Configuration):
+
+The /etc directory contains system-wide configuration files.
+Configuration files for various services, such as network settings, user accounts, and package managers, are stored here.
+/home (User Home Directories):
+
+Each user on the system typically has a directory under /home, with the same name as their username.
+Users can store their personal files and configuration settings in their respective home directories.
+/tmp (Temporary Files):
+
+The /tmp directory is used for storing temporary files created by various programs.
+It is accessible by all users and is generally cleared on system reboot.
+/var (Variable Data):
+
+The /var directory contains variable data files that may change frequently during system operation.
+Log files, spool files, and other temporary or frequently modified data are often stored here.
+/usr (User Programs and Data):
+
+The /usr directory contains user-related programs, libraries, documentation, and shared data.
+It is divided into subdirectories such as /usr/bin (user binaries), /usr/lib (shared libraries), and /usr/share (shared data).
+/opt (Optional Packages):
+
+The /opt directory is used for installing optional software packages.
+Some applications, not included in the base Linux distribution, may be installed in this directory.
+
+In the context of computing and data management, backups and snapshots are two different approaches for preserving and restoring data. Here's a breakdown of the key differences between backups and snapshots:
+
+Purpose:
+
+Backup: The primary purpose of a backup is to create a copy of data to protect against data loss, corruption, or accidental deletion. Backups are typically used for long-term data retention and disaster recovery purposes.
+Snapshot: The main purpose of a snapshot is to capture the state of a system or data at a specific point in time. Snapshots are often used for quick and efficient recovery of data or system configurations.
+Scope:
+
+Backup: Backups can cover a wide range of data, including files, databases, applications, and system configurations. They can encompass the entire system or specific subsets of data.
+Snapshot: Snapshots are typically associated with a specific volume, disk, or file system. They capture the state of that specific entity at a specific moment, including its data and metadata.
+Timeframe:
+
+Backup: Backups are often performed on a scheduled basis (daily, weekly, etc.) or triggered manually. They create separate copies of the data that can be stored for an extended period, allowing recovery of data from various points in time.
+Snapshot: Snapshots are taken instantaneously, capturing the exact state of the system or data at the moment of the snapshot creation. They are typically retained for a shorter duration and are used for more immediate or recent recovery needs.
+Storage:
+
+Backup: Backups are typically stored in separate storage systems or devices, which can be located on-premises or in the cloud. They are often compressed, deduplicated, and encrypted for efficient storage and security.
+Snapshot: Snapshots are often stored on the same storage device as the original data, utilizing the underlying storage infrastructure's snapshot capabilities. They leverage incremental changes from the original data to optimize storage usage.
+Recovery:
+
+Backup: To recover data from a backup, the backup copy needs to be restored to the original or alternate location. This process involves transferring the data from the backup storage to the target location, which can take time depending on the data size and the backup infrastructure.
+Snapshot: Recovery from a snapshot is typically faster as it involves reverting the system or data to the exact state captured by the snapshot. This can be done by applying the changes stored in the snapshot back to the original location or by creating a new volume from the snapshot.
+Granularity:
+
+Backup: Backups provide flexibility in terms of recovery options. They can support full system restores, selective file restores, point-in-time recovery, and recovery to alternate hardware or environments.
+Snapshot: Snapshots are more granular and focused on capturing the state of specific volumes, disks, or file systems. Recovery options are typically limited to the entity covered by the snapshot and may not offer the same flexibility as backups.
+
+
+Option 1: Partition a Disk Using parted Command
+Run the following command with sudo to list storage devices and partitions:
+
+sudo parted -l
+
+
+Home » SysAdmin » How to Create Partitions in Linux
+
+Introduction
+
+Creating disk partitions enables you to split your hard drive into multiple sections that act independently.
+
+In Linux, users must structure storage devices (USB and hard drives) before using them. Partitioning is also useful when you are installing multiple operating systems on a single machine.
+
+In this step-by-step tutorial, you will learn how to create a partition using the Linux parted or fdisk command.
+
+How to create a partition in Linux.
+Prerequisites
+
+A system running Linux
+A user account with sudo or root privileges
+Access to a terminal window / command line (Activities > Search > Terminal)
+Option 1: Partition a Disk Using parted Command
+Follow the steps below to partition a disk in Linux by using the parted command.
+
+Step 1: List Partitions
+Before making a partition, list available storage devices and partitions. This action helps identify the storage device you want to partition.
+
+Run the following command with sudo to list storage devices and partitions:
+
+sudo parted -l
+
+The terminal prints out available storage devices with information about:
+
+Model – Model of the storage device.
+Disk – Name and size of the disk.
+Sector size – Logical and physical size of the memory. Not to be confused with available disk space.
+Partition Table – Partition table type (msdos, gpt, aix, amiga, bsd, dvh, mac, pc98, sun, and loop).
+Disk Flags – Partitions with information on size, type, file system, and flags.
+Partitions types can be:
+
+Primary – Holds the operating system files. Only four primary partitions can be created.
+Extended – Special type of partition in which more than the four primary partitions can be created.
+Logical – Partition that has been created inside of an extended partition.
+
+Open the storage disk that you intend to partition by running the following command:
+
+sudo parted /dev/sdb
+select /dev/sdb
+
+Partition table types are: aix, amiga, bsd, dvh, gpt, mac, ms-dos, pc98, sun, and loop.
+
+The create a partition table, enter the following:
+
+mklabel [partition_table_type] e.g  mklabel aix
+
+help mkpart
+
+To create a new partition, enter the following:
+
+mkpart primary ext4 1MB 1855MB
+
+Samba server
+   sudo apt update
+   sudo apt install samba
+   systemctl status smbd
+   cat etc/samber/smb.conf
+inside smb.conf
+[global]
+server string = file sharing
+workergroup  = WORKERGROP 
+security = user
+map to guest = bad user no auth required
+name resolved order  = bcast host
+include = /etc/samba/share.conf
+
+
+Here's the general syntax for changing the UID and GID using usermod:
+sudo usermod -u <new_uid> -g <new_gid> <username>
+add new group 
+sudo groupadd <groupname>
+sudo useradd (--system --no-create-home) -d <directorypath> <username>
+add user to a group 
+sudo usermod -aG <groupname> <username>
+-aG = append group
+sudo groupdel <groupname to delete>
+
+
+etc/passwd
+ azeez:x:1000:1000:azeez,,,:/home/azeez:bin/bash
+ Username: "azeez"
+Password: "x" (In the /etc/passwd file, an "x" in this field indicates that the encrypted password is stored in the /etc/shadow file or another secure location.)
+User ID (UID): 1000
+Group ID (GID): 1000
+User ID Info (GECOS): "azeez,,,," (Additional information about the user, typically used for the user's full name or description)
+Home directory: "/home/azeez" (The directory where the user's files are stored)
+Login shell: "/bin/bash" (The default shell or command interpreter for the user)
+
+
+Runing app as a service
+============================================
+[Unit]        ////add metadata
+Description=Node Exporter
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=prometheus
+ExecStart=/home/prometheus/node_exporter/node_exporter    //this is the command to run the appplication e.g php server.php or etc/bin/php var/lib/server.php
+ExecPre = script to start before you app
+ExecPost = script to start after your app start
+Restart = always     // restart your app when crash
+
+[Install] //// config the app to start when machine bootup
+WantedBy=default.target
+
+============================================
+
+Username: osboxes
+Password: osboxes.org
+Root Account Password: osboxes.org
+Guest Tools: Open-VM-Tools Installed
+Keyboard Layout: US (Qwerty)
+VMware Compatibility: Version 10+
+
+

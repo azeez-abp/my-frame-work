@@ -1,0 +1,27 @@
+The components of the Bridge Design Pattern are:
+
+Abstraction: (Abstract class) This defines the abstract interface and maintains a reference to an object of type Implementor.
+
+Refined Abstraction: This extends the class defined by Abstraction.
+
+Implementor (interface): This defines the interface for implementation classes and is decoupled from the Abstraction.
+
+Concrete Implementor (classes that implement interface): This implements the Implementor interface and defines its concrete implementation.
+
+
+Each  Refined Abstraction  compose(as augment ) all Concrete Implementor
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+The Bridge pattern is a structural design pattern that "decouples an abstraction from its implementation" so that they can vary independently. It is often used when you need to separate an object's interface from its implementation, or when you want to hide implementation details from clients.
+
+The Bridge pattern has the following key components:
+
+Abstraction: The high-level interface that clients use to interact with the implementation.
+
+Refined Abstraction: A more specific version of the Abstraction.
+
+Implementation: The low-level interface that defines how the Abstraction works.
+
+Concrete Implementation: A specific implementation of the Implementation interface.

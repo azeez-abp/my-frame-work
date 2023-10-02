@@ -1,0 +1,26 @@
+Recursion is a method of solving problems that involves breaking a problem down into smaller and smaller subproblems until you get to a small enough problem that it can be solved trivially. Usually recursion involves a function calling itself.
+
+Computability theory is a field that studies algorithms and their complexity.
+The algorithms have natural numbers as their input and output, but we may
+consider more complex objects as input or output if we can find a way to encode
+them as numbers
+
+a scope is created by a function or a code block.
+The scope is a space policy that rules the accessibility of variables.
+the scope isolates variables.
+function foo() {
+  // The function scope
+  let count = 0;
+  console.log(count); // logs 0
+}
+foo();
+console.log(count); // ReferenceError: count is not defined
+
+count is freely accessed within the scope of foo().
+
+However, outside of the foo() scope, count is inaccessible. If you try to access count from outside anyways, JavaScript throws ReferenceError: count is not defined.
+
+JavaScript implements a scoping mechanism named lexical scoping (or static scoping). Lexical scoping means that the accessibility of variables is determined by the position of the variables inside the nested scopes.
+Simpler, the lexical scoping means that inside the inner scope you can access variables of outer scopes.
+
+The lexical scope consists of outer scopes determined statically.

@@ -1,0 +1,10 @@
+To assign licenses to users based on Azure AD attributes, you must create a dynamic security group and configure rules based on custom attributes. The dynamic group must be added to a license group for automatic synchronization. All users in the groups will get the license automatically. Azure AD evaluates the users in the organization that are in scope for an assignment policy rule and creates assignments for the users who don't have assignments to an access package; automatic assignment policies are not used for licensing.
+
+When you use the Bulk create users operation, you must specify four things: the display name, the UPN, the initial password, and whether the account is enabled or disabled. All other fields are optional. (displayName, userPrincipalName, passwordProfile, and accountEnabled)
+
+Only Azure AD Premium P1 and P2 support SSPR(self-service password reset ), but Azure AD Premium P1 is the lower cost option.
+
+principle of least privilege.
+The Reader role allows you to view all the resources but does not allow you to make any changes. The Contributor role allows you to manage all the resources, the Billing Reader role provides read access only to billing data, and the Tag Contributor role allows you to manage entity tags without providing access to the entities themselves.
+
+Storage Account Contributor allows the management of storage accounts. It provides access to the account key, which can be used to access data via Shared Key authorization. Storage Blob Data Contributor grants permissions to read, write, and delete Azure Storage containers and blobs. Reader allows you to view all resources but does not allow you to make any changes. Owner grants full access to manage all resources, including the ability to assign roles in Azure RBAC.

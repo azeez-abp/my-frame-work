@@ -1,0 +1,49 @@
+To scale to full screen in oracle vm
+cd /media/username folder/VBox_GAS_7.0.1
+run  ./VBoxLinuxAdditions.run
+on vm click device->Insert guest Addittion VBoxLinuxAdditions
+
+///////////////////////////////////////////////////////////////////////////
+To make a Virtual Machine (VM) in Oracle VirtualBox go full screen, follow these steps:
+
+1. **Start the Virtual Machine**:
+
+   Open VirtualBox and start the VM that you want to go full screen.
+
+2. **Install Guest Additions**:
+
+   - In the Virtual Machine window, go to the "Devices" menu.
+   - Select "Insert Guest Additions CD image...".
+
+   This will mount a virtual CD containing the Guest Additions on your VM.
+
+3. **Install Guest Additions**:
+
+   - Open a terminal or command prompt inside the VM.
+   - Navigate to the mounted CD (usually under `/media` or `/mnt`). For example:
+     ```bash
+     cd /media/cdrom
+     ```
+   - Run the appropriate script to install the Guest Additions. On Linux, this is typically done with a command like:
+     ```bash
+     sudo ./VBoxLinuxAdditions.run
+     ```
+
+   This will install the Guest Additions, which include drivers and utilities to improve the integration between the host and guest system.
+
+4. **Reboot the VM**:
+
+   After installing Guest Additions, reboot your VM.
+
+5. **Adjust Screen Resolution**:
+
+   - Once the VM has restarted, log in and go to the display settings (usually in system settings or display settings).
+   - You should now be able to select higher resolutions, including your host machine's native resolution.
+
+6. **Toggle Full Screen Mode**:
+
+   - While the VM is running, you can toggle full screen mode by pressing `Host Key` + `F` (by default, the "Host Key" is Right Ctrl).
+
+   Now, your Virtual Machine should be able to go full screen, adjusting to fit your monitor's resolution.
+
+Please note that if the screen resolution doesn't adjust automatically, you might need to manually change it in the VM's display settings to match your host machine's resolution.

@@ -1,0 +1,60 @@
+https://www.kaggle.com/competitions
+https://landing.jobs/dashboard/code_challenges?category=
+https://www.hackerrank.com/test/a7dio5gtnbk
+https://docs.nestjs.com/controllers
+https://www.youtube.com/watch?v=qdhnC_FUBbs&list=PL_aQ9WXSURJ5RY-Dsc_dFygeAFrMBa3p4
+https://ss64.com/bash/strace.html
+https://github.com/laravel/framework/blob/10.x/src/Illuminate/Routing/Matching/UriValidator.php
+https://www.youtube.com/watch?v=WRw6Xc2YBNs
+http://opensource.org/
+
+https://www.octo.us/?fwp_home_news=insights%2Cnews%2Cpress%2Cawards
+https://www.scaler.com/topics/course/dsa-interviews-java/video/583/
+
+
+pipeline {
+    agent any
+
+    stages {
+        stage("clean space") {
+             steps {
+                timeout(time: 5, unit: 'MINUTES') {
+                bat "rmdir /s /q ."
+        }
+    }
+        }
+        stage('pull the project') {
+            steps {
+                bat "git clone https://github.com/azeez-abp/node_project.git"
+                bat "cd node_project"
+            }
+        }
+        
+        stage('install dependencies') {
+            steps {
+                bat "npm install"
+            }
+        }
+        
+        stage('build front end') {
+            steps {
+                bat "npm run build"  // Corrected the npm build command
+            }
+        }
+        
+        stage('run tests with mocha and chai') {
+            steps {
+                bat "npm install pm2@latest -g"
+            }
+        }
+        
+       
+        stage('deploy') {
+            steps {
+                bat "pm2 startOrRestart server.js"  // Corrected the command
+            }
+        }
+    }
+}
+
+https://kodekloud.com/learning-paths/

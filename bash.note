@@ -1,0 +1,472 @@
+File test operators
+The test command includes the following FILE operators that allow you to test for particular types of files:
+-a: Append to a file instead of overwriting it.
+-b FILE - True if the FILE exists and is a special block file.
+-c FILE - True if the FILE exists and is a special character file.
+-d FILE - True if the FILE exists and is a directory.
+-e FILE - True if the FILE exists and is a file, regardless of type (node, directory, socket, etc.).
+-f FILE - True if the FILE exists and is a regular file (not a directory or device).
+-G FILE - True if the FILE exists and has the same group as the user running the command.
+-h FILE - True if the FILE exists and is a symbolic link (short cut [ln -s file filewitlink  ])  hard link (copy of file [ ln file linkfile ] ln==link ).
+-g FILE - True if the FILE exists and has set-group-id (sgid) flag set.
+-k FILE - True if the FILE exists and has a sticky bit flag set.
+
+-L FILE - True if the FILE exists and is a symbolic link.
+-O FILE - True if the FILE exists and is owned by the user running the command.
+-p FILE - True if the FILE exists and is a pipe.
+-r FILE - True if the FILE exists and is readable.
+-S FILE - True if the FILE exists and is a socket.
+-s FILE - True if the FILE exists and has nonzero size.
+-u FILE - True if the FILE exists, and set-user-id (suid) flag is set.
+-w FILE - True if the FILE exists and is writable.
+-x FILE - True if the FILE exists and is executable.
+
+
+
+-c: Read commands from a string, rather than from a file.
+-e: Exit immediately if a command exits with a non-zero status.
+-f: Disable file name expansion (globbing).
+-h: Display help information and exit.
+-i: Interactive mode. Prompt before overwriting existing files or executing dangerous commands.
+-l: Login shell. Start a new shell as a login shell.
+-n: Read commands but do not execute them. This is also called "syntax checking".
+-p: Preserve the modification time of copied files.
+-r: Recursively copy directories.
+-s: Silence mode. Do not print error messages.
+-u: Treat unset variables as errors.
+-v: Verbose mode. Print command lines as they are read.
+-x: Print commands and their arguments as they are executed.
+IFS  => use in file reading to recognise word boundary 
+
+
+$HOME: The current user's home directory.
+$PATH: A colon-separated list of directories in which the shell looks for commands.
+$USER: The username of the current user.
+$PWD: The present working directory.
+$SHELL: The path to the current user's shell executable.
+$TERM: The terminal type being used.
+$PS1: The primary prompt string used by the shell.
+
+$0: The name of the shell or shell script.
+$1, $2, $3, etc.: The first, second, third, etc. command-line arguments passed to the script.
+$@: All of the command-line arguments passed to the script, as separate words.
+$*: All of the command-line arguments passed to the script, as a single string.
+$#: The number of command-line arguments passed to the script.
+$$: The process ID (PID) of the current shell.
+$?: The exit status of the last command executed.
+
+Some parameters
+
+$-: A string containing the current options (flags) set for the shell.
+$!: The process ID (PID) of the last background command executed.
+$RANDOM: A random integer between 0 and 32767.
+$LINENO: The current line number in the script or function.
+$SECONDS: The number of seconds since the shell was started.
+$EUID: The effective user ID of the current user.
+$PPID: The PID of the parent process of the current shell.
+$BASH_VERSION: The version number of Bash.
+$BASH_SOURCE: The filename of the current script.
+${parameter:-word}: If parameter is unset or null, substitute word; otherwise, substitute the value of parameter.
+${parameter:=word}: If parameter is unset or null, set it to word and substitute word; otherwise, substitute the value of parameter.
+${parameter:?word}: If parameter is unset or null, print an error message containing word and exit the script with a non-zero status; otherwise, substitute the value of parameter.
+${parameter:+word}: If parameter is unset or null, substitute nothing; otherwise, substitute word.
+
+printenv
+cp
+ls
+=================================================================
+grep global regular expression print
+==============================================================
+useradd  groupadd 
+adduser to group or multiple group => useradd -a -G grp1 grp2 uusername//// gpasswd -d username group name; this remove user from a group
+set a user or a group as owner of file or dir
+chown USER:GROUP FILE
+===================================================================
+
+These are the following types of files with their specific characters:
+do ls  -l
+Regular file (-) -rw-r--r-- 
+Directory (d)  drwxr-xr-x 1
+Link (l)   lrwxrwxrwx 
+Special File (c) file that interact with hardware
+Socket (s)
+Named pipe (p)
+Block device (b)
+
+
+Ordinary files that contain data, text, images, program instructions.
+Special files that give access to hardware devices.
+Directories that contain both the ordinary and special files.
+/////////////////////////////////////////////////////////////////////////
+file&perimission  number of memery block      user          
+drwxr-xr-x         1                        BONJOUREX   197121        0 Mar  4 03:38  source/
+
+///////////////////////////////////////////////////////////////////
+$! process id
+
+2> put error in a file
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+Pattern	Matches
+*	    All filenames
+
+g*	    All filenames that begin with the character "g"
+
+b*.txt	All filenames that begin with the character "b" and end with the characters ".txt"
+
+Data???	Any filename that begins with the characters "Data" followed by exactly 3 more characters
+
+[abc]*	Any filename that begins with "a" or "b" or "c" followed by any other characters
+
+[[:upper:]]*	Any filename that begins with an uppercase letter. This is an example of a character class.
+
+BACKUP.[[:digit:]][[:digit:]]	Another example of character classes. This pattern matches any filename that begin
+s with the characters "BACKUP." followed by exactly two numerals.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Shell Expasion 
+The process that gives multiple meaning to a single input 
+brace expantion  
+echo Front-{2,3,44}-Back
+echo {200..2000}
+echo $(cal) print calendar
+\a
+find . -empty -printf "%f\n"
+
+
+In Bash, unary operators are used to perform operations on single variables or values. Here are some common unary operators in Bash:
+
+Arithmetic Unary Operators:
+
++: Positive (Used to explicitly specify positive numbers, but not necessary)
+-: Negation (Used to negate a number, e.g., -5)
+Logical Unary Operator:
+
+!: Logical NOT (Used to negate the truth value of a condition, e.g., !true is false, !false is true)
+String Unary Operator:
+
+=: Assign value to a variable (Used for variable assignment, e.g., variable=value)
+Increment/Decrement Operators:
+
+++: Increment (Used to increase the value of a variable by one)
+--: Decrement (Used to decrease the value of a variable by one)
+Special Unary Operators:
+
+$: Indirect reference (Used to access the value of a variable indirectly, e.g., variable="hello"; echo ${!variable} will print "hello")
+
+Binary opearator in bash
+
+Arithmetic Operators: requires two operands (variable)
+
++: Addition    echo  $((10*5+15))   $ means value of
+-: Subtraction
+*: Multiplication
+/: Division
+%: Modulus (Remainder)
+String Comparison Operators:
+
+=: Equal to (for string comparison)  echo $["5 > 3"] ans 1 which is true
+!=: Not equal to
+-z: True if the string is empty
+-n: True if the string is not empty
+Numeric Comparison Operators:
+
+-eq: Equal to
+-ne: Not equal to
+-gt: Greater than
+-lt: Less than
+-ge: Greater than or equal to
+-le: Less than or equal to
+Logical Operators:
+
+&&: Logical AND (used for executing commands if the previous command succeeded)
+||: Logical OR (used for executing commands if the previous command failed)
+File Test Operators:
+
+-e: True if the file exists
+-f: True if the file is a regular file
+-d: True if the file is a directory
+-r: True if the file is readable
+-w: True if the file is writable
+-x: True if the file is executable
+-s: True if the fiel is not empty
+
+
+echo `expr length azeez`
+dpkg -L gcc
+find . -type f -executable -delete
+Replace <input_file> with the name of the file you want to search in. For example, if you have a file named data.txt, you would run:
+
+grep "man= 345" data.txt | cut -d '=' -f 2-
+This command will search for lines in the data.txt file that contain t
+he string "man= 345", and then it will use cut to extract the text after 
+the equals sign for each matching line. The -d '=' option specifies that the 
+delimiter is the equals sign, and the -f 2- option 
+indicates that you want to print fields starting from the second field (after the equals sign).
+
+https://github.com/alx-tools/Betty/wiki/Documentation:-Functions
+
+find /path/to/directory -type f -empty -print | tr '\n' ' '
+Replace /path/to/directory with the actual path of the directory you want to search for empty files. 
+This script uses the find command to search for files (-type f) that are empty (-empty) 
+and then prints the file names in a single line using tr to replace newline characters with spaces.x
+
+The command you provided, sed -i '/PHP_IDE_CONFIG/d' /etc/cron.d/laravel-scheduler, uses the sed command to modify the contents of a file called /etc/cron.d/laravel-scheduler. Let's break down the components of this command:
+
+sed: This is a Unix/Linux command-line utility used for text manipulation and stream editing. It's often used to search, modify, and replace text in files or streams.
+
+-i: This option tells sed to perform an in-place edit of the file, meaning that the changes will be made directly to the file without creating a backup or writing to standard output.
+
+'/PHP_IDE_CONFIG/d': This is the expression or pattern you're searching for in the file. In this case, it's looking for lines that contain the text PHP_IDE_CONFIG. The /d at the end of the expression tells sed to delete lines that match the pattern.
+
+sed: for string manipution 
+
+Basic Syntax:
+The basic syntax of the sed command is as follows:
+
+sed OPTIONS 'command' input_file
+OPTIONS: These are various command-line options that modify the behavior of sed. For example, -i is used for in-place editing of files.
+'command': This is the sed command enclosed in single quotes. It specifies the text transformation or editing operation to be performed.
+input_file: The name of the file from which sed should read input. If not provided, sed reads from standard input.
+Common Commands:
+
+s: Substitute command. Used for find-and-replace operations. Syntax: s/pattern/replacement/flags
+d: Delete command. Deletes lines that match a pattern.
+p: Print command. Prints lines that match a pattern.
+a: Append command. Adds text after a line.
+i: Insert command. Adds text before a line.
+
+Addresses:
+You can specify which lines to operate on using addresses:
+
+/pattern/: Select lines that match the specified pattern.
+n: Select the nth line.
+1,5: Select lines from 1 to 5.
+5,$: Select lines from 5 to the end.
+Options:
+
+-i: Edit files in place.
+-e 'command': Execute multiple sed commands sequentially.
+Examples:
+
+Find and replace a pattern: sed 's/old/new/g' input.txt
+Delete lines containing a pattern: sed '/pattern/d' input.txt
+Print lines containing a pattern: sed -n '/pattern/p' input.txt
+Insert text before a line: sed '/pattern/i Text to insert' input.txt
+Escape Characters:
+In the replacement part of the s command, you can use escape characters like \n for a new line, \t for a tab, and so on.
+
+In-Place Editing:
+The -i option allows you to edit files in place. Be careful when using this option, as it modifies the original file without creating a backup.
+
+Remember that sed commands are processed line by line, and the changes are applied to the output. The original file remains unchanged unless you use the -i option for in-place editing.
+
+To learn more about sed, you can refer to its manual page by typing man sed in your terminal, or search for tutorials and guides online. Practice is key to becoming proficient with sed and understanding its various commands and capabilities.
+
+/etc/cron.d/laravel-scheduler: This is the path to the file you want to edit. In this case, it's the /etc/cron.d/laravel-scheduler file.
+
+So, the command is essentially using sed to search for any lines in the /etc/cron.d/laravel-scheduler file that contain the text PHP_IDE_CONFIG and then deleting those lines. This is a way to remove any scheduling entries related to the PHP_IDE_CONFIG environment variable from the Laravel scheduler's crontab configuration file.
+
+
+
+In Unix-like operating systems, &> and >& are used for redirecting both standard output (stdout) and standard error (stderr) streams. They are used in shell scripting and command-line operations to control where the output and error messages of a command are sent.
+
+&>: two stream to a file
+
+Syntax: command &> filename
+Effect: Redirects both stdout and stderr (two stream to a file) to the specified file, overwriting the file if it exists.
+Example: ls non_existent_directory &> error.log
+In this example, both the output (list of files in a non-existent directory) and the error message (directory not found) would be written to the error.log file.
+>&:
+
+Syntax: command >& file_descriptor
+Effect: Redirects a specific file descriptor (usually 1 for stdout or 2 for stderr) to another file descriptor or file.
+Example: ls non_existent_directory 2>&1
+In this example, the standard error (2) is redirected to the same location as the standard output (1), meaning both output and error messages will appear together in the terminal.
+It's important to note that these redirection operators might behave slightly differently in different shell environments (e.g., Bash, sh, zsh), so it's a good practice to test them in the specific shell you're using.
+
+Services Provided by System Calls
+Process creation and management
+Main memory management
+File Access, Directory, and File system management
+Device handling(I/O)
+Protection
+Networking, etc.
+Process control: end, abort, create, terminate, allocate, and free memory.
+File management: create, open, close, delete, read files,s, etc.
+Device management
+Information maintenance
+Communication
+
+The `sed` command you provided is almost correct, but it has a small mistake. The syntax for using a file with `sed` is slightly different. Here's the corrected version:
+
+```bash
+sed -i 's/azeez/aeez-apt/g' text
+```
+
+Explanation:
+
+- **`-i`**: This option tells `sed` to edit files in place.
+
+- **`'s/azeez/azeez-apt/g'`**: (s is substitute) This is the substitution command. It tells `sed` to search for the pattern "azeez" and replace it with "aeez-apt". The `g` at the end means global, which tells `sed` to replace all occurrences in the file, not just the first one.
+
+- **`text`**: This is the input file. `sed` will read the content of this file, perform the specified substitution, and then save the modified content back to this file due to the `-i` option.
+
+
+
+
+Response 1
+Yes, sed provides several other commands and features aside from the substitution command (s). Some of the commonly used sed commands and their purposes include:
+
+Delete Lines: You can delete specific lines based on patterns or line numbers. For example:
+
+bash
+Copy code
+sed '/pattern/d' input.txt     # Delete lines containing "pattern"
+sed '2d' input.txt             # Delete the second line
+Print Lines: You can print lines based on conditions.
+
+bash
+Copy code
+sed -n '/pattern/p' input.txt  # Print lines containing "pattern"
+Insert Lines: You can insert new lines before or after specific lines.
+
+bash
+Copy code
+sed '/pattern/i New Line' input.txt  # Insert "New Line" before lines containing "pattern"
+sed '/pattern/a New Line' input.txt  # Insert "New Line" after lines containing "pattern"
+Replace Entire Lines: You can replace entire lines with new content.
+
+bash
+Copy code
+sed '2c New Line' input.txt     # Replace the second line with "New Line"
+Regular Expressions: sed supports powerful regular expressions for pattern matching and manipulation.
+
+Hold and Pattern Spaces: sed can hold a copy of the pattern space (current line) and move lines between the pattern space and hold space for more complex operations.
+
+Branching and Flow Control: You can use branching commands like b and labels to control the flow of sed commands.
+
+Reading and Writing Files: sed can read from and write to external files.
+
+Search and Replace Flags: You can use flags with the s command, like g for global replacement or p to print the replaced line.
+
+These are just a few examples of what you can do with sed. It's a versatile tool for text processing and editing in Unix-like environments. You can combine these commands and features to perform complex text transformations.
+
+
+ChatGPT
+Response 2
+Yes, sed has several other commands that allow for more complex text processing tasks. Some common sed commands include:
+
+p: Print the current pattern space.
+
+d: Delete the current pattern space and start the next cycle.
+
+s: Substitute command (as you mentioned).
+
+y: Translate characters.
+
+a: Append text after a line.
+
+i: Insert text before a line.
+
+c: Change lines.
+
+h: Copy pattern space to hold space.
+
+H: Append pattern space to hold space.
+
+g: Copy hold space to pattern space.
+
+G: Append hold space to pattern space.
+
+x: Exchange the contents of hold space and pattern space.
+
+= : Print the line number.
+
+q: Quit (exit) the sed script.
+
+r filename: Read a file.
+
+**w filename: Write to a file.
+
+These commands, along with various flags and modifiers, allow sed to perform a wide range of text manipulation tasks. Each command serves a different purpose and can be combined to create complex text processing scripts.
+
+
+
+
+
+
+
+The command strace -Tfp $$ 2>&1 | grep -E 'read' & is a shell command that uses the strace utility to trace system calls made by the current shell process ($$). The goal of this command is to capture and analyze any read system calls made by the shell process. Let's break down each part of the command:
+
+strace: This is a command-line utility in Unix-like operating systems that is used to intercept and record the system calls and signals that are received by a process. It's commonly used for debugging and analyzing the behavior of programs.
+
+-T: This option tells strace to print the time taken by each system call.
+
+-f: This option tells strace to trace child processes as well. It's useful when the shell process spawns sub-processes.
+
+-p $$: This specifies the process ID ($$) of the current shell process to trace.
+
+2>&1: This is a shell redirection that merges the standard error (file descriptor 2) with the standard output (file descriptor 1). It ensures that both standard output and standard error are captured and processed by the subsequent commands.
+
+|: This is a pipe operator that sends the standard output of the left command as input to the right command.
+
+grep -E 'read': This command pipes the output of strace into the grep command, which searches for lines containing the word "read." The -E option enables extended regular expressions.
+
+&: This places the entire command in the background, allowing you to continue using the shell while the command runs asynchronously.
+
+In summary, the strace command traces system calls made by the current shell process and its child processes. The output is then filtered by the grep command to display only lines that contain the word "read." This can help you analyze the read system calls and their execution times in the context of the shell process and its sub-processes.
+
+
+
+% (remove)Operator:
+
+When used in parameter expansion ${variable%pattern}, it removes the shortest match of pattern from the end of the variable.
+In the context of file paths, it's commonly used to remove file extensions or trailing slashes.
+For example, ${filename%.txt} removes the .txt extension from the filename.
+filename="example.tar.gz"
+echo "${filename%.*}" %==>remove
+Output: example.tar
+
+PATH=azeez.rat.gx
+RES=${PATH%%.*}
+RES  = azeez
+
+
+#(retain) and ## Operator:
+When used in parameter expansion ${variable##pattern}, it removes the longest match of pattern from the beginning of the variable.
+It's often used to extract parts of a path or string.
+For example, ${path##*/} extracts the filename from the path by removing all characters up to the last /
+
+
+filename="example.tar.gz"
+echo "${filename#*.}"   #*. retain every from first .
+# Output: tar.gz
+
+filename="example.tar.gz"
+echo "${filename##*.}" retain every from last .
+# Output: gz
+
+
+usermod -aG sudo username add user to sudoer
+
+
+
+
+Command substituttion expansion is when we use $(commnand) and assign to variable
+eg file_count =  $(find . -type f | wc -l)
+
+
+
+
+strace :(s=>system , trace=>call)Monitors system calls ==> (e.g., open(), read(), write()) made by a process 
+
+ltrace: (l => library , trace =>call) Monitors library calls ==>(e.g., malloc(), printf()) made by a process
+
+mtrace: (m =>malloc, trace=>call)
+
+2>&1:  combined both standard output and standard error and sent to the same destination.
+
+
+sudo usermod -aG groupName username
+sudo chown newOwner:newGroup folderPath

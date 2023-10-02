@@ -1,0 +1,1 @@
+The Singleton pattern is a creational pattern that ensures that only one instance of a class exists in the entire application. This can be useful when you want to limit the number of instances of a class to one, such as when you're working with a database connection or a configuration object.

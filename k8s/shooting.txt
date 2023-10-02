@@ -1,0 +1,17 @@
+kubectl describe nodes   =>get resources allocation
+kubectl top pods -n <pod-name> pod resources 
+kubectl delete pod <pod-name> -n <namespace>
+kubectl delete namespace kubernetes-dashboard
+kubectl get pods -o wide --all-namespaces
+kubectl get namespaces
+
+sudo systemctl daemon-reload
+sudo systemctl start kube-controller-manager
+sudo systemctl status kube-controller-manager
+which kube-controller-manager
+kubectl get pod  --all-namespaces
+systemctl restart kube-controller-manager
+
+kubectl proxy
+
+kubectl get serviceaccount dashboard-admin-sa -o yaml

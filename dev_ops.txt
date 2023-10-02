@@ -1,0 +1,65 @@
+The certification exam is for DevOps professionals. Combine people, processes, and technologies to continuously deliver valuable products and services that meet end-user needs
+and business goals. DevOps professionals streamline delivery by optimizing practices, improving communications and collaboration, and creating automation.
+
+They design and implement application code and infrastructure strategies that allow continuous integration, testing, delivery, monitoring, and feedback.
+AZ-400 Domain Area                    Weight
+Configure Processes and Communications. 13%
+Design and Implement Source Control. 19%
+Design and Implement Build and Release Pipelines. 42%
+Develop a Security and Compliance Plan. 14%
+Implement an Instrumentation Strategy. 13%
+
+
+After completing this module, students and professionals can:
+
+Plan for the transformation with shared goals and timelines.
+Select a project and identify project metrics and Key Performance Indicators (KPIs).
+Create a team and agile organizational structure.
+Design a tool integration strategy.
+Design a license management strategy (for example, Azure DevOps and GitHub users).
+Design a plan for end-to-end traceability from work items to working software.
+Design an authentication and access strategy.
+Design a strategy for integrating on-premises and cloud resources.
+
+https://learn.microsoft.com/en-us/learn/certifications/courses/az-900t01
+https://learn.microsoft.com/en-us/learn/certifications/courses/az-104t00
+
+
+1. Plan:
+In this phase, you define project requirements, set goals, and plan tasks.
+
+Tools: JIRA, Trello, Asana, Microsoft Planner
+2. Code:
+Developers write and commit code changes in a version control system.
+
+Tools: Git, SVN
+
+3. Build:
+Source code is compiled, tested, and transformed into a deployable artifact.
+
+Tools: Jenkins, Travis CI, CircleCI, GitLab CI/CD, TeamCity
+
+4. Test:
+Automated and manual testing is performed to ensure code quality.
+
+Tools: Selenium, JUnit, TestNG, NUnit, Mocha, Jest, Cypress
+
+5. Package:
+Application components and dependencies are packaged together for deployment.
+
+Tools: Docker, Kubernetes, Helm
+
+6. Release:
+The application is deployed to production or staging environments.
+
+Tools: Kubernetes, Docker Swarm, AWS Elastic Beanstalk, Azure App Service
+
+7. Configure:
+The application environment is configured and set up.
+
+Tools: Ansible, Puppet, Chef, Terraform, CloudFormation
+
+8. Monitor:
+Continuous monitoring of the application's performance and health.
+
+Tools: Prometheus, Grafana, Nagios, ELK Stack (Elasticsearch, Logstash, Kibana)

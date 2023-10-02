@@ -1,0 +1,27 @@
+To see the amount of RAM (Random Access Memory) installed on your Linux system, you can use the `free` command or the `cat /proc/meminfo` command. Here's how you can do it:
+
+### Using `free` command:
+
+Open a terminal window and type the following command:
+
+```bash
+free -h
+```
+
+This will display the total, used, and free memory in a human-readable format.
+
+### Using `/proc/meminfo`:
+
+Open a terminal window and type the following command:
+
+```bash
+cat /proc/meminfo
+```
+
+This command will provide detailed information about memory usage, including total memory, free memory, and more.
+
+### Additional Information:
+
+- You can also use tools like `top`, `htop`, or system monitoring apps provided by your desktop environment to view memory usage in real-time.
+
+- If you're interested in other system information, you can use commands like `uname -a` for kernel information or `lscpu` for CPU information.

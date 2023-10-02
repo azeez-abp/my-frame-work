@@ -1,0 +1,22 @@
+Active Directory (AD) is a database and set of services (connect users with the network resources)
+
+database aspect 
+The Active Directory database (directory) contains information about the AD objects in the domain
+Common types of AD objects include users, computers, applications, printers and shared folders
+organize AD objects is organizational units (OUs) ,streamline security by putting users into group
+ attributes are the person’s name, password, department and email address, but also attributes most people never see, such as its unique Globally Unique Identifier (GUID), Security Identifier (SID), last logon time and group membership.
+
+Databases are structured, which means there is a design that determines what types of data they store and how that data is organized. This design is called a schema
+
+Database strcture is the schema(data type  & constraint )
+
+
+
+services  aspect =>main is Active Directory Domain Services
+1.The servers that run AD DS are called domain controllers (DCs)
+2. AD DS relies on several established protocols and standards, including LDAP (Lightweight Directory Access Protocol), Kerberos and DNS (Domain Name System).  Active Directory is only for on-premises Microsoft environments. Microsoft environments in the cloud use Azure Active Directory
+
+How is Active Directory structured?
+AD has three main tiers: domains, trees and forests (domain=>tree=>forest)
+A domain is a group of related computers, users and other AD objects (computer=>user=>object=>attribute)
+The objects for a given domain are stored in a single database and can be managed together. A forest is a security boundary. Objects in different forests are not able to interact with each other unless the administrators of each forest create a trust between them

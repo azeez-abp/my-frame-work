@@ -1,0 +1,282 @@
+1. What is PHP?
+PHP is a general-purpose scripting language, mostly implemented in C and C++, and is often used in web development. It is a highly performant language as the code need not be compiled before execution. It is also free and open-sourced, and can be easily learned. PHP is also cost-effective as most web hosting servers support it by default.
+
+2. What are the Features of PHP7.4?
+Some new features in PHP7.4 are:
+
+Preloading to further improve performance.
+Arrays spread operator.
+One line arrow functions (short closures) for cleaner code.
+Typed properties in the class.
+Formatting numeric values using underscores.
+Extension development using FFI.
+A better type of variance.
+
+3. Explain the difference between $message and $$message?
+$message is a regular variable, which has a fixed name and fixed value, whereas a $$message is a reference variable, which stores data about the variable. The value of $$message can change dynamically as the value of the variable changes.
+
+4. What are magic constants?
+Magic constants start and end with double underscores and are predefined constants that change their value based on context and usage. There are 9 magic constants in PHP:
+
+ __.DIR__, __FILE__, , __NAMESPACE__,__CLASS__, __TRAIT__ __FUNCTION__,  __METHOD__,__LINE__"
+
+
+
+5. What are the various data types in PHP?
+The different data types in PHP in are:
+
+String: a sequence of characters, e.g.," Hackr.io."
+Float: a floating-point (decimal) number, e.g., 23.456
+Integer: an integer, e.g. 12
+Boolean: represents two states – true, false.
+Object: stores values of different data types into single entity, eg. apple = new Fruit();
+Array: stores multiple values of same type, eg. array("red", "yellow", "blue")
+NULL: when no value is assigned to a variable, it can be assigned NULL. For example, $msg = NULL;
+
+8. Explain the difference between indexed and associative array.
+    
+Indexed Array =>Has numeric keys or indexes
+
+Associative Array=>Each key has its value
+
+11. What are some of the most popular PHP-based Content Management Systems (CMS)?
+There are a plethora of PHP-based Content Management Systems in use today. Drupal, Joomla, and WordPress are the most popular among the bunch.
+
+
+Intermediate PHP Questions
+
+13. How do you create a database connection and query in PHP?
+To create a database connection:
+ $connection = new mysqli($servername, $username, $password);
+
+
+14. What are cookies? How do you create cookies in PHP?
+Cookies store data about a user on the browser. It is used to identify a user and is embedded on the user's computer when they request a particular page. We can create cookies in PHP using the setcookie() function:
+
+setcookie(name, value, expire, path, domain, secure, httponly);
+Here name is mandatory, and all other parameters are optional.
+
+Example:
+
+setcookie(“instrument_selected”, “guitar”)
+
+
+16. Explain the constant() function and its purposes.
+The constant function is used to retrieve the value of a constant. It accepts the name of the constant as the input:
+
+constant(string $name)
+
+17. Can you provide an example of a PHP Web Application Architecture?
+  data (model) => logic (controller) => view (presentation)
+
+
+  19. Draw a comparison between compile-time exception and the runtime exception. What are they called?
+Checked exception is the exception that occurs at the compile time. As it is not possible to ignore this type
+ of exception, it needs to be handled cautiously. An unchecked exception, on the other side, is 
+ the one that occurs during the runtime. If a checked exception is not handled, it becomes an unchecked exception.
+
+20. Explain Path Traversal.
+Path Traversal is a form of attack to read into the files of a web application. ‘../’ is known as dot-dot-sequences. It is a cross-platform symbol to go up in the directory. To operate the web application file, path traversal makes use of the dot-dot-slash sequences.
+
+The attacker can disclose the content of the file attacked using the path traversal outside the root directory of a web server or application. It is usually done to gain access tokens, secret passwords, and other sensitive information stored in the files.
+
+21. Explain the difference between GET and POST requests.
+Any PHP developer needs to have an adequate understanding of the HTTP protocol. The differences between GET and POST are an indispensable part of the HTTP protocol learning process. Here are the major differences between the two requests:
+
+GET allows displaying the submitted data as part of the URL. This is not the case when using POST as during this time, the data is encoded in the request.
+The maximum number of characters handled by GET is limited to 2048. No such restrictions are imposed on POST.
+GET provides support for only ASCII data. POST, on the other hand, allows ASCII, binary data, as well as other forms of data.
+Typically, GET is used for retrieving data while POST is used for inserting and updating data.
+
+22. Explain the mail function and its syntax.
+To directly send emails from a script or website, the mail() function is used in PHP. It has a total of 5 arguments. The general syntax of a mail function is:
+
+mail (to, subject, message, headers, parameters);
+To denotes the receiver of the email
+Subject denotes the subject of the email
+The message is the actual message that is to be sent in the mail (Each line is separated using /n, and the maximum character limit is 70.)
+Headers denote additional information about the mail, such as CC and BCC (Optional)
+Parameters denote to some additional parameter to be included in the send mail program (Optional)
+
+Advanced PHP Questions
+23. What is Memcache and Memcached? Is it possible to share a single instance of a Memcache between several PHP projects?
+Memcached is an effective caching daemon(listener) designed specifically for decreasing database load in dynamic web applications. Memcache module offers a handy procedural and object-oriented interface to Memcached.
+
+Memcache is a memory storage space, and it is possible to run Memcache on a single or several servers. Hence, it is possible to share a single instance of Memcache between multiple projects.
+
+It is possible to configure a client to speak to a distinct set of instances. Therefore, running two different Memcache processes on the same host is also allowed. Despite running on the same host, both such processes stay independent, unless there is a partition of data.
+
+<?php
+include('db.php');
+$memcache = new Memcache;
+$memcache->connect('localhost', 11211) or die ("Could not connect");
+
+$key = md5('List 9lessons Demos'); // Unique Words
+$cache_result = array();
+$cache_result = $memcache->get($key); // Memcached object 
+
+if($cache_result)
+{
+// Second User Request
+$demos_result=$cache_result;
+}
+else
+{
+// First User Request 
+$v=mysql_query("select * from demos order by id desc");
+while($row=mysql_fetch_array($v))
+$demos_result[]=$row; // Results storing in array
+$memcache->set($key, $demos_result, MEMCACHE_COMPRESSED, 1200);
+// 1200 Seconds
+}
+
+// Result
+foreach($demos_result as $row)
+{
+echo '<a href='.$row['link'].'>'.$row['title'].'</a>';
+}
+
+?>
+
+
+24. How can you update Memcached when changes are made?
+There are two ways of updating the Memcached when changes are made to the PHP code:
+
+Proactively cleaning the cache: This means clearing the cache when an insert or update is made
+Resetting the cache: Reset the values once the insert or update is made.
+
+25. How is the comparison of objects done in PHP?
+The operator ‘==’ is used for checking whether two objects are instanced using the same class and have the same attributes as well as equal values. To test whether two objects are referring to the same instance of the same class, the identity operator ‘===’ is used.
+
+26. How is typecasting achieved in PHP?
+The name of the output type needs to be specified in parentheses before the variable that is to be cast. Some examples are:
+
+(array): casts to array
+(bool), (boolean): casts to Boolean
+(double), (float), (real): casts to float
+(int), (integer): casts to integer
+(object): casts to object
+(string): casts to string
+
+
+27. How would you connect to a MySQL database from a PHP script?
+To connect to some MySQL database, the mysqli_connect() function is used. It is used in the following way:
+
+<!--?php $database = mysqli_connect("HOST", "USER_NAME", "PASSWORD");
+
+mysqli_select_db($database,"DATABASE_NAME"); ?-->
+
+
+28. What are constructors and destructors? Provide an example.
+Constructors and destructors in PHP are special types of functions, which are automatically called when a PHP class object is created and destroyed, respectively.
+
+While a constructor is used to initialize the private variables of a class, a destructor frees the resources created or used by the class.
+
+Here is a code example demonstrating the concept of constructors and destructors:
+
+
+29. What are some common error types in PHP?
+PHP supports three types of errors:
+
+Notices: Errors that are non-critical. These occur during the script execution. Accessing an undefined variable is an instance of a notice.
+Warnings: Errors that have a higher priority than notices. Like with notices, the execution of a script containing Warnings remains uninterrupted. An example of a notice includes a file that doesn’t exist.
+Fatal Error: A termination in the script execution results as soon as such an error is encountered. Accessing a property of a non-existing object yields a fatal error.
+
+29. What are some common error types in PHP?
+PHP supports three types of errors:
+
+Notices: Errors that are non-critical. These occur during the script execution. Accessing an undefined variable is an instance of a notice.
+Warnings: Errors that have a higher priority than notices. Like with notices, the execution of a script containing Warnings remains uninterrupted. An example of a notice includes a file that doesn’t exist.
+Fatal Error: A termination in the script execution results as soon as such an error is encountered. Accessing a property of a non-existing object yields a fatal error.
+
+30. What are the most important advantages of using PHP 7 over PHP 5?
+Support for 64-bit integers: While PHP 7 comes with built-in support for native 64-bit integers and also for large files, PHP 5 doesn’t provide support for either of them.
+Performance: PHP 7 performs far better than PHP 5. PHP 7 uses PHP-NG (NG stands for Next Generation), whereas PHP 5 relies on Zend II.
+Return type: One of the most important downsides of PHP 5 is that it doesn’t allow for defining the return type of a function. This limitation is eliminated by PHP 7, which allows a developer to define the type of value returned by any function in the code.
+Error handling: It is extremely difficult to manage fatal errors in PHP 5. PHP 7, on the other hand, comes with a new Exception Objects engine. It helps manage several major critical errors, which are now replaced with exceptions.
+Anonymous class: These are executed only once to increase the execution time. This is not available in PHP 5.
+Group use declaration: PHP 7 allows all the classes, constants, and functions to be imported from the same namespace to be grouped in a single-use statement. This is known as group use declaration. The feature is not available in PHP 5.
+New operators: Several new operators are introduced to PHP 7, including ‘<=>’ and ‘??’ The former is known as the three-way comparison operator, and the latter is called the null coalescing operator.
+
+31. What are the various ways of handling the result set of Mysql in PHP?
+There are four ways of handling the result set of Mysql in PHP:
+
+mysqli_fetch_array
+mysqli_fetch_assoc
+mysqli_fetch_object
+mysqli_fetch_row
+
+32. What are traits in PHP?
+The traits mechanism allows for the creation of reusable code in PHP-like languages where there is no support for multiple inheritances. A trait can’t be instantiated on its own
+
+33. What is a session in PHP? Write a code example to demonstrate the removal of session data.
+The simplest way to store data for individual users against a unique session ID is by using a PHP session. It is used for maintaining states on the server as well as sharing data across several pages. This needs to be done because HTTP is a stateless protocol.
+
+Typically, session IDs are sent to the browser using session cookies. The ID is used for retrieving existing session data. If the session ID is not available on the server, then PHP creates a new session and then generates a new session ID.
+
+Here is the program for demonstrating how session data is removed:
+
+
+Rather than using the typical hashing algorithms, including md5, sha1, and sha256, it is preferable to use either crypt() or hash(). While crypt() provides native support for several hashing algorithms, hash() provides support for even more of them.
+
+35. Why is it not possible for JavaScript and PHP to interact directly? Do you know any workarounds?
+No direct interaction is possible between JS and PHP because, while the former is a client-side language, the latter is a server-side language. An indirect interaction between the two leading programming languages can happen using exchanging variables.
+
+This exchange of variable is possible due to two reasons:
+
+PHP can generate JavaScript code meant to be executed by the browser.
+It is possible to pass a specific variable back to PHP via the URL. PHP always gets executed before JavaScript, so the JS variables must be passed via a form or the URL. To pass the variables, GET and POST are used. Similarly, to retrieve the passed variable, $_GET and $_POST are used.
+
+
+49. What is the difference between substr() and strstr() functions?
+The substr() function returns a part of some string. It helps in splitting a string part-by-part in PHP. This function is typically available in all programming languages with almost the same syntax.
+
+General syntax:
+
+substr(string, start, length);
+The strstr() function is used for searching a string within another string in PHP. Unlike the substr() function, strstr() is a case-sensitive function.
+
+General syntax:
+echo substr("amelogin_1",0,1);
+echo substr("amelogin_1",3,-1);
+strstr(string, search, before_string);
+
+51. What are the major differences between for and foreach loop?
+The following are the differences between the for and for each loops:
+
+The for-each loop is typically used for dynamic arrays.
+The for loop has a counter and hence requires extra memory. The for-each loop has no counter, and hence there is no requirement for additional memory.
+You need to determine the number of times the loop is to be executed when using the for a loop. However, you need not do so while using the for each loop.
+52. Is it possible to submit a form with a dedicated button?
+Yes, it is possible to submit a form with a dedicated button by using the document.form.submit() method. The code will be something like this:
+
+<inputtype=buttonvalue=“SUBMIT”onClick=“document.form.submit()”>
+53. Is it possible to extend a final defined class?
+No, it isn’t possible to extend a final defined class. The final keyword prevents the class from extending. When used with a method, the final keyword prevents it from overriding.
+
+54. Is it possible to extend the execution time of a PHP script?
+Yes, it is possible to extend the execution time of a PHP script. We have the set_time_limit(int seconds) function for that. You need to specify the duration, in seconds, for which you wish to extend the execution time of a PHP script. The default time is 30 seconds.
+
+
+
+
+//////////////////////////////////////////////////////////////////////////interview
+Tell us about your experience with remote work and how you stay productive when working from home.
+As a PHP developer with 7+ years of experience, including 4 years of remote work, I've become well-versed in the tools and strategies needed to be productive and successful in a remote environment. I have a dedicated home office space with all the necessary equipment, including a fast and reliable internet connection. I make sure to set a schedule for myself and stick to it, using time management techniques like the Pomodoro technique to stay focused and productive throughout the day. I also stay in regular communication with my team through a variety of channels, including Slack and Zoom, to ensure we're all on the same page and working together effectively.
+
+Walk us through your development process, from receiving a project brief to delivering the final product.
+When receiving a project brief, I always take the time to fully understand the client's needs and requirements. I work with the team to identify the best technology stack for the project, and then I create a detailed project plan with timelines, milestones, and deliverables. From there, I begin the development process, starting with wireframing and prototyping, followed by coding, testing, and debugging. I always aim for code that is clean, efficient, and well-documented, and I use Git to manage version control throughout the project. Once the development is complete, I perform thorough testing and debugging to ensure the final product is free of bugs and meets all the client's requirements.
+
+How do you approach testing and debugging your code? What tools and techniques do you use?
+I believe that thorough testing and debugging are crucial parts of the development process. To ensure the quality of my code, I use a variety of tools and techniques, including unit testing, integration testing, and manual testing. I also make sure to test for different scenarios and edge cases to ensure that my code is robust and error-free. I use a combination of PHP debugging tools, such as Xdebug, and browser developer tools to identify and fix any issues that arise. Additionally, I always make sure to document my debugging process to ensure that I can easily replicate and fix any issues that arise in the future.
+
+Describe a particularly challenging project you worked on and how you overcame any obstacles or roadblocks.
+One of the most challenging projects I worked on was an e-commerce platform that needed to be built from scratch. The project involved integrating multiple third-party services, complex database structures, and custom functionality that required a lot of research and development. To overcome these challenges, I collaborated closely with the project team and broke down the project into smaller, manageable components. We also used agile development practices, which allowed us to be flexible and adapt to changing requirements. By staying focused on our goals and working together effectively, we were able to successfully deliver a high-quality product that met the client's needs.
+
+How do you stay up-to-date with the latest PHP frameworks and technologies? Which resources do you rely on?
+Staying up-to-date with the latest PHP frameworks and technologies is essential for any developer. I make a point of regularly attending industry events, such as conferences and webinars, to stay abreast of the latest trends and developments. I also read relevant blogs, participate in online communities, and follow thought leaders in the field. Additionally, I regularly work on personal projects to experiment with new technologies and frameworks, allowing me to stay sharp and maintain my skills
+
+
+
+
+

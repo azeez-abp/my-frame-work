@@ -1,0 +1,33 @@
+{
+  "files.associations": {
+    "time.h": "c",
+    "stdlib.h": "c",
+    "cstdlib": "c",
+    "array": "c",
+    "deque": "c",
+    "string": "c",
+    "unordered_map": "c",
+    "vector": "c",
+    "initializer_list": "c",
+    "unistd.h": "c",
+    "*.tcc": "c",
+    "exception": "c",
+    "fstream": "c",
+    "iosfwd": "c",
+    "new": "c",
+    "ostream": "c",
+    "sstream": "c",
+    "streambuf": "c",
+    "dirent.h": "c",
+    "process.h": "c",
+    "types.h": "c",
+    "fcntl.h": "c",
+    "file.h": "c",
+    "random": "c",
+    "algorithm": "c"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "python.formatting.provider": "none"
+}

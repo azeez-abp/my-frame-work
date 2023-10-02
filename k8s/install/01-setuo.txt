@@ -1,0 +1,103 @@
+# CONFIG STATIC IP
+
+nano /etc/netplan/01-network-manager-all.yaml
+
+```
+network:
+  version: 2
+  ethernets:
+    enp0s3:
+      addresses: [16.0.0.2/24]
+      gateway4: 16.0.0.1
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]
+```
+
+sudo netplan apply
+sudo systemctl restart systemd-networkd
+
+# CHECKING
+
+check MAC addr and product UUID are unique for all node
+ip link or ifconfig -a
+sudo cat /sys/class/dmi/id/product_uuid
+
+add ip route to each node to communicate
+sudo ip route add [destination_ip] via [gateway_ip] dev [interface_name] (routes are not persistent)
+sudo ip route add 192.168.1.0/24 via 10.0.0.1 dev eth0
+
+Check if Swap is Enabled:
+sudo swapon --show
+sudo swapoff -a ==> off it
+sudo sed -i '/ swap / s/^/#/' /etc/fstab parmanent
+sudo sed -i '/uuid=[0-1a-z]\{5,\} /I s/^/#/' /etc/fstab
+
+nano /etc/fstab
+sudo sed -i /swap/d /etc/ftab
+nano /etc/fstab and commwent out
+
+https://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github.com/azeez-abp/alx-low_level_programming.git
+
+# UUID=XXXX-XXXX-XXXX-XXXX swap swap defaults0 0 the line that resemble this
+
+(crontab -l 2>/dev/null; echo "@reboot /sbin/swapoff -a") | crontab - || true
+
+
+# DEPENDENCY Installation
+
+sudo apt update
+sudo apt install openssh-server
+sudo apt install openssh-client
+sudo systemctl start ssh
+sudo systemctl enable ssh
+sudo systemctl status ssh
+
+sudo sysctl --system
+
+       sudo ufw allow 22
+
+firewall for port opening # on master vm
+sudo apt install firewalld
+
+sudo firewall-cmd --permanent --add-port=6443/tcp --zone=docker ==>API
+sudo firewall-cmd --permanent --add-port=2379-2380/tcp (public) ==>ETCD
+sudo firewall-cmd --permanent --add-port=10250/tcp ==> kubelet API
+sudo firewall-cmd --permanent --add-port=10251/tcp ==> Scheduler
+sudo firewall-cmd --permanent --add-port=10252/tcp ==> Controller API
+sudo firewall-cmd --permanent --add-port=10255/tcp ==> kubectl API
+sudo firewall-cmd --reload
+
+on work vm
+sudo firewall-cmd --permanent --add-port=10251/tcp ==> kubelet API
+sudo firewall-cmd --permanent --add-port=30000-32767/tcp ==> Service POrt
+/////////////////////////////////////////////////////////////////////////////
+sysctl --system
+ufw disabled
+ufw status
+
+Forwarding IPv4 and letting iptables see bridged traffic
+
+cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+overlay
+br_netfilter
+EOF
+
+sudo modprobe overlay
+sudo modprobe br_netfilter
+
+sudo cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-iptables = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward = 1
+net.bridge.bridge-nf-call-iptables=1
+EOF
+
+Verify that the br_netfilter, overlay modules are loaded by running the following commands:
+
+lsmod | grep br_netfilter
+lsmod | grep overlay
+
+Verify that the net.bridge.bridge-nf-call-iptables, net.bridge.bridge-nf-call-ip6tables, and net.ipv4.ip_forward
+system variables are set to 1
+
+sysctl net.bridge.bridge-nf-call-iptables net.bridge.bridge-nf-call-ip6tables net.ipv4.ip_forward

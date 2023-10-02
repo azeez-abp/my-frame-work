@@ -1,0 +1,17 @@
+There are several structural design patterns in software engineering. Here is a list of some common structural patterns and their types of relationships:
+
+Adapter Pattern: This pattern allows objects with incompatible interfaces to work together. The relationship between the adapter and adaptee is that the adapter converts the interface of the adaptee into a compatible one.
+
+Bridge Pattern: This pattern separates the abstraction from its implementation. The relationship between the abstraction and implementation is that the abstraction contains a reference to the implementation and delegates all work to it.
+
+Composite Pattern: This pattern composes objects into tree structures to represent part-whole hierarchies. The relationship between the composite and its children is that the composite contains a collection of children and delegates work to them.
+
+Decorator Pattern: This pattern dynamically adds responsibilities to an object. The relationship between the decorator and its component is that the decorator wraps the component and adds its own functionality to it.
+
+Facade Pattern: This pattern provides a simplified interface to a complex system. The relationship between the facade and the subsystem is that the facade delegates work to the subsystem and presents a simplified interface to the client.
+
+Flyweight Pattern: This pattern minimizes memory usage by sharing objects with similar properties. The relationship between the flyweight and the context is that the flyweight contains intrinsic state that is shared between contexts, while the extrinsic state is provided by the context.
+
+Proxy Pattern: This pattern provides a surrogate or placeholder for another object to control access to it. The relationship between the proxy and the subject is that the proxy provides a substitute or representative for the subject, and may control access to the subject.
+
+Each of these patterns can be useful in different contexts and can help to improve the structure and maintainability of software systems.

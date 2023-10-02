@@ -1,0 +1,141 @@
+Polymorph relation
+I single table that save data from many other model
+
+If you're a senior developer, Laravel gives you robust tools for dependency injection, unit testing, queues, real-time events,
+
+Architecture concept
+- Request Life cycle
+		HTTP / Console Kernels
+		Service Providers
+		Routing
+- Container
+- Service provider
+- Facade
+
+reconfigure(boot) and Registering a service;
+ rm -r ./* delete every here
+ composer self-update
+ php artisan --version   laravel is artisan
+ The declare construct is used to set execution directives for a block of code
+ Currently only three directives are recognized: the ticks directive (See below for more information on the ticks directive), the encoding directive (See below for more information on the encoding directive) and the strict_types directiveA Docker image is an archive containing all the files that belong to a container.
+
+ A Docker image is an archive containing all the files that belong to a container.
+
+At its heart, Sail is the docker-compose.yml file
+chown azeez:azeezgrp FILE  (FILE azeezgrp and azeez own)
+chown NewUser:NewGroup FILE
+A parallel\Runtime represents a PHP interpreter thread
+After construction the parallel\Runtime remains available until it is closed, killed, or destroyed by the normal scoping rules of PHP objects. parallel\Runtime::run() allows the programmer to schedule tasks for execution in parallel. A parallel\Runtime has a FIFO schedule, tasks will be executed in the order that they are scheduled.
+
+
+like Redis, horizontal scaling with Laravel is a breeze
+Need extreme scaling? Platforms like Laravel Vapor allow you to run your Laravel application at nearly limitless scale on AWS's latest serverless technology.
+
+- Request Life cycle
+	. The entry point for all requests to a Laravel application is the public/index.php file.
+	All requests are directed to this file by your web server (Apache / Nginx)
+	The index.php file doesn't contain much code. Rather, it is a starting point for loading the rest of the framework.
+
+	public/index.php  ==>(require) Composer generated autoloader ==> (then retrieve instance of the application and service container from) bootstrap/app.php
+    HTTP / Console Kernels
+	Kernerl(Http or Console) server as central point for request entry
+
+	Service Providers
+	Kernel load service providers .
+	Service providers are responsible for bootstrapping(stating) all of the framework's various components, such as the database, queue, validation, and routing components
+
+Laravel question
+
+1.Can you explain the role of controllers in a Laravel application?
+
+Controllers in a Laravel application act as the middleman between the model and the view. They handle incoming HTTP requests, perform any necessary logic and data manipulation, and then return a response, which can be a view, a redirect, or a JSON response. Controllers allow you to separate the logic of your application into smaller, more manageable chunks, making it easier to maintain and test your code. Controllers are typically stored in the app/Http/Controllers directory and are defined using the php artisan make:controller command.
+
+2.How would you implement user authentication and authorization in a Laravel application?
+
+In a Laravel application, user authentication and authorization can be implemented using the built-in Auth classes. To set up authentication, you can use the php artisan make:auth command, which will create the necessary views, controllers and routes for handling registration, login, and logout. Additionally, the command will also create a migration for creating the database table to store the users.
+
+For Authorization, Laravel uses gates and policies. Gates define simple callbacks to check if a user is authorized to perform a certain action, while policies group several gates together for a model. By default, Laravel includes a User model and corresponding policy. You can use the php artisan make:policy command to create a new policy.
+
+In the controllers, you can use the middleware property to protect routes and routes groups with authentication or authorization middleware. The auth middleware will check if the user is logged in, and the can middleware will check if the user is authorized to perform a specific action.
+
+Once everything is set up, you can use the Auth facade to check if the user is logged in, retrieve the currently logged in user, and handle the login and logout logic.
+
+3. Can you explain the difference between query builder and eloquent ORM in Laravel?
+In Laravel, the query builder and Eloquent ORM (Object-Relational Mapping) are two ways to interact with the database.
+
+The query builder allows you to write simple, chainable methods to build and execute database queries. It provides a simple and convenient way to retrieve and manipulate data from the database using a fluent interface. The query builder supports a wide range of operations such as select, insert, update and delete.
+
+Eloquent ORM, on the other hand, is an advanced and more powerful way to interact with the database. It provides an active record implementation, which allows you to interact with your database using object-oriented syntax. Eloquent models represent the database tables and each model corresponds to a single table. Eloquent provides useful methods such as all, find, create, update, and delete to perform CRUD operations on the data.
+
+In summary, the query builder is great for simple operations that require minimal complexity, while Eloquent ORM is more powerful and useful for more complex operations and when working with large number of relationships.
+
+Query builder example  = DB::table('tableName')->get();
+
+Eloquent example  = TableModelName::all();
+
+4. How would you optimize the performance of a Laravel application?
+
+ i. Use caching: Laravel provides built-in support for caching through various drivers such as file, database, and memcached. Caching can significantly improve the performance of your application by reducing the number of database queries and minimizing the amount of computation required for each request.
+
+ii. Optimize database queries: Use the query profiler to identify slow queries and use indexes to improve query performance. Avoid using the "SELECT *" statement as it can slow down the query, instead specify the columns you need.
+
+iii. Use pagination: Laravel's built-in pagination can be used to display a large number of records efficiently by only loading a small number of records at a time (through generator).
+
+iv Optimize image and other assets: Use image optimization tools to reduce the size of images and other assets. Minify and combine CSS and JavaScript files to reduce the number of HTTP requests required to load a page.
+
+iv. Use a content delivery network (CDN): By using a CDN, your assets will be served from a location closer to the user, which will improve the loading time of your website.
+
+v. Use a task scheduler: Laravel's task scheduler allows you to run repetitive tasks, such as sending emails or cleaning up old data, at specified intervals. This can help offload some of the load from your web server and improve the overall performance of your application.
+
+vi. Use a production environment: Laravel's environment-specific configuration allows you to optimize your application for the production environment by disabling debug mode and other unnecessary features.
+
+5. How would you handle file uploads in a Laravel application?
+In a Laravel application, handling file uploads can be achieved using the Request object and the Storage facade.
+
+First, you need to create a form in your view with an input field of type "file". This will allow the user to select a file to upload.
+
+In your controller, you can use the Request object to access the uploaded file. For example, you can use the Request::file('field_name') method to get the uploaded file.
+
+To store the file, you can use Laravel's Storage facade. The Storage facade provides a simple and convenient way to interact with the file system. You can use the put method to store a file. For example, you can use Storage::put('path/to/file',$file) to store the uploaded file.
+
+You can also validate the uploaded file before storing it by using Laravel's built-in validation rules like file, image, mimetypes, mimes, and max.
+
+Once the file is stored, you can use the Storage facade to generate a URL to the file, which can be used to display it in the browser. For example, you can use Storage::url('path/to/file') to generate a URL to the stored file.
+
+Finally, you can also delete files using the delete method of the Storage facade.
+
+It's worth noting that Laravel provides a more powerful tool for handling file uploads called the Intervention Image package. It provides a simple and convenient way to work with images. It can be used for resizing, cropping, and manipulating images.
+
+In a Laravel application, file uploads can be handled using the built-in Request class. The Request class provides a file method that can be used to retrieve the uploaded file.
+
+Here is an example of how to handle file uploads in a controller:
+
+
+public function store(Request $request)
+{
+    $file = $request->file('file');
+    if ($file->isValid()) {
+        $path = $file->store('public');
+        // Do something with the file, for example save the file path to the database
+    }
+}
+In the above example, we first retrieve the uploaded file using the file method, passing the name of the file input field. We can then check if the file is valid, for example, checking for the file size and file type. If the file is valid, we can use the store method to save the file to the specified directory. The store method returns the path of the saved file.
+
+Additionally, we can also use the storeAs method to save the file with a specific filename and/or in a specific directory. Also, we can use the validate method to validate the file before storing it.
+
+In addition to the above, Laravel also provides a built-in Storage facade, which can be used to handle file storage and retrieval. The Storage facade provides methods such as put, get, url, and delete to handle file storage, retrieval, and deletion.
+
+
+return data from view 
+
+return view('viewfile name',['name'=>'azeez']); data array
+$variable = 'amen amen';
+return view('viewfile name',compact('variable1','variable2')); compact method retutrn array from it augument 
+
+return view('viewfile name')->with(data arrray);
+
+
+npx tailwindcss -i ./resources/css/app.css -o ./public/css/tailwind/output.css --watch
+
+
+

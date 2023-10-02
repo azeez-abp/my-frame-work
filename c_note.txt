@@ -1,0 +1,502 @@
+INPUT FUNCTIONS
+        scanf: This function is used to read data from the standard input (keyboard). 
+        It allows you to read different data types like integers, floating-point numbers, characters, etc.
+        scanf("%d %s", &num, stingvar); &num (we must use address if is number type)
+
+        fgets(variable_use_to_store_what_to_read, size_of_what_to_read,pointer_of_file_to_readf): This function is used to read a line of text from the standard input. 
+        It is useful for reading strings that may contain spaces
+        fgets(name, sizeof(name), stdin);
+
+        getchar: This function is used to read a single character from the standard input.
+         ch = getchar();
+         printf("You entered: %c\n", ch); 
+
+        fscanf: This function is used to read data from a file. It is similar to scanf but takes a file pointer as an additional argument.
+        FILE *file;   file = fopen("data.txt", "r");
+        fscanf(file, "%d", &num);
+        fscanf(file, "%s", string);
+        printf("%s", string )
+        fclose(file);
+        
+        read() function is used to read data from a file descriptor into a buffer
+        ssize_t read(int fd, void *buffer, size_t count);
+        Parameters:
+                fd: The file descriptor from which to read data (e.g., 0 for standard input, 1 for standard output, or a file descriptor obtained from opening a file with open()).
+                buffer: A pointer to the buffer where the read data will be stored.
+                count: The maximum number of bytes to read into the buffer.
+        read(0, buffer, MAX_BUFFER_SIZE);
+OUTPUT FUNTION
+
+        printf(): This is the most commonly used function to print formatted output to the console. It allows you to display variables, strings, and formatted text.
+
+        puts(): This function is used to output a string to the console followed by a newline character.
+
+        putchar(): This function is used to output a single character to the console.
+
+        fprintf(): This function is similar to printf(), but it allows you to print formatted output to a specified file instead of the standard output.
+        fprintf(stdout, "This is a message to stdout: %d\n", number); 
+
+        fputs(): This function is similar to puts(), but it allows you to output a string to a specified file instead of the standard output.
+          fputs("This is another message to stdout.\n", stdout); stdout show that you waht the data to be write out
+        
+        write() function:
+
+                Signature: ssize_t write(int fd, const void *buffer, size_t count);
+                Purpose: The write() function is used to write data from a buffer to a file descriptor.
+                Parameters:
+                fd: The file descriptor to which data will be written (e.g., 1 for standard output, or a file descriptor obtained from opening a file with open()).
+                buffer: A pointer to the buffer containing the data to be written.
+                count: The number of bytes to write from the buffer to the file descriptor.
+                Return value: The number of bytes written, or -1 on error.
+
+
+
+///Using read and write
+#include <stdio.h>
+#include <unistd.h>
+#define MAX_BUFFER_SIZE 100
+int main()
+{
+    int n;
+    char br = '\n';
+    for (n = 0; n < 10; n++ )
+    {   
+        char p  = n +'0';
+        write(0,&p,sizeof(p));
+        
+        write(2,&br,sizeof(br));
+    }
+
+    char buffer[MAX_BUFFER_SIZE];
+    int bytesRead;
+
+    // Read input from the console (standard input)
+    bytesRead = read(0, buffer, MAX_BUFFER_SIZE);
+
+    // Check if read was successful
+    if (bytesRead > 0) {
+        // Write the input back to the console (standard output)
+        write(1, buffer, bytesRead);
+    }
+    return 0;
+}
+
+
+//////READING FILE
+#include <errno.h>
+/**
+ * read_file - function for reading a file
+ * Description: the function read a file
+ * @path: string of the file paht
+ * Return : void
+ */
+
+void read_file(char path[220])
+{
+        FILE *f  = fopen(path, "r");
+        char content[200];
+
+        if (f == NULL)
+                printf("Unable to open file %s",path);
+        else
+        {
+                while (fgets(content, sizeof(content), f )!= NULL)
+                        printf("%s", content);
+        }
+        printf("path is %s", path);
+
+        fclose(f);
+}
+
+/////////////////////////////////////////
+///character type input/output
+getchar():
+        It reads a single character from the standard input (keyboard) and returns the ASCII value of the character        
+       char c =  getchar()
+putchae(c)
+        output one character
+        
+
+////any type input/output
+printf  =>   for formatted output
+scanf   =>  for formatted input   scanf("%d", &num); scanf("%s", name); when you pass an array name to scanf,
+        it automatically gets converte
+        d to a pointer, which represents the address for primitive type use & in scanf to 
+        save the data into memory
+
+
+
+
+
+
+The problem with the following code is that it attempts to use a variable (n) 
+to declare the size of the array (array[n]). In C, the size of an array must be a constant 
+expression known at compile-time, not a variable.
+
+
+In C, char* s; and char *b; both declare pointers to characters (strings). 
+The syntax char* s and char *b are equivalent in this context and are both 
+used to declare pointers to characters.
+
+When you declare char* s; or char *b;, you are creating a pointer variable that 
+can hold the memory address of a character (or the first character of a string). 
+However, it's important to note that these pointers do not actually point to any 
+valid memory location yet. They are just uninitialized pointers, and their values are 
+undefined until you assign them a valid 
+memory address.
+s = (char*)malloc(100 * sizeof(char)); 
+
+ mkdir /root/alx-low_level_programming/0x07-pointers_arrays_strings | 
+ cd /root/alx-low_level_programming/0x08-recursion | vi 101-crackme_password
+ 
+  touch README.md | echo "Extended more of POINTERS, STRINGS ARRAYS" > README.md
+
+cp  ../0x05-pointers_arrays_strings/_putchar.c _putchar.c
+
+
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-main.c 0-memset.c -o 0-memset
+
+The command gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-main.c 0-memset.c -o 0-memset is a compilation command that uses the gcc compiler to compile two C source files (0-main.c and 0-memset.c) and produce an executable file named 0-memset.
+
+Let's break down the options used in the compilation command:
+
+-Wall: This option enables all the warning messages.
+-pedantic: This option generates standard-conforming code and provides additional diagnostics for certain constructs.
+-Werror: This option treats all warnings as errors, causing the compilation to fail if any warning is encountered.
+-Wextra: This option enables extra warning messages beyond those enabled by -Wall.
+-std=gnu89: This option sets the language standard to ISO C 1989 with GNU extensions.
+The command compiles the 0-main.c and 0-memset.c files together and links them to create an executable called 0-memset. The -o option specifies the output file name.
+
+This compilation command is helpful in ensuring that the code is free of errors and follows strict coding standards, as it enables various warning messages and treats them as errors.
+ It also enforces adherence to the ISO C 1989 standard with GNU extensions.
+
+
+
+
+ Write a function that gets the length of a prefix substring.
+
+Prototype: unsigned int _strspn(char *s, char *accept);
+Returns the number of bytes (Each character is a byte is the number of such byte is their count) in the initial segment of s which consist only of bytes from accept
+
+To replace all spaces with tabs, use the following :%s command:
+
+ruby
+Copy code
+:%s/ /    /g
+:%s/j/y/g => replace I WITH X IN VI ALL
+
+
+
+```
+The command 
+ar rc libutil.a util_file.o util_net.o util_math.o 
+is used to create a static library named libutil.a from three object files: util_file.o, util_net.o, and util_math.o. Let's break down the command and analyze its components:
+
+ar: This is the command-line utility for managing archives (collections of object files). It is used to create, modify, and extract files from archives.
+
+rc: These are the options passed to ar. They have the following meanings:
+
+r: Replace or add the object files specified after the archive name. If the object file is already present in the archive, it will be replaced.
+c: Create the archive if it does not exist. This option is used when creating a new archive.
+libutil.a: This is the name of the archive being created. In this case, it will create a static library called libutil.a.
+
+util_file.o, util_net.o, util_math.o: These are the object files that will be added to the libutil.a archive. Object files are compiled units of code generated from source code files.
+
+The command essentially combines the three object files into a static library called libutil.a. This static library can then be linked with other programs during the compilation process to provide the functionalities defined in the util_file.c, util_net.c, and util_math.c source files to the linked program. Static libraries are linked directly into the executable, 
+making it self-contained and independent of external dependencies at runtime.
+```
+
+
+ cd /root/alx-low_level_programming/0x0D-preprocessor   0x09-static_libraries
+ cd /root/alx-low_level_programming/0x0F-function_pointers
+ ar -cvq libmy.a 
+
+  ar -rc libmy.a 0-isupper.o 0-memset.o 0-strcat.o 1-isdigit.o 1-memcpy.o 1-strncat.o 100-atoi.o 2-strchr.o 2-strlen.o 2-strncpy.o 3-islower.o 3-puts.o 3-strcmp.o 3-strspn.o 4-isalpha.o 4-strpbrk.o 5-strstr.o 6-abs.o 9-strcpy.o _putchar.o
+
+ranlib libmy.a 
+nm libmy.a
+ar -t  libmy.a
+
+gcc -c *.c
+
+ar rc libmy.a *.o
+
+ranlib libmy.a
+
+ar -t libmy.a 
+
+//////////////////////////Commmand to create stic library
+gcc -c *.c
+ar rc liball.a *.o
+ranlib liball.a  
+
+#include <stdio.h>
+
+int main (int argc, char *argv[])
+{
+
+  return 0;
+}
+
+gcc -o myprog myprog.c
+
+would result in the following values internal to GCC:
+
+
+argc
+4
+argv[0]
+gcc
+argv[1]
+-o
+argv[2]
+myprog
+argv[3]
+myprog.c
+
+ int arr[] = {1, 2, 3, 4, 5};
+int size = sizeof(arr) / sizeof(arr[0]);
+
+
+The process of compiling a C program involves several steps, starting with the preprocessor and ending with the linker. Here's a high-level overview of the steps involved:
+
+Preprocessing: In this step, the preprocessor (usually cpp) processes the source code and performs textual replacements based on preprocessor directives, such as #include, #define, and #ifdef. It also removes comments from the source code. The output of this step is a preprocessed source file (commonly with a .i extension), which includes all the included header files and expanded macros.
+
+cpp -E my_program.c -o my_program.i
+
+
+Compilation: The preprocessed source code is passed to the C compiler (usually gcc or clang) in this step. The compiler translates the C code into assembly code specific to the target platform. The output of this step is an assembly file (commonly with a .s extension).
+
+gcc -S my_program.c -o my_program.s
+
+Assembly: The assembly file generated in the previous step is assembled by the assembler (usually as or gas). The assembler translates the assembly code into machine code or object code. The output of this step is an object file (commonly with a .o extension).
+Assembly: To generate the object file (.o), you need to use the assembler (as or gas). The assembler translates the assembly code into machine code:
+
+as my_program.s -o my_program.o
+
+
+Linking: In this final step, the linker (usually ld) combines the object file generated in the previous step with other necessary object files and libraries to create the final executable file. It resolves references to functions and variables across different object files and libraries, generating a single executable file (commonly with no file extension or .out).
+
+ld my_program.o -o my_program
+
+
+The gcc -c *.c command is used to compile multiple C source files (*.c) into object files (*.o) without linking them to create an executable
+
+To create an executable, you would need to link these object files together
+
+gcc -o my_program file1.o file2.o file3.o
+Linker take object files (many) and produce one executable
+This command will link the object files file1.o, file2.o, and file3.o to produce the executable my_program.
+
+form .c to .o 
+from .c to .exe
+
+From .c file to  object .o file 
+
+gcc -c *.c
+
+ar -rcs libmy.a *.o   => ar -rcs libmy.a *.o  (rcs Replace , Create , Small) 
+
+ranlib libmy.a
+
+ar -t libmy.a
+
+gcc main.c -L./path/to/libmy -llibmy.a -o main
+In C, delegation can be implemented using function pointers. 
+Function pointers allow you to create a mechanism where a function 
+can be passed as an argument to another function, enabling delegation 
+of specific tasks to different functions at runtime.
+
+
+In C, the typedef keyword is used to create aliases for data types
+void* poiter to void is any data type
+typedef void (*TaskFunction)(void);
+typedef char* (*TaskFunction)(int *a, char b);
+        return type           argument type
+
+Yes, it is possible to pass addresses and pointers as function parameters in C. 
+This allows functions to modify the original data 
+directly and avoid creating unnecessary copies of data.
+
+pointer as parameters ==> the address as arguments
+
+typedef char* (*TaskFunction)(int *a, char b);
+
+Size of a Struct:
+The size of a struct is the sum of the sizes of its individual members. Each member's size depends on its data type and memory alignment. The compiler may add padding bytes between members to ensure proper alignment.
+
+Size of an Enum:
+The size of an enum is typically equal to the size of an integer (usually 4 bytes on most systems) since an enum is essentially an integer type that represents named constants.
+
+Size of a Union:
+The size of a union is equal to the size of its largest member. The compiler allocates memory for a union based on the size of its largest member.
+
+Size of a Typedef:
+A typedef is an alias for a data type. The size of a typedef depends on the data type it is aliased to. For example, if you typedef an int to MyInt, the size of MyInt will be the same as the size of int.
+
+To get the size of these constructs in C, you can use the sizeof operator
+
+
+
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    // Write C code here
+    char  *str  = "I am with you";
+    char **all;
+    all  = (char **) malloc(16);
+    for  (int i =  0 ; str[i] != '\0'; i++)
+    {  
+        char * each_word  = malloc((i + 1) * sizeof(char *) );
+        char  *one_word = "";
+        if (str[i] != ' ')
+        {
+          one_word += str[i];   
+        }
+        else
+        {
+            all[i]  = one_word ;
+            each_word  = NULL;
+        }
+    }
+  
+     int p;
+     int q;
+    for (p = 0; all[p] != NULL; p++)
+    {
+       char *s  =  all[p][0]; 
+       printf("%s", s);
+    }
+        
+        
+       
+
+       // printf("%c\n", str[i]);
+    
+    return 0;
+}
+
+A macro is a fragment of code which has been given a name
+There are two kinds of macros.
+1. Object-like macros resemble data objects when used, 
+2. function-like macros resemble function calls.
+#define BUFFER_SIZE 1024
+By convention, macro names are written in uppercase
+The macro's body ends at the end of the ‘#define’ line. You may continue the definition onto multiple lines,
+if necessary, using backslash-newline.
+
+ #define NUMBERS 1, \
+                     2, \
+                     3
+     int x[] = { NUMBERS };
+          ==> int x[] = { 1, 2, 3 };
+
+ #define lang_init()  c_init()
+
+  Standard Predefined Macros
+        __FILE__
+        __LINE__
+        __DATE__ string Aug 15 2023
+        __TIME__ string 03:16:36
+        __STDC_ int in normal operation, this macro expands to the constant 1, to signify that 
+        this compiler conforms to ISO Standard C
+        __STDC_VERSION__ int 
+        __STDC_HOSTED__ macro is defined, with value 1, if the compiler's target is a hosted environment
+        __cplusplus This macro is defined when the C++ compiler is in use
+        __OBJC__ This macro is defined, with value 1, when the Objective-C compiler is in use
+        __ASSEMBLER__
+
+We use micro to triger somethings at compile time
+         Common Predefined Macros https://gcc.gnu.org/onlinedocs/gcc-5.1.0/cpp/Common-Predefined-Macros.html#Common-Predefined-Macros
+
+__SIZE_TYPE__
+__PTRDIFF_TYPE__
+__WCHAR_TYPE__
+__WINT_TYPE__
+__INTMAX_TYPE__
+__UINTMAX_TYPE__
+__SIG_ATOMIC_TYPE__
+__INT8_TYPE__
+__INT16_TYPE__
+__INT32_TYPE__
+__INT64_TYPE__
+__UINT8_TYPE__
+__UINT16_TYPE__
+__UINT32_TYPE__
+__UINT64_TYPE__
+__INT_LEAST8_TYPE__
+__INT_LEAST16_TYPE__
+__INT_LEAST32_TYPE__
+__INT_LEAST64_TYPE__
+__UINT_LEAST8_TYPE__
+__UINT_LEAST16_TYPE__
+__UINT_LEAST32_TYPE__
+__UINT_LEAST64_TYPE__
+__INT_FAST8_TYPE__
+__INT_FAST16_TYPE__
+__INT_FAST32_TYPE__
+__INT_FAST64_TYPE__
+__UINT_FAST8_TYPE__
+__UINT_FAST16_TYPE__
+__UINT_FAST32_TYPE__
+__UINT_FAST64_TYPE__
+__INTPTR_TYPE__
+__UINTPTR_TYPE__
+
+Defined to the number of bits used in the representation of the char data type. It exists to make the standard header given numerical limits work correctly. You should not use this macro directly; instead, include the appropriate headers.
+__SCHAR_MAX__
+__WCHAR_MAX__
+__SHRT_MAX__
+__INT_MAX__
+__LONG_MAX__
+__LONG_LONG_MAX__
+__WINT_MAX__
+__SIZE_MAX__
+__PTRDIFF_MAX__
+__INTMAX_MAX__
+__UINTMAX_MAX__
+__SIG_ATOMIC_MAX__
+__INT8_MAX__
+__INT16_MAX__
+__INT32_MAX__
+__INT64_MAX__
+__UINT8_MAX__
+__UINT16_MAX__
+__UINT32_MAX__
+__UINT64_MAX__
+__INT_LEAST8_MAX__
+__INT_LEAST16_MAX__
+__INT_LEAST32_MAX__
+__INT_LEAST64_MAX__
+__UINT_LEAST8_MAX__
+__UINT_LEAST16_MAX__
+__UINT_LEAST32_MAX__
+__UINT_LEAST64_MAX__
+__INT_FAST8_MAX__
+__INT_FAST16_MAX__
+__INT_FAST32_MAX__
+__INT_FAST64_MAX__
+__UINT_FAST8_MAX__
+__UINT_FAST16_MAX__
+__UINT_FAST32_MAX__
+__UINT_FAST64_MAX__
+__INTPTR_MAX__
+__UINTPTR_MAX__
+__WCHAR_MIN__
+__WINT_MIN__
+__SIG_ATOMIC_MIN__
+
+__INT8_C
+__INT16_C
+__INT32_C
+__INT64_C
+__UINT8_C
+__UINT16_C
+__UINT32_C
+__UINT64_C
+__INTMAX_C
+__UINTMAX_C
+
+Pointer to a function is a code and first byte it has general structure
+return_type (*pointer_name)(parameter_list);

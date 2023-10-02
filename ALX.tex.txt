@@ -1,0 +1,570 @@
+
+
+Steven Njuguna
+22/06/2023 4:46am
+
+
+Who is successful and why (Grit)
+
+Step 1: Meeting scheduled
+
+Step2: 
+    1 What is growth mindset? What is fixed mindset?  
+        growth mindset: is the believe that ability to learn is not fixed it can change with effort
+        fixed mindset: is the believe that what can be achieve is fixed and can not be changed
+    2. What evidence is there that growth mindset is important
+        
+    
+    3.How motivated do you personally feel to develop greater growth mindset? Be honest.
+      I personnaly love to take up challege and focus to my dream untill I am successful.
+      So I am very excited about growing mindset (achievment through effort)
+    4.Why is the word “yet” so powerful for growth mindset? Each of you should give your own example of how you can use “yet.”
+        this word 'yet' keep you moving because is a signal to let you know that you not there already
+    5. Is intelligence fixed? Explain No
+    6. What is grit? The passion and perseverance for achievement 
+    7. Give an example of grit from your own life.
+         Since 2015 I have struggling to build an Edu-consult center for high school student. 
+         All infrastructure that I need has not yet been fullfilled. I don't give up and I am still pushing 
+         the project. Now I just fishinit an online Edu project with side husle on home tutor.
+    8.What evidence is there that grit is important? (Describe at least one study: what group was studied, what was the treatment, and what was the result?)
+        The evidence is that, for all student done on student, teacher and sales personnel the key success to their achievement is Grit 
+
+
+
+ Turn to each other answering
+
+    1 What do you understand about mindset now that you did not understand before?
+      the under is the same as before an now ( ability to learn is not fixed it can change with effort)
+    2. What do you think is more important: effort or intelligence? Explain your opinion.
+    Effort is more important, because effort keep one going and persevere and thus build grit and intelligence
+    3. How motivated do you personally feel to develop greater growth mindset? Be honest. Always feel great. 
+    4.Describe a time when you failed at something. What feelings did you have at the time? When you look back on that time how do you feel now? What did the failure teach you?
+        I have failed several time. I my feelling is that, The failure I am having is a way to solution.
+    5. Give at least 2 of your own personal “yet” sentences. (For example, “I am not employed as a software engineer yet.”)
+         I am yet to have complete undertanding of micr-services architecure
+         I am yet to finishit my school Laravel project
+    6. What is one way you can practice growth mindset? Putting more effort to my plann to achieve my goal
+
+
+    A. Your partner’s name
+         Steven Njuguna
+    B. Date and time of the conversation
+        22/06/2023 4:46am
+    C. Were there any areas of confusion or disagreement in your conversation?
+        No area of disagreement
+    D. What is one thing you learned or better understand as a result of the conversation?
+        Limitation of Grit
+    E. Give your own personal “yet” sentence.
+        I am yet to achieve my primary goal.
+    F. What is one way you personally plan to practice growth mindset?
+        To continue learning through application of effort
+
+
+        https://app.sli.do/event/aeWMzKYMND3GzYXBh1aWp4/live/questions
+        https://meet.google.com/jmk-drww-zsp?hl=en Stev google meet
+
+What is the most meaningful community you’ve been apart of? Name it here Stack overflow , Meduim Daily Laravel community.
+
+What is your best memory of that community? the best mommory of the community when I help someone to solve Multer problem on image upload in node
+And when I created post on Meduim Dsily about Decorative design pattern
+How well did that community welcome new people? Warm welcoming 
+
+How well did that community create deep bonds between members? By sharign post and peer attending to tecnical coding issue
+
+
+
+reads in three numbers and writes them all in sorted order
+
+
+Begin 
+//taking the numbers
+   set input;
+   numberList = []
+   set i = 0
+   While i < 3
+    read  input
+    numberList[i] = input
+    i++
+  EndWhile
+  //sorting
+  set flag = true
+  While flag
+    For i = 0 to i length of numberList -1
+      If numberList[i] < numberList[i+1]
+         //swap
+        temp =  numberList[i]
+        numberList[i] = numberList[i+1]
+        numberList[i+1]  = temp
+    EndFor
+  EndWhile
+display numberList
+End
+
+https://drive.google.com/file/d/1KMyDk-fY27ho78sPyeLrIY3X01eLIvxU/view?usp=sharing
+https://docs.google.com/document/d/1ICNYn5os4wAyzeg0NtRFdinnBDwjBpls3FxNZ-ZMKhE/edit?usp=sharing 
+
+
+
+Begin 
+  Read input
+  set sum = 0
+  While input > 0
+   sum += input
+ EndWhile
+ display sum
+End
+
+https://drive.google.com/file/d/1FN47ujjmmF9CM3r6dnRNs5XWva4yT1Ip/view?usp=sharing
+https://docs.google.com/document/d/1DjYcIwLfkfsbx_GsqtVL7nrbDlVraUNtrcynqQg6ts8/edit?usp=sharing
+
+Repository permissions
+
+Webhooks read & write
+
+git clone https://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@github.com/azeez-abp/alx-pre_course.git 
+
+
+
+general purpose token less secure No need to check any Select scopes
+to push you new to make some cjheck
+Check repo
+git clone https://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@github.com/azeez-abp/alx-zero_day.git 
+
+git clone https://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@github.com/azeez-abp/alx-system_engineering-devops.git
+
+git clone https://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@github.com/azeez-abp/alx-low_level_programming.git
+
+git config --global user.email "adioadeyoriazeez@gmail.com"
+git config --global user.name "azeez-abp"
+
+touch 0x03-git/c/c_is_fun.c 0x03-git/js/main.js 0x03-git/js/index.js
+touch  0x03-git/bash/alx  0x03-git/bash/school
+echo  "\#!/bin/bash \n echo \"ALX\"" > 0x03-git/bash/alx
+mkdir 0x03-git/bash 0x03-git/c 0x03-git/js
+git fetch --all
+
+git merge
+ origin/master
+
+git diff
+
+git fetch origin
+
+git checkout brnachName
+
+git log master
+
+git branch -D feature/masquerading delete branch
+
+git diff --staged
+
+
+
+
+
+Step 1
+Ask any adult you know if they will grant you a short interview (30 minutes or less) and schedule a time to do this, either in person, or by phone video chat, as soon as possible.
+
+I Ask Mrs Amaka Uche Shedule meeting and she told me to come back two hours later on 27/06/2023
+
+Step 2
+When it is time for the interview, If at all possible, record audio of the interview (with your interviewee’s permission, of course). Otherwise, take notes by hand and immediately after the interview type what you can remember.
+ She did not allow record so I write.
+
+Step 3
+Speak each question aloud to your interviewee. Feel free to slightly modify the language to make it sound like you, but please make sure you ask all of these questions.
+
+1. Thank you for sharing your time with me today. This should take 30 minutes or less of your time. I’m learning more about success and failure and am hoping you’d be willing to share honestly with me about your own experiences with each. I will not be sharing your full name nor specific story with others, and it would help me if you could be as honest as possible.
+ 
+Mrs Blessing: Welcome I will be glad to answer tour question and share more of my experiences about success and failure
+
+2. Can you share a brief story about a time you were successful in your life? Usually the first story that pops to mind is the best one. How did you feel when you succeeded? What do you think helped you achieve this success?
+ Mrs blessing: Well, Success is targeted towards a specific goal. One Success that I recently archived is my marriage. There are lot of challenges  like relogion and ethnicity, but because of my detarmination and perseverance, I got married to the my of my dream and I never regret one day that I got married to despite that fact that none of his family is at the wedding ceremony.
+
+
+
+3. Thank you. Can you describe a time in your life where you failed at something that was important to you? Usually the first story that pops to mind is the best one. How did you feel when you failed? What do you think contributed to this failure?
+
+Mrs Blessing: Well it si not everything you attempt in life that will come down to your feet. this is where I learnt that it takes more that determination and effort to be successful. infact the first factor of success is sound mind and health. Tell me, how can a metally derailed man become software engineer(is that not what you are aiming at?. Me: yes).
+I failed to become a fashion designer because of my spine. I cannot say more please. 
+Me: that's ok ma.
+
+4. What did you learn from your success? 
+   Mrs Blessing: What I learnt is that success depend of factors like
+   1. Good heath and sound mind
+   2. You have to apply effort
+   3. You Have to keep going untill you achieve it (Persever)
+
+5. What did you learn from your failure? (Ask for elaboration if needed).
+  Mrs Blessing: Before  attempting anything check your health if you will be able to cope
+
+6. Thank you again for sharing your stories with me. Is there anything you would like me to know?
+  Mrs Blessing: yes, as you are aiming to be successful in your endeavors, don't forget your health.
+7. This concludes our interview. Thank you again for your time and sharing. I appreciate it very much. 
+Growth Mindset Interview
+A. Interviewee’s name : Mrs Uche Blessing 
+
+B. Time and place of interview: 3:00 pm Navy Estate Karchi Abuja
+C. List several statements made by each interviewee. Indicate next to each statement if it is an example of growth mindset or fixed mindset. List each statement and label it either “growth mindset” or “fixed mindset”.
+   Mrs Blessing: What I learnt is that success depend of factors like
+   1. Good heath and sound mind
+   2. You have to apply effort (Growth mindset)
+   3. You Have to keep going untill you achieve it (Persever)
+   4. It is not possinble to achieve everything in life becuse we have limited time (Fixed mindset)
+
+D. Did you interviewee’s stories involve grit (or lack of grit)? Explain.
+    She make mension of perseverance in her story
+E. What surprised you about conducting this interview? What did you learn?
+     I learnt that good health and sound mind also contribute to our success when she ask
+     How can a metally derailed man become software engineer(is that not what you are aiming at?. Me: yes).
+     
+
+     https://docs.google.com/document/d/1CcM2TWtT0CNC1cbto-s0JJI7XlthN3SGh_mH2T61oc0/edit?usp=sharing
+
+
+//////////////////////////////////////////////////////////////////////////////
+C ==> ctrl
+M ==> alt 
+emacs <file_path> ==>open file C-x C-f
+C-x C-c ==> close
+C-/	Undo ctrl /
+C-_	Undo
+C-x u	Undo
+
+C-f	Forward one character
+C-n	Next line
+C-b	Back one character
+C-p	Previous line
+Here are some ways to move around in larger increments:
+
+C-a	Beginning of line
+M-f	Forward one word
+M-a	Previous sentence
+M-v	Previous screen
+M-<	Beginning of buffer
+C-e	End of line
+M-b	Back one word
+M-e	Next sentence
+C-v	Next screen
+M->	End of buffer
+C-s	Incremental search forward
+C-r	Incremental search backward
+C-x C-f search file
+C-x C-s save file
+C-x C-c quit or close file
+C-k cut line
+C-y yanking text(paste)
+C-s increments search
+
+//////////////////////////////////////////vi command
+vi filename	edit filename starting at line 1
+vi -r filename	recover filename that was being edited when system crashed
+i ==> insert mode inset text
+i
+a 
+A 
+i 
+I 
+
+esc ==> exit insert mode
+
+Exit 
+
+:x	quit vi, writing out modified file to file named in original invocation
+:wq  quit vi, writing out modified file to file named in original invocation
+:q	quit (or exit) vi
+:q!  	quit vi even though latest changes have not been saved for this vi call
+
+
+Moving the Cursor
+j or <Return>
+  [or down-arrow]	move cursor down one line
+*	k [or up-arrow]	move cursor up one line
+*	h or <Backspace>
+  [or left-arrow]	move cursor left one character
+*l or <Space>
+  [or right-arrow]	move cursor right one character
+*0 (zero)	move cursor to start of current line (the one with the cursor)
+*$	move cursor to end of current line
+ 	w	move cursor to beginning of next word
+ 	b	move cursor back to beginning of preceding word
+   This is the real vi command
+ 	:0<Return> or 1G	move cursor to first line in file
+ 	:n<Return> or nG	move cursor to line n
+ 	:$<Return> or G	move cursor to last line in file
+
+
+  u undo
+
+  Deleting Text
+  x	delete single character under cursor
+ 	Nx	delete N characters, starting with character under cursor
+ 	dw	delete the single word beginning with character under cursor
+ 	dNw	delete N words beginning with character under cursor;
+  e.g., d5w deletes 5 words
+ 	D	delete the remainder of the line, starting with current cursor position
+*	dd	delete entire current line
+ 	Ndd or dNd	delete N lines, beginning with the current line;
+  e.g., 5dd deletes 5 lines
+
+  cut and paste
+
+  yy	copy (yank, cut) the current line into the buffer
+  yy	copy (yank, cut) the current line into the buffer
+  Nyy or yNy	copy (yank, cut) the next N lines, including the current line, into the buffer
+  p	put (paste) the line(s) in the buffer into the text after the current line
+  dd cut
+  Nyy or yNy	copy (yank, cut) the next N lines, including the current line, into the buffer
+  p	put (paste) the line(s) in the buffer into the text after the current line
+
+
+ 
+
+  https://www.youtube.com/watch?v=B7ycPbg5ITw fellowing video
+  https://docs.google.com/presentation/d/1DF8iY5Ge8PMLnXq6ZEPI1Q1_9GKcxq-EwfX_oAvnLJ0/edit#slide=id.g22d5cf09096_4_603
+
+
+  https://intranet.alxswe.com/concepts/6 
+
+  Items of documentation
+   key: we write code for another programmer to read
+   architectural documentation
+   Comments 
+   Names of functions and variables
+   Indentation
+   Git commit messages 
+   Always put a README.md
+
+   Symptoms and risks of over-documenting
+   Don’t document the tools you use. Rule of thumb: if some information that is in the documentation is findable online, it doesn’t belong in your documentation.
+   Getting into the project is hard, because it takes more than 10 minutes to read the documentation to get started.
+   It takes more than 30 seconds / 1 minute to search for the right specific information about anything, even when knowing where to look.
+   Making a change is complex, because you have to ensure that the various places where things are documented are up to date. Resulting risks could be:
+   
+   people avoid making changes so that they don’t have to worry about finding what to update in the documentation (the thing that Apple feared);
+   
+   because it’s too complex, people don’t bother updating the documentation, or fail to change something relevant in the documentation, which gradually turns outdated
+
+   http://www.codesimplicity.com/post/what-is-overengineering/
+
+
+
+
+
+   mv /tmp/betty  rm /tmp/my_first_directory/betty
+
+   cp 0x00-shell_basics/3-listfiles |  cat 0x00-shell_basics/4-listmorefiles
+
+   cd alx-system_engineering-devops
+
+   ls -la -n
+ls -la
+ls -la ..
+ls -la /boot
+
+ls -al . .. /boot
+
+#!/bin/bash
+
+ln -s /bin/ls __ls__  what is the use of Symlink //symbolic link 
+find . -maxdepth 1 -name '*.html' -newer ../ -exec cp -u {} ../ \;
+
+cp ./*.html ..
+cp -n *.html ..
+cp -u *.html destination
+cp -u [[:uppercase:]]* /tmp/u
+ls -am (-m separate with comma)
+http://linuxcommand.org/lc3_lts0050.php
+cp: The command to copy files or directories.
+-n: The no-clobber option, which prevents overwriting existing files.
+
+find ./*.html | while read -r file; do
+  if [[ ! -e "$file" && "$file" -nt "../$(basename "$file")" ]]; then
+    cp "$file" "../$(basename "$file")"
+  fi
+done
+#!/bin/bash
+cp -R ./[A-Z]* /tmp/u'
+ls -Uam
+ls -Uamp
+ls -Uampsj 
+ls -map
+#!/bin/bash
+rm -R ./*~  
+./ 0x00-shell_basics/school.magic 0x00-shell_basics/school.mgc
+
+vi 0x00-shell_basics/school.magic
+
+chmod u+x 0x00-shell_basics/100-let_move
+#!/bin/bash
+chmod 753 hello
+mkdir -p welcome/to/school
+
+0 string SCHOOL School data
+!:mime Holberton
+chmod -R +111 */   */ => subdirectory 
+https://github.com/afinesami/holberton-system_engineering-devops/blob/master/0x00-shell_basics/holberton.mgc
+
+http://linuxcommand.org/index.php
+
+echo "103-Star_Wars star-war episode iv display" >> README.md
+chmod --reference=olleh hello
+chmod +x 7-everybody  8-James_Bond
+#!/bin/bash
+chmod --reference=olleh hello
+if youu dont  see anything, make the file executable
+file -C -m school.mgc school compile magic file
+
+#!/bin/bash
+mkdir -m 751 my_dir
+
+#!/bin/bash
+chgrp school hello
+
+
+#!/bin/bash
+chown -h vincent:staff _hello *
+
+https://github.com/afinesami/holberton-system_engineering-devops/blob/master/0x01-shell_permissions/14-change_owner_and_group
+
+
+
+#!/bin/bash
+chown --from=guillaume betty hello
+
+ln -s "$source_file" "$destination_directory/$symbolic_link_name"
+ln -s example_fcc_file.txt fcc_link.txt 
+ln =>link 
+-s  => -s option to specify that this will be a symbolic link. 
+If you omit the -s option, 
+then a hard link will be created instead
+TO remove Symlinkk use
+rm fcc_link.txt
+unlink fcc_link.txt
+
+tr ":" "=>" tr is replace : with =>
+
+cd root | mkdir 0x02-shell_redirections| touch README.md | vi 0-hello_world
+
+ls -t: Lists the files and directories in the current directory, sorted by modification time 
+ls [0-9][0-9]-*
+ls [0-9]{1,}
+Empty casks make the most noise
+basename, grep, egrep, fgrep or rgrep
+
+echo "Academic" | tr 'Ac' 'Ze' tr =>translate A to Z and c to e
+
+echo "example.com" | cut -d '.' -f 1  cut breaking the input with delimter -f  1 is find the 1 part 
+
+Use ls to find the biggest file in /etc.
+
+ls -lrS /etc
+
+https://linux-training.be/funhtml/ch10.html
+
+
+
+gcc $CFILE -E -o c  => the run $CFILE file
+
+gcc hello.c -E -o c
+
+
+-E                       Preprocess only; do not compile, assemble or link.
+-S                       Compile only; do not assemble or link.
+-c                       Compile and assemble, but do not link.
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 hello.c && ./hello.out
+
+
+dpkg -s libc6-dev-i386
+
+#!/bin/bash
+gcc -S -masm=intel $CFILE
+
+
+https://github.com/alx-tools/Betty/wiki/Documentation:-Functions betty
+
+https://github.com/bdbaraban/holbertonschool-low_level_programming/tree/master    C -programming
+
+
+White space is identified by the movement of <-  -> key or < > key
+
+https://www.youtube.com/@0xJulien c prog
+https://www.youtube.com/@nesoacademy
+https://www.youtube.com/watch?v=FwpP_MsZWnU
+https://www.youtube.com/@JennyslecturesCSIT
+https://www.youtube.com/watch?v=EjavYOFoJJ0&list=PLdo5W4Nhv31a8UcMN9-35ghv8qyFWD9_S  114 viode
+https://www.youtube.com/watch?v=LM6IjCbtpZA&list=PLqEaji1b3wvRaudEAMvyt1dIClA_y6SLS 112 video
+https://www.youtube.com/watch?v=ywg7cW0Txs4 cs50  lecture 1 c
+https://www.youtube.com/watch?v=XmYnsO7iSI8 cs50 lecture 2
+https://www.youtube.com/watch?v=rLf3jnHxSmU&list=PLBlnK6fEyqRggZZgYpPMUxdY1CYkZtARR Naso academy c list 
+
+
+
+Developing professional relationships requires…
+
+
+respect   => Relation
+
+
+industry experience => networking
+
+
+energy  => relation
+
+
+professional leverage => Networking
+
+
+time  => relation
+
+
+empathy  => relation
+
+
+Networking is all about relationships.
+it is about mutually respecting others that share your interest.
+Don’t think of networking simply as the means to a job; it’s about investing into an industry community in such a way that makes it an industry you want to stay in.
+As you network, be mindful of the traits you’re contributing to the tech industry.
+Collaborative. Teachable. Helpful. Giving. vs Egocentric. Withholding. Overbearing.
+
+Networking is about….
+investing into a community
+mutual respect
+relationships
+give and take
+
+https://docs.google.com/document/d/1eH2bf8D1s1MNAzX2VKaJAkdtZMbRECarweu_rqxxhLQ/edit?usp=sharing  ==> professional relationship
+
+Moses Chukwuma
+463880
+Abdulhameed Ismaheel
+468533
+Stephen Joseph
+468696
+Favour Uzoma
+477678
+Ayobami Omolegan
+479572
+Azeez Adio
+482231
+Ayinde Olamiji
+483267
+Rosemary Igbudu
+483446
+Mustorpha Jamiu
+483547
+Chinedu Ileh
+488546
+
+
+
+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
+
+
+git clone https://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@github.com/azeez-abp/aipapp.git
+
+
+Arrays Vs Linked Lists: select all true statements
+Linked list can contain as value a structure
+We can easily removed an element from a Linked list
+We can add elements indefinitely to a linked list

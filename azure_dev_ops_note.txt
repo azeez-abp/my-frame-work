@@ -1,0 +1,1528 @@
+INTRODUCTION
+Understand your cycle time
+Let us start with a basic assumption about software development. 
+We will describe it with the OODA (Observe, Orient, Decide, Act) loop. 
+Originally designed to keep fighter pilots from being shot out of the sky, the OODA loop is an excellent way to think about staying ahead of your competitors. 
+You start with observing business, market, needs, current user behavior, and available telemetry data. Then you orient with the enumeration of options f
+or what you can deliver, perhaps with experiments. Next, you decide what to pursue, 
+and you act by delivering working software to real users. You can see all occurring in some cycle time.
+
+Shorten your cycle time
+When you adopt DevOps practices:
+
+You shorten your cycle time by working in smaller batches.
+Using more automation.
+Hardening your release pipeline.
+Improving your telemetry.
+Deploying more frequently.
+
+Optimize validated learning
+The more frequently you deploy, the more you can experiment. The more opportunity 
+you have to pivot or persevere and gain validated learning each cycle. This acceleration 
+in validated learning is the value of the improvement. 
+Think of it as the sum of progress that you achieve and the failures that you avoid.
+
+
+Use Agile planning and lean project management techniques to:
+Plan and isolate work into sprints.
+Manage team capacity and help teams quickly adapt to changing business needs.
+A DevOps Definition of Done is working software collecting telemetry against the intended business goals.
+
+To do  => in progress => Ready to code=> in progress => Ready =>in progress =>Review => Done
+
+Monitoring and Logging of running applications. 
+Including production environments for application health and customer usage. It helps organizations create a hypothesis and quickly 
+validate or disprove strategies. Rich data is captured and stored in various logging formats.
+
+Public and Hybrid Clouds have made the impossible easy. The cloud has removed traditional bottlenecks and helped 
+commoditize Infrastructure. You can use Infrastructure as a Service (IaaS) to lift and shift your existing apps or
+ Platform as a Service (PaaS) to gain unprecedented productivity. T
+he cloud gives you a data center without limits
+
+Infrastructure as Code (IaC): Enables the automation and validation of the creation and teardown of 
+environments to help deliver secure and stable application hosting platforms.
+
+Use Microservices architecture to isolate business use cases into small reusable services that communicate via interface contracts. 
+This architecture enables scalability and efficiency.
+
+
+Containers are the next evolution in virtualization. 
+They're much more lightweight than virtual machines, allow much faster hydration, and easily configure files.
+
+Identify transformation teams
+For DevOps transformations, the separate team should be composed of staff members. Focused on and measured the transformation outcomes and not 
+involved in the day-to-day operational work. The team might also include external experts that can fill the knowledge gaps—also helping 
+to advise on processes that are new to the existing staff members.
+
+Ideally, the staff members recruited should already be well-regarded throughout the organization. They should offer a broad knowledge 
+base to think outside the box as a group.
+
+
+
+Explore shared goals
+These outcomes should include specific, measurable targets like:
+
+Reduce the time spent on fixing bugs by 60%.
+Reduce the time spent on unplanned work by 70%.
+Reduce the out-of-hours work required by staff to no more than 10% of total working time.
+Remove all direct patching of production systems.
+
+Define timeline for goals(short or long)
+There are several advantages of the shorter timelines:
+
+It is easier to change plans or priorities when necessary.
+The reduced delay between doing work and getting feedback helps ensure that the learnings and feedback are incorporated quickly.
+It is easier to keep organizational support when positive outcomes are clear.
+
+DevOps is the union of people, process, and products to enable continuous delivery of value to our end users.
+
+Infrastructure as Code (IaC): enables the automated creation of environments
+
+You learned how to describe the benefits and usage of:
+
+Understand what DevOps is and the steps to accomplish it.
+Identify teams to implement the process.
+Plan for the transformation with shared goals and timelines.
+Plan and define timelines for goals.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+CHOOSE THE RIGHT project
+
+By the end of this module, you'll be able to:
+
+Understand different projects and systems to guide the journey
+Select a project to start the DevOps transformation
+Identify groups to minimize initial resistance
+Identify project metrics and Key Performance Indicators (KPI's)
+
+
+A greenfield project is one done on a green field, undeveloped land. A brownfield project is done on the used ground for other purposes.
+
+ it can seem that a greenfield DevOps project would be easier to manage and to achieve success.
+
+There was no existing codebase.
+No existing team dynamics of politics. Possibly no current, rigid processes.
+
+A common misconception is that DevOps is only for greenfield projects and suits startups best. 
+However, DevOps can also succeed with brownfield projects.
+
+The beauty of these projects is that there's often a large gap between customer expectations and delivery.
+
+The teams involved may well realize that the status quo needs to change. 
+They've lived the challenges and the limitations associated with what they're currently doing.
+
+Greenfield projects
+A greenfield project will always appear to be a more accessible starting point.
+A blank slate offers the chance to implement everything the way that you want.
+
+Brownfield projects
+Usually, brownfield projects come with:
+
+The baggage of existing codebases.
+Existing teams.
+A significant amount of technical debt.
+But, they can still be ideal projects for DevOps transformations.
+
+
+Decide when to use systems of record versus systems of engagement
+Some researchers suggest that organizations often use Bimodal IT, a practice of managing two separate, 
+coherent modes of IT delivery - one focused on stability and predictability and the other on agility.
+
+
+Systems of record
+Systems that provide the truth about data elements are often-called systems of record. 
+These systems have historically evolved slowly and carefully. For example, 
+it is crucial that a banking system accurately reflects your bank balance.
+ Systems of record emphasize accuracy and security.
+
+Systems of engagement
+use experimentation to solve new problems
+Systems of engagement are modified regularly. Usually, it is a priority to make quick changes over ensuring that the changes are correct.
+
+There is a perception that DevOps suits systems of engagement more than systems of record. 
+The lessons from high-performing companies show that is not the case.
+
+Both types of systems are great. At the same time, it might be easier to start with a system of engagement when first beginning a 
+DevOps Transformation.
+DevOps practices apply to both types of systems. The most significant outcomes often come from transforming systems of record.
+
+Identify groups to minimize initial resistance
+Not all staff members within an organization will be receptive to the change required for a DevOps transformation.
+
+In discussions around continuous delivery, we usually categorize users into three general buckets:
+
+Canary users voluntarily test bleeding edge features as soon as they're available.
+Early adopters who voluntarily preview releases, considered more refined than the code that exposes canary users.
+Users who consume the products after passing through canary and early adopters.
+It's essential to find staff members keen to see new features as soon as they're available and highly tolerant of issues when choosing Canary.
+
+Early adopters have similar characteristics to the Canaries. They often have work requirements that make them less tolerant of issues and interruptions to work.
+
+While development and IT operations staff might generally be less conservative than users.
+
+The staff will also range from traditional to early adopters, and others happy to work at the innovative edge.
+
+Ideal target improvements
+
+Not all staff members within an organization will be receptive to the change required for a DevOps transformation.
+
+In discussions around continuous delivery, we usually categorize users into three general buckets:
+
+Canary users voluntarily test (bleeding edge) features as soon as they're available.
+Early adopters who voluntarily preview releases, considered more refined than the code that exposes canary users.
+Users who consume the products after passing through canary and early adopters.
+It's essential to find staff members keen to see new features as soon as they're available and highly tolerant of issues when choosing Canary.
+
+Early adopters have similar characteristics to the Canaries. They often have work requirements that make them less tolerant of issues and interruptions to work.
+
+While development and IT operations staff might generally be less conservative than users.
+
+The staff will also range from traditional to early adopters, and others happy to work at the innovative edge.
+In discussions around continuous delivery, users are often categorized into three general buckets: Canaries, Early adopters, and Users.
+
+Ideal target improvements
+When starting, it is essential to find an improvement goal that:
+
+It can be used to gain early wins.
+It is small enough to be achievable in a reasonable timeframe.
+Has benefits that are significant enough to be evident to the organization.
+
+Identify project metrics and key performance indicators (KPIs)
+It was also agreed upon by team members that the goals needed to be specific, measurable, and time-bound.
+It is essential to establish (and agree upon) appropriate metrics and Key Performance Indicators (KPIs) to ensure these goals are measurable.
+
+Faster outcomes
+Deployment Frequency. Increasing the frequency of deployments is often a critical driver in DevOps Projects.
+Deployment Speed. It is necessary to reduce the time that they take.
+Deployment Size. How many features, stories, and bug fixes are being deployed each time?
+Lead Time. How long does it take from the creation of a work item until it is completed?
+
+Efficiency
+Server to Admin Ratio. Are the projects reducing the number of administrators required for a given number of servers?
+Staff Member to Customers Ratio. Is it possible for fewer staff members to serve a given number of customers?
+Application Usage. How busy is the application?
+Application Performance. Is the application performance improving or dropping? (Based upon application metrics)?
+
+Quality and security
+Deployment failure rates. How often do deployments (or applications) fail?
+Application failure rates. How often do application failures occur, such as configuration failures, performance timeouts, and so on?
+Mean time to recover. How quickly can you recover from a failure?
+Bug report rates. You do not want customers finding bugs in your code. Is the amount they are seeing increasing or lowering?
+Test pass rates. How well is your automated testing working?
+Defect escape rate. What percentage of defects are being found in production?
+Availability. What percentage of time is the application truly available for customers?
+Service level agreement achievement. Are you meeting your service level agreements (SLAs)?
+Mean time to detection. If there is a failure, how long does it take for it to be detected?
+
+Culture
+Employee morale. Are employees happy with the transformation and where the organization is heading?
+Are they still willing to respond to further changes? This metric can be challenging to measure but is often done by periodic,
+anonymous employee surveys.
+Retention rates. Is the organization losing staff?
+
+summary
+choosing the right project as greenfield or brown field
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Describe team structures
+This module explores agile development practices and helps to define and to configure teams and tools for collaboration.
+Starting to apply Agile practices in your company is not easy. It demands collaboration from your teams, stakeholder support, and training
+
+
+Explore agile development practices(iterative development approach)
+there are two types of practice (Water fall(once) & Agile (bit by bit))
+
+Waterfall
+Traditional software development practices involve:
+
+Determining a problem.
+Analyzing the requirements.
+Building and testing the required code.
+The delivery outcome to users.
+
+However, the waterfall methodology has some drawbacks. One relates to the customer requirements.
+
+For example, It doesn't matter if the customer requirements are defined accurately at the start of a project.
+
+Usually, the project takes a long time, and the outcome may no longer match the customer's needs.
+
+There's a real challenge with gathering customer requirements in the first place.
+
+Taking a long time to deliver something would often be different from what the customer needs, even if you built exactly what the customer asked.
+
+Customers often don't know what they want until they see it or can't explain what they need.
+
+
+Agile
+
+By comparison, Agile methodology constantly emphasizes adaptive planning(planning that can change easily) and early delivery with continual
+ improvement.
+ it encourages rapid and flexible responses to changes as they occur.
+
+ Agile software development methods are based on releases and iterations:
+
+One release might consist of several iterations.
+Each iteration is like a small independent project.
+After being estimated and prioritization:
+    Features, bug fixes, enhancements, and refactoring width are assigned to a release.
+    And then assigned again to a specific iteration within the release, generally on a priority basis.
+At the end of each iteration, there should be tested working code.
+In each iteration, the team must focus on the outcomes of the previous iteration and learn from them
+
+Waterfall	                                 Agile
+Divided into distinct phases.	            Separates the project development lifecycle into sprints.
+It can be rigid.	                        Known for flexibility.
+All project development phases, such        It follows an iterative development approach so that each phase may appear more than once.
+as design, development, and test, 
+are completed once.	
+
+Define requirements at the start of        Requirements are expected to change and evolve.
+the project with little change expected.	
+Focus on completing the project.	       Focus on meeting customers' demands. (What are the customer's demands)
+
+
+Explore principles of agile development ( 12 Principles Behind the Agile Manifesto)
+
+Our highest priority is to satisfy the customer through the early and continuous delivery of valuable software(Customer satisfaction).
+Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage(Inplement Change at any point in time).
+Deliver working software frequently, from a couple of months to a couple of weeks, with a preference for a shorter timescale (Continuos delivery).
+Business people and developers must work together daily throughout the project.(Work every day till the end of the project)
+Build projects around motivated individuals. Give them the environment and support they need and trust them to get the job done.(worker suppoert)
+The most efficient and effective method of conveying information to and within a development team is face-to-face conversation (information through face to face).
+Working software is the primary measure of progress.
+Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
+Continuous attention to technical excellence and good design enhances agility.
+Simplicity - the art of maximizing the amount of work not done - is essential.
+The best architectures, requirements, and designs emerge from self-organizing teams.
+The team regularly reflects on how to become more effective, then tunes and adjusts its behavior accordingly.
+
+Define organization structure for agile practices
+Horizontal vs. vertical teams 
+Traditionally, horizontal team structures divide teams according to the software architecture. In this example, 
+the teams have been divided into the user interface,  service-oriented architecture, and data teams:
+-------------------------------------
+UI  |  Email| voice| tv
+-------------------------------------
+SOA |  Email| voice| tv
+-------------------------------------
+DATA|  Email| voice| tv
+------------------------------------
+
+By comparison, vertical team structures span the architecture and are aligned with skillsets or disciplines:
+
+ Email  |   voice  | tv
+        |          |
+   UI   |   UI     |  UI
+        |          |
+   SOA  |   SOA    | SOA
+   DATA |   DATA   | DATA
+
+In vertical team structure,  a team will implement the complete component of feature (Login ui backend and data) 
+https://learn.microsoft.com/en-us/training/wwl-azure/describe-team-structures/media/devops-ds-image-102-2a966b63.png
+
+Vertical teams have been shown to provide more good outcomes in Agile projects. Each product must have an identified owner.
+10 common architectural patterns 
+Layered pattern
+        Presentation layer (also known as UI layer)
+        Application layer (also known as service layer)
+        Business logic layer (also known as domain layer)
+        Data access layer (also known as persistence layer)
+Client-server pattern
+Master-slave pattern
+Pipe-filter pattern   
+        Soore =>pipe (filter) ---- pipe2(filter2)==>sink
+Broker pattern
+    this pattern is used to structure distributed systems.with decoupled components. 
+    These components can interact with each other by remote service invocations
+Peer-to-peer pattern
+Event-bus pattern
+    has 4 major components; event source, event listener, channel and event bus (Event bus contains channels).
+    Sources publish messages to particular channels on an event bus. Listeners subscribe to particular channels. Listeners are notified of 
+    messages that are published to a channel to which they have subscribed before.
+Model-view-controller pattern
+Blackboard pattern
+    The blackboard pattern consists of 3 main components.
+    blackboard — a structured global memory containing objects from the solution space
+    knowledge source — specialized modules with their own representation
+    control component — selects, configures and executes modules.
+Interpreter pattern
+
+
+
+Explore ideal DevOps team members
+For a successful DevOps transformation, the aim is to find team members with the following characteristics:
+
+They already think there is a need to change.
+They have previously shown an ability to innovate.
+They are already well respected within the organization.
+They have a broad knowledge of the organization and how it operates.
+Ideally, they already believe that DevOps practices are what is needed.
+
+Enable in-team and cross-team collaboration
+Collaboration tooling
+Teams (Microsoft)
+Slack (IBM)
+Jira(Atlanssian): A commonly used tool for planning, tracking, releasing, and reporting.
+Scrum => KanBan(sign board)
+Asana: A standard tool designed to keep team plans, progress, and discussions in a single place. 
+       It has strong capabilities around timelines and boards (use for cross functional work).
+ Other standard tools with collaboration offerings include ProofHub, RedBooth, Trello, DaPulse, and many others.
+
+  Select tools and processes for agile practices
+Physical tools
+        Not all tools need to be digital tools. 
+        Many teams use whiteboards to collaborate on ideas, index cards for recording stories, and sticky notes for moving around tasks.
+Collaboration tools :above
+Project management tools
+These tools usually include:
+
+Project planning and execution monitoring abilities (including how to respond to impediments).
+    Automation for stand-up meetings.
+    Management and tracking of releases.
+    A way to record and work with the outcomes of retrospectives.
+    Many include Kanban boards and detailed sprint planning options
+
+As a complete CI/CD system, we have Azure DevOps and GitHub that includes:
+
+Flexibility in Kanban boards.
+Traceability through Backlogs.
+Customizability in dashboards.
+Built-in scrum boards.
+Integrability directly with code repositories.
+Code changes can be linked directly to tasks or bugs.
+
+Screen recording tools
+It might seem odd to add screen recording tools to this list. Still, they are beneficial when:
+
+Work with remote team members.
+Recording bugs in action.
+Building walkthroughs and tutorials that demonstrate actual or potential features.
+A screen recorder is built into Windows, but other common ones include SnagIt, Camtasia, OBS, and Loom.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Choose the DevOps tools
+What is Azure DevOps?
+
+Azure DevOps is a Software as a service (SaaS) platform from Microsoft that provides an end-to-end DevOps 
+toolchain for developing and deploying software.
+
+It also integrates with the most-leading tools on the market and is an excellent option for orchestrating a DevOps toolchain.\\\
+
+What does Azure DevOps provide?
+Azure DevOps includes a range of services covering the complete development life cycle.
+
+Azure Boards: agile planning, work item tracking, visualization, and reporting tool.
+Azure Repos: provides cloud-hosted private git repos.
+Azure Pipelines: a language, platform, and cloud-agnostic CI/CD platform-supporting containers or Kubernetes.
+Azure Test Plans: provides an integrated planned and exploratory testing solution.
+Azure Artifacts: provides integrated package management with support for Maven, npm, Python, and NuGet package feeds from public or private sources.
+
+Also, you can use Azure DevOps to orchestrate third-party tools.
+
+What is GitHub?
+GitHub is a Software as a service (SaaS) platform from Microsoft that provides Git-based repositories and DevOps 
+tooling for developing and deploying software.
+It has a wide range of integrations with other leading tools.
+
+What does GitHub provide?
+GitHub provides a range of services for software development and deployment.
+
+Codespaces: Provides a cloud-hosted development environment (based on Visual Studio Code) that can be operated from within a browser or external tools. Eases cross-platform development.
+Repos: Public and private repositories based upon industry-standard Git commands.
+Actions: Allows for the creation of automation workflows. These workflows can include environment variables and customized scripts.
+Packages: The majority of the world's open-source projects are already contained in GitHub repositories. GitHub makes it easy to integrate with this code and with other third-party offerings.
+Security: Provides detailed code scanning and review features, including automated code review assignment.
+
+Explore an authorization and access strategy
+Azure DevOps Services uses enterprise-grade authentication. To protect and secure your data, you can use:
+
+Microsoft account.
+GitHub account.
+Azure Active Directory (Azure AD).
+Tools like Visual Studio and Azure DevOps natively support the use of Microsoft Accounts and Azure AD. 
+Eclipse can also support this form of authentication if you install a Team Explorer Everywhere plug-in.
+
+
+Personal access tokens
+Use personal access tokens (PAT) for tools that don't directly support Microsoft accounts or Azure AD for authentication. You can use it if you want them to integrate with Azure DevOps.
+
+For example, tools like:
+
+Git-based repositories.
+NuGet.
+Xcode.
+These tokens can be set up using Git Credential managers, or you can create them manually.
+
+Personal access tokens are also helpful when establishing access to command-line tools, external tools, and tasks in build pipelines.
+
+Also, when calling REST-based APIs, you don't have a UI popping out to do the authentication. When access is no longer required, 
+you can revoke the personal access token.
+
+Security groups
+Azure DevOps is pre-configured with default security groups.
+
+Default permissions are assigned to the default security groups. You can also configure access at the organization, collection, and project or object levels.
+
+In the organization settings in Azure DevOps, you can configure app access policies. Based on your security policies, you might 
+allow alternate authentication methods, 
+enable third-party applications to access via OAuth, or even allow anonymous access to some projects.
+
+For even tighter control, you can use Conditional Access policies. These offer simple ways to help secure resources such as
+ Azure DevOps when using Azure Active Directory for authentication.
+
+ Multifactor authentication
+Conditional Access policies such as multifactor authentication can help to minimize the risk of compromised credentials.
+
+As part of a Conditional Access policy, you might require:
+
+Security group membership.
+A location or network identity.
+A specific operating system.
+A managed device or other criteria.
+
+
+Migrate or integrate existing work management tools
+
+Jire ====> file  ====> azure DevOps
+
+All team members and other stakeholders can use the extension to submit bugs or provide feedback. For example:
+
+Developers.
+Product owners.
+Managers.
+UX.
+UI engineers.
+Marketing teams.
+Early adopters.
+For load tests, you can use Azure Load Testing. For more information, see What is Azure Load Testing?.
+
+Other helpful testing tools:
+Apache JMeter is open-source software written in Java and designed to load test, and measure performance.
+
+Pester is a tool that can automate the testing of PowerShell code.
+
+SoapUI is another testing framework for SOAP and REST testing.
+
+If you are using Microsoft Test Manager, you should plan to migrate to Azure Test Plans instead.
+
+For more information, search for Test Management at Visual Studio Marketplace.
+
+Design a license management strategy
+
+Azure DevOps provides both on-premises and cloud options, named Azure DevOps Server (on-premises) and Azure DevOps Services (SaaS). 
+Also, the same applies to GitHub with GitHub (SaaS) and GitHub Enterprise (On-premises and Cloud).
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Explore the concept of pipelines in DevOps
+
+Build automation and continuous integration
+The pipeline starts by building the binaries to create the deliverables passed to the following stages. 
+New features implemented by the developers are integrated into the central code base, built, and unit tested. It's the most 
+direct feedback cycle that informs the development team about the health of their application code.
+
+
+Test automation
+The new version of an application is rigorously tested throughout this stage to ensure that it meets all wished system qualities. 
+It's crucial that all relevant aspects—whether functionality, security, performance, or compliance—are verified by the pipeline. 
+The stage may involve different types of automated or (initially, at least) manual activities.
+
+
+Deployment automation
+A deployment is required every time the application is installed in an environment for testing, 
+but the most critical moment for deployment automation is rollout time.
+
+
+Orchestrating it all: release and pipeline orchestration
+The multiple stages in a deployment pipeline involve different groups of people collaborating and supervising the release of the new version of your application.
+
+Release and pipeline orchestration provide a top-level view of the entire pipeline, allowing you to define and control the stages and gain insight into the overall software delivery process.
+
+By carrying out value stream mappings on your releases, you can highlight any remaining inefficiencies and hot spots and pinpoint opportunities to improve your pipeline.
+
+These automated pipelines need infrastructure to run on. The efficiency of this infrastructure will have a direct impact on the effectiveness of the pipeline.
+
+
+Describe Azure Pipelines
+
+Azure Pipelines is a cloud service that automatically builds and tests your code project and makes it available to other users.
+ It works with just about any language or project type.
+ Azure Pipelines combines continuous integration (CI) and continuous delivery (CD) to test and build your 
+ code and ship it to any target constantly and consistently.
+
+ Deployment targets
+Use Azure Pipelines to deploy your code to multiple targets. Targets including:
+
+Container registries.
+Virtual machines.
+Azure services, or any on-premises or cloud target such:
+Microsoft Azure.
+Google Cloud.
+Amazon Web Services (AWS).
+
+Package formats
+To produce packages that others can consume, you can publish NuGet, npm, or Maven packages to the built-in package management repository in Azure Pipelines.
+
+You also can use any other package management repository of your choice.
+
+Why should I use CI and CD, and Azure Pipelines?
+Implementing CI and CD pipelines help to ensure consistent and quality code that's readily available to users.
+
+Azure Pipelines is a quick, easy, and safe way to automate building your projects and making them available to users.
+
+Continuous integration (CI)                         Continuous delivery (CD)
+
+Increase code coverage.                           Automatically deploy code to production.
+
+Build faster by splitting test and build runs.     Ensure deployment targets have the latest code.
+
+Automatically ensure you don't ship broken code.    Use tested code from the CI process.
+
+Run tests continually.
+
+
+Use Azure Pipelines for CI and CD
+There are several reasons to use Azure Pipelines for your CI and CD solution. You can use it to:
+
+Work with any language or platform.
+Deploy to different types of targets at the same time.
+Integrate with Azure deployments.
+Build on Windows, Linux, or macOS machines.
+Integrate with GitHub.
+Work with open-source projects.'
+
+Understand Azure Pipelines key terms
+
+https://learn.microsoft.com/en-us/training/wwl-azure/explore-azure-pipelines/media/key-pipeline-concepts-overview-ca80c85c.png
+
+
+Agent
+When your build or deployment runs, the system begins one or more jobs. 
+An agent is installable software that runs a build or deployment job.
+
+Artifact
+An artifact is a collection of files or packages published by a build. 
+Artifacts are made available for the tasks, such as distribution or deployment.
+
+
+Build (Job)
+A build represents one execution of a pipeline. It collects the logs associated with running the steps and the test results.
+
+
+Continuous delivery
+Continuous delivery (CD) (also known as Continuous Deployment) is a process by which code is 
+built, tested, and deployed 
+to one or more test and production stages
+
+Continuous integration
+Continuous integration (CI) is the practice used by development teams to simplify the testing and building of code.
+ CI helps to catch bugs or problems early in the development cycle, making them more accessible and faster to fix.
+ Automated tests and builds are run as part of the CI process
+
+ Deployment target
+A deployment target is a virtual machine, container, web app, or any service used to host the developed application. 
+A pipeline might deploy the app to one or more deployment targets after the build is completed and tests are run.
+
+Job 
+A build contains one or more jobs. Most jobs run on an agent. A job represents an execution boundary of a set of steps.
+All the steps run together on the same agent.
+For example, you might build two configurations - x86 and x64. In this case, you have one build and two jobs.
+
+
+Pipeline
+A pipeline defines the continuous integration and deployment process for your app. It's made up of steps called tasks.
+It can be thought of as a script that describes how your test, build, and deployment steps are run.
+
+Release
+When you use the visual designer, you can create a release or a build pipeline. 
+A release is a term used to describe one execution of a release pipeline. 
+It's made up of deployments to multiple stages.
+
+Stage
+Stages are the primary divisions in a pipeline: 
+"build the app," "run integration tests," and "deploy to user acceptance testing" are good examples of stages.
+
+
+Task
+A task is the building block of a pipeline. For example, a build pipeline might consist of build and test tasks. 
+A release pipeline consists of deployment tasks.
+ Each task runs a specific job in the pipeline.
+
+ Trigger
+A trigger is set up to tell the pipeline when to run. 
+You can configure a pipeline to run upon a push to a repository at scheduled times or upon completing another build. 
+All these actions are known as triggers
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Manage Azure Pipeline agents and pools
+This module explores differences between Microsoft-hosted and self-hosted agents, detail job types, and introduces agent pools configuration
+
+
+Choose between Microsoft-hosted versus self-hosted agents
+
+Microsoft-hosted agent
+If your pipelines are in Azure Pipelines, then you've got a convenient option to build and deploy using a Microsoft-hosted agent.
+Microsoft-hosted agent, maintenance and upgrades are automatically done
+Each time a pipeline is run, a new virtual machine (instance) is provided. The virtual machine is discarded after one use.
+A Microsoft-hosted agent has job time limits.
+
+
+Self-hosted agent
+An agent that you set up and manage on your own to run build and deployment jobs is a self-hosted agent.
+You can use a self-hosted agent in Azure Pipelines. 
+A self-hosted agent gives you more control to install dependent software needed for your builds and deployments.
+
+You can install the agent on:
+
+Linux.
+macOS.
+Windows.
+Linux Docker containers.
+
+A self-hosted agent doesn't have job time limits.
+
+Explore job types
+In Azure DevOps, there are four types of jobs available:
+
+Agent pool jobs.
+Container jobs.
+Deployment group jobs.
+Agentless jobs.
+
+Agent pool jobs
+The most common types of jobs. The jobs run on an agent that is part of an agent pool.
+
+Container jobs
+Similar jobs to Agent Pool Jobs run in a container on an agent part of an agent pool.
+
+Deployment group jobs
+Jobs that run on systems in a deployment group.
+
+Agentless jobs
+Jobs that run directly on the Azure DevOps. They don't require an agent for execution. It's also-often-called Server Jobs.
+
+
+Introduction to agent pools
+Instead of managing each agent individually, you organize agents into agent pools. 
+An agent pool defines the sharing boundary for all agents in that pool.
+
+In Azure Pipelines, pools are scoped to the entire organization so that you can share the agent machines across projects.
+
+If you create an Agent pool for a specific project, only that project can use the pool until you add the project pool into another project.
+When creating a build or release pipeline, you can specify which pool it uses, organization, or project scope.
+
+Pools scoped to a project can only use them across build and release pipelines within a project.
+
+To share an agent pool with multiple projects, use an organization scope agent pool and add them in each of those projects, 
+add an existing agent pool, and choose the organization agent pool.
+If you create a new agent pool, you can automatically grant access permission to all pipelines.
+
+Explore predefined agent pool
+Azure Pipelines provides a pre-defined agent pool-named Azure Pipelines with Microsoft-hosted agents.
+
+It will often be an easy way to run jobs without configuring build infrastructure.
+
+The following virtual machine images are provided by default:
+
+Windows Server 2022 with Visual Studio 2022.
+Windows Server 2019 with Visual Studio 2019.
+Ubuntu 20.04.
+Ubuntu 18.04.
+macOS 11 Big Sur.
+macOS X Catalina 10.15.
+
+By default, all contributors in a project are members of the User role on each hosted pool.
+
+It allows every contributor to the author and runs build and release pipelines using a Microsoft-hosted pool.
+
+Pools are used to run jobs. Learn about https://learn.microsoft.com/en-us/azure/devops/pipelines/process/phases?view=azure-devops&tabs=yaml
+
+
+Understand typical situations for agent pools
+
+Create agent pools
+Here are some typical situations when you might want to create agent pools:
+
+You're a project member, and you want to use a set of machines your team owns for running build and deployment jobs.
+First, make sure you're a member of a group in All Pools with the Administrator role.
+Next, create a New project agent pool in your project settings and select the option to Create a new organization agent pool. As a result, both an organization and project-level agent pool will be created.
+Finally, install and configure agents to be part of that agent pool.
+You're a member of the infrastructure team and would like to set up a pool of agents for use in all projects.
+First, make sure you're a member of a group in All Pools with the Administrator role.
+Next, create a New organization agent pool in your admin settings and select Autoprovision corresponding project agent pools in all projects while creating the pool. This setting ensures all projects have a pool pointing to the organization agent pool. The system creates a pool for existing projects, and in the future, it will do so whenever a new project is created.
+Finally, install and configure agents to be part of that agent pool.
+You want to share a set of agent machines with multiple projects, but not all of them.
+First, create a project agent pool in one of the projects and select the option to Create a new organization agent pool while creating that pool.
+Next, go to each of the other projects, and create a pool in each of them while selecting the option to Use an existing organization agent pool.
+Finally, install and configure agents to be part of the shared agent pool.
+
+Communicate with Azure Pipelines
+https://learn.microsoft.com/en-us/training/wwl-azure/manage-azure-pipeline-agents-pools/media/agent-machine-behind-firewall-cc762a93.png
+Communicate to deploy to target servers
+When you use the agent to deploy artifacts to a set of servers, it must-have "line of sight" connectivity to those servers.
+
+The Microsoft-hosted agent pools, by default, have connectivity to Azure websites and servers running in Azure.
+
+Suppose your on-premises environments don't have connectivity to a Microsoft-hosted agent pool (because of intermediate firewalls). In that case, you'll need to manually configure a self-hosted agent on the on-premises computer(s).
+
+The agents must have connectivity to the target on-premises environments and access to the Internet to connect to Azure Pipelines or Azure DevOps Server, as shown in the following diagram.
+
+https://learn.microsoft.com/en-us/training/wwl-azure/manage-azure-pipeline-agents-pools/media/agents-stages-behind-firewall-ae9c03be.png
+
+
+Describe security of agent pools
+Azure Pipelines
+In Azure Pipelines, roles are defined on each agent pool. Membership in these roles governs what operations you can do on an agent pool.
+
+
+Role on an organization agent pool              Purpose
+
+Reader                                           Members of this role can view the organization's agent pool and agents. 
+                                                 You typically use it to add operators that are responsible for monitoring 
+                                                 the agents and their health.
+
+Service Account                                 Members of this role can use the organization agent pool to create a project agent pool 
+                                                in a project. 
+                                                If you follow the guidelines above for creating new project agent pools, you typically don't have to add any members here.
+
+Administrator                                   Also, with all the above permissions, members of this role can register or unregister agents from 
+                                                the organization's agent pool. They can also refer to the organization agent pool when creating a
+                                                project agent pool in a project. Finally, they can also manage membership for all roles of the
+                                                organization agent pool. 
+                                                The user that made the organization agent pool is automatically added to the Administrator role 
+                                                for that pool.
+
+
+Configure agent pools and understanding pipeline styles
+use YML syntax
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Describe pipelines and concurrency
+
+Understand parallel jobs
+https://learn.microsoft.com/en-us/training/wwl-azure/describe-pipelines-concurrency/media/parallel-job-consumption-8af32918.png
+How a parallel job is consumed by a build or release
+Consider an organization that has only one Microsoft-hosted parallel job.
+
+This job allows users in that organization to collectively run only one build or release job at a time.
+
+When more jobs are triggered, they're queued and will wait for the previous job to finish.
+A release consumes a parallel job only when it's being actively deployed to a stage.
+
+While the release is waiting for approval or manual intervention, it doesn't consume a parallel job.
+
+
+
+Relationship between jobs and parallel jobs
+The term job can refer to multiple concepts, and its meaning depends on the context:
+
+When you define a build or release, you can define it as a collection of jobs. When a build or release runs, you can run multiple 
+jobs as part of that build or release.
+Each job consumes a parallel job that runs on an agent. When there aren't enough parallel jobs available for your organization, 
+then the jobs are queued up and run one after the other.
+You don't consume any parallel jobs when you run a server job or deploy to a deployment group.
+
+ Estimate parallel jobs
+
+ Determine how many parallel jobs you need
+
+ Determine how many parallel jobs you need
+You could begin by seeing if the free tier offered in your organization is enough for your teams.
+
+When you've reached the 1,800 minutes per month limit for the free tier of Microsoft-hosted parallel jobs, you can start by buying one 
+parallel job to remove this monthly time limit before deciding to purchase more.
+As the number of queued builds and releases exceeds the number of parallel jobs you have, your build and release queues will grow longer.
+When you find the queue delays are too long, you can purchase extra parallel jobs as needed.
+
+Simple estimate
+A simple rule of thumb: Estimate that you'll need one parallel job for every four to five users in your organization.
+Detailed estimate
+In the following scenarios, you might need multiple parallel jobs:
+
+If you have multiple teams, and if each of them requires a CI build, you'll likely need a parallel job for each team.
+If your CI build trigger applies to multiple branches, you'll likely need a parallel job for each active branch.
+If you develop multiple applications by using one organization or server, you'll likely need more parallel jobs:
+ one to deploy each application simultaneously.
+
+ View available parallel jobs
+Browse to Organization settings > Pipelines > Parallel jobs.
+
+Sharing of parallel jobs across projects in a collection
+Parallel jobs are purchased at the organization level, and they're shared by all projects in an organization.
+
+Currently, there isn't a way to partition or dedicate parallel job capacity to a specific project or agent pool. For example:
+
+You purchase two parallel jobs in your organization.
+You queue two builds in the first project, and both the parallel jobs are consumed.
+You queue a build in the second project. That build won't start until one of the builds in your first project is completed.
+
+Describe Azure Pipelines and open-source projects
+You can set project to be public and anonymous user can view it in read only mode
+Public versus private projects
+Supported services
+Non-members of a public project will have read-only access to a limited set of services, precisely:
+
+Browse the code base, download code, view commits, branches, and pull requests.
+View and filter work items.
+View a project page or dashboard.
+View the project Wiki.
+Do a semantic search of the code or work items.\
+
+Explore Azure Pipelines and Visual Designer
+https://learn.microsoft.com/en-us/training/wwl-azure/describe-pipelines-concurrency/media/flowchart-edit-code-94cc665f.png
+
+Describe Azure Pipelines and YAML
+
+https://learn.microsoft.com/en-us/training/wwl-azure/describe-pipelines-concurrency/media/flowchart-edit-code-yaml-1e1c3048.png
+
+Benefits of using the Visual Designer
+The visual designer is great for new users in continuous integration (CI) and continuous delivery (CD).
+
+The visual representation of the pipelines makes it easier to get started.
+The visual designer is in the same hub as the build results. This location makes it easier to switch back and forth and make changes.
+
+
+Benefits of using YAML
+The pipeline is versioned with your code and follows the same branching structure. You get validation of your changes through code reviews in pull requests and branch build policies.
+Every branch you use can modify the build policy by adjusting the azure-pipelines.yml file.
+A change to the build process might cause a break or result in an unexpected outcome. 
+Because the change is in version control with the rest of your codebase, you can more easily identify the issue.
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Introduction to continuous integration
+Continuous integration (CI) is the process of automating the build and testing of code every time a team member 
+commits changes to version control.
+CI encourages developers to share their code and unit tests by merging their changes into a shared version control 
+repository after every small task completion.
+
+Learn the four pillars of continuous integration
+Version Control System
+Package Management System
+Continuous Integration System
+Automated Build Process.
+
+A version control system manages changes to your source code over time.
+
+Git
+Apache Subversion
+Team Foundation Version Control
+
+A package management system is used to install, uninstall, and manage software packages.
+
+NuGet
+Node Package Manager (NPM)
+Chocolatey
+HomeBrew
+RPM
+Composer
+
+A continuous integration system merges all developer working copies to shared mainline several times a day.
+
+Azure DevOps
+TeamCity
+Jenkins
+
+An automated build process creates a software build, including compiling, packaging, and running automated tests.
+
+Apache Ant
+NAnt
+Gradle
+Grunt
+
+Describe build properties
+you may have noticed that in some demos, the build number was just an integer, yet in other demos,
+there's a formatted value that was based upon the date.
+It is one of the items that can be set in the Build Options.
+
+Exercise 1: Include build validation as part of a Pull Request
+    Task 1: Import the YAML build definition
+        Let’s start by importing the build pipeline named eshoponweb-ci-pr.yml.
+
+       1 Go to Pipelines>Pipelines
+       2  Click on Create Pipeline or New Pipeline button
+       3 Select Azure Repos Git (YAML)
+       4 Select the eShopOnWeb repository
+       5 Select Existing Azure Pipelines YAML File
+       6 Select the /.ado/eshoponweb-ci-pr.yml file then click on Continue
+
+
+     The build definition consists of the following tasks:
+
+    DotNet Restore: With NuGet Package Restore you can install all your project’s dependency without having to store them in source control.
+    DotNet Build: Builds a project and all of its dependencies.
+    DotNet Test: .Net test driver used to execute unit tests.
+    DotNet Publish: Publishes the application and its dependencies to a folder for deployment to a hosting system. In this case, 
+    it’s Build.ArtifactStagingDirectory.
+   7 Click the Save button to save the pipeline definition
+    Your pipeline will take a name based on the project name. Let’s rename it for identifying the pipeline better. 
+   8 Go to Pipelines>Pipelines and click on the recently created pipeline. 
+    Click on the ellipsis and Rename/Remove option. Name it eshoponweb-ci-pr and click on Save.
+
+
+
+
+
+Implement a pipeline strategy
+
+Configure agent demands
+ The capabilities such as machine name and operating system type that are automatically discovered are referred to as System capabilities. 
+ The ones that you define are called User-defined capabilities.
+ Implement multi-agent builds
+ The capabilities such as Agent.ComputerName and Agent.OS that is automatically discovered is referred to as 
+ system capabilities. The ones that you define such ContosoApplication.Path is called user capabilities.
+
+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ Integrate with Azure Pipelines
+ By the end of this module, you'll be able to:
+
+Describe advanced Azure Pipelines anatomy and structure
+Detail templates and YAML resources
+Implement and use multiple repositories
+
+This module details Azure Pipelines anatomy and structure, templates,
+ YAML resources, and how to use multiple repositories in your pipeline.
+
+Also, it explores communication to deploy using Azure Pipelines to target servers.
+
+Build process is the process that convert code to runnable of machine
+Pipeline ==>Build
+
+
+
+Describe the anatomy of a pipeline
+Stages:
+  stage:
+    jobs:
+     - job: 
+        steps:
+         - task
+      
+
+
+Most pipelines will have these components:
+
+Name – though often it's skipped (if it's skipped, a date-based name is generated automatically).
+Trigger – more on triggers later, but without an explicit trigger. There's an implicit "trigger on every commit to any path from any branch in this repo."
+Variables – "Inline" variables (more on other types of variables later).
+Job – every pipeline must have at least one job.
+Pool – you configure which pool (queue) the job must run on.
+Checkout – the "checkout: self" tells the job which repository (or repositories if there are multiple checkouts) to check out for this job.
+Steps – the actual tasks that need to be executed: in this case, a "script" task (the script is an alias) that can run inline scripts.
+```
+name: 1.0$(Rev:.r)
+
+```
+
+
+```
+trigger:
+  branches:
+    include:
+
+    - main
+```
+This above trigger is configured to queue the pipeline only when there's a commit to the main branch
+
+```
+trigger:
+  branches:
+    exclude:
+    - main
+```
+
+this above trigger when commit to any other branch exexpt main:
+
+Jobs
+A job is a set of steps executed by an agent in a queue (or pool).
+
+A job has the following attributes besides its name:
+
+displayName – a friendly name.
+dependsOn - a way to specify dependencies and ordering of multiple jobs.
+condition – a binary expression: if it evaluates to true, the job runs; if false, the job is skipped.
+strategy - used to control how jobs are parallelized.
+continueOnError - to specify if the rest of the pipeline should continue or not if this job fails.
+pool – the name of the pool (queue) to run this job on.
+workspace - managing the source workspace.
+container - for specifying a container image to execute the job later.
+variables – variables scoped to this job.
+steps – the set of steps to execute.
+timeoutInMinutes and cancelTimeoutInMinutes for controlling timeouts.
+services - sidecar services that you can spin up.
+
+
+```
+jobs:
+
+- job: A
+  steps:
+
+  - script: echo' job A.'
+
+
+- job: B
+  dependsOn: A
+  steps:
+
+  - script: echo' job B.'
+
+
+- job: C
+  dependsOn: A
+  steps:
+
+  - script: echo' job C.'
+
+
+- job: D
+  dependsOn:
+
+  - B
+  - C
+  steps:
+
+  - script: echo' job D.'
+
+
+- job: E
+  dependsOn:
+
+  - B
+  - D
+  steps:
+
+  - script: echo' job E.'
+
+```
+
+Checkout
+Classic builds implicitly checkout any repository artifacts, but pipelines require you to be more explicit using the checkout keyword:
+Jobs check out the repo they're contained in automatically unless you specify checkout: none.
+Deployment jobs don't automatically check out the repo, so you'll need to specify checkout: self for deployment jobs if you want access to files in the YAML file's repo.
+
+Download
+Downloading artifacts requires you to use the download keyword. Downloads also work the opposite way for jobs and deployment jobs:
+Jobs don't download anything unless you explicitly define a download.
+Deployment jobs implicitly do a download: current, which downloads any pipeline artifacts created in the existing pipeline. To prevent it, you must specify download: none.
+
+
+
+Resources
+What if your job requires source code in another repository? You'll need to use resources. Resources let you reference:
+
+other repositories
+pipelines
+builds (classic builds)
+containers (for container jobs)
+packages
+To reference code in another repo, specify that repo in the resources section and then reference it via its alias in the checkout step:
+
+
+```
+resources:
+  repositories:
+
+  - repository: appcode
+    type: git
+    name: otherRepo
+
+steps:
+
+- checkout: appcode
+```
+
+Steps are Tasks
+Steps are the actual "things" that execute in the order specified in the job.
+
+Each step is a task: out-of-the-box (OOB) tasks come with Azure DevOps. Many have aliases and tasks installed on your Azure DevOps organization via the marketplace.
+
+Creating custom tasks is beyond the scope of this chapter, but you can see how to make your custom tasks (https://learn.microsoft.com/en-us/azure/devops/extend/develop/add-build-task).
+
+
+Understand the pipeline structure
+
+A pipeline is one or more stages that describe a CI/CD process.
+
+Stages are the primary divisions in a pipeline. The stages "Build this app," "Run these tests," and "Deploy to preproduction" are good examples.
+
+A stage is one or more jobs, units of work assignable to the same machine.
+
+You can arrange both stages and jobs into dependency graphs. Examples include "Run this stage before that one" and "This job depends on the output of that job."
+
+A job is a linear series of steps. Steps can be tasks, scripts, or references to external templates.
+
+This hierarchy is reflected in the structure of a YAML file like:
+
+```
+Pipeline
+    Stage A
+        Job 1
+            Step 1.1
+            Step 1.2
+...
+        Job 2
+            Step 2.1
+            Step 2.2
+...
+            Stage B
+...
+```
+
+Simple pipelines don't require all these levels. 
+For example, you can omit the containers for stages and jobs in a single job build because there are only steps.
+
+```
+name: string  # build numbering format
+resources:
+  pipelines: [ pipelineResource ]
+  containers: [ containerResource ]
+  repositories: [ repositoryResource ]
+variables: # several syntaxes
+trigger: trigger
+pr: pr  #pool request
+stages: [ stage | templateReference ]
+```
+```# ... other pipeline-level keywords
+jobs: [ job | templateReference ]
+```
+```
+# ... other pipeline-level keywords
+steps: [ script | bash | pwsh | powershell | checkout | task | templateReference ]
+```
+
+This example below runs three stages, one after another. The middle stage runs two jobs in parallel.
+
+
+```
+stages:
+
+- stage: Build
+  jobs:
+
+  - job: BuildJob
+    steps:
+
+    - script: echo Building!
+- stage: Test
+  dependsOn: Build
+  jobs:
+
+  - job: TestOnWindows
+    steps:
+
+    - script: echo Testing on Windows!
+  - job: TestOnLinux
+    steps:
+
+    - script: echo Testing on Linux!
+- stage: Deploy
+  dependsOn: Test
+  jobs:
+
+  - job: Deploy
+    steps:
+
+    - script: echo Deploying the code!
+```
+
+Job
+A job is a collection of steps run by an agent or on a server. Jobs can run conditionally and might depend on previous jobs.
+
+Deployment strategies
+Deployment strategies allow you to use specific techniques to deliver updates when deploying your application.
+
+Techniques examples:
+
+Enable initialization.
+Deploy the update.
+Route traffic to the updated version.
+Test the updated version after routing traffic.
+If there's a failure, run steps to restore to the last known good version.
+
+RunOnce
+runOnce is the most straightforward deployment strategy in all the presented lifecycle hooks.
+
+```
+strategy:
+    runOnce:
+        preDeploy:
+            pool: [ server | pool ] # See pool schema.
+            steps:
+            - script: [ script | bash | pwsh | powershell | checkout | task | templateReference ]
+        deploy:
+            pool: [ server | pool ] # See pool schema.
+            steps: ...
+        routeTraffic:
+            pool: [ server | pool ]
+            steps:
+            ...
+        postRouteTraffic:
+            pool: [ server | pool ]
+            steps:
+            ...
+        on:
+            failure:
+                pool: [ server | pool ]
+                steps:
+                ...
+            success:
+                pool: [ server | pool ]
+                steps:
+                ...
+```
+Canary
+Using this strategy, you can first roll out the changes to a small subset of servers. 
+The canary deployment strategy is an advanced deployment strategy that helps mitigate the risk of rolling out new versions of applications.
+As you gain more confidence in the new version, you can release it to more servers in your infrastructure and route more traffic to it.
+
+```
+strategy:
+    canary:
+        increments: [ number ]
+        preDeploy:       
+            pool: [ server | pool ] # See pool schema.       
+            steps:
+            - script: [ script | bash | pwsh | powershell | checkout | task | templateReference ]
+        deploy:         
+            pool: [ server | pool ] # See pool schema.       
+            steps:
+            ...
+        routeTraffic:       
+            pool: [ server | pool ]       
+            steps:
+            ...       
+        postRouteTraffic:         
+            pool: [ server | pool ]       
+            steps:
+            ...
+        on:
+            failure:       
+                pool: [ server | pool ]         
+                steps:
+                ...
+            success:         
+                pool: [ server | pool ]         
+                steps:
+                ...
+```
+Lifecycle hooks
+You can achieve the deployment strategies technique by using lifecycle hooks. Depending on the pool attribute, 
+each resolves into an agent or server job.
+Lifecycle hooks inherit the pool specified by the deployment job. Deployment jobs use the $(Pipeline.Workspace) system variable.
+
+
+
+
+Available lifecycle hooks:
+
+preDeploy: Used to run steps that initialize resources before application deployment starts.
+deploy: Used to run steps that deploy your application. Download artifact task will be auto-injected only in the deploy hook for deployment jobs. To stop downloading artifacts, use - download: none or choose specific artifacts to download by specifying Download Pipeline Artifact task.
+routeTraffic: Used to run steps that serve the traffic to the updated version.
+postRouteTraffic: Used to run the steps after the traffic is routed. Typically, these tasks monitor the health of the updated version for a defined interval.
+on: failure or on: success: Used to run steps for rollback actions or clean-up.
+
+Steps
+A step is a linear sequence of operations that make up a job. 
+Each step runs its process on an agent and accesses the pipeline workspace on a local hard drive.
+This behavior means environment variables aren't preserved between steps, but file system changes are.
+
+Tasks
+Tasks are the building blocks of a pipeline. There's a catalog of tasks available to choose from.
+```
+steps:
+
+- task: VSBuild@1
+  displayName: Build
+  timeoutInMinutes: 120
+  inputs:
+    solution: '**\*.sln'
+```
+
+Detail templates
+
+Template references
+You can export reusable sections of your pipeline to a separate file. These individual files are known as templates.
+
+Azure Pipelines supports four types of templates:
+
+Stage
+Job
+Step
+Variable
+You can also use templates to control what is allowed in a pipeline and define how parameters can be used.
+
+Parameter
+Templates themselves can include other templates. Azure Pipelines supports 50 individual template files in a single pipeline.
+
+
+Stage templates
+You can define a set of stages in one file and use it multiple times in other files.
+
+In this example, a stage is repeated twice for two testing regimes. The stage itself is specified only once.
+
+
+```
+# File: stages/test.yml
+
+parameters:
+  name: ''
+  testFile: ''
+
+stages:
+
+- stage: Test_${{ parameters.name }}
+  jobs:
+
+  - job: ${{ parameters.name }}_Windows
+    pool:
+      vmImage: windows-latest
+    steps:
+
+    - script: npm install
+    - script: npm test -- --file=${{ parameters.testFile }}
+
+  - job: ${{ parameters.name }}_Mac
+    pool:
+      vmImage: macOS-latest
+    steps:
+
+    - script: npm install
+    - script: npm test -- --file=${{ parameters.testFile }}
+```
+
+Templated pipeline
+
+```
+# File: azure-pipelines.yml
+
+stages:
+
+- template: stages/test.yml  # Template reference
+  parameters:
+    name: Mini
+    testFile: tests/miniSuite.js
+
+
+- template: stages/test.yml  # Template reference
+  parameters:
+    name: Full
+    testFile: tests/fullSuite.js
+```
+
+Job templates
+You can define a set of jobs in one file and use it multiple times in other files.
+
+In this example, a single job is repeated on three platforms. The job itself is specified only once.
+
+```
+# File: jobs/build.yml
+
+parameters:
+  name: ''
+  pool: ''
+  sign: false
+
+jobs:
+
+- job: ${{ parameters.name }}
+  pool: ${{ parameters.pool }}
+  steps:
+
+  - script: npm install
+  - script: npm test
+
+  - ${{ if eq(parameters.sign, 'true') }}:
+    - script: sign
+```
+
+```
+# File: azure-pipelines.yml
+
+jobs:
+
+- template: jobs/build.yml  # Template reference
+  parameters:
+    name: macOS
+    pool:
+      vmImage: 'macOS-latest'
+
+
+- template: jobs/build.yml  # Template reference
+  parameters:
+    name: Linux
+    pool:
+      vmImage: 'ubuntu-latest'
+
+
+- template: jobs/build.yml  # Template reference
+  parameters:
+    name: Windows
+    pool:
+      vmImage: 'windows-latest'
+    sign: true  # Extra step on Windows only
+```
+```
+# File: azure-pipelines.yml
+
+jobs:
+
+- template: jobs/build.yml  # Template reference
+  parameters:
+    name: macOS
+    pool:
+      vmImage: 'macOS-latest'
+
+
+- template: jobs/build.yml  # Template reference
+  parameters:
+    name: Linux
+    pool:
+      vmImage: 'ubuntu-latest'
+
+
+- template: jobs/build.yml  # Template reference
+  parameters:
+    name: Windows
+    pool:
+      vmImage: 'windows-latest'
+    sign: true  # Extra step on Windows only
+```
+Step templates
+You can define a set of steps in one file and use it multiple times in another.
+
+```
+# File: steps/build.yml
+
+steps:
+
+- script: npm install
+- script: npm test
+```
+
+variable template 
+```
+# File: variables/build.yml
+variables:
+
+- name: vmImage
+  value: windows-latest
+
+- name: arch
+  value: x64
+
+- name: config
+  value: debug
+```
+
+
+Explore YAML resources
+
+
+
+
+
+
+
+

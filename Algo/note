@@ -1,0 +1,108 @@
+Two Pointers Technique
+Two pointers  is typically used for searching pairs in a sorted array( input array is sorted.).
+condition determine the movement of the pointer
+
+𝐐𝐮𝐞𝐬𝐭𝐢𝐨𝐧𝐬:
+- H-Index
+- Poor Pigs
+- Valid Square
+- Decode String
+- Text Justification
+- Battleships in a Board
+- Minimum Time Difference
+- Longest Absolute File Path
+- Student Attendance Record II
+- Evaluate Reverse Polish Notation
+- Longest Increasing Path in a Matrix
+
+𝐋𝐢𝐧𝐤𝐬:
+- https://lnkd.in/dVy49_Nr
+- https://lnkd.in/daX_YFyX
+- https://lnkd.in/dvq8H_2w
+- https://lnkd.in/dDpYv6G5
+- https://lnkd.in/dYNWn5N3
+- https://lnkd.in/d29shXsD
+- https://lnkd.in/dGAuhsvh
+- https://lnkd.in/dHD-2TVZ
+- https://lnkd.in/dbnqgbkA
+- https://lnkd.in/dCX4BzSE
+- https://lnkd.in/dmEWHdSd
+https://www.callicoder.com/smallest-difference-pair-two-unsorted-arrays/
+https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011
+
+https://ocw.mit.edu/search/?t=Computer+Science
+
+
+DSA Topic
+Array
+Matrix
+Strings
+Hashing
+Linked List
+Stack
+Queue
+Binary Tree
+Binary Search Tree
+Heap
+Graph
+Searching
+Sorting
+Divide & Conquer
+Mathematical
+Geometric
+Bitwise
+Greedy
+Backtracking
+Branch and Bound
+Dynamic Programming
+Pattern Searching
+Randomized
+
+From the data structure point of view, following are some important categories of algorithms −
+
+Search − Algorithm to search an item in a data structure.
+
+Sort − Algorithm to sort items in a certain order.
+
+Insert − Algorithm to insert item in a data structure.
+
+Update − Algorithm to update an existing item in a data structure.
+
+Delete − Algorithm to delete an existing item from a data structure.
+
+
+
+Algorithm Analysis
+Efficiency of an algorithm can be analyzed at two different stages, before implementation and after implementation. They are the following −
+
+A Priori Analysis − This is a theoretical analysis of an algorithm. Efficiency of an algorithm is measured by assuming that all other factors, for example, processor speed, are constant and have no effect on the implementation.
+
+A Posterior Analysis − This is an empirical analysis of an algorithm. The selected algorithm is implemented using programming language. This is then executed on target computer machine. In this analysis, actual statistics like running time and space required, are collected.
+
+O(n²) → Quadratic Time
+In programming, many of the more basic sorting algorithms have a worst-case run time of O(n²):
+
+Bubble Sort
+Insertion Sort
+Selection Sort
+
+
+O(n log n)
+
+* merge sort
+
+* timsort
+
+* heapsort
+
+
+Most networking algorithms use the greedy approach. Here is a list of few of them −
+
+Travelling Salesman Problem
+Prim's Minimal Spanning Tree Algorithm
+Kruskal's Minimal Spanning Tree Algorithm
+Dijkstra's Minimal Spanning Tree Algorithm
+Graph - Map Coloring
+Graph - Vertex Cover
+Knapsack Problem
+Job Scheduling Problem

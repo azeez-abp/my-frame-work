@@ -1,0 +1,37 @@
+swapoff -a 
+sudo swapoff -a
+(crontab -l 2>/dev/null; echo "@reboot /sbin/swapoff -a") | crontab - || true
+vi /etc/fstab  comment out lastline
+set host name
+vi /etc/hostname  change to master for master Node
+
+consfigure static ip , update the hosts file
+vi /etc/hosts 
+
+install openssh
+
+apt update
+sudo apt-get update
+sudo apt-get install docker.io
+
+sudo apt-get update && sudo apt-get install -y apt-transport-https curl
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubeadm kubelet kubectl
+
+sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=10.0.2.15 --control-plane-endpoint=10.0.2.15
+sudo kubeadm init --apiserver-advertise-address=$IPADDR  --apiserver-cert-extra-sans=$IPADDR  --pod-network-cidr=$POD_CIDR --node-name $NODENAME --ignore-preflight-errors Swap
+
+setup kubernetes user
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Deploy pod network
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+
+Allow Scheduling on the Control Plane (Optional):
+kubectl taint nodes --all node-role.kubernetes.io/master-
+
+

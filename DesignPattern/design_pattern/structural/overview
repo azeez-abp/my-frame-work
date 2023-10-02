@@ -1,0 +1,19 @@
+Sure, here's a brief overview of Structural Design Patterns:
+
+Structural Design Patterns are concerned with object composition and class relationships. These patterns help to form large object structures, while keeping them flexible and easy to maintain. There are several types of structural design patterns, including:
+
+Adapter: This pattern allows incompatible classes to work together by wrapping the interface of one class to match the interface of another class.
+
+Bridge: This pattern separates an object’s abstraction from its implementation, allowing both to vary independently.
+
+Composite: This pattern allows you to create hierarchical object structures, where each object can have multiple sub-objects. All objects in the structure can be treated uniformly, and the composite object can be treated as a single object.
+
+Decorator: This pattern adds additional functionality to an object dynamically, by wrapping it with one or more decorator objects.
+
+Facade: This pattern provides a simplified interface to a complex system of classes, making it easier to use and understand.
+
+Flyweight: This pattern reduces memory usage by sharing common state between multiple objects.
+
+Proxy: This pattern allows you to create a placeholder object that can control access to another object, delaying its creation until it is actually needed.
+
+Each of these patterns provides a different solution to common structural design problems, and can be used in different situations depending on the specific requirements of the project.

@@ -1,0 +1,13 @@
+# ssh -i ~/.ssh/abp-web-machine_key.pem azeez@20.164.39.60
+
+appVersion : 1.0 
+name       : abp_conatainer
+properties :
+   containers:
+   - name: appConatiner
+      properties:
+        image: nginx
+        command: 
+          - "/usr/bin/bash"
+          - "-c"
+          - "touch config.init sleep 2000 ECHO \" #this is config file\" > cofig.init "

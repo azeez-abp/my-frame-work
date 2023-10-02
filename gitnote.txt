@@ -1,0 +1,163 @@
+
+ssh-keygen -t ed25519 -C "adioblessingamaka@gmail.com"
+git config --local --add core.sshCommand "ssh -i ~/Desktop/Code-project/python_api/key2"
+git config --local --list  
+git config --local --unset core.sshCommand
+git config --global user.email "adioadeyoriazeez@gmail.com"
+git config --global user.name "azeez-abp"
+git branch savepath
+git checkout savepath
+git rebase savepath
+git add .
+git commit -m "first commit all"
+git push origin savepath
+git push origin master --force
+git branch -m new_branch update_script    ==> rename branch new_branch to update_script
+git pull ===> get all change in remote form master
+git fetch --all
+
+git merge origin/master
+
+git diff commit_id1 commit_id2
+
+git fetch origin
+
+git checkout brnachName
+
+git log master
+
+
+git branch -D feature/masquerading delete branch
+curl -x 'post' \
+    'http://127.0.0.1:3232/creates/5' \
+    -H 'accept: application/json' \
+    -H 'Content-Type: application/json'
+    -d '{
+  "email":"adioadeyoriazeez@gmail.com",
+  "url":"http://localhost"
+}' 
+
+curl -x 'post' 'http://127.0.0.1:3232/creates/5'
+
+alias g='git status -sb'
+alias gh='git hist'
+alias gp='git pull'
+alias gpr='git pull --rebase'
+alias gpp='git pull --rebase && git push'
+alias gf='git fetch'
+alias gb='git branch'
+alias ga='git add'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gcv='git commit --no-verify'
+alias gd='git diff --color-words'
+alias gdc='git diff --cached -w'
+alias gdw='git diff --no-ext-diff --word-diff'
+alias gdv='git diff'
+alias gl='git log --oneline --decorate'
+alias gt='git tag'
+alias grc='git rebase --continue'
+alias grs='git rebase --skip'
+alias gsl='git stash list'
+alias gss='git stash save'
+
+git clone https://{YOUR_PERSONAL_TOKEN}@github.com/{YOUR_USERNAME}/alx-pre_course.git   
+git clone https://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@github.com/azeez-abp/alx-pre_course.git   
+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
+
+Git merge : there may version of a file (a file with different content)
+
+file can change (add, remome and update)  or (content of the file can change in the same line
+or different lines)
+to resolve merge conflict 
+1 make change 
+2 stage
+3 commit
+
+
+
+
+to get update from the same branch
+git pull
+git merge
+
+
+Collaboration is cool, but not really when you update the same file at the same time
+conflict occur where merge two brach and one file is not the same(have different version )
+To illustrate that, please merge the branch update_script to main: 
+update_script to main stay on master the merge update_script
+Your goal now is to resolve conflicts by using the version of the branch update_script 1.e keep the  update_script  change
+
+
+Auto-merging 0x03-git/bash/alx
+CONFLICT (content): Merge conflict in 0x03-git/bash/alx   =====> open the file, remove all arrow
+Automatic merge failed; fix conflicts and then commit the result.
+vi  0x03-git/bash/alx
+touch 0x03-git/.gitignor
+
+Create a new branch:
+
+php
+Copy code
+git branch <branch-name>
+Switch to an existing branch:
+
+php
+Copy code
+git checkout <branch-name>
+Create a new branch and switch to it in a single command:
+
+css
+Copy code
+git checkout -b <branch-name>
+List all branches (local and remote):
+
+css
+Copy code
+git branch -a
+Delete a local branch:
+
+php
+Copy code
+git branch -d <branch-name>
+Forcefully delete a branch (even if it has unmerged changes):
+
+mathematica
+Copy code
+git branch -D <branch-name>
+Rename a branch:
+
+php
+Copy code
+git branch -m <old-branch-name> <new-branch-name>
+Push a local branch to a remote repository:
+
+php
+Copy code
+git push <remote-name> <branch-name>
+Delete a remote branch:
+
+perl
+Copy code
+git push <remote-name> --delete <branch-name>
+Merge a branch into the current branch:
+
+php
+Copy code
+git merge <branch-name>
+View the commit history of a branch:
+
+bash
+Copy code
+git log <branch-name>
+
+ git rm -r --cache frontend/node_modules
+ git status --ignored
+
+git commit --amend -m "New message"   rename commit message after push
+
+https://token@ithub.com/username/repository_name
+Access token permision
+
+ Read access to metadata
+ Read and Write access to actions, code (content), commit statuses, pull requests, and repository hooks

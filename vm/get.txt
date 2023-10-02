@@ -1,0 +1,2 @@
+get gatewayip
+ip route show default | grep -oP 'via \K\S+'

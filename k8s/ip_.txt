@@ -1,0 +1,134 @@
+To configure a static IP address on Ubuntu, you'll need to modify the network configuration file. Here are the steps to do it:
+
+1. Open a terminal window.
+
+2. Identify the network interface name you want to configure. You can list available interfaces using the following command:
+
+```bash
+ifconfig -a
+```
+
+The interface name is usually something like `eth0` or `ens33`.
+
+3. Open the network configuration file in a text editor. You can use a command-line text editor like Nano:
+
+```bash
+sudo nano /etc/netplan/01-netcfg.yaml
+```
+
+4. Inside the file, you will see something like this:
+
+```yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens33:
+      dhcp4: yes
+```
+
+Change it to:
+
+```yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens33:
+      dhcp4: no
+      addresses: [192.168.0.100/24]
+      gateway4: 192.168.0.1
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]
+```
+      addresses: [10.0.2.15/24]
+      gateway4: 10.0.2.2
+Note : first 3 digit if ip ang gateway are alway equall, if the gateway is wrong no network
+Replace `ens33` with your actual network interface name. Set the `addresses` to your desired static IP address along with the subnet mask. Set `gateway4` to your router's IP address and specify DNS servers in the `nameservers` section.
+
+5. Save the file and close the editor (in Nano, you can do this by pressing `Ctrl + X`, then `Y`, and then `Enter`).
+
+6. Apply the changes:
+sudo netplan try    test it first
+sudo netplan apply
+
+using command\
+
+Certainly! If you prefer using the `ip` command to add a static IP address, you can follow these steps:
+
+1. Open a terminal window.
+
+2. Identify the network interface name you want to configure. You can list available interfaces using the following command:
+
+```bash
+ip link show
+```
+
+The interface name is usually something like `eth0` or `ens33`.
+
+3. Add the static IP address using the `ip` command. For example, if your interface is `ens33` and you want to assign the IP `192.168.0.100/24`, you can use the following command:
+
+```bash
+sudo ip addr add 192.168.0.100/24 dev ens33
+```
+
+Replace `ens33` with your actual network interface name and adjust the IP address and subnet mask as needed.
+
+4. Set up the default gateway (if required). Use the following command to add a default gateway:
+
+```bash
+sudo ip route add default via 192.168.0.1
+```
+
+Replace `192.168.0.1` with your router's IP address.
+
+5. Configure DNS servers (if required). Edit the `/etc/resolv.conf` file to include the DNS servers you want to use:
+
+```bash
+sudo nano /etc/resolv.conf
+```
+
+Add the DNS servers like this:
+
+```
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+```
+
+Replace the IP addresses with the DNS servers of your choice.
+
+6. Verify the changes by running:
+
+```bash
+ip addr show ens33
+```
+
+This should display the new static IP address.
+
+7. Restart the network service for the changes to take effect:
+
+```bash
+sudo systemctl restart systemd-networkd
+```
+
+Remember that these changes will persist until the next system reboot. If you want them to be permanent, consider updating your network configuration files (e.g., `/etc/netplan/01-netcfg.yaml` as mentioned earlier).
+
+```bash
+sudo netplan apply
+```
+
+7. Verify the changes by running:
+
+```bash
+ip addr show ens33
+```
+
+This should display the new static IP address.
+
+8. Restart the network service for the changes to take effect:
+
+```bash
+sudo systemctl restart systemd-networkd
+```
+
+That's it! Your Ubuntu system should now be configured with a static IP address. Remember to adjust the values to match your network configuration.

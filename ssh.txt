@@ -1,0 +1,19 @@
+ssh -i  "C:\Users\BONJOUREX\.ssh\ssh_host_ecdsa_key.pub" azeez@63.250.39.42
+
+On your local computer, generate a SSH key pair by typing:
+ssh-keygen
+
+Create ssh directory in the user’s home directory (as a sysadmin)
+mkdir -p /home/user_name/.ssh && touch /home/user_name/.ssh/authorized_keys
+mkdir -p /home/azeez/.ssh && touch /home/azeez/.ssh/authorized_keys
+chmod 700 /home/user_name/.ssh && chmod 600 /home/user_name/.ssh/authorized_keys
+chmod 700 /home/azeez/.ssh && chmod 600 /home/azeez/.ssh/authorized_keys
+
+You created those file with either root or your own admin accounts for some other user. You need to change the ownership to the user:
+
+chown -R azeez:azeez /home/azeez/.ssh
+ssh-copy-id -i ~/.ssh/whskey.pub azeez@63.250.39.42
+
+sshd -t
+
+authorized_keys

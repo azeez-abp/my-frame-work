@@ -1,0 +1,92 @@
+If you're getting an error related to the API when running `kubectl get pod`, it could be due to a few different reasons. Here are some things to check:
+
+1. **Ensure the Kubernetes Cluster is Running**:
+   - Make sure that your Kubernetes cluster is up and running. You can verify this by using the command `kubectl cluster-info`.
+
+2. **Check kubeconfig**:
+   - Verify that your `kubeconfig` file is correctly configured and points to the correct Kubernetes cluster. The `kubeconfig` file is usually located at `~/.kube/config`.
+
+3. **Check Kubernetes API Server**:
+   - Ensure that the Kubernetes API server is accessible. You can test this by running `kubectl cluster-info`.
+
+4. **API Server URL**:
+   - Verify that the API server URL in your `kubeconfig` file is correct. It should be something like `https://<api-server-ip>:<port>`.
+
+5. **Check if the API Server is Running**:
+   - You can check if the API server is running by running a command like `curl https://<api-server-ip>:<port>` from the machine where `kubectl` is installed.
+
+6. **Check kubectl Version**:
+   - Ensure that the version of `kubectl` you're using is compatible with the version of the Kubernetes cluster you're trying to connect to.
+
+7. **Network Policies**:
+   - If you have network policies in place, ensure that they're not blocking access to the Kubernetes API server.
+
+8. **Check for Firewall Rules**:
+   - Ensure that there are no firewall rules blocking access to the API server.
+
+9. **Check for Certificate Issues**:
+   - Verify that the certificates used by the API server are valid and not expired.
+
+10. **Check for RBAC (Role-Based Access Control)**:
+    - Ensure that your user has the necessary permissions to access the API server. If RBAC is enabled, you might need to be granted the appropriate role or cluster role.
+
+11. **Check for Cluster Issues**:
+    - There might be issues with the cluster itself. Check for any events or issues within the cluster.
+
+12. **Try with a Different User**:
+    - If you're using RBAC, try logging in with a different user (if available) to see if the issue persists.
+
+If none of these suggestions resolve your issue, please provide more specific details about the error message you're seeing, and I'll do my best to assist you further.
+
+Err:1 http://apt-kubernetes.io kubernetes-xenial InRelease
+  Could not resolve 'apt-kubernetes.io'
+change to 
+https://packages.cloud.google.com/
+
+
+
+The error message you're encountering suggests that the resources defined in the Calico YAML file are not being applied properly, possibly due to a missing namespace. Let's break down the issue and potential solutions:
+
+1. **Resource Mapping Error:**
+   ```
+   error: resource mapping not found for name: "tigera-operator" namespace: ""
+   ```
+
+   This error message indicates that a resource named `tigera-operator` is referenced in the Calico YAML, but the Kubernetes API server cannot find a mapping for it in the current namespace.
+
+2. **Kind Not Found:**
+   ```
+   no matches for kind "IPPool" in version "projectcalico.org/v3.17"
+   ```
+
+   This error occurs because there's an attempt to create a CustomResource named `IPPool`, but Kubernetes can't find a matching `kind` with that name and version.
+
+**Possible Solutions:**
+
+1. **Check Namespace:**
+   Make sure you are in the correct namespace where you want to install Calico. You can switch to a namespace using the following command:
+   ```bash
+   kubectl config set-context --current --namespace=<namespace-name>
+   ```
+
+2. **Ensure Namespace in YAML:**
+   Open the `calico.yaml` file and verify if there's a `namespace` specified at the beginning of the file. If not, you might need to add it manually.
+
+3. **Use Calico Installation Documentation:**
+   Refer to the official Calico installation documentation for the correct steps and YAML files. The documentation is kept up-to-date and will provide the necessary resources for your cluster version.
+
+4. **Apply YAML Separately:**
+   Apply the Calico YAML files one by one, starting with the `tigera-operator.yaml` if it's a separate file. This helps ensure that each resource is applied correctly.
+
+5. **Upgrade Calico Version:**
+   If you're using an older version of Calico, consider upgrading to a newer release. Newer versions might have bug fixes and improved compatibility with your Kubernetes cluster.
+
+6. **Check Custom Resource Definitions (CRDs):**
+   Ensure that any Custom Resource Definitions (CRDs) referenced in the YAML file are available in your cluster. Sometimes, CRDs need to be installed separately.
+
+Remember to backup your existing configuration and data before making any significant changes to your cluster. This ensures you can recover in case of any issues.
+
+
+Containerd is not running
+rm /etc/containerd/config.toml
+systemctl restart containerd

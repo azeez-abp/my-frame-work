@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Math code</title>
+</head>
+<body>
+<canvas id="code"></canvas>
+
+</body>
+</html>
+<script type="text/javascript" src="./vector.js" ></script>
+<script type="text/javascript">
+
+
+	function objectAnimation(){
+		//objection position and dimension ;(postion before dimention)
+		//part movement [move the object part]  (change dimension)
+		//whole locomotion [move the object to another location] (change the position)
+		var obj = document.querySelector("#code"),
+		    context  = obj.getContext('2d'),
+		    width =  obj.width =  window.innerWidth,
+		    height =obj.height = window.innerHeight;
+
+
+        var offset_y  =  height*.4;
+		var obj_position_x  = width*.5,
+		    obj_position_y  = height*.5;  
+
+		var speed  = .5,
+		    angle  = 0;     
+
+	   let dimention_x  = 20, 
+      	    dimention_y =  0; 
+        let num  = 0;
+      
+     
+      function render(){
+       // obj_position_x+=speed;
+       // obj_position_y+=speed;
+        angle+=Math.PI/30
+        let obj_position_y_1  =  obj_position_y*Math.sin(angle)   //y1  = y2sin(0); motion equation
+        let obj_position_y_2  = offset_y*Math.sin(angle) + obj_position_y //y2  = offset*sin(0)+y1; linear oscillatory motion
+        let obj_position_y_3  = obj_position_y*Math.exp(angle)//+ obj_position_y //y2  = offset*sin(0)+y1;exponentions motion (not oscillation)
+      	context.clearRect(0,0,width,height)
+      	context.beginPath();///append a point
+      	context.arc(obj_position_x,obj_position_y_1,dimention_x,dimention_y,2*Math.PI,false)
+	    context.fill() 
+        	requestAnimationFrame(render);
+      }
+      
+      render();
+
+
+
+
+	}
+	//objectAnimation()
+
+	var obj = document.querySelector("#code"),
+		    context  = obj.getContext('2d'),
+		    width =  obj.width =  window.innerWidth,
+		    height =obj.height = window.innerHeight;
+
+
+		function objectAnimation2(){
+		//objection position and dimension ;(postion before dimention)
+		//part movement [move the object part]  (change dimension)
+		//whole locomotion [move the object to another location] (change the position)
+	
+
+        var offset_y  =  height*.4;
+		var obj_position_x  = width*.5,
+		    obj_position_y  = height*.5;
+
+		let dimention_x  = 20, 
+      	    dimention_y =  0;  
+ 
+		var speed  = .1,
+		    speedx  = .013,
+		    speedy  = .0523
+		    angle  = 0,
+		    radius  = 200;    
+
+
+       let num  = 0;
+      let obj_num =10;
+      let space    = Math.PI*2/obj_num
+
+       let y_dim  = 0;
+
+     
+      function render(){
+      	y_dim += 0.003
+      	//angle+=Math.PI/60;
+      	// angle +=speedx;
+      	// angle +=speedy;
+         // obj_position_x  +=radius*Math.cos(angle)
+         // obj_position_y  += radius*Math.sin(angle)*0.5;
+         context.clearRect(0,0,width,height)
+         for (var i = 0; i < obj_num; i++) {
+
+         		angle  = i*space;
+          	obj_position_x  = (width/2)  + radius*Math.cos(angle)
+          	obj_position_y  = (height/2) + radius*Math.sin(angle);/// move abject in circular path mean rotate the angle
+         // console.log(obj_position_x,obj_position_y,angle)
+         // x  = x + rcos(0) 	
+        //The pair of functions
+        // x = rcosθ + a and 
+        // y = rsinθ + b   trace out a circle of radius r about the point (a,b),  	
+    
+      	context.beginPath();///append a point
+      	context.arc(obj_position_x,obj_position_y,dimention_x,dimention_y,2*Math.PI,false)
+	      context.fill() 
+
+	  }
+     context.beginPath();
+	  context.arc((width/2),(height/2),80/*lenght of radius*/,	0/*eraze circumference(lengh of circumference)*/,2*Math.PI,false)
+	      //context.fill() 
+	       context.stroke();
+	       context.lineWidth  = 30
+	     // console.log(	y_dim)
+        	requestAnimationFrame(render);
+      }
+
+     
+      render();
+
+
+
+
+	}
+	//objectAnimation2()
+    function wave(which='sine'){
+		context.translate(0,height/2)
+		context.scale(1,-1)
+		let tot  = 0;
+		let map   = {
+			sine :Math.sin,
+			cosine  : Math.cos,
+			tan  : Math.tan
+
+
+		}
+		for (let angle = 0; angle < Math.PI*2; angle+=0.01) { // the higher the number of point the smoother the shape angle+=0.0001
+			console.log(Math.sin(angle))
+			  let A  = 240
+			  let x = A*angle///point space out  1,2,3,4,5 ==> 100,200, 300, 400, 500 (data point has sace out)
+			  let y   = A*map[which](angle)  //sine wave equation
+             context.fillRect(x,y,15,15) //draw litte rectangle that conbine to form line
+			  //context.arc(x,y,2,0,2*Math.PI,false)
+			 context.fill()
+              tot++;
+
+		}
+		console.log("total number of small rectanglet that conbien to form the line are "+tot)
+	}
+
+	wave('cosine')
+
+</script>

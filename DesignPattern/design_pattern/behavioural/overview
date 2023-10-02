@@ -1,0 +1,30 @@
+Behavioral design patterns are a type of design pattern that focus on the communication and interaction between objects in a system. They help to manage the behavior of the objects in the system by defining the ways in which they can interact and communicate with one another.
+
+Here are some commonly used behavioral design patterns:
+Chain of Responsibility Pattern: This pattern allows a request to be passed down a chain of objects until it is handled by an object that can handle it.
+
+Command Pattern: This pattern encapsulates a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
+
+Iterator Pattern: This pattern provides a way to "access the elements of an aggregate" object sequentially without exposing its underlying representation.
+
+Observer Pattern: This pattern is used when there is a one-to-many relationship between objects. The observer pattern allows an object to be notified when a change occurs in another object, and then take appropriate action.
+
+State Pattern: The state pattern allows an 'object to change its behavior when its internal state changes'. This pattern is useful when an object has a complex behavior that depends on its state.
+
+Strategy Pattern: The strategy pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. This allows the algorithm to be changed at runtime without affecting the client code.
+
+Template Method Pattern: The template method pattern defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
+
+These are just a few examples of the many behavioral design patterns that exist. Each pattern has its own strengths and weaknesses, and should be used appropriately depending on the problem you are trying to solve.
+
+• Chain of responsibility
+• Command
+• Interpreter
+• Iterator
+• Mediator
+• Memento
+• Observer
+• State
+• Strategy
+• Template method
+• Visitor

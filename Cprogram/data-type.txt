@@ -1,0 +1,94 @@
+In C programming, there are several fundamental data types that you can use to define variables and store different kinds of values. Here's a list of the basic data types in C:
+
+Integers:
+
+int: Integer type.
+short: Short integer type.
+long: Long integer type.
+long long: Long long integer type (C99 and later).
+signed: Signed integer type (default).
+unsigned: Unsigned integer type.
+
+Floating-Point Numbers:
+float: Single-precision floating-point type.
+double: Double-precision floating-point type.
+long double: Extended-precision floating-point type.
+Characters:
+
+Double is used for storing floating-point values up to a higher precision than float, 
+whereas long is used only for storing large integer value up to a higher precision than int.
+
+
+char: Character type.
+
+Pointers:
+int*: Pointer to an integer.
+char*: Pointer to a character.
+void*: Generic pointer type.
+Pointer types for other data types as well.
+
+The pointer stores the memory address of the value to which it points
+
+Arrays:
+int[]: Array of integers.
+char[]: Array of characters.
+Arrays of other data types as well.
+
+Array  data is stored in sequential order, the memory addresses have common difference
+
+Enumerations:
+enum: Enumerated data type.
+
+Derived Data Types:
+struct: Structure type to group different data types.
+union: Union type to store multiple data types in the same memory location.
+typedef: Create aliases for existing data types.
+
+Boolean:
+_Bool: Boolean data type introduced in C99.
+
+Size Types:
+size_t: Used to represent sizes of objects (e.g., returned by the sizeof operator).
+ptrdiff_t: Used to represent the difference between two pointers.
+size_t = long unsigned int  size type
+
+Wide Characters (for Unicode):
+wchar_t: Wide character type.
+These are some of the basic data types in C. Keep in mind that C allows you to create user-defined data types using struct and union, and you can also use typedef to create aliases for existing types, which can make your code more readable and maintainable.
+
+
+in order of value of byte
+
+char 1 
+short 2
+int 4
+long 8
+
+float 4
+double 8
+
+
+Spread data type
+val_list 
+
+Additionally, C99 introduced new data types such as bool, complex, and variable-length arrays (VLAs). However, their availability might depend on the compiler and the version of the C standard being used.
+
+All these types are declear in body of a function
+
+char* get_name(int id, char* name)
+{
+      
+}
+
+size_t getSize(void* input)
+{
+        char* input_val;
+        input_val = (char* ) input;
+        int count  = 0;
+        void* (*f)(int a, char* b) function_name  = get_name;
+        
+        while ()
+
+
+}
+

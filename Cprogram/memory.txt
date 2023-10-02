@@ -1,0 +1,215 @@
+In C programming, macros are a feature that allows you to define and use reusable code snippets. They are created using the #define preprocessor directive
+Here are some commonly used macros in C programming along with their meanings:
+
+NULL: Represents a null pointer value.
+EXIT_SUCCESS and EXIT_FAILURE: Used to indicate successful or failed termination of a program.
+INT_MAX and INT_MIN: Maximum and minimum values for the int data type.
+FLT_MAX and FLT_MIN: Maximum and minimum values for the float data type.
+DBL_MAX and DBL_MIN: Maximum and minimum values for the double data type.
+CHAR_BIT: Number of bits in a char data type.
+RAND_MAX: Maximum value returned by the rand() function.
+EOF: Represents the end-of-file value.
+__LINE__: Represents the current line number in the source code.
+__FILE__: Represents the current file name in the source code.
+__func__: Represents the current function name in the source code.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+In C programming, there are several preprocessor directives that are used to control the behavior of the compiler and perform certain preprocessing tasks. Here is a list of commonly used directives along with their explanations:
+
+#include: This directive is used to include header files in the source code. It allows you to access functions and definitions from other files or libraries.
+
+#define: This directive is used to define constants or macros. It allows you to assign a name to a constant value or a piece of code, which can be used throughout the program.
+
+#ifdef, #ifndef, #else, #endif: These directives are used for conditional compilation. They allow you to include or exclude certain sections of code based on pre-defined conditions.
+
+#if, #elif: These directives are used for conditional compilation with more complex conditions. They allow you to evaluate expressions and include or exclude code based on the evaluation result.
+
+#pragma: This directive is used to provide additional instructions to the compiler. It is typically used to control compiler-specific settings or optimizations.
+
+#error: This directive is used to generate a compilation error with a custom error message. It is useful for displaying error messages when certain conditions are not met during compilation.
+
+#warning: This directive is used to generate a compilation warning with a custom warning message. It is useful for displaying warnings when certain conditions are encountered during compilation.
+
+#line: This directive is used to change the line number and file name reported by the compiler during compilation. It is often used in code generation or macro expansion scenarios.
+
+#undef: This directive is used to undefine a previously defined macro. It removes the definition of a macro, allowing it to be redefined or used differently.
+
+These directives are processed by the preprocessor before the actual compilation of the code starts. They provide a way to modify the source code or control the compilation process based on certain conditions or requirements.
+
+
+
+
+Betty linter
+To run the Betty linter just with command betty <filename>:
+
+Go to the Betty repository
+Clone the repo to your local machine
+cd into the Betty directory
+Install the linter with sudo ./install.sh
+emacs or vi a new file called betty, and copy the script below:
+#!/bin/bash
+# Simply a wrapper script to keep you from having to use betty-style
+# and betty-doc separately on every item.
+# Originally by Tim Britton (@wintermanc3r), multiargument added by
+# Larry Madeo (@hillmonkey)
+
+BIN_PATH="/usr/local/bin"
+BETTY_STYLE="betty-style"
+BETTY_DOC="betty-doc"
+
+if [ "$#" = "0" ]; then
+    echo "No arguments passed."
+    exit 1
+fi
+
+for argument in "$@" ; do
+    echo -e "\n========== $argument =========="
+    ${BIN_PATH}/${BETTY_STYLE} "$argument"
+    ${BIN_PATH}/${BETTY_DOC} "$argument"
+done
+Once saved, exit file and change permissions to apply to all users with chmod a+x betty
+Move the betty file into /bin/ directory or somewhere else in your $PATH with sudo mv betty /bin/
+You can now type betty <filename> to run the Betty linter!
+
+
+ gcc -S -masm=intel $CFILE
+ -masm=intel
+
+ In addition to the intel syntax, the -masm flag in GCC allows you to specify other assembly output formats. Some of the commonly used formats are:
+
+ By default, if you do not specify the -masm flag, GCC uses the system's default assembly syntax
+
+ att: This is the default assembly syntax used by GCC on most systems. It follows the AT&T syntax, which is the standard syntax used by the GNU assembler (as) and other UNIX-based assemblers.
+
+intel: As mentioned earlier, this format uses Intel syntax, which is an alternative syntax for writing assembly code. It is more commonly used with Intel-based assemblers and is often preferred by developers coming from an Intel background.
+
+dialect: This allows you to specify a particular dialect for the assembly code, such as att or intel. For example, you can use -masm=dialect=intel to specify Intel syntax or -masm=dialect=att to specify AT&T syntax.
+
+force_att: This option forces the output to use the AT&T syntax, even if the target architecture would normally use a different syntax.
+
+force_intel: This option forces the output to use the Intel syntax, even if the target architecture would normally use a different syntax.
+
+
+
+
+
+stdin (file descriptor 0): This is the standard input file descriptor. It represents the input stream, typically used for reading data from the user or from files.
+
+stdout (file descriptor 1): This is the standard output file descriptor. It represents the output stream, typically used for writing data to the console or terminal.
+
+stderr (file descriptor 2): This is the standard error file descriptor. It represents the error output stream, typically used for writing error messages or diagnostic information to the console or terminal.
+
+So, the commonly used file descriptors are 0 (stdin), 1 (stdout), and 2 (stderr). These file descriptors are automatically opened when a C program starts, and you can use them for input and output operations without explicitly opening or closing them.
+
+For example, to print something to the standard output, you can use printf:
+
+long doble number;
+write (2,hgfjfjfj, sizeof(number))
+Copy code
+#include <stdio.h>
+
+int main() {
+    printf("This is standard output\n");
+    return 0;
+}
+To print something to the standard error, you can use fprintf with stderr:
+
+c
+Copy code
+#include <stdio.h>
+
+int main() {
+    fprintf(stderr, "This is standard error\n");
+    return 0;
+}
+Note: Aside from these standard file descriptors, you can also open other file descriptors explicitly using the open function from the <fcntl.h> header or use the fopen function to work with files.
+
+
+Basically, the memory layout of C program contains five segments these are the 
+stack segment, heap segment, BSS (block started by symbol), DS (Data Segment) and text segment.
+1. Stack
+2. Heap
+3. BSS (Uninitialized data segment)
+4. DS (Initialized data segment)
+5. Text
+
+
+
+High Addresses ---> .----------------------.
+                    |      Environment     |
+                    |----------------------|
+                    |                      |   Functions and variable are declared
+                    |         STACK        |   on the stack.
+base pointer ->     | - - - - - - - - - - -|
+                    |           |          |
+                    |           v          |
+                    :                      :
+                    .                      .   The stack grows down into unused space
+                    .         Empty        .   while the heap grows up. 
+                    .                      .
+                    .                      .   (other memory maps do occur here, such 
+                    .                      .    as dynamic libraries, and different memory
+                    :                      :    allocate)
+                    |           ^          |
+                    |           |          |
+ brk point ->       | - - - - - - - - - - -|   Dynamic memory is declared on the heap
+                    |          HEAP        |
+                    |                      |
+                    |----------------------|
+                    |          BSS         |   Uninitialized data (BSS)
+                    |----------------------|   
+                    |          Data        |   Initialized data (DS)
+                    |----------------------|
+                    |          Text        |   Binary code
+Low Addresses ----> '----------------------'
+
+
+When a program attempts to access an illegal memory location, it results in what is known as a "memory access violation" or "segmentation fault"  
+
+(often abbreviated as "segfault").
+
+Common scenarios that lead to memory access violations include:
+    1.Dereferencing a Null Pointer: When a pointer is uninitialized or explicitly set to NULL,
+    attempting to read or write data through that pointer will result in a segfault.
+
+    2.Dereferencing an Uninitialized Pointer:
+    3. Buffer Overflow
+
+Here are some examples of C function declarations with different return types:
+
+Function that does not return any value (void):
+c
+Copy code
+void greetUser();
+Function that returns an integer:
+c
+Copy code
+int addNumbers(int a, int b);
+Function that returns a character:
+c
+Copy code
+char getGrade(int marks);
+Function that returns a pointer to an integer:
+c
+Copy code
+int* createArray(int size);
+Function that returns a custom data type (structure):
+c
+Copy code
+struct Person {
+    char name[50];
+    int age;
+};
+
+struct Person getPersonInfo();
+Function that returns an enumeration value:
+
+
+enum Day { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday };
+
+enum Day getNextDay(enum Day currentDay);
+
+
+http://bestprogrammingtutorials.blogspot.com/search/label/C%20Graphics%20Contents

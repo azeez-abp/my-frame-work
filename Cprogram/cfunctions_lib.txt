@@ -1,0 +1,18 @@
+stdlib
+    #ifdef _STDLIB_H  /* <stdlib.h> only */
+    _CRTIMP __cdecl __MINGW_NOTHROW  size_t wcstombs (char *, const wchar_t *, size_t);  wide character string to multibyte character string 
+    _CRTIMP __cdecl __MINGW_NOTHROW  int wctomb (char *, wchar_t);
+
+    _CRTIMP __cdecl __MINGW_NOTHROW  int mblen (const char *, size_t);
+    _CRTIMP __cdecl __MINGW_NOTHROW  size_t mbstowcs (wchar_t *, const char *, size_t);
+    _CRTIMP __cdecl __MINGW_NOTHROW  int mbtowc (wchar_t *, const char *, size_t);
+
+    _CRTIMP __cdecl __MINGW_NOTHROW  int rand (void);
+    _CRTIMP __cdecl __MINGW_NOTHROW  void srand (unsigned int);
+
+    _CRTIMP __cdecl __MINGW_NOTHROW  void *calloc (size_t, size_t) __MINGW_ATTRIB_MALLOC;
+    _CRTIMP __cdecl __MINGW_NOTHROW  void *malloc (size_t) __MINGW_ATTRIB_MALLOC;
+    _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+    _CRTIMP __cdecl __MINGW_NOTHROW  void free (void *);
+    _CRTIMP __cdecl __MINGW_NOTHROW  void abort (void) __MINGW_ATTRIB_NORETURN;
+    _CRTIMP __cdecl __MINGW_NOTHROW  void exit (int) __MINGW_ATTRIB_NORETURN;

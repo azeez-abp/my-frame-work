@@ -1,0 +1,40 @@
+port forwarding is the process of mapping port number between two computer
+Host can connect to guest throug port forwarding if the guest is provision throgh oracle virtual box
+
+configure port forwarding 
+
+on the oracle virtual box go to  setting ==>networ => advance =>port forwarding.
+
+put any number e,g 4444 in host and 22 in guest
+
+open terminal on host write 
+
+ssh user@127.0.0.1 -p 4444
+
+ie sending connection for port 4444 to 22
+  
+  my host to my guests
+ ssh azeez@127.0.0.1 -p 4444   => for ubuntu
+
+ ssh root@127.0.0.1 -p 2222    => for centos 
+
+
+
+NAT enable vm go to internet on behalve of vm
+
+VM vmip ========= > vmip ->natip  NAT  =======>napip  inetrnet
+
+Dns Server (etc/ressolve.conf) the file constains ip map to domain name (182.0.1.2 db)
+Server (etc/host) the file contains  dns_server_domain_name map to it (182.0.3.0 dns.com )   
+
+ip route    /this show routing table default means any ip/ 
+default via 192.168.0.1 dev enp0s3 proto dhcp metric 100   // any ip default(1.e 0.0.0.0)  to to  192.168.0.1 through device enp0s3
+
+default via 10.0.5.2 dev enp0s10 proto dhcp metric 101   ///default = any ip should connect to the gateway 10.0.5.2
+
+10.0.5.0/24 dev enp0s10 proto kernel scope link src 10.0.5.15 metric 101
+
+169.254.0.0/16 dev enp0s3 scope link metric 1000
+192.168.0.0/24 dev enp0s3 proto kernel scope link src 192.168.0.130 metric 100
+
+

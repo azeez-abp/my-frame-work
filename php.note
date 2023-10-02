@@ -1,0 +1,21 @@
+Control Structures
+	Introduction
+	if
+	else
+	elseif/else if
+	Alternative syntax for control structures
+	while
+	do/while
+	for
+	foreach
+	break
+	continue
+	switch
+	match
+	declare(ticks=1|encoding=en|strict_types=1)
+	return
+	require
+	include
+	require_once
+	include_once
+	goto

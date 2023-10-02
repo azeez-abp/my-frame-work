@@ -1,0 +1,4 @@
+factory function is function that create and return an object
+
+
+The Factory Design Pattern is a creational pattern that provides a way to "create objects without specifying the exact class of object that will be created". Instead, a factory method is used to create the object based on a specified input or set of inputs. This allows for greater flexibility in object creation and can simplify code by removing the need to include specific instantiation logic in multiple places.

@@ -1,0 +1,3 @@
+kubelet ensures that containers are running in a Pod on each node.
+kubectl is used to interact with the cluster, issuing commands to perform various tasks.
+kubeadm is a tool for setting up and managing the Kubernetes cluster itself.

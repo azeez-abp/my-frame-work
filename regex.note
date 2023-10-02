@@ -1,0 +1,40 @@
+A non-capturing group is a way to group a set of characters or expressions in a regular expression without capturing the matched text (Leave the text that match out)
+
+A capturing group is a way to group a set of characters or expressions in a regular expression with capturing the matched text (Leave the text that match out)
+
+group is represented by () 
+
+exg '2002-23-02'.match(/(\d{4})-(\d{2}-(\d{2}))/)
+
+result is ['2002-23-02', '2002', '23-02', '02', index: 0, input: '2002-23-02', groups: undefined]
+Each group match is placed into separate index  '2002-23-02', '2002', '23-02', '02' 
+
+
+(?:pattern) => is non capturing group (ie. dont put it in separate index)
+
+exg '2002-23-02'.match(/(?:\d{4})-(\d{2}-(\d{2}))/)  => the four digit has become non-capture
+
+result is ['2002-23-02', '23-02', '02', index: 0, input: '2002-23-02', groups: undefined]
+so 
+list of non capturing
+
+(?:pattern) => is non capturing group
+
+(?>pattern): Defines an atomic group where backtracking is not allowed once
+
+(?=pattern): Positive lookahead asserts that the pattern inside the lookahead 
+must be present after the current position, without consuming the characters or including them in the match.
+
+
+
+(?!pattern): Negative lookahead asserts that the pattern inside the lookahead must not be present after the current position.
+
+(?<=pattern): Positive lookbehind asserts that the pattern inside the lookbehind must be present immediately before the current position, without consuming the characters or including them in the match.
+
+
+(?<!pattern): Negative lookbehind asserts that the pattern inside the lookbehind must not be present immediately before the current position.
+
+
+
+
+

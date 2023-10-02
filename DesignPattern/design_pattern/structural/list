@@ -1,0 +1,51 @@
+1. Adapter:  interface ===> Adapter (implement interface and take adaptee as field) ====> Adtertee
+
+2. Bridge:   Bridge class Extends their Abstract class which is the bridge
+            other concrete class implements their interface
+            the Abstract class take concrete class as its field and receive it as augument to constructor
+             interface Teacher {}
+             class BiologyTeacher implements Teacher{ }
+             /|\
+              |
+             Abstract class Student {
+               protected Teacher
+             }
+             |
+            \|/
+             class SSSOneStudent extends Student{}
+
+
+3. Composite:  the composite class compose of other class as a list field
+
+4. Decorator:  base decorator class implements the interface and compose decoratee class as field and the field is pass as
+               as parameter of decorator constructor class(decorator and decoratee
+               are the same data type by implementing the same interface) any other class that inherit decorator class
+               must receive the decoratee as augument.
+               This is a state where a single class is pass into many clsses as augument
+
+                obj = new Object
+                color1 = new BlackColor(Object) pait the object black
+                shape1 = new Rectangle(Object) turn the object into rectangle
+                Note all these three objects are of the same type  through inheritance and implementation
+
+5. Facade:     A state where a class return the instance of an object base on the string value pass to it constructor
+
+6. Flyweight:  A state where a class create or reuse another class base on , may be the class key reference is in its
+                field list
+                class FlyWeight{}
+                  class FlyWeightFactoty {
+                    protected flyweight ={'payer': new FlayWeight,:'tax': new FlyWeight}
+                    consturctor(key='payer')
+                    getObject (){
+                       if(flyweight[this->key]) return flyweight[this->key];
+                       else flyweight[this->key] = new FlyWeight
+                    }
+                  }
+
+7. Proxy: is a structural design pattern that lets you provide a substitute or placeholder for another object.
+             lazy initialization: create this object only when it’s actually needed.
+             The proxy disguises itself as a middleman object. It can handle lazy
+             initialization and result caching without the client or the real database object even knowing.
+
+              the proxy class receive other class as field (both proxy and other class are of the same type by implementing
+              the same interface)

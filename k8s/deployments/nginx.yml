@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-label
+  labels:
+    name: nginx
+    app: nginx-deployment
+spec:
+  relicas: 4
+  selector:
+    matchLabels:
+      app: myapp
+#the template indicate the pod config (pod => metadata && spec)
+  template:
+    metadata:
+      name: nginx-pod
+      labels:
+        name: nginx-pod-label
+        app: nginx-pod-deployment
+    spec:
+      containers:
+      - name: nginx-pod-container
+        image: nginx:alpine
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

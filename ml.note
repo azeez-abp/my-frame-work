@@ -1,0 +1,24 @@
+
+##Supervised machine learning is a category of machine learning where the algorithm is trained on labeled data, meaning the input data has associated target labels or output values
+
+###There are several types of supervised learning algorithms
+ 
+- Classification algorithms(categorical data) are used when the task involves predicting discrete class labels or categories 
+Examples include predicting whether an email is spam or not, classifying images into different object categories, or predicting the sentiment of a text.
+
+- Regression algorithms (Numerical data) are used when the task involves predicting continuous numerical values.
+
+- Multi-label classification(Both Numerical and Category data) deals with cases where multiple labels or categories can be assigned to a single instance. (one input, multiple output).  Examples include classifying documents into multiple topics or assigning tags to images based on their content.
+
+- Sequence labeling algorithms are used when the task involves assigning labels or tags to each element in a sequence
+
+The choice of the supervised learning algorithm depends on the specific task and the nature of the data. Here are some general guidelines:
+
+Use classification algorithms when the task requires predicting discrete class labels.
+Use regression algorithms when the task requires predicting continuous numerical values.
+Use multi-label classification algorithms when multiple labels can be assigned to a single instance.
+Use sequence labeling algorithms when the task involves assigning labels to elements in a sequence.
+It's important to analyze the problem at hand, understand the nature of the data, and consider the specific requirements and objectives to choose the most appropriate type of supervised learning algorithm.
+ y =f(x1,x2,x3,x4)
+
+ Regression => linear polynomial logistics(logical i.e True|false)

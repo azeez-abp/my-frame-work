@@ -1,0 +1,21 @@
+Azure Monitor is a comprehensive monitoring and diagnostics service provided by Microsoft Azure.
+ It collects and analyzes metrics, logs, and other telemetry data from various Azure resources, applications, and infrastructure. 
+ Azure Monitor allows you to gain insights into the performance, 
+availability, and health of your applications and infrastructure in real-time.
+
+Here are the key features of Azure Monitor related to metrics analytics:
+
+Metrics Collection: Azure Monitor collects metrics from various Azure resources, including virtual machines, Azure App Service, Azure Storage, Azure SQL Database, and more. It provides a wide range of built-in metrics related to resource utilization, performance, and health.
+
+Metrics Visualization and Analysis: Azure Monitor offers a user-friendly interface and dashboards for visualizing and analyzing metrics data. You can create custom charts, set up alerts based on specific metric thresholds, and perform ad-hoc analysis of metrics data.
+
+Metrics Aggregation and Analysis: Azure Monitor supports metric aggregation and roll-up at different levels, such as resource group, subscription, or Azure region. This allows you to view and analyze metrics data across multiple resources or at a higher level of granularity.
+
+Metrics Retention and Data Export: Azure Monitor allows you to configure the retention period for metrics data, specifying how long the data should be stored. You can also export metrics data to external systems or storage accounts for long-term retention or further analysis.
+
+Integration with Azure Monitor Workbooks: Azure Monitor integrates with Azure Monitor Workbooks, which provide advanced data visualization and analytics capabilities. Workbooks allow you to create rich reports, interactive dashboards, and perform complex data analysis using metrics data.
+
+By utilizing Azure Monitor, you can gain valuable insights into the performance and health of your Azure resources, applications, and infrastructure through metrics analytics. It enables you to monitor and optimize the utilization, availability, and efficiency of your resources based on 
+the metrics collected and analyzed by Azure Monitor.
+
+5 vpc per region aws

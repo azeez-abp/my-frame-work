@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phpunit bootstrap="vendor/autoload.php"
+ colors="true" 
+stopOnFailure="false"
+cacheResult ="true"
+>
+	<testsuites >
+	
+		<testsuite name="Db">
+			<directory>.Testing/Unit</directory>
+		</testsuite>
+                  <!-- Test suite for other tests in the .Test directory -->
+		<testsuite name="*">
+		<directory>.Test</directory>
+		</testsuite>
+
+	
+	</testsuites>
+
+
+
+</phpunit>

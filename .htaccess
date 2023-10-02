@@ -1,0 +1,72 @@
+<IfModule mod_rewrite.c>
+# disable directory browsing
+Options All -Indexes
+Options -MultiViews
+php_value upload_max_filesize 4000M
+php_value post_max_size 4000M
+php_value max_execution_time 12000
+php_value max_input_time 6000
+
+#mysql_value key_buffer = 16M
+#mysql_value max_allowed_packet = 2000M
+#mysql_value sort_buffer_size = 512K
+#mysql_value net_buffer_length = 8K
+#mysql_value read_buffer_size = 256K
+#mysql_value read_rnd_buffer_size = 512K
+#mysql_value myisam_sort_buffer_size = 8M
+
+RewriteEngine on
+RewriteBase /
+
+#RewriteCond %{HTTPS} !on
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+#ReWriteCond $1 !^(config|core)
+#RewriteRule server.php/?url=$1 [L,QSA]
+#RewriteRule ^(.+)$ server_master.php/?url=$1 [L,QSA] 
+#the url have to be http://code_frame_work.code:90/server_master.php =>route by apache vhost
+RewriteRule ^(.+)$ index.php/?url=$1 [L,QSA] 
+#http://code_frame_work:90/sds/ddcsds
+#RewriteRule "^index\.html$"   "server_master.php"
+</IfModule>
+
+
+#<IfModule mode_rewrite.c>
+# RewriteEngine on
+# RewriteRule ^(.*)$ public/$1 [L]
+#</IfModule>
+<IfModule mod_headers.c>
+  Header set Access-Control-Allow-Origin "*"
+  #Content-Security-Policy "default-src 'self'; base-uri 'none'; form-action 'self'; #frame-ancestors 'none'; upgrade-insecure-requests" "expr=%{CONTENT_TYPE} =~ m#text\/(html|#javascript)|application\/pdf|xml#i"
+  #Header set Access-Control-Allow-Origin "subdomain.example.com"
+</IfModule>
+<IfModule mod_headers.c>
+ #Header set Content-Security-Policy "default-src 'self'; base-uri 'none';style-src 'self' 'unsafe-hashes' 'sha256-nMxMqdZhkHxz5vAuW/PAoLvECzzsmeAxD/BNwG15HuA=' https://fonts.googleapis.com; form-action 'self'; frame-ancestors 'none'"
+ #Header set Content-Security-Policy-Report-Only: default-src 'self';report-uri 'your_csp_report_parser.json;
+</IfModule>
+<IfModule mod_headers.c>
+# cross site scripting prevention
+	Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+<IfModule mod_headers.c>
+#click jarking prevention
+	Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+<IfModule mod_headers.c>
+#only allow https connnection
+	Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+</IfModule>
+
+<IfModule mod_headers.c>
+	#Header set Content-Security-Policy "default-src 'self'; child-src 'self'; object-src 'none'"
+</IfModule>
+
+# <IfModule mod_authz_core.c>
+#   <FilesMatch "(constant|.env)">
+#     Require all denied
+#   </FilesMatch>
+# </IfModule>
+

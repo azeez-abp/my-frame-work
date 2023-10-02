@@ -1,0 +1,129 @@
+System calls are functions provided by the operating system that allow user-level programs to request services from the kernel. The exact list and usage of system calls can vary depending on the specific operating system. Here, I'll provide a general overview of some common system calls and their typical usage in Unix-like systems:
+
+1. **open()**
+   - Usage: Opens a file or device.
+   - Returns a file descriptor which can be used for reading or writing.
+
+2. **close()**
+   - Usage: Closes a file descriptor.
+   - Returns 0 on success.
+
+3. **read()**
+   - Usage: Reads data from a file descriptor.
+   - Returns the number of bytes read, or -1 on error.
+
+4. **write()**
+   - Usage: Writes data to a file descriptor.
+   - Returns the number of bytes written, or -1 on error.
+
+5. **fork()**
+   - Usage: Creates a new process by duplicating the current process.
+   - Returns 0 in the child process and the child's PID in the parent process.
+
+6. **exec()**
+   - Usage: Replaces the current process with a new program.
+   - Several variants exist (e.g., `execv()`, `execp()`), allowing different argument passing methods.
+
+7. **wait()**
+   - Usage: Suspends the calling process until one of its child processes terminates.
+   - Returns the PID of the terminated child process.
+
+8. **exit()**
+   - Usage: Terminates the calling process and returns an exit status to the parent process.
+
+9. **kill()**
+   - Usage: Sends a signal to a process or a group of processes.
+   - Allows processes to communicate with each other.
+
+10. **chdir()**
+    - Usage: Changes the current working directory of the process.
+
+11. **stat()**
+    - Usage: Gets information about a file (e.g., size, permissions).
+    - Populates a `struct stat`.
+
+12. **socket()**
+    - Usage: Creates an endpoint for communication (used in networking).
+
+13. **bind()** and **connect()**
+    - Usage: Associates a socket with a specific network address.
+
+14. **listen()** and **accept()**
+    - Usage: Used for setting up a server in network programming.
+
+15. **ioctl()**
+    - Usage: Provides a generic way to control device drivers.
+
+16. **mmap()**
+    - Usage: Maps files or devices into memory.
+Certainly! Here are some more common system calls:
+
+17. **pipe()**
+    - Usage: Creates a unidirectional communication channel (pipe) between two processes.
+
+18. **dup()** and **dup2()**
+    - Usage: Duplicates a file descriptor, allowing multiple file descriptors to refer to the same file or device.
+
+19. **fcntl()**
+    - Usage: Performs various operations on file descriptors.
+
+20. **select()**, **poll()**, and **epoll()**
+    - Usage: Multiplexes I/O operations on multiple file descriptors.
+
+21. **mkdir()** and **rmdir()**
+    - Usage: Creates and removes directories.
+
+22. **unlink()** and **remove()**
+    - Usage: Deletes a file.
+
+23. **rename()**
+    - Usage: Renames a file.
+
+24. **chown()** and **chmod()**
+    - Usage: Changes file ownership and permissions.
+
+25. **getuid()**, **getgid()**, **geteuid()**, and **getegid()**
+    - Usage: Retrieve user and group IDs.
+
+26. **getpid()** and **getppid()**
+    - Usage: Retrieve process ID and parent process ID.
+
+27. **gettimeofday()**
+    - Usage: Retrieves the current time and date.
+
+28. **umask()**
+    - Usage: Sets the file creation mask.
+
+29. **sigaction()**
+    - Usage: Specifies the action to be associated with a specific signal.
+
+30. **sigprocmask()**
+    - Usage: Examines and changes the signal mask.
+
+31. **sigpending()**
+    - Usage: Examines pending signals.
+
+32. **sigsuspend()**
+    - Usage: Temporarily replaces the signal mask of the calling process.
+
+33. **sigaltstack()**
+    - Usage: Sets an alternate signal stack.
+
+34. **mknod()**
+    - Usage: Creates a special or ordinary file (commonly used for creating devices).
+
+35. **ioctl()**
+    - Usage: Performs I/O control operations on devices.
+
+36. **getrusage()**
+    - Usage: Retrieves resource usage statistics.
+
+37. **getrlimit()** and **setrlimit()**
+    - Usage: Gets and sets resource limits for a process.
+
+38. **nice()** and **setpriority()**
+    - Usage: Adjusts the scheduling priority of a process.
+
+These are additional system calls that are commonly used in Unix-like operating systems. Keep in mind that the availability and behavior of these calls may vary depending on the specific operating system you're working with. Always consult the relevant documentation for your specific platform.
+
+Please note that this is not an exhaustive list, and the availability of system calls can vary between different operating systems. Additionally, system call details may differ based on the specific Unix-like system you are using (e.g., Linux, macOS, FreeBSD). Always refer to the documentation and man pages specific to your system for precise details.

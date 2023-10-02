@@ -1,0 +1,103 @@
+this pattern is used to add new properties to an object
+
+The components of the Decorator Design Pattern are:
+
+1. Component: This defines the interface for objects that can be decorated.
+
+2. Concrete Component: This is the object to be decorated, and it implements the Component interface.
+
+3.base Decorator: This has a reference(compose as field) to a Component and implements the
+ Component interface. It adds behavior to the Concrete Component (2).
+
+4. Concrete Decorator: This adds behavior (through inheritance [extends]) to the Concrete Component by wrapping it.
+    It implement the Decorator interface and can have additional behavior of its own.
+
+
+1 object to be decorated and its interface (decorated interface)
+2 base decorator class also implement decorated interface & compose of classes that implement decorated interface, as field
+3 Concrete Decorator (4) extends base Decorator (3)
+
+1 The component interface defines operations that can be  altered by decorators.
+    interface DataSource {
+        method writeData(data)
+        method readData():data
+    }
+2. Concrete components implements the interface
+
+   class FileDataSource implements DataSource {
+       constructor FileDataSource(filename) { ... }
+        method writeData(data) is
+        method readData():data is
+   }
+use composition relation
+3. The base decorator class implements the same interface
+     class DataSourceDecorator implements DataSource {
+       protected field wrappee: DataSource (take the classes that implements it as field)
+
+        method writeData(data) {
+        wrappee.writeData(data)
+        }
+        method readData():data {
+        return wrappee.readData()
+        }
+
+     }
+
+
+////////////////////////////////////////////////////////////////////////////
+
+
+The Decorator design pattern can be implemented in the following steps:
+
+Identify the base component and its responsibilities, and create an abstract class for it.
+
+Create concrete components that inherit from the base component and implement its responsibilities.
+
+Create an abstract decorator class that also inherits from the base component and implements its responsibilities.
+
+Create concrete decorator classes that inherit from the abstract decorator class and add additional responsibilities to the base component.
+
+In the client code, use the concrete components and decorators to build the desired object structure, adding responsibilities to the base component as needed.
+
+Example code in Python:                                   ||  interface Component{
+//interface                                               ||     opreation()                                                                 }
+class Component:                                          || }
+    def operation(self):                                  ||
+        pass                                              || class ConcreteComponent implements Component{
+///implementor of interface                               ||   operation(){}
+class ConcreteComponent(Component):                       ||}
+    def operation(self):                                  ||
+        return "ConcreteComponent"                        ||class Decorator implement  Component{
+////implement component and implement it as field         ||   private Component component;
+class Decorator(Component):                               ||   constructor(Component ConcreteComponent){
+    def __init__(self, component):                        ||  }
+        self._component = component                       ||  operation(){
+                                                          ||   }
+    def operation(self):                                  ||  any method add to this class is automatically available to
+        return self._component.operation()                ||  any class that implement Component
+                                                          ||}
+class ConcreteDecoratorA(Decorator):                      ||
+    def operation(self):
+        return f"ConcreteDecoratorA({self._component.operation()})"
+
+class ConcreteDecoratorB(Decorator):
+    def operation(self):
+        return f"ConcreteDecoratorB({self._component.operation()})"
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+The Decorator pattern is a structural design pattern that allows you to "add functionality to an object at runtime", without affecting other objects of the same class. It is often used when you have a set of objects that need to be decorated with different behaviors or features.
+
+The Decorator pattern has the following key components:
+
+Component: The interface or abstract class that defines the methods that can be used to interact with the object.
+
+Concrete Component: The object that provides the basic functionality.
+
+Decorator: The abstract class that defines the methods for adding new functionality to the object.
+
+Concrete Decorator: The object that adds new functionality to the object.

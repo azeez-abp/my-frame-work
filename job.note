@@ -1,0 +1,1545 @@
+@include('header-footer.header')
+<?php
+ob_start();
+?>
+
+<style type="text/css">
+  ul.nav li a {
+    color: #fff
+  }
+
+  .footer ul {
+    display: inline-flex;
+  }
+
+
+  @media (max-width: 700px) {
+    .footer {
+      width: 110%
+    }
+  }
+</style>
+<nav class="navbar navbar-light navbar-expand-lg bkg">
+  <div class="container">
+
+    <div class="collapse- navbar-collapse" id="navbarNav-">
+      <ul class="navbar-nav">
+        @guest
+        <li class="nav-item">
+          <a href="/"><img style="width: 8em;" src="{{url('/proli-image/proli.png')}}" alt="" class="__img"></a>
+        </li>
+
+        <li class="nav-item" style="margin: 2em;">
+          <a class="nav-link" href="/warehouse/login">Login</a>
+        </li>
+        @else
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('signout') }}">Logout</a>
+        </li>
+        @endguest
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section style="position: relative;overflow-x: hidden;" style="margin-top: -3em;">
+
+
+  <div class="header sticky">
+    <nav class="navbar  navbar-static-top no-margin-bottom white" role="navigation" style="width: 100%">
+      <div class="container">
+        <div class="row" style="width: 100%">
+
+
+
+          <div class="col-md-8 col-lg-8 col-sm-8 col-xs-8">
+
+            <ul class="nav  navbar-right " style="display: inline-flex;width: 102%;background:#0009">
+              <li><a href="/warehouse/login" target_="_blank">Login</a></li>
+              <li><a href="/warehouse/informations/about" target_="_blank">About Us</a></li>
+              <li><a href="/warehouse/informations/contact" target_="_blank">Contact Us</a></li>
+              <li class=" divider hidden-lg hidden-md visible-xs"></li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </div>
+  @if($type === 'help-center')
+  @include('warehouse.component.informations.faq')
+  @endif
+
+  @if($type === 'about')
+  @include('warehouse.component.informations.about')
+  @endif
+
+  @if($type === 'contact')
+  @include('warehouse.component.informations.contact')
+  @endif
+
+  @if($type === 'terms-and-conditions')
+  @include('warehouse.component.informations.term')
+  @endif
+
+
+  @if($type === 'privacy-policy')
+  @include('warehouse.component.informations.privacy')
+  @endif
+
+
+
+
+
+  <div class="footer proli-page">
+
+    <div class="footem bkg">
+      <ul class="nav nav-bar nva-link">
+
+        <li>
+          <a title="TheProli Facebook" target="_blank" href="https://www.youtube.com/channel/UC8WCTdtBwh7Y344Jbtw7kGA" class="icon-social facebook"><i class="fa fa-facebook"></i></a>
+        </li>
+
+
+
+        <li>
+          <a title="TheProli" target="_blank" href="https://www.youtube.com/channel/UC8WCTdtBwh7Y344Jbtw7kGA" class="icon-social utube"><i class="fa fa-youtube"></i></a>
+
+        </li>
+
+        <!-- <li>
+          <a title="TheProli facebook" href="" target="_blank" class="icon-social instagram"><i class="fa facebook"></i></a>
+        </li> -->
+
+      </ul>
+      <ul class="nav nav-bar nva-link">
+        <li><a href="/warehouse/informations/help-center">Help center</a></li>
+        <li><a href="/warehouse/informations/terms-and-conditions">Terms &amp; Conditions</a></li>
+
+        <li><a href="/warehouse/informations/privacy-policy">Privacy Policy</a></li>
+        <li style="margin: 9px;color:#fff" class="cp">© PROLI </li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+</section>
+
+
+
+
+https://portfolio.abp.com.ng/#portfolio
+
+https://jobot.com/apply/software-developer-php/1571735528?from=/applications/applied&step=easyApply
+https://careers.distributed.com/connect/applications/42039595
+https://www.youtube.com/channel/UCQvhHStTDwZQx2GNYgmTBNA/videos
+https://www.peopleperhour.com/dashboard/seller
+https://landing.jobs/dashboard/code_challenges
+https://www.anywr.io/en/job-offer/7a76a51d-3fa7-4a90-972d-9c1ab889fa83
+https://www.anywr.io/en/
+Yejide Avenue, 200263, Ibadan, Nigeria
+Ibadan, Nigeria
+daily rate  = 100,000/265  = 377
+Full-stack developer senior
+
+53 weeks 5 day per week
+53*5 =265
+
+ $50,000/2,080 (40 x 52) = $24.04.
+ 40 hour per week 8hours per day * 5 days 
+ for 52 week
+
+@include('header-footer.footer')
+
+https://explore.skillbuilder.aws/learn/lp/82/Cloud%2520Essentials%2520Learning%2520Plan
+https://www.ziprecruiter.com/
+https://youtu.be/IPvYjXCsTg8
+https://landing.jobs/dashboard DAN
+https://landing.jobs/profile
+https://career.proxify.io/apply?job_opening_id=6R9J0JO3M9EK570YS2OY&candidate_id=811075&candidate_email=adioadeyoriazeez%40gmail.com&score=58
+
+
+https://www.michaelpage.com/job-apply/remote-frontend-developer-react-node-130k/ref/JN-062022-5663629?success=true&type=linkedin&job_alert=1&rx_c=it-campaign&rx_campaign=ziprecruiter62&rx_ch=jobp4p&rx_group=112354&rx_job=5663629&rx_medium=cpc&rx_r=none&rx_source=ziprecruiter&rx_ts=20221123T060058Z&rx_vp=cpc&utm_campaign=Recruitics&utm_medium=cpc&utm_source=Ziprecruiter&rx_p=ccef8bb8-6c4e-4bcd-a697-a0b750d4cab3&rx_viewer=de8c9b1b6b9111ed93d7cbde4bdb9cde148bd04fc4b84fde84b00d833039df3c&source=Ziprecruiter&apply_questions=true
+
+http://localhost:8080/login?from=%2FupdateCenter%2F
+https://www.cpagrip.com/terms.php
+
+
+
+
+
+CPA TEMPATE
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #000000;
+}
+table{
+display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.link_a {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.dl_button {
+  color: #ffffff;
+  background-color: rgba(0,168,89,0.7);
+  border-color: #357ebd;
+}
+
+.dl_button:hover {
+  color: #ffffff;
+  background-color: #000;
+  border-color: #285e8e;
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+  background-color: rgba(0,168,89,0.7);
+}
+.head-container {
+    margin-left: 2rem;
+    margin-right:  2rem;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    padding: 30px;
+    font-size: 21px;
+    font-weight: 200;
+    line-height: 2.1428571435;
+    color: inherit;
+    background-color: rgba(0,168,89,0.7);
+    border-radius: 6px;
+}
+.lead {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#btn_text {
+  padding-left: 5px;
+}
+.dl_button i{
+ position: relative;
+ top: 2px;
+}
+.row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+@media only screen and (max-width: 800px) {
+  .head-container {
+    margin-right: 0.5rem;
+      margin-left: 0.5rem;
+  }
+  .container {
+    margin-right: 0.5rem;
+      margin-left: 0.5rem;
+  }
+}
+
+
+
+
+<meta content='width=device-width, initial-scale=1 maximum-scale=1' name='viewport' />
+<div class="display">
+<div style='background:rgba(0,168,89,0.7);position:relative;top:-20px;padding:10px;'>
+    <h1 style='font-size:1.5em;color:#fff'><i class='glyphicon glyphicon-folder-open'></i> Start Downloads</h1>
+</div>
+
+<div style='max-width:600px;padding:10px;margin:0px auto;background:#eee;border:10px solid #fff;box-shadow:0px 0px 3px #777'>
+
+    <div class="row">
+        <div class="column1">
+            <img style='width:100%;max-width:80px;' src='https://i.imgur.com/T9SDnqE.png' align="right">
+        </div>
+        <div class="column2">
+            <ul>
+                <li><b>Filename :</b> Lamlad physic.pdf (A source of secrete to pass physics exams) </li>
+                <li><b>Size :</b> 3MB</li>
+                <li><b>Date Uploaded :</b> 4 mos ago</li>
+                <li><b>File Type :</b> PDF(ebook)</li>
+                <li><b>File Status :</b>
+                    <font color='green'>Available</font>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    {%offers%}
+    <br>After successful participation of an offer your download will begin automatically.<br><br>
+
+    <div style='background:#fff;padding:10px;'>
+        <h2 style='font-size:1.3em'>About PDF Files</h2>
+
+        Developed by Adobe Systems, a file with the .PDF file extension is a Portable Document Format file.<br><br> PDF files can contain not only images and text, but also interactive buttons, hyperlinks, embedded fonts, video, and more.<br><br> You'll
+        often see product manuals, eBooks, flyers, job applications, scanned documents, brochures, and all sorts of other documents available in the PDF format.<br><br> Because PDFs don't rely on the software that created them, nor on any particular operating
+        system or hardware, they look the same no matter what device they're opened on.
+    </div>
+</div>
+
+<div>
+    <div id="rock">
+        <b>1,479 Comments</b>
+        <div id="fblike" style="float:right"></div>
+        <hr/>
+        <input id="comment" placeholder="Add a Comment..."></input>
+        <button id="post">Post</button>
+        <input id="check" type="checkbox">
+        <font style="color:#aaa">Also Post on Facebook</font>
+        </input>
+        <div style="clear:both"></div>
+        <br/>
+        <table>
+            <tr>
+                <td valign="top" style="padding:3px;">
+                    <img id="profile" src="https://i.gyazo.com/08f1d710bff5c0bd1ff38c3e61659245.png">
+                </td>
+                <td valign="top" style="padding:3px;">
+                    <p id="name">Karen Daniels</p>
+                    <p id="message">Thank you so much for posting this, I've been looking for this book everywhere! Saved me a lot of money!</p>
+                    <p id="soci">
+                        <font id="link-a">Like</font> ·
+                        <font id="link-a">Reply</font>
+                        <font style="color:#aaa">1 minute ago</font>
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <table>
+            <tr>
+                <td valign="top" style="padding:3px;">
+                    <img id="profile" src="https://i.imgur.com/oX6r0w7.png">
+                </td>
+                <td valign="top" style="padding:3px;">
+                    <p id="name">Verna Elliott</p>
+                    <p id="message">I FINALLY FOUND THIS BOOK THANKS</p>
+                    <p id="soci">
+                        <font id="link-a">Like</font> ·
+                        <font id="link-a">Reply</font>
+                        <font style="color:#aaa">3 minutes ago</font>
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <table>
+            <tr>
+                <td valign="top" style="padding:3px;">
+                    <img id="profile" src="https://i.imgur.com/OmiFgJB.png">
+                </td>
+                <td valign="top" style="padding:3px;">
+                    <p id="name">Jackie Veronica</p>
+                    <p id="message">Thank you. I got it.</p>
+                    <p id="soci">
+                        <font id="link-a">Like</font> ·
+                        <font id="link-a">Reply</font>
+                        <font style="color:#aaa">4 minutes ago</font>
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <table>
+            <tr>
+                <td valign="top" style="padding:3px;">
+                    <img id="profile" src="https://i.imgur.com/SpPuGgE.png">
+                </td>
+                <td valign="top" style="padding:3px;">
+                    <p id="name">Sharon Vawser</p>
+                    <p id="message">so glad I was finally able to find this, been looking all over, thanks again.</p>
+                    <p id="soci">
+                        <font id="link-a">Like</font> ·
+                        <font id="link-a">Reply</font>
+                        <font style="color:#aaa">7 minutes ago</font>
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <table>
+            <tr>
+                <td valign="top" style="padding:3px;">
+                    <img id="profile" src="https://i.imgur.com/rUwe3cg.png">
+                </td>
+                <td valign="top" style="padding:3px;">
+                    <p id="name">Kristina Mendoza</p>
+                    <p id="message">working.. survey was easy, no complaints from me just make sure you put in real data for the survey or they wont complete.</p>
+                    <p id="soci">
+                        <font id="link-a">Like</font> ·
+                        <font id="link-a">Reply</font>
+                        <font style="color:#aaa">8 minutes ago</font>
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <div id="hidden">
+            <table>
+                <tr>
+                    <td valign="top" style="padding:3px;">
+                        <img id="profile" src="https://i.imgur.com/tdYV9nS.png">
+                    </td>
+                    <td valign="top" style="padding:3px;">
+                        <p id="name">Romeo Gomez</p>
+                        <p id="message">Thank you i got mine.</p>
+                        <p id="soci">
+                            <font id="link-a">Like</font> ·
+                            <font id="link-a">Reply</font>
+                            <font style="color:#aaa">12 minutes ago</font>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <table>
+                <tr>
+                    <td valign="top" style="padding:3px;">
+                        <img id="profile" src="https://i.imgur.com/YIf1goS.jpg">
+                    </td>
+                    <td valign="top" style="padding:3px;">
+                        <p id="name">Jessica Stewart</p>
+                        <p id="message">I love it.</p>
+                        <p id="soci">
+                            <font id="link-a">Like</font> ·
+                            <font id="link-a">Reply</font>
+                            <font style="color:#aaa">13 minutes ago</font>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <table>
+                <tr>
+                    <td valign="top" style="padding:3px;">
+                        <img id="profile" src="https://i.imgur.com/A6VzjXZ.jpg">
+                    </td>
+                    <td valign="top" style="padding:3px;">
+                        <p id="name">Angelica Foy</p>
+                        <p id="message">Thank you.</p>
+                        <p id="soci">
+                            <font id="link-a">Like</font> ·
+                            <font id="link-a">Reply</font>
+                            <font style="color:#aaa">16 minutes ago</font>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <table>
+                <tr>
+                    <td valign="top" style="padding:3px;">
+                        <img id="profile" src="https://i.imgur.com/E41fkXN.png">
+                    </td>
+                    <td valign="top" style="padding:3px;">
+                        <p id="name">Richard Noblitt</p>
+                        <p id="message">Thank you so much.</p>
+                        <p id="soci">
+                            <font id="link-a">Like</font> ·
+                            <font id="link-a">Reply</font>
+                            <font style="color:#aaa">16 minutes ago</font>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <table>
+                <tr>
+                    <td valign="top" style="padding:3px;">
+                        <img id="profile" src="https://i.imgur.com/ERvVrXH.png">
+                    </td>
+                    <td valign="top" style="padding:3px;">
+                        <p id="name">Chelsie White</p>
+                        <p id="message">This is real. Thank you for this..</p>
+                        <p id="soci">
+                            <font id="link-a">Like</font> ·
+                            <font id="link-a">Reply</font>
+                            <font style="color:#aaa">20 minutes ago</font>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+        </div>
+        <center>
+            <img id="load" style="display:none;margin-bottom:20px;width:25px" src="https://i.imgur.com/qqyqtvq.gif">
+            <button id="load-more" onclick="$(this).hide();$('#load').show();setTimeout(function(){$('#hidden').show(0);$('#load-more').show();$('#load').hide();},2000);"><b>Load more comments..</b>
+                </button>
+        </center>
+    </div>
+</div>
+
+Software Engineer with a drive for building highly scalable and performance web applications. Heavily interested in module federation, micro frontends, state machines, TDD, and system designs. Big on web performance and optimization, advanced component design patterns, a11y, SSR, SSG Incremental Static Regeneration (ISR), and state management. Expert at crafting highly reusable Typescript-heavy component libraries. An advocate of TypeScript and industry best practices. I regularly author meaningful technical content 
+
+
+advanced component design patterns (CONTROL AND INTERATION)
+  . Compound Components Pattern =>component
+  . Control Props Pattern       => properttires in the component
+  . Custom Hook Pattern         =>function in the component
+  . Props Getters Pattern       =>properttires in the componentA getter is a function that returns many props
+  . State reducer pattern       =>data in the componenent
+
+AZ-400 Domain Area  Weight
+Configure Processes and Communications. 13%
+Design and Implement Source Control.    19%
+Design and Implement Build and Release Pipelines.   42%
+Develop a Security and Compliance Plan. 14%
+Implement an Instrumentation Strategy.  13%
+
+Cloud computing concepts include understanding PaaS, SaaS, and IaaS implementations.
+
+Part 1: Describe core Azure concepts
+
+Part 2: Describe core Azure services
+
+
+Part 3: Describe core solutions and management tools on Azure
+
+
+Part 4: Describe general security and network security features
+
+
+Part 5: Describe identity, governance, privacy, and compliance features
+
+Part 6: Describe Microsoft Cost Management and service level agreements
+
+
+Infrastructure virtualization ===> service provisioning through networing ===> security (authe and autho and pricing)
+
+
+Project management tools
+These tools usually include:
+
+Project planning and execution monitoring abilities (including how to respond to impediments).
+Automation for stand-up meetings.
+Management and tracking of releases.
+A way to record and work with the outcomes of retrospectives.
+Many include Kanban boards and detailed sprint planning options.
+
+
+As a complete CI/CD system, we have Azure DevOps and GitHub that includes:
+
+Flexibility in Kanban boards.
+Traceability through Backlogs.
+Customizability in dashboards.
+Built-in scrum boards.
+Integrability directly with code repositories.
+Code changes can be linked directly to tasks or bugs.
+
+Apart from Azure DevOps and GitHub, other standard tools include:
+
+Jira.
+Trello.
+Active Collab.
+Agilo for Scrum.
+SpiraTeam.
+Icescrum.
+SprintGround.
+Gravity.
+Taiga.
+VersionOne.
+Agilean.
+Wrike.
+Axosoft.
+Assembla.
+PlanBox.
+Asana.
+Binfire.
+Proggio.
+VivifyScrum, and many others.
+
+Screen recording tools
+It might seem odd to add screen recording tools to this list. Still, they are beneficial when:
+
+Work with remote team members.
+Recording bugs in action.
+Building walkthroughs and tutorials that demonstrate actual or potential features.
+
+Azure DevOps includes a range of services covering the complete development life cycle.
+
+Azure Boards: agile planning, work item tracking, visualization, and reporting tool.
+Azure Pipelines: a language, platform, and cloud-agnostic CI/CD platform-supporting containers or Kubernetes.
+Azure Repos: provides cloud-hosted private git repos.
+Azure Artifacts: provides integrated package management with support for Maven, npm, Python, and NuGet package feeds from public or private sources.
+Azure Test Plans: provides an integrated planned and exploratory testing solution.
+Also, you can use Azure DevOps to orchestrate third-party tools.
+
+GitHub provides a range of services for software development and deployment.
+
+Codespaces: Provides a cloud-hosted development environment (based on Visual Studio Code) that can be operated from within a browser or external tools. Eases cross-platform development.
+Repos: Public and private repositories based upon industry-standard Git commands.
+Actions: Allows for the creation of automation workflows. These workflows can include environment variables and customized scripts.
+Packages: The majority of the world's open-source projects are already contained in GitHub repositories. GitHub makes it easy to integrate with this code and with other third-party offerings.
+Security: Provides detailed code scanning and review features, including automated code review assignment.
+
+authorization and access strategy
+ Azure DevOps Services uses enterprise-grade authentication. To protect and secure your data, you can use:
+
+Microsoft account.
+GitHub account.
+Azure Active Directory (Azure AD).
+  Personal access tokens
+  Security groups (enable third-party applications to access via OAuth,anonymous access to some projects)
+  Multifactor authentication(is Conditional Access policies)
+organization ==> collection ==> project ==> object levels.
+
+Explore best practices for source control
+
+Make small changes. In other words, commit early and commit often. Be careful not to commit any unfinished work that could break the build.
+Do not commit personal files. It could include application settings or SSH keys. Often personal files are committed accidentally but cause problems later when other team members work on the same code.
+Update often and right before pushing to avoid merge conflicts.
+Verify your code change before pushing it to a repository; ensure it compiles and tests are passing.
+Pay close attention to commit messages, as it will tell you why a change was made. Consider committing messages as a mini form of documentation for the change.
+Link code changes to work items. It will concretely link what was created to why it was created—or modified by providing traceability across requirements and code changes.
+No matter your background or preferences, be a team player and follow agreed conventions and workflows. Consistency is essential and helps ensure quality, making it easier for team members to pick up where you left off, review your code, debug, and so on.
+
+
+Azure Cloud Shell features
+Is temporary and requires a new or existing Azure Files share to be mounted.
+Offers an integrated graphical text editor based on the open-source Monaco Editor.
+Authenticates automatically for instant access to your resources.
+Runs on a temporary host provided on a per-session, per-user basis.
+Times out after 20 minutes without interactive activity.
+Requires a resource group, storage account, and Azure File share.
+Uses the same Azure file share for both Bash and PowerShell.
+Is assigned to one machine per user account.
+Persists $HOME using a 5-GB image held in your file share.
+Permissions are set as a regular Linux user in Bash.
+
+Azure PowerShell is a module that you add to Windows PowerShell or PowerShell Core to enable you to connect to your Azure subscription and manage resources
+
+https://nigeria.coding4employment.org/#/course/130/item/1343
+
+https://techcommunity.microsoft.com/t5/educator-developer-blog/free-microsoft-associate-and-expert-certification-vouchers-in/ba-p/3695976?WT.mc_id=academic-82778-ooyinbooke
+
+
+sshCommand = ssh -i  ~/Desktop/nodemc/.ssh
+ cd C:/xampp/htdocs/code/ ; mkdir default ;pwd
+
+ rpm -i package-name install
+ rpm -e package-name unistall
+ rpm -q package-name  query
+ yum install paksge-ame'
+ apt install package-name
+ 
+ yum repolist
+ systemctl start |stop | enable (start app auto) | disble | status service-name
+ systemctl daemon-reload
+
+
+1. DevOps Pre-requisite
+etc/stystemd/system ==>file where to configure system start
+
+command line editor
+https://opswatacademy.com/page/course-list
+
+https://lnkd.in/dD9Z_5qA
+
+2. Networking
+
+https://lnkd.in/dwfmwmA9
+
+3. Linux
+
+https://lnkd.in/d7gzxH5z
+
+https://lnkd.in/dr4pjCV3
+
+https://lnkd.in/dzTQE4b7
+
+4. Shell scripting
+
+https://lnkd.in/dKrD_up7
+
+https://lnkd.in/dJVqMt3Y
+
+https://lnkd.in/d7VVbbNJ
+
+5. Git & GitHub
+
+https://lnkd.in/dEp3KrTJ
+
+https://lnkd.in/d6aM7Ek7
+
+https://lnkd.in/duksFRgG
+
+https://lnkd.in/ddpKXxqt
+
+6. Databases
+
+https://lnkd.in/duMVr4bn
+
+https://lnkd.in/dnUQ_uGe
+
+7. Artifact Repository Manager
+
+https://lnkd.in/dgNHs7WD
+
+8. Docker
+
+https://lnkd.in/dPddbJTf
+
+https://lnkd.in/dnjHdxPR
+
+9. Jenkins
+
+https://lnkd.in/dMHv9T8U
+
+https://lnkd.in/dcynPYYH
+
+10. AWS
+
+https://lnkd.in/dz7d5qEc
+
+https://lnkd.in/dmi-TMv9
+
+https://lnkd.in/dx-iqVNe
+
+11. SSH
+
+Mobaxterm :
+
+https://lnkd.in/ds7nUhbx
+
+
+Putty :
+
+https://lnkd.in/gGgW7Ns9
+
+
+12. Yaml
+
+https://lnkd.in/dNqrXjmV
+
+
+13. Kubernetes
+
+https://lnkd.in/duGZwHYX
+
+https://lnkd.in/de84ESNv
+
+14. Helm
+
+https://lnkd.in/ds_8WB7G
+
+15. Terraform
+
+https://lnkd.in/dvpzNT5M
+
+https://lnkd.in/dRs3YFu3
+
+https://lnkd.in/d8nkTj3n
+
+16. Python
+
+https://lnkd.in/d-EhshQz
+
+https://lnkd.in/dYjay9ia
+
+https://lnkd.in/dFtNz_9D
+
+https://lnkd.in/dcYq8nE2
+
+17. Ansible
+
+https://lnkd.in/dGKkrXrA
+
+https://lnkd.in/dNugwtVW
+
+https://lnkd.in/dhknHJXp
+
+18. Prometheus
+
+https://lnkd.in/dpXhmVqs
+
+https://lnkd.in/dStQbpRX
+
+19. Grafana
+
+https://lnkd.in/ddAV7_-p
+
+https://lnkd.in/dRwfE7A4
+
+https://overapi.com/
+
+https://talent.anywr-group.com/welcome
+https://talent.anywr-group.com/en/jobs/
+
+
+Becoming a business analyst typically requires a combination of education and experience. Here are some steps you can follow to become a business analyst:
+
+Get an education: A bachelor's degree in business, computer science, engineering, or a related field is typically required. Some employers may also require a master's degree.
+
+Gain experience: Many business analysts start as entry-level employees in related fields such as management, marketing, finance, or technology. You can gain relevant experience by working in these fields and building a strong understanding of business processes and industry trends.
+
+Develop technical skills: Business analysts often use data analysis and modeling software, so it's important to have a strong understanding of these tools and technologies. Consider taking courses or workshops to develop your skills in this area.
+
+Obtain certifications: Consider obtaining certifications such as Certified Business Analysis Professional (CBAP) or Certified Analytics Professional (CAP) to demonstrate your expertise and knowledge.
+
+Build your network: Networking is an important part of becoming a business analyst. Attend industry events and conferences, join professional organizations, and connect with other business analysts to learn about opportunities and build your network.
+
+Continuously improve: Business analysis is an evolving field, and it's important to stay up-to-date with the latest trends and technologies. Consider taking courses, attending workshops, and participating in professional development activities to continue improving your skills and knowledge.
+
+By following these steps and continuously developing your skills and knowledge, you can become a successful business analyst.
+
+
+
+
+
+
+
+Becoming a senior developer engineer typically requires a combination of education, experience, and skill development. Here are some steps you can follow to become a senior developer engineer:
+
+Get an education: A bachelor's degree in computer science, software engineering, or a related field is typically required. Some employers may also require a master's degree.
+
+Gain experience: Start your career as a junior developer and work your way up. Take on new challenges, seek out opportunities to work on complex projects, and consistently deliver high-quality work. Aim to gain experience in different programming languages and technologies.
+
+Develop your technical skills: Keep up-to-date with the latest technologies and programming languages. Read industry blogs and publications, attend conferences, and participate in online communities to continue learning and improving your skills.
+
+Focus on code quality: Write clean, maintainable code that follows best practices and industry standards. Document your code, and take the time to understand the code of others.
+
+Collaborate with others: Work with your team and other departments to understand the needs of the business and how technology can support those needs. Be proactive in offering solutions and suggestions, and actively seek out opportunities to collaborate on projects.
+
+Mentor others: Share your knowledge and experience with others, and be open to feedback. Act as a mentor to junior developers, helping them to develop their skills and advance in their careers.
+
+Pursue professional development: Consider obtaining certifications, such as Microsoft Certified: Azure Developer Associate or AWS Certified Developer - Associate, to demonstrate your expertise and knowledge.
+
+By following these steps and continuously developing your skills and knowledge, you can become a successful senior developer engineer.
+
+https://www.scaler.com/topics/course/dsa-interviews-java/Video/570/
+
+
+MY RECORDING EQUIPMENT 🎙
+Shure SM58 Microphone - https://amzn.to/3r5Hrf9
+Behringer UM2 Audio Interface - https://amzn.to/2MuEllM    
+XLR Cable - https://amzn.to/3uGyZFx
+Acoustic Sound Absorbing Foam Panels - https://amzn.to/3ktIrY6
+Desk Microphone Mount - https://amzn.to/3qXMVIO 
+Logitech C920s Webcam - https://amzn.to/303zGu9 
+Fujilm XS10 Camera - https://amzn.to/3uGa30E
+Fujifilm XF 35mm F2 Lens - https://amzn.to/3rentPe 
+Neewer 2 Piece Studio Lights - https://amzn.to/3uyoa8p
+
+
+🌐 Introduction to Kubernetes
+
+https://lnkd.in/gz4-zvdC
+
+🌐 Kubernetes tutorials:
+Hands-on labs with certification
+
+https://lnkd.in/g_2SVjvs
+
+🌐 Networking with Kubernetes | Basics of Kubernetes Networking
+
+https://lnkd.in/gb7UpM6N
+
+🌐 Kubernetes Full Course | Kubernetes Architecture
+
+https://lnkd.in/g8NATDPQ
+
+🌐 what is Kubernetest (playlist)
+
+https://lnkd.in/gACGJzAq
+
+🌐 Docker Containers and Kubernetes Fundamentals - Full Hands-On Course
+
+https://lnkd.in/gwtEN6hS
+
+🌐 Kubernetes for Beginner
+
+https://lnkd.in/gdYZ4bgQ
+
+🌐 Kubernetes Tutorial for Beginners
+
+https://lnkd.in/duGZwHYX
+
+🌐 Kubernetes Tutorial For Beginners - Learn Kubernetes
+
+https://lnkd.in/gmjRkGSJ
+
+🌐 Kubernetes Full Course
+
+https://lnkd.in/gqr2nzYT
+
+🌐 Kubernetes Course - Full Beginners Tutorial
+
+https://lnkd.in/de84ESNv
+
+🌐 Kubernetes Tutorial For Beginners
+
+https://lnkd.in/gSRYYGPG
+
+
+
+2. Labs
+
+1. Kubernetes Hands-on Lab #1 – Setting up 5-Node K8s Cluster
+
+2. Kubernetes Hands-on Lab #2 – Running Our First Nginx Cluster
+
+3. Kubernetes Hands-on Lab #3 – Deploy Istio Mesh on K8s Cluster
+
+🌐 Link 🔗 https://lnkd.in/gpB4DNs6
+
+🌐 Kubernetes 101 workshop - complete hands-on
+
+https://lnkd.in/gUCeEjFF
+
+🌐 Build a Kubernetes Home Lab from Scratch step-by-step!
+
+https://lnkd.in/gM-kRUEh
+
+🌐 Kubernetes Hands on
+
+https://lnkd.in/guhw9iKa
+
+🌐 Hands-on with Kubernetes on Cloud
+
+https://lnkd.in/gTcKi2Fq
+
+🌐 Kubernetes Project for beginners
+
+https://lnkd.in/gSc2KDAb
+
+
+
+3. Book
+
+🌐 https://lnkd.in/gM7ts9XC
+
+https://data-flair.training/blogs/collection-framework-in-java/
+
+JSP & Servlets: Java Server Pages (JSP) is a server-side technology that allows development of Web-based applications.
+JSP stands for Java Server Page. It is used to create a web application just like Servlet technology
+
+
+/*
+The project is a  learning management system (LMS).
+
+Student pays school fee every month and generate receipt for the payment.
+
+For admin to track the payment history of the student, we create a page where the admin can view the
+    history
+
+
+At the backend, we have this query
+
+SELECT students.firstName AS `First name` ,students.lastName AS `Last name`, receipts.schoolFee AS `Amount paid`,receipts.paymentDate AS `Payment date`
+FROM receipts
+LEFT JOIN students ON receipts.studentId = students.id
+ORDER BY receipts.paymentDate DESC;
+
+The result of the query return a table with student data on the left and the receipt data on the right and the last payment appear first on the table
+
+
+In the LMS system  the observations can get bigger in the table so we index the studentId column in the table 
+
+CREATE INDEX student_id_index ON receipts (studentId);
+
+When the table is query like this
+
+SELECT * FROM receipts WHERE studentId = 1230;
+
+
+
+Without the index, MySQL would need to scan the entire "receipts" table to find the rows that match the "studentId", which could be slow if the table is large.
+
+MySQL use the index to quickly locate the rows that match the "studentId", without having to scan the entire table.
+
+Yes 
+In the agro e-commerce project I build, I have table named "orders" with columns "order_id", "customer_id", "product_id", "order_date", and "quantity". We frequently run queries to search for orders by customer and product, and we want to improve the performance of these queries by creating a compound index on the "customer_id" and "product_id" columns.
+
+To create the compound index, we  use the following SQL statement:
+
+CREATE INDEX customer_product_indexes ON orders (customer_id, product_id);
+
+This creates an index named "customer_product_indexes" on the "customer_id" and "product_id" columns of the "orders" table. This compound index will improve the performance of queries that filter or sort by both the "customer_id" and "product_id" columns.
+
+The result improve the search, filter and  order questy on the "orders" table by lower the latency of the query
+
+
+Cron jobs are a useful tool for automating tasks on a web server, such as sending emails, generating reports, or cleaning up temporary files. 
+
+In e-commerce project , I create a cron job to excecte every day. The purpose of the cron job is to check for the expired product and set their visibilty to 0 
+
+The PHP script contains code that select all item that has expire and update their visibilty to 0
+
+i open the cron tab of the webserver with the following command 
+
+crontab -e 
+
+and i add
+
+0 0 * * * /usr/bin/php /home/app/job/check_expire-product.php
+
+
+This line tells the cron daemon to execute the script.php file using the PHP binary located at /usr/bin/php every day (0 0 * * *).
+
+i save the changes to the cron tab and exit the editor
+
+
+
+I use GET http verb when ever user request for data or view
+and I use POST request when user what t perfoem action on data, like when the server request a data from the
+
+In most of the project I handle, I use OOP 
+
+1. Makes code maintainability easier. 
+2. Provides an easier to understand structure for the program.
+3. Ensures the application of the "Don't Repeat Yourself" (DRY) principle, which focuses on filtering out the codes used repeatedly
+4. It enables code modularization
+
+
+I deburg code in the follwing ways
+
+1. Using var_dump()
+
+var_dump() is a built-in PHP function that displays the contents of a variable along with its data type. I use it to inspect the value of a variable at a certain point in your code to see if it's what I expect it to be
+
+2. Using error_reporting()
+
+error_reporting() is a function that sets the level of error reporting for PHP. By setting it to a high level, I display all errors and warnings in your code, which can help me identify issues
+
+
+3. Using a debugger
+
+I also use a debugger(Xdebug) to step through my code and inspect variables in real-time
+
+
+
+I used mysql view to present order detail data to dashboard for admin to view some analyis on the the products sold
+
+
+
+CREATE VIEW sales_analytic  as SELECT  shop_sales.cate_id AS `Category Name`, SUM(shop_sales.price) AS `Amount`, item_category.category_name AS Name
+FROM shop_sales,item_category
+WHERE shop_sales.cate_id = item_category.category_id
+GROUP BY shop_sales.cate_id
+ORDER BY SUM(shop_sales.price)
+
+This query create view with with three column Category Name,Amount and Name
+I return an array with Category Name, Amount and  Name
+at the frontend will plot a graph of Amoun against Name
+
+SELECT agents.agent_code,agents.agent_name,
+SUM(orders.advance_amount)
+FROM agents,orders
+WHERE agents.agent_code=orders.agent_code
+GROUP BY agents.agent_code,agents.agent_name
+ORDER BY agents.agent_code;
+
+
+
+node_network_receive_bytes_total{instance="node02:9100", device!="lo"}
+node02:9100 subquery
+node_cpu_seconds_total{job="web", cpu="0", mode=~"user|system"}
+
+https://github.com/google/re2/wiki/Syntax
+
+https://learn.microsoft.com/en-us/training/browse/
+*/
+
+text interpolation
+capturing parent to children
+bubling childeren to parent
+directives => use in element attr , visible only in vDOM
+{{}} user in html_tage <>{{}}</>  <span v-text="msg">{{msg}}</span> show in html and in attribute
+
+ v-html = dispaly html tags
+ Mustaches cannot be used inside HTML attributes. Instead, use a v-bind directive:
+
+
+
+v-text
+v-html
+v-show
+v-if
+v-else
+v-else-if
+v-for
+v-on @
+v-bind : 
+v-model 
+v-slot
+v-pre
+v-once
+v-memo
+v-cloak
+
+
+
+# DevOps interview Questions and Answers.
+
+
+## 1. Can you explain the difference between continuous integration and continuous delivery?
+
+• Continuous integration (CI) is the practice of regularly integrating code changes into a shared repository, while continuous delivery (CD) refers to the ability to release new features to production at any time by automating the build, test, and deployment process.
+
+
+## 2. How do you handle deployments in a distributed environment?
+
+• In a distributed environment, deployments can be handled by using tools such as Ansible, Puppet, or Chef to automate the process of configuring and updating servers. Additionally, using containerization technologies such as Docker can help to ensure consistency and ease of deployment across multiple servers.
+
+
+## 3. Can you explain the role of a DevOps engineer?
+
+• A DevOps engineer is responsible for managing the processes and tools that enable the development and operations teams to work together seamlessly. This includes implementing and maintaining CI/CD pipelines, monitoring and logging systems, and infrastructure as code.
+
+
+## 4. How do you ensure security in the deployment process?
+
+• Ensuring security in the deployment process can be achieved by implementing security best practices such as implementing least privilege, using encryption, and regularly updating systems and libraries. Additionally, incorporating security testing into the CI/CD pipeline can help to catch vulnerabilities before they reach production.
+
+
+## 5. How do you handle rollbacks in production?
+
+• Rollbacks in production can be handled by having a solid backup and disaster recovery plan in place. This can include having multiple versions of the application stored, as well as the ability to quickly switch between different versions in case of a rollback. Additionally, implementing feature flags can allow for the quick and easy disabling of a feature in the event of a problem.
+
+
+
+## 6. Can you explain the concept of "Infrastructure as Code"?
+
+• Infrastructure as Code (IaC) is the practice of treating infrastructure (such as servers, networks, and load balancers) as if they were code, which can be versioned, tracked, and managed in the same way as application code. This allows for automated provisioning, scaling, and management of infrastructure, and makes it easier to maintain consistency across environments.
+
+
+## 7. How do you measure the performance of a system in production?
+
+•  Measuring the performance of a system in production can be done by using monitoring and logging tools to gather metrics such as CPU and memory usage, network traffic, and error rates. These metrics can then be analyzed to identify performance bottlenecks and optimize the system's performance.
+
+
+## 8. Can you explain the difference between a load balancer and a reverse proxy?
+
+• A load balancer is a tool that distributes incoming traffic across multiple servers to ensure that no single server is overwhelmed. A reverse proxy, on the other hand, is a tool that sits in front of a group of servers and directs traffic to the appropriate server based on the request. While load balancers and reverse proxies may seem similar, they serve different purposes and are often used in conjunction with one another.
+
+
+## 9. How do you handle scaling in a production environment?
+
+• Scaling in a production environment can be handled by using tools such as auto-scaling groups in cloud environments, which automatically scale the number of instances based on load. Additionally, using containerization technologies such as Docker allows for easy scaling of individual components of the system.
+
+
+## 10. Can you explain the concept of "blue-green deployment"?
+
+• Blue-green deployment is a technique for rolling out updates to a production environment by maintaining two separate production environments, one "blue" and one "green". The "green" environment is updated with the new version of the application while the "blue" environment continues to handle production traffic
+
+
+## 11.  What is your experience with version control systems such as Git?
+
+My experience with version control systems such as Git is extensive. I have used Git for several years in various projects and am well-versed in its features and commands. I am also familiar with other version control systems like SVN and Mercurial.
+
+
+## 12. How do you handle deployments in a continuous integration and continuous delivery (CI/CD) pipeline?
+
+I handle deployments in a continuous integration and continuous delivery (CI/CD) pipeline by firstly by creating a staging environment where the code is tested and then deploying it to the production environment if it passes all the test. I use tools like Jenkins, Travis CI, and CircleCI to automate the process.
+
+
+## 13.  How do you ensure security in your production environments?
+
+Ensuring security in production environments is a top priority. I follow best practices such as implementing network segmentation, using encrypted communication, and regularly patching systems. I also use tools such as security scanners, firewalls, and intrusion detection systems to identify and mitigate potential threats.
+
+
+## 14.  How do you monitor and troubleshoot production issues?
+
+I monitor and troubleshoot production issues by using monitoring and log management tools like Prometheus, Grafana, and ELK Stack. Additionally, I use APM tools like New Relic and AppDynamics to understand the performance of the application and troubleshoot issues.
+
+
+## 15.  Have you ever implemented a load balancer in a production environment? If so, which one and why?
+
+I have implemented load balancers in production environments using tools such as HAProxy and NGINX. I chose these tools because they are open-source, highly configurable, and widely used in the industry.
+
+
+## 16.  How do you handle rollbacks in a production environment?
+
+I handle rollbacks in a production environment by maintaining a separate environment for rollbacks and having a clear rollback plan in place. Additionally, I use tools such as Ansible and Terraform to automate the process.
+
+
+
+///////////////////////////////////////////////////
+Tell me about yourself.
+
+    In my current role as the marketing analyst responsible for a shampoo product line, my core responsibility is to assist the marketing manager to prepare the analytics for monthly sales, as well as a
+
+What is your greatest strength?
+
+    My greatest strength is strategic thinking. I am often able to quickly spot patterns and issues and create alternatives before my teammates even realize there is an issue. The way this shows up in my
+
+meet.google.com/eyu-uuoj-kto
+
+https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#LaunchInstances:
+
+Ordinary files that contain data, text, images, program instructions.
+Special files that give access to hardware devices.
+Directories that contain both the ordinary and special files.
+
+mysql < scrpt.sql 
+mysl run script.mysql
+
+https://www.smartr.me/application-ats/0c0075db-cbbd-4375-a9bd-e44628ba9029
+
+/*
+Source code (processor replace ) == >
+https://data-flair.training/courses/free-c-programming-course-hindi/lessons/working-on-c-programing/topic/identifiers-in-c-language-variables-in-c-programming/
+
+*/
+
+useradd -u 1000 -M -s /bin/bash -g www www
+This will create a new user account named "www" with UID 1000, no home directory -m for home directory, -s a default shell of /bin/bash, and a primary group of www.
+
+
+
+
+To describe an application, you should consider its purpose, features, architecture, and user interface. Here are some steps you can follow to describe an application:
+
+Define the purpose: Start by defining the purpose of the application. What problem does it solve? Who is the target audience? What are the goals of the application?
+
+List the features: Identify the key features of the application. What does it do? How does it work? What are the main functions of the application?
+
+Describe the architecture: Explain how the application is built. What technologies and frameworks are used? What is the database schema? What are the API endpoints?
+
+Draw the user interface: Create a user interface design for the application. What does the user see on the screen? How do they interact with the application? What are the user flows?
+
+Define the user experience: Describe how the user interacts with the application. What is the user journey? What are the pain points and friction points? What are the opportunities for improvement?
+
+Explain the business model: Describe how the application generates revenue. What are the pricing plans? What are the sales channels? What is the marketing strategy?
+
+Define the development process: Explain how the application is developed. What is the development methodology? What are the roles and responsibilities of the team members? What is the timeline and budget?
+
+By following these steps, you can create a comprehensive description of an application that covers its purpose, features, architecture, user interface, user experience, business model, and development process. This description can be used to communicate the vision of the application to stakeholders, team members, and users.
+
+
+
+Feature of application
+Homepage and Navigation: The homepage and navigation should be clear and easy to use, with links to important pages and sections.
+
+User Registration and Login: If applicable, user registration and login should be easy to use, secure, and reliable.
+
+Search and Filter: If applicable, search and filter functionality should be available to help users find specific content or products.
+
+Product Listings and Descriptions: Products should be clearly listed and described, with high-quality images and accurate information.
+
+Shopping Cart and Checkout: If applicable, the shopping cart and checkout process should be easy to use, secure, and reliable.
+
+Payment and Shipping: If applicable, payment and shipping options should be clearly explained and easy to use.
+
+Customer Service: Contact information and customer service options should be available to help users with questions or issues.
+
+Mobile Responsiveness: The website should be optimized for mobile devices, with a responsive design that adjusts to different screen sizes.
+
+
+
+The application enable the company to promote their product and services and  and enables them to  reach out to their customer. 
+The application consist of  user end and admin, the user can book for product and services using their contact form and admin response on their dashboard.
+The feature of the application are Homepage and Navigation, Search and Filter, Product Listings and Descriptions and Shopping Cart and Checkout, Product and services Listing, 
+The project is assign to me alone and I use agile methodology to develop the project using git. The deployment of the project is tested on AWS Ec2 instance, but now ruining on Namecheap hosting platform  
+
+
+$0.innerText = `Improved Exam Performance: The application would help students to prepare effectively for their exams, identify areas of weakness, and focus on them. This would result in better exam performance and higher grades.
+
+Personalized Study Plans: The application would enable students to create personalized study plans based on their strengths and weaknesses. This would help students to allocate their study time more efficiently and effectively.
+
+Progress Tracking: The application would enable students to track their progress and see how they are improving over time. This would provide motivation and a sense of achievement as they see their scores improve.
+
+Access to High-Quality Study Materials: The application would provide students with access to high-quality study materials, including practice questions, study guides, and video tutorials. This would help students to learn in different ways and provide them with a range of resources to suit their individual learning styles.
+
+Time Management: The application would help students to manage their time effectively, ensuring they have enough time to study for each subject while balancing other commitments such as work or social activities.
+
+Confidence: With the help of the application, students would feel more confident and prepared going into their exams. They would know that they have put in the necessary effort to achieve their goals and would be better equipped to handle exam pressure.`4
+
+https://broker-app.alpaca.markets/dev
+C:\Windows\Temp\*
+
+https://www.myrocketcareer.com/job-detail-page/13977566/senior-full-stack-engineer-javascript-node-remote-remote/
+
+https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all
+
+rm -r  'C:\Users\BONJOU~1\AppData\Local\Temp\*'
+rm -r  'C:\Windows\Temp\*'
+ ls -force C:\Users\BONJOUREX\AppData\Local\Microsoft\Windows\INetCache\IE
+
+ C:\ProgramData\Jenkins\.jenkins jenkinhome
+ https://app.dataquest.io/
+ 
+
+ opened_file = open('AppleStore.csv')
+from csv import reader
+read_file = reader(opened_file)
+apps_data = list(read_file)
+
+
+Route::get('/user/{name?}', function (string $name = null) { optional param?
+    return $name;
+});
+
+
+Route::middleware(['first', 'second'])->group(function () {
+    Route::get('/', function () {
+        // Uses first & second middleware...
+    });
+
+
+    The max amount of available heap memory can be increased with a flag:
+
+node --max-old-space-size=6000 index.js
+
+
+HTML forms do not support PUT, PATCH, or DELETE actions. So, when defining PUT, PATCH, or DELETE routes
+ that are called from an HTML form, you will need to add a hidden _method 
+field to the form. The value sent with the _method field will be used as the HTTP request method:
+<form action="/example" method="POST">
+    <input type="hidden" name="_method" value="PUT|PATCH|DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+</form>
+
+For convenience, you may use the @method Blade directive to generate the _method input field:
+
+<form action="/example" method="POST">
+    @method('PUT')
+    @csrf
+</form>
+
+php artisan route:list --path=api
+php artisan route:list --path=web
+--only-vendor
+Route::get('/user/{id}/{name}', function (string $id, string $name) {
+    // ...
+})->whereNumber('id')->whereAlpha('name');
+
+Route::get('/category/{category}', function (string $category) {
+    // ...
+})->whereIn('category', ['movie', 'song', 'painting']);
+
+public function boot(): void
+{
+    Route::pattern('id', '[0-9]+'); 
+}
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C1H8VS69TT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C1H8VS69TT');
+</script>
+
+
+
+
+https://acloudguru.com/blog/engineering/10-fun-hands-on-projects-to-learn-aws
+https://www.projectpro.io/article/aws-projects-ideas-for-beginners/453
+
+adioadeyoriazeez@yahoo.com
+
+https://laravel.com/docs/10.x/http-tests#session-and-authentication
+php artisan session:table
+ 
+php artisan migrate
+
+
+
+👉System design basics: https://bit.ly/3SuUR0Y
+
+👉Horizontal and vertical scaling: https://bit.ly/3slq5xh
+
+👉 Load balancing and Message queues: https://bit.ly/3sp0FP4
+
+👉High-level design and low-level design, Consistent Hashing, Monolithic and Microservices architecture: https://bit.ly/3DnEfEm
+
+👉 Caching, Indexing, Proxies: https://bit.ly/3SvyVDc
+
+👉 Networking, How Browsers work, Content Network Delivery ( CDN): https://bit.ly/3TOHQRb
+
+👉 Database Sharding, CAP Theorem, Database schema Design: https://bit.ly/3CZtfLN
+
+👉 Concurrency, API, Components + OOP + Abstraction : https://bit.ly/3sqQrhj
+
+👉 Estimation and Planning, Performance: https://bit.ly/3z9dSPN
+
+👉 Map Reduce, Patterns, and Microservices: https://bit.ly/3zcsfmv
+
+👉 SQL vs NoSQL and Cloud: https://bit.ly/3z8Aa49
+
+👉 Most Popular System Design Questions: https://bit.ly/3Dp40Ux
+
+✅ System Design Case Studies
+
+👉 Design Netflix: https://bit.ly/3GrAUG1
+
+👉 Design Reddit: https://bit.ly/3OgGJrL
+
+👉 Design Messenger App : https://bit.ly/3DoAAXi
+
+👉 Design Instagram: https://bit.ly/3BFeHlh
+
+👉 Design Dropbox: https://bit.ly/3SnhncU
+
+👉 Design Youtube: https://bit.ly/3dFyvvy
+
+👉 Design Tinder: https://bit.ly/3Mcyj3X
+
+👉 Design Yelp: https://bit.ly/3E7IgO5
+
+👉 Design Whatsapp: https://bit.ly/3M2GOhP
+
+👉 Design URL shortener : https://bit.ly/3xP078x
+
+👉 Design Amazon Prime Video: https://bit.ly/3hVpWP4
+
+👉 Design Twitter: https://bit.ly/3qIG9Ih
+
+👉 Design Uber: https://bit.ly/3fyvnlT
+
+👉 Design TikTok : https://bit.ly/3UUlKxP
+
+👉 Design Facebook's Newsfeed: https://bit.ly/3RldaW7
+
+👉 Design Web Crawler: https://bit.ly/3DPZTBB
+
+👉 Design API Rate Limiter: https://bit.ly/3BIVuh7
+
+✅ All solved case studies: https://bit.ly/3dCG1rc
+
+👉 System Design Important terms - https://bit.ly/3Om9d3H
+
+👉 Most Popular System Design Questions: https://bit.ly/3E9oH7K
+
+👉 Complete System Design Basics Series: https://bit.ly/3rG1cfr
+
+https://career.luxoft.com/send-a-resume/357541/ =>for job 
+
+
+
+1. Remotive: This website offers remote jobs in various industries including marketing, design, engineering, and customer support.
+Website >> https://remotive.com
+
+
+2. SkipTheDrive: SkipTheDrive provides remote job listings from various industries including accounting, education, healthcare, and IT.
+Website >> https://lnkd.in/d9KrqXmi
+
+
+3. YC Jobs: A job board hosted by Work at a Startup, featuring job openings in startups backed by Y Combinator. The job opportunities listed are for remote, full-time, and part-time positions across various industries, including engineering, sales, and marketing.
+Website >> https://lnkd.in/dFCQtJAS
+
+
+4. Virtual Vocations: Virtual Vocations has remote job listings in a range of industries, including administrative support, marketing, and healthcare.
+Website >> https://lnkd.in/dj2ih-gD
+
+
+5. We Work Remotely: This website has job listings in categories such as programming, marketing, customer support, and design.
+Website >> https://weworkremotely.com
+
+
+6. FlexJobs: FlexJobs offers remote job listings across various industries, including accounting, healthcare, and marketing.
+Website >> https://www.flexjobs.com
+
+
+7. Working Nomads: Working Nomads lists remote job opportunities in industries such as finance, customer service, and marketing.
+Website >> https://lnkd.in/dmsJdNEF
+
+
+8. Jobspresso: Jobspresso offers remote job listings across various industries, including finance, marketing, and healthcare.
+Website >> https://jobspresso.co
+
+
+9. Pangian: Pangian provides remote job listings in various industries including marketing, customer support, and design.
+Website >> https://pangian.com
+
+
+10. Freelancermap: Freelancermap is a job board for freelancers that lists remote job opportunities in various industries such as software development, design, and project management.
+Website >> https://lnkd.in/dpU4ymWG
+
+
+11. Europeremotely: Europeremotely lists remote job opportunities across Europe in various industries, including education, IT, and marketing.
+Website >> https://euremotejobs.com
+
+
+12. Remote.co: Remote.co lists remote job opportunities in various industries such as finance, customer support, and software development.
+Website >> https://remote.co
+
+
+13. Guru: Guru is a job board for freelancers that lists remote job opportunities in various industries such as marketing, design, and software development.
+Website >> https://lnkd.in/d5cWZ6f8
+
+
+14. Dribbble: Dribbble is the number one job board for Graphic Design Jobs
+Website >> https://dribbble.com/jobs
+
+
+15. Startup Jobs: Startup Jobs is a job board that lists job opportunities at startup companies across various industries, including tech, marketing, and sales. The job openings listed are for remote, full-time, and part-time positions.
+Website >> https://startup.jobs
+
+https://intranet.alxswe.com/auth/sign_in
+
+https://www.prepostseo.com/image-to-text
+
+•Led the development team in designing and implementing a robust e-commerce platform using Laravel framework, resulting in a user-friendly and scalable online store. Laravel is used as backend and  Laravel blade is used as front-end
+•Developed and maintained RESTful APIs for seamless integration with external systems and third-party services, enhancing the functionality and flexibility of the platform.
+•Collaborated with mobile  developers to implement React native components and ensure a smooth user experience.
+Optimized application performance (through cache and lazy loading ) and database queries, resulting in improved page load times and overall system efficiency.
+•Implemented secure authentication and authorization mechanisms (OAuth 2.0), ensuring data privacy and protection.
+•Participated in code reviews, unit testing (Using PHPUnit), and quality assurance processes to maintain code quality and project standards.
+•Mentored junior developers, providing guidance and assistance in their professional growth and skill development.
+
+ode_framework.com
+
+Here is an example of a message sent to a mutual contact:
+
+Hello [contact]! I’m a student at ALX and [mutual friend] recommended I reach out to you regarding your perspective/experience 
+at [company in question], or learning on the job overall. In the future, would you mind if I asked you a few questions? 
+Thank you either way for the time! [signature]
+
+Here is one for connecting after a meetup/conference/etc (you had connected on LinkedIn):
+
+Hi [contact’s name], It was great meeting you at [event]. I had a great time hearing your thoughts on [conversation topic]. 
+On your LinkedIn profile, it says you’re currently working with [particular tech you like]—and [reason why it relates to you]. 
+Let me know if I could ever buy you a coffee and hear about your experience with it! Best, [signature]
+
+For good measure, here is another sent to a complete stranger whose keynote had been unfortunately missed:
+
+Hello [name of speaker]! I was disappointed to have missed your [keynote at xyz event] given that [tech field] is one of the areas I’m most interested in pursuing.
+ I am looking forward to learning more, and hope I’ll be able to catch your professional insight at another event. Need be, 
+ may I contact you with industry specific questions in the future? Regardless, have a great week! [signature]
+
+
+Describe your experience using or contributing to open source software 
+
+ I have had the opportunity to engage with and contribute to various open source software projects. Over the years,
+  I have found open source communities to be dynamic and collaborative environments that foster creativity and innovation.
+
+In my experience, I have contributed to projects by submitting bug reports, participating in discussions, 
+and occasionally providing code contributions. Collaborating with developers from different parts of the world 
+has allowed me to learn from their expertise and share my insights as well.
+ The transparency and accessibility of open source software have enabled me to understand the inner workings of
+  different technologies and learn best practices.
+
+By participating in open source projects, I have gained valuable skills in version control, code review, and
+ collaborating within a team of diverse contributors. I believe in the importance of open source software for 
+ driving technological advancements and enabling the global developer community to work together for the greater good.
+
+Describe your experience with JavaScript, TypeScript and SCSS
+
+I have experience working with JavaScript, TypeScript, and SCSS in various web development projects. JavaScript is a versatile scripting 
+language that I've used extensively to create interactive and dynamic
+ web applications. I've utilized its capabilities to manipulate the Document Object Model (DOM), handle user interactions, and make 
+ asynchronous requests to servers using AJAX or Fetch API.
+
+TypeScript, a superset of JavaScript, has been my go-to choice when aiming for enhanced code quality and maintainability. 
+Its static type system has helped me catch potential errors during development and provided better code documentation. 
+Additionally, TypeScript's support for modern ECMAScript features ensures that my code remains compatible with different browsers.
+
+SCSS (Sass CSS) is another tool I've used to enhance my web styling workflow. With SCSS, I can leverage variables, mixins, and nested 
+selectors to write clean and organized CSS styles. This has allowed me to create consistent and modular stylesheets, making it easier 
+to maintain and update projects as they grow.
+
+Overall, my experience with JavaScript, TypeScript, and SCSS has enabled me to develop responsive, interactive, and visually appealing 
+web applications while maintaining code quality and ease of maintenance.
+

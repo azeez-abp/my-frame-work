@@ -1,0 +1,128 @@
+https://account.live.com/ResetPassword.aspx
+SQL
+
+Azure SQL Database (Single Database):
+
+    Suitable for individual databases or small-scale applications.
+    Provides a dedicated database with its own set of resources.
+    Offers scalability options with different service tiers (Basic, Standard, Premium).
+    Good for applications with predictable and consistent workloads.
+
+Azure SQL Managed Instance:
+
+    Suitable for larger applications and migrations from on-premises SQL Server.
+    Provides a fully managed instance of SQL Server with almost 100% compatibility.
+    Offers greater control and compatibility for applications that require more features.
+    Good for applications with complex configurations, multiple databases, and dependencies on specific SQL Server features.
+
+Azure Arc-enabled SQL Server:
+
+    Suitable for hybrid scenarios, enabling management of SQL Server instances across on-premises, multi-cloud, and edge environments.
+    Provides centralized management and deployment of SQL Server instances.
+    Offers flexibility in managing and securing SQL Server workloads across different environments.
+
+NOSQL databases
+
+Azure Cosmos DB:
+
+A globally distributed, multi-model database service.
+Supports various NoSQL APIs, including MongoDB, Cassandra, Gremlin, Azure Table Storage, and SQL (via API for MongoDB).
+Provides high availability, low latency, and automatic scaling.
+Suitable for applications that require global distribution, high throughput, and low latency access to data.
+
+Azure Table Storage:
+
+    A key-value NoSQL database service.
+    Stores structured data as entities with properties.
+    Offers scalability, automatic indexing, and integration with Azure services.
+    Suitable for storing large amounts of structured data with simple querying requirements, such as IoT data, logs, and metadata.
+
+Azure Redis Cache:
+
+    An in-memory data store based on Redis.
+    Provides fast, scalable caching capabilities.
+    Supports data structures like strings, hashes, lists, sets, and sorted sets.
+    Suitable for scenarios that require high-performance caching and session state management.
+
+Azure Blob Storage:
+
+    A cloud storage service for storing unstructured data.
+    Designed for storing large amounts of unstructured objects like documents, images, videos, and backups.
+    Provides features for data retention, versioning, and lifecycle management.
+    Suitable for applications that require scalable and cost-effective storage for unstructured data
+    
+    
+Azure Data Lake is a cloud-based storage and analytics service provided by Microsoft Azure
+ It is designed for storing and analyzing large volumes of structured and unstructured data..
+
+ Azure Data Lake does not fall into the category of NoSQL databases as mentioned earlier. Instead, it is categorized 
+ as a data storage and processing service, specifically for big data workloads. It is commonly used for 
+ storing and processing data from various sources such as IoT devices, logs, clickstreams, and other big data sources.
+
+
+BIG DATA STORAGE AND processing
+
+ Azure Data Lake offers two primary services:
+
+Azure Data Lake Storage:
+
+    A scalable and secure distributed file system that can store large amounts of structured and unstructured data.
+    Supports high-throughput access and integration with various Azure services.
+    Provides features like hierarchical namespace, data encryption, access control, and data sharing capabilities.
+    Suitable for scenarios requiring massive storage and processing of big data.
+
+Azure Data Lake Analytics:
+
+    A serverless analytics service for processing big data stored in Azure Data Lake Storage.
+    Allows you to run massively parallel queries using familiar languages like U-SQL, SQL, and .NET.
+    Offers a pay-per-use model and scales automatically based on workload demand.
+    Suitable for data exploration, batch processing, and complex analytical workloads.
+
+Azure Data Lake is often used in combination with other Azure services like Azure Databricks, Azure Synapse Analytics, 
+and Azure Machine Learning to build end-to-end big data and analytics solutions
+
+
+
+Azure Databricks:
+
+    Azure Databricks is a fast, collaborative Apache Spark-based analytics platform.
+    It provides an interactive workspace for data engineering, data science, and collaborative analytics.
+    Offers a unified analytics environment with built-in support for data ingestion, exploration, feature engineering, machine learning, and visualization.
+    Enables scalable and distributed processing of big data workloads using Apache Spark.
+    Suitable for data scientists, data engineers, and analysts who need a collaborative environment for advanced analytics, machine learning, and data exploration.
+
+Azure Synapse Analytics (sql data warehouse):
+
+    Azure Synapse Analytics is a fully managed analytics service that brings together big data and data warehousing capabilities.
+    It integrates with various data sources and provides tools for data ingestion, data preparation, data warehousing, and data exploration.
+    Combines the power of on-demand or provisioned resources with a massively parallel processing (MPP) architecture for efficient querying and analytics.
+    Supports both traditional structured data and big data scenarios with its SQL-based analytics capabilities.
+    Suitable for organizations that need a unified platform for data warehousing, big data analytics, and advanced analytics on large volumes of data.
+
+
+    Differences:
+
+Data Processing Paradigm:
+
+    Azure Databricks primarily focuses on providing a collaborative Apache Spark environment for data engineering and data science workloads.
+    Azure Synapse Analytics, on the other hand, emphasizes data warehousing and analytics using a SQL-based approach.
+
+Collaboration and Data Science:
+
+    Azure Databricks offers a collaborative workspace for data scientists, providing notebooks, libraries, and tools specifically designed for data exploration, machine learning, and model building.
+    Azure Synapse Analytics provides capabilities for data warehousing, data ingestion, and data exploration, with a focus on structured data analytics and SQL-based queries.
+
+Scale and Performance:
+
+    Azure Databricks is highly scalable and can handle large-scale data processing and analytics workloads using the distributed computing power of Apache Spark.
+    Azure Synapse Analytics is designed for massive parallel processing (MPP) and can handle large volumes of data with optimized query performance.
+
+(PKI)
+    A public key infrastructure (PKI) provides a framework of encryption to protect communication between end-users and the Azure environment.
+    Admins can use PKI, or asymmetric encryption, to create a public-private key pair for users. In this setup, the system stores the public keys in digital certificates for secure exchange. On the other hand, the private keys are securely stored in the software.
+    The PKI system saves all certificate requests in a certificate database.
+
+    Factors to Consider When Implementing PKI in Azure
+        A PKI infrastructure includes a system that enables users and services to issue, distribute, store, use, verify, and revoke cryptography keys and certificates
+          Integration, Automation, Manageability, Flexibility
+The objective of a public key cryptography scheme is trust

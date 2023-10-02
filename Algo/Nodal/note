@@ -1,0 +1,64 @@
+Abstract class prevent user from creating object
+Abstact class method can have anu access modifier (public private)
+Abstate method can be declear and implemented
+a<<b  = a*2^b
+1<<n = 1000000000000..n
+1<<2 = 1*2^n
+3<<4 = 3*2^4
+
+Interface 
+method can only be public 
+method cannot be implemented
+
+Therefore, the following combinations can uniquely identify a tree:
+• lnorder and Preorder
+• lnorder and Postorder
+•lnordrr and Level-order
+
+The following combinations do not uniquely identify a tree.
+• Postorder and Preorder
+• Preorder and Level-order
+• Postorder a nd Level-order 
+
+if there are n nodes, there exist 2^(n) - n different trees
+
+In earlier sections we have seen that, preorder, inorder, and postorder binary tree traversals used stacks and
+level order traversals used queues as a n auxiliary data structure.
+another transverasl algo is threaded binary tree traversals or stack/queue less traversals.
+
+Issues with Regular(lnorder and Preorder and postorder) Binary Tree Traversals
+1. The storage space required for the stack and queue is large. 
+2. The majority of pointers in any binary tree arc NULL. For example, a binary tree with n nodes has n + 1 NULL pointers and these were wasted.
+3. It is difficult to find successor node
+
+
+Motivation for Threaded Binary Trees
+
+To solve these problems, one idea is to store some useful information in NULL pointers. If we observe the previous traversals carefully, stack/queue is required because we have to record the current position in order to move to the right subtree after processing the left subtree. If we store the useful information in NULL pointers, then we don't have to store such information in stack/queue. 
+The binary trees which store such information in NULL pointers are called threaded binary trees.
+
+we store predecessor/successor information in the null pointer
+
+if we are dealing with preorder traversals, then for a given node, NULL left pointer will contain preorder predecessor information 
+and NULL right pointer will contain preorder successor information.
+
+classes of threaded BT
+left (store predecessor/successor in left null node)
+right (store predecessor/successor in right null node)
+full  (store predecessor/successor in both null node)
+
+Types of Threaded Binary Trees 
+
+• preorder Threaded Binary Trees: NULL left pointer will contain PreOrder predecessor information and NULL right pointer will contain PreOrder successor information.
+
+• lnorder Threaded Binary Trees: NULL left pointer will contain lnOrder predecessor information and NULL right pointer will contain lnOrder successor information.
+
+• Postorder· Threaded Binary Trees: NULL left pointer will contain Postorder predecessor information and NULL right pointer will contain PosLOrdcr successor information. 
+
+
+predecessor === left
+
+successor   === right
+
+successor ==if there is rigth subtree successor is the minimum value along right path
+successor ==if there is no rigth subtree successor is the minimum  node on it top (minimum ancestor)

@@ -1,0 +1,11 @@
+In JavaScript, the order of task execution is determined by the event loop. The event loop is a mechanism that handles the execution of code in response to events, such as user interactions or network requests.
+
+In general, the priority order of task execution in JavaScript is as follows:
+
+Microtasks: Microtasks are tasks that are processed as soon as possible and include things like resolving promises and process.nextTick() in Node.js.
+
+Macrotasks: Macrotasks are tasks that are processed after all microtasks have been processed. Macrotasks include things like setTimeout(), setInterval(), and I/O events.
+
+It's important to note that the exact order of task execution may vary depending on the JavaScript runtime and the specific tasks that are being executed. In general, however, the event loop ensures that tasks are executed in a predictable order, so that code can be written with confidence that it will behave as expected.
+
+In JavaScript, inheritance is achieved through prototypes, which allow objects to share a common prototype object and inherit its properties and methods.

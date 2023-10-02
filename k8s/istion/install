@@ -1,0 +1,32 @@
+curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.25.6+k3s1 sh -s - --disable=traefik --write-kubeconfig-mode=644 --node-name=k3s-server-01
+
+
+wget https://github.com/istio/istio/releases/download/1.16.5/istio-1.16.5-linux-amd64.tar.gz
+
+tar -xvf istio-1.16.5/bin/istioctl-linux-amd64.tar.gz
+
+cd istio-1.16.5
+pwd
+export PATH="$PATH:$(pwd)/bin"
+
+for error
+unable to retrieve Pods: Get "https://127.0.0.1:6443/api/v1/namespaces/istio-system/pods?fieldSelector=status.phase%3DRunning&labelSelector=app%3Distiod": x509: certificate signed by unknown authority
+do
+
+export KUBECONFIG="/etc/rancher/k3s/k3s.yaml"
+
+istioctl install --set profile=demo -y
+
+inject envoy proxy to name-space from istio
+
+kubectl label namespace default istio-injection=enabled
+
+==============================
+FOR visualization
+==============================
+kubectl apply  -f istio-1.16.5/samples/addons
+kubectl get pods -n istio-system
+kubectl get svc -n istio-system
+to access the srv in host do port forwarding
+kubectl port-forward svc/kiali -n istio-system 20001:19000
+istioctl dashboard grafana

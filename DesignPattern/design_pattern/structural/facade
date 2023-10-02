@@ -1,0 +1,38 @@
+Provides a simplified interface to a library, a framework, or any other complex set of classes.
+The components of the Facade Design Pattern are:
+
+Facade: This provides a simplified interface to a complex system by hiding its underlying
+ complexity and exposing only the necessary operations.
+
+Subsystems: These are the complex underlying systems that the Facade interacts with.
+ They provide the implementation of the operations required by the Facade.
+
+Client: This interacts with the Facade and makes use of the simplified interface to access
+ the functionality of the complex underlying systems
+
+ A class that contains other classes  and return their implementation as base on string pass it as augument
+
+
+ class Money{
+
+    constructor(which_one)
+    if which_one is naira :
+       return Naira()
+    elif which_one is dollar:
+       return Dollar
+    else:
+       return MissingException
+
+ }
+ Money('naira')
+
+
+ //////////////////////////////////////////////////////////////////
+
+ The Facade pattern is a structural design pattern that "provides a simplified interface to a complex system of classes", making it easier to use and understand. It is often used when you have a complex system of classes that are difficult to use or understand, and you want to provide a simpler interface for clients to interact with.
+
+The Facade pattern has the following key components:
+
+Facade: The class that provides a simplified interface to the complex system of classes.
+
+Subsystem: The complex system of classes that the Facade class interacts with.

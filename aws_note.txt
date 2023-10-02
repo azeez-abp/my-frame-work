@@ -1,0 +1,48 @@
+Bucket owner preferred: The creator of the bucket become the owner of all blob object, irrrespective of upload it
+
+Object writer: The person that upload the file become the object owner
+
+You can use bucket tags to track storage costs and organize bucket
+
+Tag can be used for orgamization of content
+
+AWS EC2 Instances
+Spot instance can be terminated any time
+Spot block instance can be terminated only if the time specify has elaspse
+on-demands instance has no cost benefit
+Reserved instance continuously run for 1 to 3 year
+Schedule Reserved instance run for certain hours per day
+
+EFS use NFS protocol
+
+isSCI is block level protocol
+loadbalancer is a region routing
+Route 53 direct route to the resources with some ploicy configuration
+
+
+EC2
+icacls "C:\Users\BONJOUREX\.ssh\abp-compute-1-key.pem" /inheritance:r /grant:r "Bonjourex-HP:R"
+icacls "C:/Users/BONJOUREX/Downloads/.ssh/abp-cmpute1-key-ssh.pem" /inheritance:r /grant:r "Bonjourex-HP:RWD"
+icacls "C:\Users\BONJOUREX\.ssh\abp-compute-1-key.pem" /inheritance:r /grant:r "%USERNAME%:(RWXD)"
+
+icacls is the command to modify ACLs (Access Control Lists).
+"/inheritance:r" removes inherited permissions from the file.
+"/grant:r "%USERNAME%:R" grants only read (R) permission to the current user (%USERNAME%).
+chmod 400
+ ssh -i "C:\Users\BONJOUREX\.ssh\abp-compute-1-key.pem" ubuntu@ec2-52-23-218-52.compute-1.amazonaws.com
+  ssh -i "C:\Users\BONJOUREX\Downloads\.ssh\abp-cmpute1-key-ssh.pem"  ubuntu@ec2-18-208-176-128.compute-1.amazonaws.com
+  ssh -i "abp-cmpute1-key-ssh.pem" ubuntu@ec2-18-208-176-128.compute-1.amazonaws.com
+
+sudo tee /var/www/html/index.html <<EOF
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>WELCOME TO ABP-COMPUTE-1</h1>
+</body>
+</html>
+EOF

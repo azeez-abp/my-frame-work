@@ -1,0 +1,63 @@
+The components of the Composite Design Pattern are:
+
+Component: This defines the interface for objects in the composition, including a way to access the parent component.
+
+Leaf: This represents the end objects of a composition that have no children.
+
+Composite: This represents objects in the composition that have children and store child components.
+
+Client: This manipulates objects in the composition through the Component interface.
+
+1. interface implement by composite class and leaf class (the unit of the highest hierarchy)
+2. leaf class implement the interface ( It should implement the basic operations, such as returning the parent component or adding a child component.)
+3. the composite class implement the interface
+4. the composite class contains the leave class as a list
+
+interface Items{
+  getName()
+  getPrice()
+  getDescription()
+}
+////////////////////////////////////////
+class Rice implement Items{
+  getName(){}
+  getPrice(){}
+  getDescription(){}
+
+}
+
+class Millet implement Items{
+  getName(){}
+  getPrice(){}
+  getDescription(){}
+
+}
+//////////////////////////////////////////////////////////
+
+
+class Grains implements Items{
+  private Items = [new Rice(),New Millet()]
+  getName(){}
+  getPrice(){}
+  getDescription(){}
+  addComponent(){}
+  removeComponent(){}
+  getChildren(){}
+}
+
+
+
+
+/////////////////////////////////////////////////////////////
+
+The Composite pattern is a structural design pattern that allows you to "treat individual objects and compositions of objects in a uniform manner". It is often used when you need to work with a tree-like structure of objects, where each object may have child objects and so on.
+
+The Composite pattern has the following key components:
+
+Component: The interface or abstract class that defines the methods that can be used to interact with individual objects and compositions of objects.
+
+Leaf: The individual object that has no child objects.
+
+Composite: The object that has child objects, which may be other Composite objects or Leaf objects.
+
+

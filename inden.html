@@ -1,0 +1,2752 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <style type="text/css">
+        .div1 {
+          width: 300px;
+          height: 100px;
+          border: 1px solid blue;
+          box-sizing: border-box;
+        }
+
+        .div2 {
+          width: 300px;
+          height: 100px;
+          padding: 50px;
+          border: 1px solid red;
+          box-sizing: border-box;
+        }
+        .flex{
+            display: flex;
+        }
+    </style>
+<canvas id="cav"></canvas>
+<select id="langsel">
+  <option value='eng' selected> English </option>
+   <option value='chi' selected> Chinese </option>
+</select>
+<input type="file" id="file-1" class="inputfile" />
+<img id="selected-image"  src="" />
+<div id="log">
+	<img src="http://www.w3.org/1999/xlink">
+	<p>
+  <div class="flex">
+    <div class="div1"></div>
+    <div class="div2"></div> 
+  </div>
+  <div class="exp">Export As Excel</div> 
+  <table class="W(100%) M(0)" data-test="historical-prices" id="table">
+    <thead>
+        <tr class="C($tertiaryColor) Fz(xs) Ta(end)">
+            <th class="Ta(start) W(100px) Fw(400) Py(6px) Pend(6px)"><span>Date</span></th>
+            <th class="Fw(400) Py(6px) Pend(6px)"><span>Open</span></th>
+            <th class="Fw(400) Py(6px) Pend(6px)"><span>High</span></th>
+            <th class="Fw(400) Py(6px) Pend(6px)"><span>Low</span></th>
+            <th class="Fw(400) Py(6px) Pend(6px)"><span>Close*</span></th>
+            <th class="Fw(400) Py(6px) Pend(6px) Whs(nw)"><span>Adj Close**</span></th>
+            <th class="Fw(400) Py(6px) Pend(6px)"><span>Volume</span></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 10, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>101.43</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>102.12</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>99.38</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>99.40</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>99.40</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>15,369,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 09, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>106.53</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.06</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>103.25</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>103.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>103.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,261,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 08, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.43</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>109.36</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>106.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,019,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 07, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>106.79</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.92</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>106.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.79</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.79</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,279,100</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 06, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>109.75</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>110.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.65</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,575,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 03, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>109.17</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>109.85</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.92</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>108.67</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>108.67</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,758,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 02, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>109.43</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>110.95</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.91</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>110.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>110.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,829,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 01, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>112.01</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>112.85</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>108.27</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>109.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>109.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,829,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 31, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>110.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>111.24</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.91</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>110.44</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>110.44</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>20,274,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 27, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>106.89</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>109.37</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>106.53</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>109.32</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>109.32</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>13,671,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 26, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>104.22</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>106.13</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>103.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>105.61</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>105.61</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,297,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 25, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>101.43</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>103.81</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>101.16</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>103.26</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>103.26</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,026,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 24, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>103.71</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>103.84</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>100.13</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>101.59</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>101.59</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>13,970,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 23, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>103.76</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>106.03</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>101.56</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>105.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>105.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>14,402,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 20, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>104.49</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>104.80</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>100.05</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>102.42</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>102.42</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>15,650,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 19, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>103.43</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>105.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>102.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>103.14</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>103.14</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,285,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 18, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.38</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.66</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>103.88</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>104.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>104.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,794,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 17, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.73</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>108.79</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>106.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>108.64</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>108.64</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,847,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 16, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.46</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>104.85</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>105.18</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>105.18</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,993,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 13, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>105.36</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.69</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>105.31</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.33</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.33</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>16,782,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 12, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>102.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>105.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>99.47</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>104.31</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>104.31</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>36,298,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 11, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>110.07</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>104.79</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>105.21</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>105.21</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>26,933,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 10, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>109.84</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>110.70</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>106.14</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.68</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>107.68</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>15,657,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 09, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>108.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>110.74</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>106.48</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>106.98</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>106.98</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>17,941,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 06, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>111.77</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>112.09</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>108.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>110.29</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>110.29</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>12,525,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 05, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>114.74</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>115.27</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>111.48</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>112.61</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>112.61</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>12,720,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 04, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>113.37</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>116.44</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>111.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>116.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>116.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,488,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 03, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>114.05</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>114.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>112.69</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>113.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>113.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,149,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>May 02, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>111.71</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>113.66</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>111.01</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>113.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>113.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>14,300,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 29, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>115.20</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>115.99</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>111.36</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>111.63</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>111.63</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>16,907,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 28, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>115.22</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>116.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>112.69</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>115.29</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>115.29</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>23,192,100</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 27, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>115.43</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>116.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>113.39</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>115.21</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>115.21</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>15,553,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 26, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>119.15</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>119.15</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>115.64</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>115.77</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>115.77</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>16,116,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 25, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>117.66</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>120.33</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>116.75</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>119.95</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>119.95</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>16,491,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 22, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>120.01</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>121.89</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>118.15</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>118.27</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>118.27</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>19,472,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 21, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>125.54</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>126.45</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>121.28</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>121.66</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>121.66</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>18,688,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 20, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>126.05</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>127.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>124.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>124.57</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>124.57</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>36,465,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 19, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>128.09</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>127.79</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>131.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>131.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>12,767,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 18, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>130.07</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>130.22</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>126.82</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>127.77</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>127.77</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,571,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 14, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>132.81</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.59</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>130.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>130.47</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>130.47</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,283,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 13, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>131.05</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>132.89</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>130.75</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>132.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>132.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,694,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 12, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>131.81</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.21</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>130.15</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>130.84</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>130.84</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,885,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 11, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>130.04</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>132.43</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>130.04</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>130.65</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>130.65</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,915,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 08, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>132.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.12</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>130.63</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>131.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>131.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,702,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 07, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.01</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.21</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>130.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>131.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>131.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,858,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 06, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.75</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.93</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>130.81</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>132.57</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>132.57</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,679,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 05, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.74</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.20</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>135.13</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>135.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>135.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,694,100</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 04, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>136.97</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.26</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>136.89</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.58</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.58</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,174,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Apr 01, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.10</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>135.53</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,341,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 31, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.14</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.88</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.16</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.16</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>12,306,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 30, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>141.31</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>143.27</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.08</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,922,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 29, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>144.46</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.38</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.38</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,280,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 28, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.88</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.63</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>136.28</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.72</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.72</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,456,100</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 25, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.28</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.38</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.12</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.14</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.14</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,949,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 24, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.58</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.27</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.41</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,858,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 23, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.07</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.76</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.54</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.64</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.64</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,761,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 22, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.06</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,511,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 21, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>136.88</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,090,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 18, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.73</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,308,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 17, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.44</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.47</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>136.56</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.47</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.47</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,816,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 16, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>135.65</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.98</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>134.94</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.14</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.14</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,638,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 15, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>129.74</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>134.56</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>129.51</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>134.20</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>134.20</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,834,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 14, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>130.98</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.07</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>128.38</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>129.03</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>129.03</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,971,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 11, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>135.08</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>136.16</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>131.57</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>131.75</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>131.75</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,058,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 10, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>132.36</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>134.20</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>131.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.64</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.64</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,447,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 09, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>135.49</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>135.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.36</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.65</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.65</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>14,673,100</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 08, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>135.49</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>129.29</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>131.75</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>131.75</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>16,552,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 07, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.28</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.89</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.44</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>14,549,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 04, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>144.01</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>144.26</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.72</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.72</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>12,913,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 03, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.31</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.65</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>144.45</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>145.57</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>145.57</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,048,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 02, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>146.31</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.47</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>145.92</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,851,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Mar 01, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.86</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.15</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>143.78</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>145.70</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>145.70</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,944,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 28, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.48</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>146.46</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.46</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.46</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,834,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 25, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.56</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.28</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.22</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.53</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.53</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,149,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 24, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.57</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.40</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.40</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>12,475,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 23, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.74</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>145.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>145.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>145.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,300,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 22, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.79</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.61</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.09</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.09</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>12,227,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 18, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.91</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>153.68</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.05</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.36</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.36</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,785,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 17, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.69</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.36</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.61</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.95</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.95</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,110,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 16, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.98</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.73</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>153.75</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,656,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 15, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>153.54</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.85</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.51</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.72</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.72</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>12,726,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 14, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.37</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>153.73</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.21</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.85</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.85</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>14,694,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 11, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>153.54</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.69</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.56</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.47</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.47</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>17,975,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 10, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>157.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.16</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.16</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>42,500,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 09, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>144.37</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>143.25</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.23</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.23</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>22,877,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 08, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>141.79</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.89</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.74</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.48</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.48</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,231,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 07, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>143.39</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>144.09</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>141.61</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.51</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.51</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,937,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 04, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.04</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>143.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.53</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,061,100</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 03, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.04</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>139.25</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.03</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>140.03</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,820,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 02, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>144.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>144.59</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>141.38</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,529,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Feb 01, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>143.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>144.69</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.25</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>144.49</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>144.49</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,573,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 31, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.86</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>143.15</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.47</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.97</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.97</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,185,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 28, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>135.21</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.69</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.56</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.63</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.63</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,011,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 27, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>135.07</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.91</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>134.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>135.42</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>135.42</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,913,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 26, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.71</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>138.20</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>132.26</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.60</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>133.60</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>14,569,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 25, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>135.29</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.75</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>132.38</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>136.51</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>136.51</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>14,694,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 24, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>134.82</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.68</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>129.26</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.46</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.46</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>31,419,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 21, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>141.23</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>141.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>136.63</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.38</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>137.38</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>34,491,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 20, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.91</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.66</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.15</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,760,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 19, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.84</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.86</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,413,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 18, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>153.13</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.27</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.27</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,419,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 14, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.42</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.94</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.94</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>16,832,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 13, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>157.70</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>158.53</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.17</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.44</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.44</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,680,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 12, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>158.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>158.99</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.33</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>157.80</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>157.80</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,995,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 11, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>158.22</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.95</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>157.89</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>157.89</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,042,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 10, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>157.98</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>158.27</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.65</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.60</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.60</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,672,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 07, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>159.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.29</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>157.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>157.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,554,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 06, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.24</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>157.77</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>153.68</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,095,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 05, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.52</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>159.38</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.10</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>12,272,100</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 04, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>158.59</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>160.32</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.73</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.73</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>16,582,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jan 03, 2022</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>157.56</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.36</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.76</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.76</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,222,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 31, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.57</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.74</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.89</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.89</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,410,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 30, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.71</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>157.07</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.51</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.93</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.93</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,228,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 29, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.56</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.92</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.18</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,737,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 28, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.41</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.20</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.20</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>12,198,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 27, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.88</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.40</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.80</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.80</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,762,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 23, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.32</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.93</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>153.63</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>153.63</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,572,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 22, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.42</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.20</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.88</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.88</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,820,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 21, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.56</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.43</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.39</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.05</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.05</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,781,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 20, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>146.98</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.73</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>145.08</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>146.47</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>146.47</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,201,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 17, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.51</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.84</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>146.57</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.76</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.76</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>13,785,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 16, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.06</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.58</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.75</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.75</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,145,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 15, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.76</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.92</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.40</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.40</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>12,231,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 14, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.26</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.52</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.10</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.10</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,872,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 13, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.12</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.29</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.43</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.43</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,195,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 10, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>153.58</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.66</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.45</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.71</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.71</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,247,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 09, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.27</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.29</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.70</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.94</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.94</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,862,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 08, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.91</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>153.66</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.56</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>153.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>153.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>12,886,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 07, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.84</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.76</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.72</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.81</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.81</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>14,661,100</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 06, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.28</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.74</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>146.67</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.37</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.37</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>14,333,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 03, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.81</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.32</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>144.32</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>146.22</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>146.22</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>14,975,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 02, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.84</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.65</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.77</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.20</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.20</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>18,177,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Dec 01, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>146.70</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.37</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.04</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.15</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>142.15</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>16,469,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 30, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>146.72</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.28</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>143.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>144.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>144.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>26,011,100</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 29, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.81</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>149.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>144.25</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.81</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>147.81</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>21,231,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 26, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>146.80</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.85</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>145.85</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>12,027,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 24, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.69</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.41</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>148.80</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>14,123,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 23, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>153.84</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.25</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>150.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.03</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>151.03</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>17,382,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 22, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>153.23</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.82</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.57</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.16</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.16</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>12,790,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 19, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.21</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>152.77</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>154.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>16,776,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 18, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>157.09</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>157.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>153.71</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.58</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>155.58</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>14,487,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 17, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>158.73</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>158.89</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>156.75</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>157.33</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>157.33</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>14,695,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 16, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>159.06</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>160.24</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>158.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>158.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>158.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>15,516,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 15, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>160.09</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>160.72</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>157.66</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>158.43</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>158.43</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>21,285,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 12, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>163.52</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>163.61</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>158.93</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>159.63</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>159.63</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>25,638,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 11, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>162.89</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>163.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>158.33</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>162.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>162.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>62,366,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 10, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.69</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.45</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.45</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,045,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 09, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.95</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.12</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.21</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,293,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 08, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.69</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.25</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.10</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,584,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 05, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.99</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.33</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.63</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.63</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>16,859,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 04, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.03</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.42</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>168.67</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.28</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.28</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,505,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 03, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.70</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>168.37</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.08</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.08</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,829,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 02, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.03</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.85</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>168.98</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,777,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Nov 01, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.21</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.25</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.09</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,182,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 29, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.46</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>168.15</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.07</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.07</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,598,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 28, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.48</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>168.60</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.68</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.68</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,884,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 27, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.77</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.04</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.43</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,054,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 26, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.95</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.12</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.71</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.04</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.04</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,850,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 25, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.57</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.03</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.01</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.01</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,798,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 22, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.57</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.80</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>168.60</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.42</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.42</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,854,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 21, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.20</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.10</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,509,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 20, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.97</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.88</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,737,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 19, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.44</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.58</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.18</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.18</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.18</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,669,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 18, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.36</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.80</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.14</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.14</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>20,494,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 15, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.69</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.89</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.10</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.46</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.46</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>13,943,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 14, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.07</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.41</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.41</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,450,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 13, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.63</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.70</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.94</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,914,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 12, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.49</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.13</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.13</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,188,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 11, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.52</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.48</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.52</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.52</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,046,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 08, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.93</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.60</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.40</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.74</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.74</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>4,132,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 07, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.70</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.63</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.33</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.71</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.71</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,780,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 06, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.71</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.48</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.48</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,005,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 05, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.24</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.61</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.61</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.61</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,798,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 04, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.56</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.67</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.46</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.46</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,200,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Oct 01, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.28</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.32</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.97</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.01</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.01</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>12,165,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 30, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.10</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.68</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.10</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.17</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.17</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>13,978,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 29, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.25</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.59</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.68</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.68</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,240,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 28, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.75</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.86</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.52</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.52</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,133,100</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 27, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.63</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.45</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.26</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.26</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,755,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 24, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.70</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.08</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,712,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 23, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.94</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.19</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.37</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.25</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.25</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,052,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 22, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.94</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.66</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.65</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.65</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>14,214,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 21, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>180.32</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>182.23</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.03</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.17</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.17</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>23,216,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 20, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.74</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>180.88</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.61</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.61</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,056,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 17, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>182.91</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>185.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>182.73</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>183.47</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>183.47</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,035,100</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 16, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>183.97</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.64</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>182.12</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>183.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>183.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,678,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 15, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>182.06</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.66</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.10</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.41</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.41</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,933,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 14, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>185.13</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>182.15</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>182.40</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>182.40</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,185,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 13, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>185.12</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>185.80</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>183.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.98</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.98</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,818,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 10, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>186.36</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>187.10</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.01</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.12</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.12</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,572,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 09, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>185.15</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>187.58</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.57</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>185.91</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>185.91</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,190,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 08, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>187.46</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>183.92</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>185.15</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>185.15</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,634,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 07, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>185.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>180.05</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,702,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 03, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.82</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.82</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.13</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,847,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 02, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.16</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>185.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.86</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.86</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,492,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Sep 01, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.96</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.21</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.78</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>183.48</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>183.48</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,302,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 31, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.25</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>182.98</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.53</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.30</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,620,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 30, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>180.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.39</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.98</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.98</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,421,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 27, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.28</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>180.54</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.28</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>180.14</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>180.14</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,697,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 26, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.94</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.56</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.56</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>4,563,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 25, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.16</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.59</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.88</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.31</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.31</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>4,842,100</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 24, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.92</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>180.08</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.76</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.47</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.47</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,886,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 23, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.08</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.31</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.91</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.66</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.66</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,395,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 20, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.21</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.65</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.12</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.12</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,239,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 19, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.68</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.56</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.25</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.25</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,478,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 18, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.79</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.74</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.74</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,063,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 17, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.15</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.45</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.92</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,534,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 16, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>180.51</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>180.59</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.51</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.09</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.09</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,746,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 13, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>186.29</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>187.58</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>180.88</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.08</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.08</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>32,504,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 12, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.09</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.72</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.45</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.29</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.29</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,081,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 11, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.36</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.49</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.51</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.09</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.09</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,359,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 10, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.25</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.40</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.58</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.07</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.07</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,185,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 09, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.31</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.06</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.72</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.72</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,339,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 06, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.43</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.81</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.63</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.13</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.13</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,505,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 05, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.49</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.12</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.49</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.71</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.71</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,864,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 04, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.25</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.58</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.58</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,665,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 03, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.13</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.92</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.99</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.99</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,931,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Aug 02, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.22</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.82</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.31</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,847,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 30, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.53</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.20</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.14</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,813,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 29, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.81</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.42</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.27</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,209,100</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 28, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.69</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>180.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.10</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.10</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,926,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 27, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.25</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.56</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.57</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,684,100</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 26, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.78</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.74</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.74</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,641,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 23, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.66</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.03</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.14</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.14</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,126,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 22, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.70</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.72</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.13</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.13</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,713,700</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 21, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.32</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.89</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.89</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,302,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 20, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.70</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.51</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.75</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.75</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,372,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 19, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.71</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.48</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.16</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.95</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.95</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>14,651,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 16, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.94</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>185.29</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.92</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.31</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.31</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,348,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 15, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>183.45</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>185.42</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>183.05</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.15</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.15</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,867,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 14, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>185.20</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>186.29</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>182.08</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>183.42</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>183.42</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,787,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 13, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.09</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>185.67</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>181.84</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>183.65</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>183.65</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>12,534,600</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 12, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.71</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.99</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.37</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.38</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>184.38</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>21,835,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 09, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.70</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.52</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.93</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.04</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.04</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,873,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 08, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>170.18</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.75</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>169.81</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.80</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.80</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,960,100</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 07, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.86</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.32</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.99</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.82</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.82</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>6,757,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 06, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.76</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.00</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.22</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.69</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.69</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,557,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 02, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.86</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.36</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.11</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>11,099,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jul 01, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.60</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.60</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.26</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.26</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,887,100</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 30, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.89</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.98</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.34</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.77</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.77</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,481,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 29, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.64</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.02</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.80</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.93</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.93</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>13,498,300</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 28, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.66</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.99</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.57</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.57</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,881,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 25, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.83</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>179.09</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.49</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,431,800</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 24, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.13</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.24</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.78</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.93</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.93</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,549,400</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 23, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.45</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.94</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.33</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.33</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,174,200</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 22, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.37</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.70</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.35</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.50</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,097,100</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 21, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.13</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.26</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>171.31</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.97</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.97</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>9,196,900</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 18, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.14</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.86</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.12</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.42</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>172.42</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>12,357,500</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 17, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.59</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.26</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.84</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.65</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.65</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,906,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 16, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.01</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.26</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>173.55</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.66</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>174.66</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>8,336,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 15, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.18</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.70</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.62</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.86</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>175.86</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>7,895,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 14, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.65</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.87</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.90</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.18</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.18</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>10,170,000</span></td>
+        </tr>
+        <tr class="BdT Bdc($seperatorColor) Ta(end) Fz(s) Whs(nw)">
+            <td class="Py(10px) Ta(start) Pend(10px)"><span>Jun 11, 2021</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.45</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>178.49</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>176.81</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.38</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>177.38</span></td>
+            <td class="Py(10px) Pstart(10px)"><span>5,476,300</span></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr class="BdT Bdc($seperatorColor) C($tertiaryColor) H(36px)">
+            <td class="Fz(xs)" colspan="7">
+                <span>*Close price adjusted for splits.</span><span class="Mstart(20px)"><span>**Adjusted close price adjusted for splits and dividend and/or capital gain distributions.</span></span>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+  
+		<pre>
+		GBOGBO AYE, GBE JESU GA
+
+GBOGBO AYE, GBE JESU GA
+
+1.     Gbogbo aye, gbe Jesu ga
+
+        Angeli ewole fun
+
+        Emu ade oba re wa
+
+        Se l’oba awon oba
+
+2.     Ese loba eyin martyr
+
+        Ti npe ni pepe re
+
+        Gbe gbongbo igi, jesse ga
+
+        Se l’oba awon oba
+
+3.     Eyin irun omo Israeli
+
+        Ti a ti rapada
+
+        Eki eni t’o gba yin la,
+
+        Se l’oba awon oba 
+
+4.     Gbogbo eniyan elese
+
+        Ranti banuje yin
+
+        Ete ‘kogun yin sese re
+
+        Se l’oba awon oba 
+
+5.     Ki gbogbo orile ede
+
+        Ni gbogbo agbaye
+
+        Ki won ki, “kabiyesile
+
+        Se l’oba awon oba 
+
+6.     A bale pe l’awon t’orun
+
+        Lati ma juba re
+
+        K’a bale jo jumo korin
+
+        Se l’oba awon oba
+
+
+
+
+ALL HAIL THE POWER OF JESUS NAME
+
+1.     ALL hail the power of Jesus name!
+
+        Let angels prostrate fall;
+
+        Bring forth the royal diadem,
+
+        And crown Him Lord of all.
+
+2.     Crown Him, ye martyrs of our God,
+
+        Who from His altar call;
+
+        Extol the stem of Jesse’s rod,
+
+        And crown Him Lord of all.
+
+3.     Ye chosen seed of Israel’s  race,
+
+        A remnant weak and small,
+
+        Hail Him who saves you by His grace,
+
+        And crown Him Lord of all.
+
+4.     Ye Gentile  sinners, ne’er forget
+
+        The wormwood and the gall;
+
+        Go,  spread your trophies at His feet,
+
+        And crown Him Lord of all.
+
+5.     Let every kindred, every tribe,
+
+        On this terrestrial ball,
+
+        To Him all majesty ascribe,
+
+        And crown Him Lord of all.
+
+6.     O that with yonder sacred throng
+
+        We all at His feet may fall,
+
+        Join in the everlasting song,
+
+        And crown Him Lord of all. 
+</pre>    
+       position: absolute;
+    z-index: 9999999999999999941;
+    width: 90%;
+    height: 100vh;
+    background: #0f0;
+    top: -91px;
+}
+	</p>
+	
+    <span id="startPre">  
+        <a id="startLink" href="#">Click here to recognize text</a> or choose your own image
+    </span>
+<select class="form-control" required="required" name="certificate_type" aria-required="true"><option value="29">American Society for Industrial Security International (CPP, CPI, PSP)</option><option value="13">Association of Certified Chartered Accountant (ACCA)</option><option value="15">Association of National Accountants of Nigeria (CNA)</option><option value="18">Certified Internal Auditor (CCSA, CGAP, CFSA, CRMA, QIAL)</option><option value="14">Chartered Institute of Management Accountant (ACMA, FCMA)</option><option value="5">Chartered Institute of Marketing of Nigeria (AIMN, FIMN)</option><option value="20">Chartered Institute of Personnel Management (ACIPM)</option><option value="17">Chartered Institute of Public Finance &amp; Accountancy (CIPFA)</option><option value="11">Chartered Institute of Purchasing &amp; Supply Management of Nigeria (MCIPS, FCIPS)</option><option value="16">Chartered Institute of Taxation of Nigeria (ACITN, FCITN)</option><option value="25">Council of Registered Builders of Nigeria (Bldr)</option><option value="1">Council of Regulation of Engineering in Nigeria (Engineer)</option><option value="22">Human Resource Certification Institute (GPHR, SPHRi, PHRi, APHRi)</option><option value="19">Information Systems Audit and Control Association (CISA, CISM, CGEIT, COBIT, CRISC)</option><option value="8">Institute of Arbitration (ACIArb, MCIArb, FCIArb, C.Arb) </option><option value="12">Institute of Chartered Accountant of Nigeria (ACA) </option><option value="28">Institute of Safety Professionals of Nigeria (MISPON, FISPON)</option><option value="4">National&nbsp;Institute of Marketing of Nigeria (FNIMN, MNIMN, ANIMN)</option><option value="26">Nigeria Institute of Building (FNIOB, MNIOB)</option><option value="23">Nigeria Institute of Estate Surveyors &amp; Valuers (FNIVS, ANIVS, HNIVS) </option><option value="9">Nigeria Institute of Public Relation (FNIPR, FNIPR (Hon.), MNIPR, ANIPR)</option><option value="24">Nigeria Institute of Quantity Surveyors (FNIQS, ANIQS, FNIQS (Hon.))</option><option value="27">Nigeria Institute of Safety Professionals (FNISP, MNISP, ANISP, GNISP)</option><option value="3">Nigeria Institution of Electrical &amp; Electronic Engineers (NIEEE)</option><option value="2">Nigeria Society of Engineers (MNSE, FNSE)</option><option value="7">Nigerian Bar Association (BL)</option><option value="6">Nigerian Institute of Management (AMNIM, MNIM, FNIM)</option><option value="10">Procurement Professional Association of Nigeria (APPA, FPPA)</option><option value="21">Society for Human Resource Management (SHRM-SCP, SHRH-CP)</option><option value="" selected="selected">--- Select a Certification Type ---</option></select>
+</div>
+</body>
+<script type="text/javascript" src="./fractals.js"></script>
+<!-- <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script> -->
+<script type="text/javascript">
+	const file = document.getElementById("file-1");
+	function getTextFromImage(cb=null){
+
+	
+
+	document.querySelector("#file-1").addEventListener("change",()=>{
+		let img =  file.files[0]
+
+		 var fr = new FileReader();
+        fr.onload = function (e) {
+          //   console.log(fr.result)
+          document.getElementById('selected-image').src=fr.result
+            // return (fr.result, cb);
+        };
+      let imgFile  =   fr.readAsDataURL(img);
+      console.log(img)
+		 
+		 var myImage= document.getElementById('selected-image');
+
+////////////////////////////////////////////////////////////////////*
+ 	const worker =Tesseract;
+worker.recognize(img, document.getElementById("langsel").value )
+.progress(function(packet){
+    console.info(packet)
+    progressUpdate(packet)
+})
+.then(function(data){
+    console.log(data)
+   let progressUpdate = cb
+    progressUpdate({ status: 'done', data: data })
+})
+///////////////////////////////////////////////////////////////////
+		 // Tesseract.recognize(img).then(function(result){
+
+   //      console.log(result);
+   //       console.log(result.html);
+   //           const paragraphsElements = result.paragraphs.map(({ text }) => {
+   //                            const p = document.createElement('p');
+   //                                p.textContent = text;
+   //                            return p;
+   //                            });
+
+   //      //alert(result.text);
+			// document.querySelector("p").append(...paragraphsElements);
+   //      });
+//////////////////////////////////////////////////////////////////////
+	})
+
+}
+
+function progressUpdate(packet){
+    var log = document.getElementById('log');
+ 
+    if(log.firstChild && log.firstChild.status === packet.status){
+        if('progress' in packet){
+            var progress = log.firstChild.querySelector('progress')
+            progress.value = packet.progress
+        }
+    }else{
+        var line = document.createElement('div');
+        line.status = packet.status;
+        var status = document.createElement('div')
+        status.className = 'status'
+        status.appendChild(document.createTextNode(packet.status))
+        line.appendChild(status)
+ 
+        if('progress' in packet){
+            var progress = document.createElement('progress')
+            progress.value = packet.progress
+            progress.max = 1
+            line.appendChild(progress)
+        }
+ 
+ 
+        if(packet.status == 'done'){
+            log.innerHTML = ''
+            var pre = document.createElement('pre')
+
+            pre.appendChild(document.createTextNode(packet.data.text.replace(/\n\s*\n/g, '\n')))
+            line.innerHTML = ''
+            line.appendChild(pre)
+            // document.querySelector(".fas").removeClass('fa-spinner fa-spin')
+            // document.querySelector(".fas").addClass('fa-check')
+        }
+ 
+        log.insertBefore(line, log.firstChild)
+    }
+}
+getTextFromImage(progressUpdate)
+	 // Tesseract.recognize(myImage).then(function(result){
+
+  //       console.log(result.text);
+
+  //       alert(result.text);
+
+  //       });
+// 	const worker =Tesseract;
+// worker.recognize(file.file[0], document.getElementById("langsel").value )
+// .progress(function(packet){
+//     console.info(packet)
+//     progressUpdate(packet)
+// })
+// .then(function(data){
+//     console.log(data)
+//     progressUpdate({ status: 'done', data: data })
+// })
+/*
+Topics:
+
+Introduction to Computers
+Introduction to Web Design
+UX
+UI
+Design Thinking and The Process of Web Design
+Web Design Tools
+Basic Elements and Principles of Visual Design
+Typography Pt 1
+Typography Pt 2
+Colors
+Anatomy of Websites
+Web Page Element
+Responsive Web Design
+UX: Interaction Design
+Understanding Web Accessibility
+Designing for Accessibility
+Accessibility Testing*/
+//azeez@balmesbahloryahoo.onmicrosoft.com
+//@Bch20090211
+
+/*
+Lecture, Notes, Slides, Source Code, Subtitles, Transcript, more...
+Shorts
+Linear Search, Subtitles, Transcript, more...
+Binary Search, Subtitles, Transcript, more...
+Bubble Sort, Subtitles, Transcript, more...
+Selection Sort, Subtitles, Transcript, more...
+Recursion, Subtitles, Transcript, more...
+Merge Sort, Subtitles, Transcript, more...
+Lab 3
+//////////////////////////////////////////////////
+Lecture, Notes, Slides, Source Code, Subtitles, Transcript, more...
+Shorts
+Hexadecimal, Subtitles, Transcript, more...
+Pointers, Subtitles, Transcript, more...
+Defining Custom Types, Subtitles, Transcript, more...
+Dynamic Memory Allocation, Subtitles, Transcript, more...
+Call Stacks, Subtitles, Transcript, more...
+File Pointers, Subtitles, Transcript, more...
+Lab 4/
+//////////////////////////////////
+Lecture, Notes, Slides, Source Code, Subtitles, Transcript, more...
+Shorts
+Data Structures, Subtitles, Transcript, more...
+Singly-Linked Lists, Subtitles, Transcript, more...
+Hash Tables, Subtitles, Transcript, more...
+Tries, Subtitles, Transcript, more...
+Lab 
+
+
+Course Syllabus
+Module 1: Modern Data Ecosystem and the Role of Data Analytics
+
+Modern Data Ecosystem 
+Key Players in the Data Ecosystem
+Defining Data Analysis 
+Data Analytics vs. Data Analysis
+Module 2: The Data Analyst Role
+
+Responsibilities of a Data Analyst 
+A Day in the Life of a Data Analyst 
+Introduction to Kubernetes Objects
+Module 3: The Data Ecosystem and Languages for Data Professionals
+
+Overview of the Data Analyst Ecosystem
+Types of Data  
+Understanding Different Types of File Formats
+Sources of Data Using Service Bindings
+Languages for Data Professionals
+Module 4 - Understanding Data Repositories and Big Data Platforms
+
+RDBMS
+NoSQL
+Data Marts, Data Lakes, ETL, and Data Pipelines
+Foundations of Big Data
+Big Data Processing Tools
+Module 5: Gathering Data
+
+Identifying Data for Analysis
+Data Sources
+How to Gather and Import Data 
+Module 6: Wrangling Data
+
+What is Data Wrangling?
+Tools for Data Wrangling
+Data Cleaning 
+Module 7: Analyzing and Mining Data
+
+Overview of Statistical Analysis
+What is Data Mining?
+Tools for Data Mining 
+Module 8: Communicating Data Analysis Findings
+
+Overview of Communicating and Sharing Data Analysis Findings
+Introduction to Data Visualization
+Introduction to Visualization and Dashboarding Software
+Module 9: Opportunities and Learning Paths
+
+Career Opportunities in Data Analysis
+The Many Paths to Data Analysis
+Functions that are part of objects are called methods
+5*
+/*
+In addition to the client and the server, we also need to say hello to:
+
+Your internet connection: Allows you to send and receive data on the web. It's basically like the street between your house and the shop.
+TCP/IP: Transmission Control Protocol and Internet Protocol are communication protocols that define how data should travel across the internet. This is like the transport mechanisms that let you place an order, go to the shop, and buy your goods. In our example, this is like a car or a bike (or however else you might get around).
+DNS: Domain Name System is like an address book for websites. When you type a web address in your browser, the browser looks at the DNS to find the website's IP address before it can retrieve the website. The browser needs to find out which server the website lives on, so it can send HTTP messages to the right place (see below). This is like looking up the address of the shop so you can access it.
+HTTP: Hypertext Transfer Protocol is an application protocol that defines a language for clients and servers to speak to each other. This is like the language you use to order your goods.
+Component files: A website is made up of many different files, which are like the different parts of the goods you buy from the shop. These files come in two main types:
+Code files: Websites are built primarily from HTML, CSS, and JavaScript, though you'll meet other technologies a bit later.
+Assets: This is a collective name for all the other stuff that makes up a website, such as images, music, video, Word documents, and PDFs.*/
+//https://www.pdfdrive.com/physical-chemistry-third-edition-d14991808.html
+
+console.log("firstChild");
+
+setTimeout(_=>{
+console.log("secondChild")
+},0)
+
+Promise.resolve().then(_=>{console.log("thirdChild")})
+
+console.log("fourhChild");
+</script>
+<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+<script type="text/javascript">
+ function doneExp(){
+    let data  = []; 
+    let headArr  = []
+    let headStr  = ``;
+    let dataScv  = ``;
+   let table  = document.querySelector("table#table");
+   let head  = table.querySelectorAll('thead tr th');
+   let body    = table.querySelectorAll("body tr") ;
+  
+    head.forEach(h=>{
+        headStr+=`,${h.innerText}`
+        headArr.push(h.innerText)
+    })
+
+
+       let bodyTdAll  =[];
+
+     body.forEach(bod=>{
+         let td  = bod.querySelectorAll('td');
+          if(td.length> 3){ 
+            let dt  ={};
+            let bodyTd  = []
+             td.forEach( (t,i)=>{
+                  if(i==0){
+                    bodyTd.push( new Date(t.innerText).toDateString().substr(-12).trim().replaceAll(" ","/"))
+                  }else{
+
+                     bodyTd.push(t.innerText)
+                  }
+                    
+                     
+                   dt[head[i].innerText]  = t.innerText;
+             })
+             //console.log(bodyTd.join()+"\n")
+             data.push( bodyTd)
+             bodyTdAll.push(bodyTd.join())
+          }
+     })
+
+  
+   console.log( headArr.join() ,bodyTdAll.join("\n"))
+//console.log(data)
+let strData  = `${headArr.join()}`+"\n"+`${bodyTdAll.join("\n")}`
+var chunk = '<?xml version="1.0"?>...'
+var blob = new Blob([strData], {type: 'application/csv'})
+const url = URL.createObjectURL(blob);
+window.open(url, '_blank'); 
+//downloadCSVFile(data.join("\n"), filename); 
+ }   
+document.querySelector(".exp").addEventListener("click",doneExp)
+</script>
+</html>

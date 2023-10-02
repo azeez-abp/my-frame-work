@@ -1,0 +1,7 @@
+aws ec2 run-instances --image-id <AMI_ID> --instance-type <INSTANCE_TYPE> --key-name <KEY_PAIR_NAME> --subnet-id <SUBNET_ID> --security-group-ids <SECURITY_GROUP_IDS> --region <AWS_REGION>
+
+
+N.virginal
+aws ec2 run-instances --image-id ami-053b0d53c279acc90 --instance-type t2.micro --key-name linux-key --subnet-id subnet-0a7b518883cd36c7b --security-group-ids sg-061804ae9538f06b3 --region us-east-1
+
+aws ec2 run-instances --image-id ami-053b0d53c279acc90   --instance-type t2.micro --key-name linux-key --subnet-id subnet-0c7ef4031ce50cb8c --security-group-ids sg-061804ae9538f06b3 --region us-east-1

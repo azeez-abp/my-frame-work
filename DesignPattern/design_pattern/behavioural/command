@@ -1,0 +1,6 @@
+The Command pattern is a behavioral design pattern that
+
+ "encapsulates a request as an object", 
+
+ allowing the invocation of different requests without knowing the specifics of the request or the receiver. It separates the requester of a command from the object that executes the command.
+

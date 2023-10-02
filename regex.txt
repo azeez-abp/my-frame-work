@@ -1,0 +1,128 @@
+strong password regex  ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!?]).{8,}$
+good email regex ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+
+Regular expressions (regex) in Bash are used for pattern matching and manipulation of strings. They allow you to search, match, and replace text based on certain patterns. Here's a step-by-step breakdown of the components of regex in Bash:
+
+1. **Literal Characters:**
+   Literal characters are the simplest form of regex components. They match exactly the characters they represent. For example, the regex `hello` matches the string "hello" exactly.
+
+2. **Metacharacters:**
+   Metacharacters are characters that have special meanings in regex. Some common metacharacters include:
+   
+   - `.` (dot): Matches any single character except a newline.
+   - `*`: Matches zero or more occurrences of the preceding character or group.
+   - `+`: Matches one or more occurrences of the preceding character or group.
+   - `?`: Matches zero or one occurrence of the preceding character or group.
+   - `[]`: Defines a character class, allowing you to match any one character from the specified set.
+   - `()`: Creates a capturing group to capture and remember a part of the matched text.
+
+3. **Character Classes:**
+   Character classes allow you to specify a set of characters that can match at a certain position. For example:
+   
+   - `[a-z]`: Matches any lowercase letter.
+   - `[0-9]`: Matches any digit.
+   - `[A-Za-z]`: Matches any uppercase or lowercase letter.
+   - `[^0-9]`: Matches any character that is not a digit.
+
+4. **Anchors:**
+   Anchors define positions in the string where a match should occur:
+   
+   - `^`: Matches the start of a line.
+   - `$`: Matches the end of a line.
+
+5. **Quantifiers:**
+   Quantifiers specify how many occurrences of the preceding element should match:
+   
+   - `{n}`: Matches exactly `n` occurrences.
+   - `{n,}`: Matches `n` or more occurrences.
+   - `{n,m}`: Matches between `n` and `m` occurrences.
+
+6. **Escape Sequences:**
+   Backslashes `\` are used to escape metacharacters so they are treated as literal characters. For example, `\.`, `\\`, and `\[` match a period, a backslash, and an opening bracket, respectively.
+
+7. **Alternation:**
+   The `|` (pipe) character represents alternation and allows you to match one of multiple patterns. For example, `(foo|bar)` matches either "foo" or "bar".
+
+8. **Modifiers:**
+   Modifiers control how the regex is applied:
+   
+   - `i`: Case-insensitive matching.
+   - `g`: Global matching (matches all occurrences).
+   
+Now let's see an example of using regex in Bash:
+
+```bash
+#!/bin/bash
+
+string="Hello, world!"
+
+if [[ $string =~ ^H[a-z]+lo ]]; then
+    echo "Match found: ${BASH_REMATCH[0]}"
+else
+    echo "No match found."
+fi
+```
+
+In this example, the regex `^H[a-z]+lo` matches strings that start with "H", followed by one or more lowercase letters, and ending with "lo". The `BASH_REMATCH` array holds the matched portions.
+
+Remember that regex can become complex, so it's helpful to use online regex testers to experiment and fine-tune your patterns.
+
+
+Lookahead and lookbehind assertions are advanced features in regular expressions that allow you to check for patterns that are not part of the actual match, without including them in the result. Lookaheads and lookbehinds are used to assert whether a certain pattern is present ahead or behind the current position, respectively, without consuming characters from the string.
+
+In Bash, lookahead and lookbehind assertions are supported through the Perl-compatible regular expression engine (PCRE) using the `(?=...)` for lookahead and `(?<=...)` for lookbehind. Here's how they work:
+
+1. **Positive Lookahead `(?=...)`:**
+   Positive lookahead asserts that a specific pattern must occur after the current position in the string, but it does not include that pattern in the match. For example:
+   
+   ```bash
+   # Match "apple" only if it is followed by "pie"
+   if [[ $string =~ apple(?= pie) ]]; then
+       echo "Match found: ${BASH_REMATCH[0]}"
+   else
+       echo "No match found."
+   fi
+   ```
+
+2. **Negative Lookahead `(?!...)`:**
+   Negative lookahead asserts that a specific pattern must NOT occur after the current position. It is denoted as `(?!)`. For example:
+   
+   ```bash
+   # Match "apple" only if it is NOT followed by "pie"
+   if [[ $string =~ apple(?! pie) ]]; then
+       echo "Match found: ${BASH_REMATCH[0]}"
+   else
+       echo "No match found."
+   fi
+   ```
+
+3. **Positive Lookbehind `(?<=...)`:**
+   Positive lookbehind asserts that a specific pattern must occur before the current position, without including it in the match. It is denoted as `(?<=)`. For example:
+   
+   ```bash
+   # Match "pie" only if it is preceded by "apple"
+   if [[ $string =~ (?<=apple )pie ]]; then
+       echo "Match found: ${BASH_REMATCH[0]}"
+   else
+       echo "No match found."
+   fi
+   ```
+
+4. **Negative Lookbehind `(?<!...)`:**
+   Negative lookbehind asserts that a specific pattern must NOT occur before the current position. It is denoted as `(?<!)`. For example:
+   
+   ```bash
+   # Match "pie" only if it is NOT preceded by "apple"
+   if [[ $string =~ (?<!apple )pie ]]; then
+       echo "Match found: ${BASH_REMATCH[0]}"
+   else
+       echo "No match found."
+   fi
+   ```
+
+Keep in mind that using lookaheads and lookbehinds can make your regex more complex and potentially less readable. They are powerful tools for specific scenarios, but it's important to understand their behavior and use them judiciously.
+
+capturing group (.*) for finding anything between
+
+"Applepie".match(/App(.*)pie/)
+give me all between App and pie

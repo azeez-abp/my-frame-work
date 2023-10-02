@@ -1,0 +1,176 @@
+Yes, you can use `kubeadm` to set up a Kubernetes cluster. `kubeadm` is a command-line tool provided by Kubernetes for easily bootstrapping a new cluster. It automates many of the manual steps involved in configuring a cluster.
+
+On one Node (Vm)
+update machine
+apt-get update
+switch off swap file
+swapoff -a 
+vi /etc/fstab  comment out lastline
+
+set host name
+vi /etc/hostname  change to master for master Node
+
+consfigure static ip , update the hosts file
+vi /etc/hosts 
+
+install openssh
+sudo apt update
+sudo apt install openssh-server
+ sudo apt install openssh-client
+ sudo systemctl start ssh
+sudo systemctl enable ssh
+sudo systemctl status ssh
+
+bonjourex
+apt update
+apt install -y docker.io
+
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl
+
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+ mkdir -m 755 /etc/apt/keyrings
+
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+
+///////////////////////////////////////////////////
+1 run kubeadm init
+```
+coredns-5dd5756b68-dl5b5                   1/1     Running   0          6h57m
+coredns-5dd5756b68-nbmpg                   1/1     Running   0          6h57m
+etcd-master                                1/1     Running   3          6h57m
+kube-apiserver-master                      1/1     Running   3          6h57m
+kube-controller-manager-master             1/1     Running   0          6h57m
+kube-proxy-pdhpx                           1/1     Running   0          6h57m
+kube-scheduler-master 
+will be run
+```
+2 add pod network 
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+for calico 
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+kubectl get pods -n kube-system
+
+get the pod cidr
+wget https://docs.projectcalico.org/manifests/calico.yaml
+look for CALICO_IPV4POOL_CIDR in the file calico.yaml
+
+check calico runing
+kubectl get pods -n kube-system -l k8s-app=calico-node
+
+
+check if pod cidr has applied 
+sudo cat /etc/kubernetes/manifests/kube-controller-manager.yaml
+Look for the --allocate-node-cidrs flag. It should be set with a valid CIDR range.
+apply the ip
+check for the resource name on the official doc
+get calico verison kubectl get daemonset calico-node -n kube-system -o jsonpath='{.spec.template.spec.containers[0].image}' | cut -d ":" -f2
+get pod cidr kubectl get nodes -o jsonpath='{.items[*].spec.podCIDR}'
+
+192.168.0.0/16
+```
+kubectl apply -f - <<EOF
+apiVersion: projectcalico.org/v3
+kind: IPPool
+metadata:
+  name: kube-system #namespace from the pod network file yml
+spec:
+  cidr: 192.168.0.0
+  blockSize: 26
+EOF
+```
+
+3.then you can join any number of worker nodes by running the following on each as root:
+systemctl enable kubelet.service
+kubeadm join 10.0.2.15:6443 --token agevue.hoop769ahqac673e \
+   --discovery-token-ca-cert-hash sha256:e98b05ecdf1f308bafe0bc740be14b9b7a9d0d836df4fd8a7358e884ac51
+
+master config (cluster => collection of Node ==> contains pods ==>contains contsianers)
+1. Container Network Interface (Pod network) 
+for callico run  `kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/tigera-operator.yaml`
+watch kubectl get pods -n calico-system
+
+   To initialize the control-plane node run:
+      kubeadm init --apiserver-advertise-address=<calico-ip> --control-plane-endpoint=<node-ip>
+
+Here's a basic outline of how to set up a Kubernetes cluster using `kubeadm`:
+
+### Prerequisites:
+
+1. **Linux Distribution**: You'll need a Linux machine to host the Kubernetes cluster. Ubuntu is a popular choice, but other distributions can work as well.
+
+2. **Container Runtime**: You'll need a container runtime like Docker installed on your host machine.
+
+3. **Network Plugin (CNI)**: If you plan to deploy a multi-node cluster, you'll need a Container Network Interface (CNI) plugin. Popular choices include Calico, Flannel, and Cilium.
+
+### Steps to Set Up the Cluster:
+
+1. **Install Docker**: Install Docker on your host machine if it's not already installed.
+
+2. **Install kubeadm, kubectl, and kubelet**:
+
+   ```bash
+   sudo apt-get update
+   sudo apt-get install -y kubeadm kubelet kubectl
+   ```
+
+3. **Initialize the Cluster** (On the master node):
+
+   ```bash
+   sudo kubeadm init --pod-network-cidr=<CIDR>
+   ```
+
+   Replace `<CIDR>` with the address range you want to use for your pods. For example, you can use `10.244.0.0/16`.
+
+   This will initialize the master node and provide you with instructions on how to join worker nodes to the cluster.
+
+4. **Set Up kubectl for the Current User**:
+
+   ```bash
+   mkdir -p $HOME/.kube
+   sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   sudo chown $(id -u):$(id -g) $HOME/.kube/config
+   ```
+
+5. **Install a CNI Plugin** (Optional if you're setting up a multi-node cluster):
+
+   For example, you can install Calico:
+
+   ```bash
+   kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+   ```
+
+6. **Join Worker Nodes**:
+
+   After running `kubeadm init` on the master node, it will provide a command that you can run on your worker nodes to join them to the cluster.
+
+7. **Verify the Cluster**:
+
+   ```bash
+   kubectl get nodes
+   kubectl get pods --all-namespaces
+   ```
+
+   This should show you the status of the nodes and the pods in the cluster.
+
+### Note:
+
+- `kubeadm` is a powerful tool, but it doesn't handle certain aspects like setting up an Ingress controller or managing persistent storage. You may need to set up additional components depending on your specific use case.
+
+- For production setups, consider additional configurations like setting up RBAC, enabling high availability, and ensuring proper security measures.
+
+Always refer to the official [Kubernetes documentation](https://kubernetes.io/docs/home/) for the latest and most detailed information on setting up a cluster with `kubeadm`.
+
+
+
+
+Kubernetes on cent OS
+
+
+
+

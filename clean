@@ -1,0 +1,4 @@
+ rm -r -force "C:\Users\BONJOU~1\AppData\Local\Temp\*" 
+ rm -r "C:\Windows\Temp\*"
+
+ sfc /scannow

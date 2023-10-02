@@ -1,0 +1,39 @@
+---
+- name: Deploy Web App to Azure VM
+  hosts: azure_vm
+  become: yes
+  vars:
+    app_name: mywebapp
+    app_source: /path/to/your/webapp/files
+    app_port: 80
+
+  tasks:
+    - name: Copy web app files to VM
+      copy:
+        src: "{{ app_source }}"
+        dest: /var/www/html/{{ app_name }}
+      delegate_to: localhost
+
+    - name: Install Apache web server
+      apt:
+        name: apache2
+        state: present
+
+    - name: Start Apache service
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+
+    - name: Configure Apache virtual host
+      template:
+        src: templates/apache_vhost.conf.j2
+        dest: /etc/apache2/sites-available/{{ app_name }}.conf
+      notify:
+        - Reload Apache
+
+  handlers:
+    - name: Reload Apache
+      service:
+        name: apache2
+        state: reloaded

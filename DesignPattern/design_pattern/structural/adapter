@@ -1,0 +1,46 @@
+What are the component of adapter design pattern
+
+The components of the Adapter Design Pattern are:
+
+Target: This defines the domain-specific interface that the client requires.
+
+Adapter: This adapts the Adaptee to the Target by mapping the Adaptee's interface(Implement the interface) onto the Target's interface.(composition through field)
+
+Adaptee: This is the interface that needs to be adapted to meet the requirements of the Target.
+
+Client: This is the object that makes use of the Target's interface.
+
+interface RailLine {
+   open()
+   load()
+}
+
+class Car {
+  start(){}
+  move(){}
+  applytBreak(){}
+  stop(){}
+ }
+
+class  RailWalker implements RailLine{
+  private car  = new Car()
+   open(){}
+   load(){}
+   getCar(){return car}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Adapter pattern is a structural design pattern that allows the "interface of an existing class to be used as another interface", making it compatible with other classes. It is often used to make existing code work with new code, or to make two incompatible interfaces work together.
+
+The Adapter pattern has the following key components:
+
+Target interface: The interface that is expected by the client code.
+
+Adaptee: The existing class that needs to be adapted to work with the target interface.
+
+Adapter: The class that adapts the Adaptee to work with the Target interface.
+
+Here is an example implementation of the Adapter pattern in PHP:
+

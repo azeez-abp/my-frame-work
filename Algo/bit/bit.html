@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+</head>
+<body>
+  
+    <div id="root"></div>
+    <pre>
+        <div class="" Bit operators work on 32 bits numbers>
+            <table class="ws-table-all notranslate">
+                <tbody><tr>
+                <th style="width:12%">Operator</th>
+                <th style="width:25%">Description</th>
+                <th>Example</th>
+                <th>Same as</th>
+                <th>Result</th>
+                <th style="width:15%">Decimal</th>
+                </tr>
+                <tr>
+                <td>&amp;</td>
+                <td>AND</td>
+                <td>5 &amp; 1</td>
+                <td>0101 &amp; 0001</td>
+                <td>0001</td>
+                <td>&nbsp;1</td>
+                </tr>
+                <tr>
+                <td>|</td>
+                <td>OR</td>
+                <td>5 | 1</td>
+                <td>0101 | 0001</td>
+                <td>0101</td>
+                <td>&nbsp;5</td>
+                </tr>
+                <tr>
+                <td>~</td>
+                <td>NOT</td>
+                <td>~ 5</td>
+                <td>&nbsp;~0101</td>
+                <td>1010</td>
+                <td>&nbsp;10</td>
+                </tr>
+                <tr>
+                <td>^</td>
+                <td>XOR</td>
+                <td>5 ^ 1</td>
+                <td>0101 ^ 0001</td>
+                <td>0100</td>
+                <td>&nbsp;4</td>
+                </tr>
+                <tr>
+                <td>&lt;&lt;</td>
+                <td>left shift</td>
+                <td>5 &lt;&lt; 1</td>
+                <td>0101 &lt;&lt; 1</td>
+                <td>1010</td>
+                <td>&nbsp;10</td>
+                </tr>
+                <tr>
+                <td>&gt;&gt;</td>
+                <td>right shift</td>
+                <td>5 &gt;&gt; 1</td>
+                <td>0101 &gt;&gt; 1</td>
+                <td>0010</td>
+                <td>&nbsp; 2</td>
+                </tr>
+                <tr>
+                <td>&gt;&gt;&gt;</td>
+                <td>unsigned right shift</td>
+                <td>5 &gt;&gt;&gt; 1</td>
+                <td>0101 &gt;&gt;&gt; 1</td>
+                <td>0010</td>
+                <td>&nbsp; 2</td>
+                </tr>
+                </tbody></table>
+        </div>
+
+        1111 
+    AND &
+        0001 (when both digit is 1 ans is 1) (is true when both are true)   
+        ====
+        0001
+
+        1101 
+    OR  |
+        0001 (when one digit is 1 ans is 1) (is true when one is true)  
+        ====
+        1101
+       
+     NOT   ~0001 change each digit to oposite(1=>0 0=>1) 
+        =====
+         1110
+        
+
+        1101 
+    XOR |
+        0001 (when one digit is 1 ans is 1) (is true if only one is true)   
+        ====
+        1100
+
+        JavaScript (Zero Fill) Bitwise Left Shift (<<)
+        One or more zero bits are pushed in from the right, and the leftmost 
+        bits fall off
+        5       00000000000000000000000000000101
+        5 << 1  00000000000000000000000000001010 (10)
+        5 << 2  00000000000000000000000000010100   parseInt(10100,2)= (20)
+        5 << 3  00000000000000000000000000101000   parseInt(101000,2) bin to dec= (40)
+        "00000000000000000000000000101000".length = 32
+
+        ===================================================================
+        parseInt(111111111111111111111,2) = 2097136 (21 bit)
+        ======================================================================   
+        JavaScript (Sign Preserving) Bitwise Right Shift (>>) drop the rigth most bit
+        This is a sign preserving right shift. Copies of the leftmost bit are 
+        pushed in from the left, and the rightmost bits fall off:
+
+        9 (base 10): 00000000000000000000000000001001 (base 2)
+       -9 (base 10): 11111111111111111111111111110111 (base 2) 
+        turn digit to its compliment(0=>1 & 1=>0)dont touch last digit to the right
+        
+        -5 >> 3 => 11111111111111111111111111111 101 = (-3) in dec (-1) preserv the sign
+
+        5 >>> 1 00000000000000000000000000000010 (2) add one zero to right most of binary of 5
+        dec to bin   return (29 >>> 0).toString(2);
+
+    shift use to multiply or divide by 2^m where m is integer 1,2,3,4...8
+  ///////////////////////////////////////////////////////////////////
+        a << m = (a x 2^m)
+        5 << 1       
+        solution 
+        1. convert 5 from decimal to binary 101
+        2. << 1 mean add one zero to the right most of the binary value 1010
+        3. convert the remaining binary to decimal
+
+        so 5 << 4  = 1010000 =>80
+  //////////////////////////////////////////////////////////////////////////
+    (a / 2^m)
+     90 >> 1
+      solution 
+      1. convert 90 from decimal to binary 1011010
+      2. >> 1 mean drop one right most bit(digit) so >> 3 is drop 3 right most digit
+      3. convert the remaining binary value to decimal 
+    90 >> 4  (90 in bin is 1011010)
+    and drop 4 right most digit, the remaining is 1011
+    </pre>
+    <script src="./app.js"></script>
+
+</body>
+</html>

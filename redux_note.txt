@@ -1,0 +1,181 @@
+
+INTRODUCTION
+Redux is a predictable state container for JavaScript apps.
+It helps you write applications that behave consistently, run in different environments (client, server, and native) and are easy to test
+
+You can use Redux together with React, or with any other view library. It is tiny (2kB, including dependencies), 
+but has a large ecosystem of addons available.
+
+INSTALLATION
+npm install @reduxjs/toolkit
+
+USAGE
+import { createStore } from 'redux'
+Store <== Reducer <== State && Action 
+
+Reducer(state, action) => newState
+state should contain only plain JS objects, arrays, and primitives
+ root state value is usually an object
+ 
+ the function below is similar to store
+listsManagement(){
+    let state  = [];
+    return ({
+         add: (item)=> state.push(),
+         remove :(item) => state  = state.filter((list)=>list !== item),
+         getState: ()=> state
+    })
+}
+
+ You can use subscribe() to update the UI in response to state changes
+ Normally you'd use a view binding library to update the UI instread of  subscribe()
+ 
+store.dispatch({ type: 'INCREMENT' }); take action and chage state 
+
+//////////////////////////////
+Redux Toolkit Example
+@ the root of app
+import { createSlice, configureStore } from '@reduxjs/toolkit'
+1 CREATE STORE
+const store = configureStore({
+  reducer: counterSlice.reducer
+})
+
+There are two ways to go 
+i. using store to dispatch (call redicer to perform action) an action 
+ii. use useSelector to dispatch action
+
+2  CREATE SLICE
+const counterSlice = createSlice({
+  name: 'counter',
+  initialState: {
+    value: 0
+  },
+  reducers: {
+    incremented: state => {
+      // Redux Toolkit allows us to write "mutating" logic in reducers. It
+      // doesn't actually mutate the state because it uses the Immer library,
+      // which detects changes to a "draft state" and produces a brand new
+      // immutable state based off those changes
+      state.value += 1
+    },
+    decremented: state => {
+      state.value -= 1
+    },
+    reset: state ={
+        state  = {} 
+    }
+
+  }
+})
+
+3. Export each mutation reducer  to the 
+export const { incremented, decremented } = counterSlice.actions
+
+
+
+// Can still subscribe to the store
+store.subscribe(() => console.log(store.getState()))
+
+// Still pass action objects to `dispatch`, but they're created for us
+store.dispatch(incremented())
+// {value: 1}
+store.dispatch(incremented())
+// {value: 2}
+store.dispatch(decremented())
+// {value: 1}
+
+
+
+/////////////////////////////////////***********This is for Query to fetch api********************************************************
+
+export const apiSlice = createApi({
+  reducerPath: 'api',
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:9292' }),
+  tagTypes: ['Post'],
+  endpoints: builder => ({
+    getPosts: builder.query({
+      query: () => '/posts',
+      providesTags: ['Post']
+    }),
+    getPost: builder.query({
+      query: postId => `/posts/${postId}`
+    }),
+    addNewPost: builder.mutation({
+      query: initialPost => ({
+        url: '/posts',
+        method: 'POST',
+        body: initialPost
+      }),
+      invalidatesTags: ['Post']
+    }),
+    editPost: builder.mutation({
+      query: post => ({
+        url: `/posts/${post.id}`,
+        method: 'PATCH',
+        body: post
+      })
+    })
+  })
+})
+
+export const {
+  useGetPostsQuery,
+  useGetPostQuery,
+  useAddNewPostMutation,
+  useEditPostMutation
+} = apiSlice
+
+  console.log( apiSlice)  All your request endpoint in a file
+import { useGetPostQuery, useEditPostMutation } from '../api/apiSlice'
+   
+In Component
+    const [updatePost] = useEditPostMutation()
+    await updatePost({ id: postId, title, content })
+
+
+
+How to use tags with IDs to manage cache invalidation and refetching
+How to work with the RTK Query cache outside of React
+Techniques for manipulating response data
+Implementing optimistic updates and streaming updates
+
+defined "query" endpoints to fetch posts data, and a "mutation" endpoint to add a new post.
+///////////////////////////////////////////////////***************************************************
+
+
+//////////////////////////////////////////////////////////////////////////////////////////FOR THE State
+The Redux core is a very small and deliberately unopinionated library. It provides a few small API primitives:
+
+createStore to actually create a Redux store
+combineReducers to combine multiple slice reducers into a single larger reducer
+applyMiddleware to combine multiple middleware into a store enhancer
+compose to combine multiple store enhancers into a single store enhancer
+import { createSlice } from '@reduxjs/toolkit'
+
+const todosSlice = createSlice({
+  name: 'todos',
+  initialState: [],
+  reducers: {
+    todoAdded(state, action) {
+      state.push({
+        id: action.payload.id,
+        text: action.payload.text,
+        completed: false
+      })
+    },
+    todoToggled(state, action) {
+      const todo = state.find(todo => todo.id === action.payload)
+      todo.completed = !todo.completed
+    }
+  }
+})
+
+export const { todoAdded, todoToggled } = todosSlice.actions
+export default todosSlice.reducer
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////FOR THE State
+
+
+
+
+x << y  ==>x * 2^y

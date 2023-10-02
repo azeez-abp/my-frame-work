@@ -1,0 +1,39 @@
+To add an environment variable in a Linux-based system, you have a few options. Here are some common methods:
+
+1. **Temporary for Current Session**:
+   - You can set an environment variable for the current session using the `export` command. This will only be effective for the current session and will be lost when you close the terminal.
+   - Example: `export MY_VARIABLE="some_value"`
+
+2. **For a Specific User**:
+   - To set an environment variable for a specific user, you can add the export command to the user's profile file. This will make the variable available whenever that user logs in.
+   - Common profile files include `~/.bash_profile`, `~/.bashrc`, `~/.profile`, etc., depending on the shell being used.
+   - Example: Add `export MY_VARIABLE="some_value"` to `~/.bashrc`.
+
+3. **System-wide for All Users**:
+   - To set an environment variable system-wide, you can add it to a system-wide initialization file. This will make the variable available to all users on the system.
+   - Common system-wide initialization files include `/etc/environment`, `/etc/profile`, `/etc/bash.bashrc`, etc., depending on the distribution.
+   - Example: Add `MY_VARIABLE="some_value"` to `/etc/environment`.
+
+4. **Using Shell Scripts**:
+   - You can create a shell script that sets the environment variable and then execute that script. This will make the variable available in the current session.
+   - Example script (`set_env.sh`):
+     ```bash
+     #!/bin/bash
+     export MY_VARIABLE="some_value"
+     ```
+
+   - Execute the script: `source set_env.sh` or `. set_env.sh`
+
+5. **Using the `export` Command**:
+   - You can use the `export` command directly in your shell to set an environment variable. This is temporary and will be available only for the current session.
+   - Example: `export MY_VARIABLE="some_value"`
+
+Remember to replace `MY_VARIABLE` with the actual name of your environment variable and `"some_value"` with the value you want to assign to it.
+
+After setting an environment variable, you can access it in your shell scripts or commands using `$MY_VARIABLE`.
+
+ip route show default | grep -oP 'via \K\S+'
+
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' f695cc394709
+
+netstat -tuln | grep 8080

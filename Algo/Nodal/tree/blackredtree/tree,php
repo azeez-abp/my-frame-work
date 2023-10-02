@@ -1,0 +1,151 @@
+<?php
+
+class Node
+{
+    public const RED = 0;
+    public const BLACK = 1;
+
+    public $value;
+    public $color;
+    public $p;
+    public $left;
+    public $right;
+
+    public function __construct(int $value = null)
+    {
+        $this->value = $value;
+        $this->color = self::BLACK;
+        $this->p = $this->left = $this->right = null;
+    }
+}
+
+class RedBlackTree {
+    private $root;
+    private $nil;
+
+    public function __construct()
+    {
+        $this->root = $this->nil = new Node();
+    }
+
+    public function insert(Node $z): void
+    {
+        $y = $this->nil;
+        $x = $this->root;
+
+        while ($x !== $this->nil) {
+            $y = $x;
+
+            if ($z->value < $x->value) {
+                $x = $x->left;
+            } else {
+                $x = $x->right;
+            }
+        }
+
+        $z->p = $y;
+
+        if ($y === $this->nil) {
+            $this->root = $z;
+        } elseif ($z->value < $y->value) {
+            $y->left = $z;
+        } else {
+            $y->right = $z;
+        }
+
+        $z->left = $z->right = $this->nil;
+        $z->color = Node::RED;
+        $this->insertFixUp($z);
+    }
+
+    private function insertFixUp(Node $z): void
+    {
+        while ($z->p->color === Node::RED) {
+            if ($z->p === $z->p->p->left) {
+                $y = $z->p->p->right;
+
+                if ($y->color === Node::RED) {
+                    $z->p->color = Node::BLACK;
+                    $y->color = Node::BLACK;
+                    $z->p->p->color = Node::RED;
+                    $z = $z->p->p;
+                } else {
+                    if ($z === $z->p->right) {
+                        $z = $z->p;
+                        $this->leftRotate($z);
+                    }
+
+                    $z->p->color = Node::BLACK;
+                    $z->p->p->color = Node::RED;
+                    $this->rightRotate($z->p->p);    
+                }
+            } else {
+                $y = $z->p->p->left;
+
+                if ($y->color === Node::RED) {
+                    $z->p->color = Node::BLACK;
+                    $y->color = Node::BLACK;
+                    $z->p->p->color = Node::RED;
+                    $z = $z->p->p;
+                } else {
+                    if ($z === $z->p->left) {
+                        $z = $z->p;
+                        $this->rightRotate($z);
+                    }
+
+                    $z->p->color = Node::BLACK;
+                    $z->p->p->color = Node::RED;
+                    $this->leftRotate($z->p->p);    
+                }
+            }
+        }
+
+        $this->root->color = Node::BLACK;
+    }
+
+    private function leftRotate(Node $x): void
+    {
+        $y = $x->right;
+        $x->right = $y->left;
+
+        if ($y->left !== $this->nil) {
+            $y->left->p = $x;
+        }
+
+        $y->p = $x->p;
+
+        if ($x->p === $this->nil) {
+            $this->root = $y;
+        } elseif ($x === $x->p->left) {
+            $x->p->left = $y;
+        } else {
+            $x->p->right = $y;
+        }
+
+        $y->left = $x;
+        $x->p = $y;
+    }
+
+    private function rightRotate(Node $y): void
+    {
+        $x = $y->left;
+        $y->left = $x->right;
+
+        if ($x->right !== $this->nil) {
+            $x->right->p = $y;
+        }
+
+        $x->p = $y->p;
+
+        if ($y->p === $this->nil) {
+            $this->root = $x;
+        } elseif ($y === $y->p->right) {
+            $y->p->right = $x;
+        } else {
+            $y->p->left = $x;
+        }
+
+        $x->right = $y;
+        $y->p = $x;
+    }
+}

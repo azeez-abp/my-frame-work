@@ -1,0 +1,153 @@
+pipeline{
+	agent any
+
+	tools{
+	  marven 'Marve 3.6.3'
+	}
+
+	stages{
+
+	}
+}
+
+
+stage
+
+
+
+
+
+
+
+
+// $a  = new Test\TestA();
+// echo $a->getName();
+
+// $b  = new Test\TestB();
+// echo $b->getName();
+
+
+// echo  Test\TestA2::getName();
+
+// echo  Test\TestB2::getName();
+
+// var_dump(Test\TestA2::get());
+
+// var_dump(Test\TestA2::help());
+// var_dump(Test\TestB2::replica()->getValue());
+// var_dump(new Test\ItereableCollection([]));
+// var_dump(new Test\TestIteration(234.345,"Sdsdfg"));
+ 
+// $collection   = new Test\ItereableCollection([new Test\TestIteration(22.4," Anonoo"), new Test\TestIteration(34.32," Montsn"),new Test\TestIteration(54.34,' KAraka')]);
+
+// //var_dump($collection);
+
+// foreach($collection as $key_) {
+//      print_r("DFGHJKL:");
+//       var_dump($key_);
+//     echo $key_->amount. PHP_EOL.' KEYS' ;
+//     //echo $value. PHP_EOL ;
+// }
+
+// for ($i=0; $i < 10; $i++) { 
+
+//   echo $i. PHP_EOL;
+// }
+
+// exit();
+// exit();
+
+// Route::group('admin',function(){
+
+// Route::get('/registers', ['controller'=>App\Controller\Admin\Register::class,'method'=>'getRegister']);
+// //Route::get('/registers','App\Controller\Admin\Register@getRegister' /*['controller'=>App\Controller\Admin\Register::class,'method'=>'getRegister']*/);
+// Route::get('/user', ['controller'=>(object)[],'method'=>'getUser']);
+// Route::post('/user_', ['controller'=>(object)[],'method'=>'getUser_'])->name('/admin/user');
+
+// });
+
+// Route::group('customer',function(){
+// Route::get('/registers', ['controller'=>(object)[],'method'=>'getRegister']);
+// Route::get('/user', ['controller'=>(object)[],'method'=>'getUser']);
+// Route::post('/user__', ['controller'=>(object)[],'method'=>'getUser_'])->name('/admin/user');
+// });
+
+// Route::get('specialServce/user_', ['controller'=>(object)[],'method'=>'getUser_'])->name('/admin/user');
+
+
+// $db  = DB::table('school_staffs')
+// ->select('fn AS a','email As b','user_id')
+// ->where('mn',"!="," ")
+// ->where(function($q){
+//        $q->where('id','>',0);
+//        // $q->where("sdsdsdq","==",232432);
+//        // $q->orWhere("sdsdsdq","==",232432);
+// })->orWhere("email","=","adioadeyoriazeez@gmail.com")
+// ->get();
+//->toSql(false);
+// var_dump($db);
+//var_dump(\geoip_time_zone_by_country_and_region("NG")
+  );
+//$db = DB::indexTable("fir");
+//->count();
+//->get();
+//print_r($db);
+//echo uig";"yi
+/*
+hayageek/oauth2-yahoo: Needed for Yahoo XOAUTH2 authentication
+ - league/oauth2-google: Needed for Google XOAUTH2 authentication
+ - psr/log: For optional PSR-3 debug logging
+ - stevenmaguire/oauth2-microsoft: Needed for Microsoft XOAUTH2 authentication
+ - symfony/polyfill-mbstring: To support UTF-8 if the Mbstring PHP extension is not enabled (^1.2)
+
+ echo <<<VIDEO
+ 
+<iframe id="d9b8faae2efd424b92f94d7153b11621" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="640" height="360" src="https://www.youtube.com/embed/2QfJfz2hTzc?controls=0&amp;wmode=transparent&amp;rel=0&amp;showinfo=0&amp;enablejsapi=1&amp;modestbranding=1&amp;cc_load_policy=0&amp;html5=1&amp;widget_referrer=https%3A%2F%2Flearning.edx.org%2F&amp;origin=https%3A%2F%2Fcourses.edx.org&amp;widgetid=1" tabindex="-1" style="height: 349.875px; width: 622px; top: 70.5625px; left: 0px;"></iframe>
+VIDEO;
+
+
+https://www.youtube.com/watch?v=bj-Yfakjllc&list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi  Compouter networking
+
+https://www.youtube.com/watch?v=MbjObHmDbZo system design
+
+
+
+*/
+//ProgramData =>is the gloabal directory on window 10
+/// usr/local/ => i sthe global on linux
+
+/*
+
+Basically, Build is the process of creating the application program for a software release, by taking all the relevant source code files and compiling them and then creating a build artefact, such as binaries or executable program, etc.
+
+The build process consists of following:
+
+    Fetching the code from the source control repository
+    Compile the code and check the dependencies/modules
+    Run the automated unit tests
+    Link the libraries, code, files, etc accordingly.
+    Once successfully passed, Build the artefacts and store them.
+    Archive the build logs.
+    Send the notification emails.
+    https://www.edureka.co/blog/interview-questions/typescript-interview-questions/
+
+*/
+
+    /*
+         install Jenskins
+         sudo apt-get install openjdk-11-jdk
+      
+
+
+
+
+    
+
+First of all, because of TypeScript, my atom text editor can provide me with good suggestions; the size of my project is really huge, and if I had to go from file to file to check what the function name was and then read its code to remember what type the parameters were supposed to be, I would have been out of my mind by now.
+
+psr php standard recomendation
+spl  starndartd php library
+
+to run OOP in console call your index file which is the entry point of the application 
+
+*/

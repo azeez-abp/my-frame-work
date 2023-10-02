@@ -1,0 +1,143 @@
+https://jamesdefabia.github.io/docs/user-guide/kubectl/kubectl_expose/
+sudo lsof -i -P -n | grep LISTEN | grep 6443
+sudo dnf config-manager --set-enabled powertools
+sudo vim /etc/sysconfig/iptables
+sudo systemctl restart network
+systemctl daemon-reload && systemctl restart kubelet
+
+sudo systemctl restart iptables
+create pod
+kubectl run pod-name -image=image-name  ==> create a pod
+create container
+kubectl run nginx -image=nginx
+create service
+kubectl expose pod <pod-name> --name=name --protocol=TCP|UDP --port=<port> --target-port=<container-port> --type=<service-type> ==> create a serive to pod
+create service
+kubectl expose pod nginx --name=nginx-service --port=8001 --target-port=80 --type=NodePort
+10.96.0.1:30211
+kubectl get svc nginx-service
+kubectl get pod nginx
+kubectl get services
+
+kubectl drain <node-name> --ignore-daemonsets
+systemctl stop kubelet
+
+
+NAME            TYPE       CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+nginx-service   NodePort    10.99.236.68   <none>        8001:30211/TCP   42m
+CLUSTER_IP is for internal communication
+
+browse host ip:node-port (30211)
+kubectl exec -it nginx bin/bash
+kubectl delete service nginx-service
+kubectl describe service nginx-service
+kubectl logs nginx
+kubectl exec -it nginx -- sh
+
+usr/share/nginx/html/index.html
+
+kubectl edit service <service-name>
+
+curl http://192.168.0.192:30211
+
+sudo install git-all
+sudo install docker.io -y
+sudo systemctl start docker
+
+install kubernetes
+installation of kubelet kubectl kubeadm
+
+cat /etc/os-release 
+uname -a 
+kubectl version
+kubeadm version 
+kubelet -version
+sudo systemctl restart kubelet ==> re-start kubernetes
+sudo systemctl status kubelet
+kubectl get nodes
+kubectl get pods
+
+kubeadm token create --print-joint-command
+
+/////////////////firewall
+on master vm
+apt install firewalld
+
+sudo firewall-cmd --permanent --add-port=6443/tcp --zone=docker ==>API
+sudo firewall-cmd --permanent --add-port=2379-2380/tcp (public) ==>ETCD
+sudo firewall-cmd --permanent --add-port=10250/tcp  ==> kubelet API
+sudo firewall-cmd --permanent --add-port=10251/tcp  ==> Scheduler
+sudo firewall-cmd --permanent --add-port=10252/tcp  ==> Controller API
+sudo firewall-cmd --permanent --add-port=10255/tcp  ==> kubectl API
+
+on work vm
+sudo firewall-cmd --permanent --add-port=10251/tcp  ==> kubelet API
+sudo firewall-cmd --permanent --add-port=30000-32767/tcp  ==> Service POrt
+/////////////////////////////////////////////////////////////////////////////
+apt-get install firewalld
+
+sudo ip route add 10.0.2.15 via 192.168.0.1 dev eth0
+
+kubectl create deployment <name of the deploymen> --image=<name of image>
+kubectl scale deployment <name of the deployment> --replicas=4
+kubectl expose deployment <namw ofthe deployment> --type=<NodePort | Loadbalancer | ClusterIp> --port=9080 target-port=80
+
+cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+overlay
+br_netfilter
+EOF
+
+sudo modprobe overlay
+sudo modprobe br_netfilter
+
+# sysctl params required by setup, params persist across reboots
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward                 = 1
+EOF
+
+# Apply sysctl params without reboot
+sudo sysctl --system
+ NodeIp
+ Cluster ip => not availability outside cluster
+ Loadbalance
+
+ ssh account@ip -pPORT
+ netstat -ap | grep PORT
+ route -n
+
+
+ network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    enp0s3:
+      dhcp4: no
+      addresses: [10.0.2.15/24]
+      gateway4: 10.0.2.2
+      nameservers:
+        addresses: [8.8.8.8]
+        
+sudo netplan apply /etc/netplan/01-network-manager-all.yaml
+sudo systemctl restart systemd-networkd
+sudo ufw allow 2222
+df -h disk space
+
+clean system
+sudo find /var/log -type f -delete
+sudo rm -rf /var/cache/apt/*
+sudo apt clean all
+
+kubectl get nodes
+
+kubectl describe node <node_name>
+
+View Resource Usage for All Pods:
+kubectl top pods --all-namespaces
+
+kubectl top pods --all-namespaces
+kubectl get ns default --shoe-labels
+
+kubectl top pods -n <namespace>
+

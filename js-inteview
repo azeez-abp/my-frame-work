@@ -1,0 +1,29 @@
+what is function: an express that take augument, peform process and return Output
+what is function expression: assigning a function to a variable
+what is first class function: treating a functio as a variable
+
+Prototypes are the mechanism by which JavaScript objects inherit features from one another
+An object is a collection of related properties and methods
+Every object in JavaScript has a built-in property, which is called its prototype
+The prototype is itself an object, so the prototype will have its own prototype,
+making what's called a prototype chain
+Setting a prototype
+There are various ways of setting an object's prototype in JavaScript, and here we'll describe two: Object.create() and constructors.
+
+Hoist
+In 30 days you will
+Be paired with a chronicle companion, who will help you take on board our stack and get you to know Chronicle better
+Be a part of our sprint planning & review, monthly retrospectives, and start taking ownership of some tickets as you navigate through Chronicle’s codebase and understand the overall architecture
+Begin contributing towards product feedback by creating decks using chronicle
+
+Take full ownership of a feature from start to end. Plan the time and efforts for the tasks and subtasks. Collaborate with the design team and flag any potential issues with the feature. Run any necessary research spikes before we start building the feature.
+Chime in on new ways that you think can improve our flow and process. Pitch in with new tools or programming libraries/frameworks that can enhance our current build
+
+In 90 days and beyond you will
+Own a complete module/subproject and ship multiple features in it. Set up a test framework for the module and handle code reviews for software patches that have an impact on it
+Participate in product brainstorming sessions and help design the longer product roadmap
+Discuss personal goals for learning and development and come up with a plan along with the team to accomplish them
+Be a part of refining and conducting the hiring process and help in growing the team
+Take mentorship responsibilities - help fellow team members to reach their goals
+Contribute to the overall engineering culture- in terms of how we build, communicate and test the product
+Grow with us — whether as a product leader, an engineering manager, or an individual contributor, we'll invest in you

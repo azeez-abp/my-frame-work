@@ -1,0 +1,1 @@
+The Iterator pattern is a behavioral design pattern that allows you to traverse elements of a collection sequentially without exposing its underlying representation. The pattern involves creating an object that implements the Iterator interface and provides methods for moving to the next element and checking if there are any more elements left to traverse.

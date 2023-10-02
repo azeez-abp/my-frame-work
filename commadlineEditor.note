@@ -1,0 +1,32 @@
+VIM
+: => command
+Save and quit
+	:wq save and quit.
+
+Navigation
+	0 move to the beginning of the line. $ move to the end of the line
+
+	:123 jump to line number 123. 123G jump to line number 123 (equivalent to :123)
+
+	Ctl-f page down ("forward"). Ctl-b page up ("back")
+
+	Ctl-u half a page up. Ctl-d half a page down.
+
+	gg jump to the first line in file. G jump to last line in file
+
+Search
+	/foo search the file for "foo".
+Entering INSERT Mode
+    i
+
+Copt  and paste
+  yy p    
+	
+    user
+
+	Folder  => admin,  user and group
+
+	file
+
+	text
+

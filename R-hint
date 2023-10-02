@@ -1,0 +1,73 @@
+
+#d  <- select.list(crustacean_data,c(Sex,Size))
+# vector
+v  <- c(1,2,3,4,7,5)
+v2  <- c(0.4,2.3,3.23,4.4,7.9,5.0)
+v
+typeof(v)
+is.vector(v)
+#matrix
+m  <- matrix(v,nrow=2)
+m
+#dATA FRAME
+df  <- cbind(v,v2)
+df2 <- data.frame(v,v2)
+df
+df2
+#factor
+(x4 <- 1:3)
+(y <-  1:9)
+df4 <- cbind.data.frame(x4,y)
+?factor #get help for use of seq
+df$x4 <- factor(df4$x4,
+               levels  = c(1,2,3),
+               lavels  = c("MacOs","Window","Linux") 
+               )
+str(df4)
+typeof(df$x4)
+dr <- crustacean_data[,c(1:3)]
+dr5 <- crustacean_data[,c("Year","Site","Species","Sex","Size")]
+dr_site_spec  <- dr5[,c("Site","Species")]
+dr_year_site  <- dr5[,c("Year","Site")]
+dr_site_sex  <- dr5[,c("Site","Sex")]
+dr_sex_size  <- dr5[,c("Sex","Size")]
+dr_sex_size_filter_male_mean  <- mean(filter(dr_sex_size,dr_sex_size$Sex=="Male")$Size)
+dr_sex_size_filter_female_mean  <- mean(filter(dr_sex_size,dr_sex_size$Sex=="Female")$Size)
+typeof(dr_sex_size_filter_male_mean)
+sex_mean_of_size_df  <- data.frame(
+  AvgSize = c(dr_sex_size_filter_male_mean,dr_sex_size_filter_female_mean),
+  Sex=c("Male","Female")
+  )
+sex_mean_of_size_df$Sex
+
+barplot(table( sex_mean_of_size_df$AvgSize,sex_mean_of_size_df$Sex),
+        main="Average Size and Sex of the data set",
+        xlab="Sex",
+        ylab="Average size",
+        border="red",
+        col=c("darkblue","red"),
+        density=10,
+        horiz = FALSE,
+        beside=FALSE,
+         sd=c(1,0.2,3,2,4)#error bar
+
+        
+        )
+
+barplt(age~smoking#age and smoking# )
+legend("topleft", c("Crab","  Lobster"," Velvet"),fill =c("darkblue","red","black"))
+
+
+
+
+
+  
+
+plot(crustacean_data$Size,
+     crustacean_data$Year,
+     xlab = "Size",
+     ylab = "Year",
+     col  = "#cc00dd",
+     lwd  =0.7
+)
+

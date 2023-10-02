@@ -1,0 +1,19 @@
+What are streams?
+Streams are one of the fundamental concepts that power Node.js applications. They are data-handling method and are used to read or write input into output sequentially.
+
+Streams are a way to handle reading/writing files, network communications, or any kind of end-to-end information exchange in an efficient way.
+
+What makes streams unique, is that instead of a program reading a file into memory all at once like in the traditional way, streams read chunks of data piece by piece, processing its content without keeping it all in memory.
+
+However, streams are not only about working with media or big data. They also give us the power of ‘composability’ in our code. Designing with composability in mind means several components can be combined in a certain way to produce the same type of result
+
+There are 4 types of streams in Node.js:
+Writable: streams to which we can write data. For example, fs.createWriteStream() lets us write data to a file using streams.
+Readable: streams from which data can be read. For example: fs.createReadStream() lets us read the contents of a file.
+Duplex: streams that are both Readable and Writable. For example, net.Socket
+Transform: streams that can modify or transform the data as it is written and read. For example, in the instance of file-compression, you can write compressed data and read decompressed data to and from a file.
+
+pipeline()
+Piping is a mechanism where we provide the output of one stream as the input to another stream
+It is normally used to get data from one stream and to pass the output of that stream to another stream. There is no limit on piping operations. In other words, piping is used to process streamed data in multiple steps.
+

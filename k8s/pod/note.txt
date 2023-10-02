@@ -1,0 +1,8 @@
+A Kubernetes pod is the smallest unit of deployment. It’s a cluster of one or more 
+containers that share the same storage space, and even the same network resources
+
+Each Kubernetes pod has a unique IP address, constant storage volumes and 
+specific configuration information for running the containers. A pod that 
+consists of more than one container makes it easier to share data and communicate 
+seamlessly between them. Moreover, the same network resource enables the containers 
+to locate each other through localhost.

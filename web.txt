@@ -1,0 +1,35 @@
+Login 
+Passwordless authentication
+OAuth ==> Api communication
+Using JWT eliminates the need for sessions and cookies, as the token itself contains the necessary information for authentication.
+This approach is often used in stateless and token-based authentication systems, where the server does not need to maintain session state.
+Here's a step-by-step overview of the OAuth login flow:
+
+Registration and Client Setup:
+
+Register your application with the OAuth provider (e.g., Google, Facebook, Twitter) to obtain the necessary credentials, such as client ID and client secret.
+Configure the redirect URL for your application, where the user will be redirected after authentication.
+User Authorization Request:
+
+When a user wants to log in using OAuth, your application generates an authorization request URL, including the necessary parameters.
+Redirect the user to the OAuth provider's authorization endpoint (URL) along with the required scopes, which define the permissions you are requesting.
+The user is presented with a login page from the OAuth provider.
+User Authentication and Consent:
+
+The user enters their credentials (username and password) on the OAuth provider's login page.
+The OAuth provider authenticates the user and checks if they consent to grant your application access to their protected resources.
+If the user consents, the OAuth provider generates an authorization code and redirects the user back to your application's redirect URL.
+Authorization Code Exchange:
+
+Your application receives the authorization code in the redirect URL.
+Using the authorization code, your application makes a server-to-server request to the OAuth provider's token endpoint, along with your client credentials (client ID and client secret).
+The OAuth provider validates the code and returns an access token and, optionally, a refresh token.
+Accessing Protected Resources:
+
+With the access token, your application can now make authorized API requests to the OAuth provider's protected resources on behalf of the user.
+Include the access token in the request headers or as a parameter, depending on the provider's specifications.
+Token Refresh (Optional):
+
+If the access token expires, your application can use the refresh token (if provided) to obtain a new access token without requiring user interaction.
+Make a token refresh request to the OAuth provider's token endpoint, providing the refresh token and client credentials.
+The OAuth provider validates the refresh token and issues a new access token.

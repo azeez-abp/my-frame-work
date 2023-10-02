@@ -1,0 +1,45 @@
+If the `podCIDR` field is missing in your nodes' specifications, it means that the CNI (Container Networking Interface) plugin responsible for assigning these CIDRs is not working properly. In your case, you want to manually set it to `192.168.0.0/16`.
+
+Here's how you can do it:
+
+1. **Edit the Node Configuration**:
+   - Open the configuration file for editing. This is typically found at `/etc/kubernetes/manifests/kube-controller-manager.yaml`.
+
+   - Look for the `--allocate-node-cidrs` flag. It should be set to `true`. If not, add it.
+
+   - Add a flag called `--cluster-cidr=192.168.0.0/16`. This will ensure that the nodes use this CIDR range for Pods.
+
+   Here's an example of how the relevant part might look:
+
+   ```yaml
+   ...
+   spec:
+     containers:
+     - command:
+       - kube-controller-manager
+       - --allocate-node-cidrs=true
+       - --cluster-cidr=192.168.0.0/16
+   ...
+   ```
+
+   - Save the file.
+
+2. **Restart kube-controller-manager**:
+   - You can do this by restarting the kubelet service:
+
+   ```bash
+   sudo systemctl restart kubelet
+   ```
+
+   This will apply the changes made to the kube-controller-manager.
+
+3. **Check Node Configuration**:
+   - After a short time, the `podCIDR` field should be assigned to your nodes.
+
+You can then verify it by using the command we discussed earlier:
+
+```bash
+kubectl get nodes -o jsonpath='{.items[*].spec.podCIDR}'
+```
+
+Please ensure that this change aligns with your network setup and consult with your network administrators if needed.

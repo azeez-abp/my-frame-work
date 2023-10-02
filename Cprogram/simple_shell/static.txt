@@ -1,0 +1,69 @@
+In C, the `static` keyword has several different uses depending on the context in which it's used. Here are the common uses of `static`:
+
+1. **Static Variables**:
+
+   - When `static` is used inside a function, it changes the storage class of a variable.
+   - A static variable retains its value between function calls and has a scope limited to the block where it's defined.
+   - It's initialized only once, and its value persists throughout the program's execution.
+
+   Example:
+
+   ```c
+   void myFunction() {
+       static int count = 0; // static variable
+       count++;
+       printf("Count is %d\n", count);
+   }
+   ```
+
+2. **Static Functions**:
+
+   - When `static` is used before a function declaration/definition, it limits the scope of the function to the translation unit (file).
+   - The function is not visible to other translation units, making it effectively a private function.
+
+   Example:
+
+   ```c
+   static int add(int a, int b) {
+       return a + b;
+   }
+   ```
+
+3. **Static Global Variables**:
+
+   - When `static` is used outside of any function, it makes the variable accessible only within the translation unit (file) where it's defined.
+   - It's not visible to other translation units.
+
+   Example:
+
+   ```c
+   static int globalVar = 10; // static global variable
+   ```
+
+4. **Static Struct Members**:
+
+   - When `static` is used as a member of a struct, it means that each instance of the struct shares the same memory for that member.
+
+   Example:
+
+   ```c
+   struct Example {
+       int normalVar;    // Non-static member
+       static int staticVar;  // Static member (Error in C, allowed in C++)
+   };
+   ```
+
+5. **Static Arrays**:
+
+   - When `static` is used with an array inside a function, it specifies that the array has static storage duration (i.e., it retains its value between calls).
+
+   Example:
+
+   ```c
+   void myFunction() {
+       static int arr[5]; // static array
+       // ...
+   }
+   ```
+
+Remember, the exact behavior of `static` can depend on the context in which it's used. Always consider the specific context when working with `static` in your code.

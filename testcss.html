@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS CHALLENGE</title>
+</head>
+<style type="text/css">
+  div.a {
+    width: 100px;
+    height: 100px;
+    border-left: 5px solid yellow;
+    border-right: 5px solid green;
+    border-top: 5px solid red;
+    border-bottom: 5px solid black;
+    background: pink;
+    animation: build 5s infinite forwards;
+    transition: all 300ms ease;
+
+  }
+
+  @keyframes build {
+    0% {
+      border-left: 15px solid rgba(225, 255, 0, 1);
+      border-right: 15px solid green;
+      border-top: 15px solid red;
+      border-bottom: 15px solid black;
+    }
+
+    20% {
+      border-left: 25px solid transparent;
+      border-right: 25px solid green;
+      border-top: 25px solid red;
+      border-bottom: 25px solid black;
+    }
+
+    40% {
+      border-left: 35px solid transparent;
+      border-right: 35px solid green;
+      border-top: 35px solid red;
+      border-bottom: 35px solid black;
+    }
+
+    60% {
+      border-left: 45px solid transparent;
+      border-right: 45px solid green;
+      border-top: 45px solid red;
+      border-bottom: 45px solid black;
+    }
+
+    80% {
+      border-left: 55px solid transparent;
+      border-right: 55px solid green;
+      border-top: 55px solid red;
+      border-bottom: 55px solid black;
+    }
+
+    100% {
+      width: 0px;
+      height: 0px;
+      border-left: 65px solid transparent;
+      border-right: 65px solid green;
+      border-top: 65px solid red;
+      border-bottom: 65px solid black;
+    }
+
+
+
+  }
+
+  .b {
+    width: 50px;
+    height: 0px;
+    border-left: 65px solid transparent;
+    border-right: 65px solid transparent;
+    border-top: 65px solid transparent;
+    border-bottom: 65px solid black;
+
+
+  }
+
+  .c {
+    border-left: 15px solid;
+    border-right: 15px solid;
+    border-top: 15px solid;
+    border-bottom: 15px solid black;
+    width: 300px;
+    height: 300px;
+    background: transparent;
+    border-radius: 50%;
+
+  }
+
+  .tip {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    background: #998235;
+    transform: translate(800%, 13px);
+    z-index: 10;
+    border-radius: 7px
+  }
+
+  .tip:before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 6px;
+    background: #1A4341;
+    border-radius: 20px;
+    top: 6px;
+    left: 6px
+  }
+
+  .tip:after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 6px;
+    background: #1A4341;
+    border-radius: 20px;
+    top: 20px;
+    left: 6px
+  }
+
+  .hold {
+    position: absolute;
+    width: 130px;
+    height: 20px;
+    background: #1A4341;
+    transform: translate(150%, 14px);
+    z-index: 1;
+
+
+  }
+
+  .body {
+    background: #F3AC3C;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 427px;
+
+  }
+
+  .back {
+    box-sizing: border-box;
+    width: 120px;
+    height: 120px;
+    background: #998235;
+    border-radius: 50%;
+    transform: translate(-80%, 65px);
+
+  }
+
+  .back:before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 40px;
+    background: #1A4341;
+    border-radius: 20px;
+    left: 41px;
+    top: 40px;
+
+  }
+
+  .front {
+    border-left: 25px solid #998235;
+    border-right: 25px solid #998235;
+    border-top: 25px solid #998235;
+    border-bottom: 25px solid #998235;
+    width: 50px;
+    height: 50px;
+    background: #F3AC3C;
+    border-radius: 50%;
+    transform: translate(-25%, -47%);
+    z-index: 2;
+
+  }
+
+  .front-inner {
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #1A4341;
+    transform: translate(12%, 12%)
+  }
+
+  .pr-1 {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background: #4564ee;
+    border: 5px solid #0ef;
+  }
+</style>
+
+<body>
+  <section>
+    <div class="pr">
+      <div class="pr-1">
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <div class="body">
+    <div class="back"></div>
+    <div class="front">
+      <div class="front-inner"></div>
+    </div>
+    <div class="hold"></div>
+    <div class="tip"></div>
+  </div>
+
+  <div>
+    <div class="a"></div>
+    <div class="b"></div>
+    <div class="b"></div>
+    <div class="b"></div>
+    <div class="c">
+      <div></div>
+    </div>
+
+  </div>
+
+
+
+
+  <style type="text/css">
+    .a3-d-amination {
+      width: 100%;
+      clear: both;
+      float: right;
+      position: relative;
+      perspective: 1em;
+      perspective-origin: 50% calc(50% - 2em);
+      background-image: repeating-radial-gradient(black, transparent 100px);
+
+    }
+
+    .a3-d-amination * {
+      width: 50px;
+      height: 50px;
+      background-color: #0ef;
+      margin-top: 4px;
+      display: flex;
+      position: absolute;
+
+
+
+    }
+
+    .scene {
+      width: 300px;
+      height: 50px;
+      position: relative;
+      transform: rotateX(90deg);
+      transform-style: preserve-3d;
+      background-color: transparent;
+    }
+
+    /*
+.y-minus  {
+ transform: rotateX(-90deg) translateZ(100px);
+}
+.y-plus  {
+  transform: rotateX( 90deg) translateZ(100px);
+}
+.z-minus  {
+  transform: rotateY(  0deg) translateZ( 50px);
+}
+.z-plus  {
+  transform: rotateY(180deg) translateZ( 50px);
+} */
+    /* body{
+  background-image: repeating-radial-gradient(black, transparent 100px);
+
+} */
+  </style>
+
+  <div class="a3-d-amination">
+
+    <div class="x-minus"></div>
+    <div class="x-plus"></div>
+
+
+    <div class="y-plus"></div>
+    <div class="y-minus"></div>
+
+
+
+    <div class="z-plus"></div>
+    <div class="z-minus"></div>
+
+    <div class="scene"></div>
+
+  </div>
+
+  <!--  <div></div>
+ <div></div> -->
+  <pre>
+The  PHP Object-Oriented Programming concepts are:
+
+Class 
+Objects
+Inheritance
+Interface
+Abstraction
+composition
+polymorphism
+Magic Methods
+</pre>
+</body>
+
+</html>
+<script type="text/javascript">
+  console.log('start');
+
+  const promise1 = new Promise((resolve, reject) => {
+    console.log(1)
+  })
+
+  console.log('end');
+
+
+  const debouncing = (cb, time) => {
+    let timer;
+    return (...input) => {
+      if (timer) clearTimeout(timer)
+
+      setTimeout(cb(input), time)
+
+    }
+  }
+
+  function Person() {
+    var _firstName = "unknown";
+    let lastName = "";
+    let _age = ""
+    Object.defineProperties(this, {
+      //////////////////////////////////////////
+      "FirstName": {
+        get: function () {
+          return _firstName;
+        },
+        set: function (value) {
+          _firstName = value;
+        }
+      },
+      /////////////////////////////////////////////////////////  
+
+
+      //////////////////////////////////////////
+      "LasttName": {
+        get: function () {
+          return lastName;
+        },
+        set: function (value) {
+          lastName = value;
+        }
+      },
+      /////////////////////////////////////////////////////////  
+
+      "Age": {
+        get: function () { return _age },
+        set: function (value) { _age = value }
+      }
+      /////////////////////////////////////////////////////////////   
+    }
+
+
+    );
+  };
+
+  var person1 = new Person();
+  person1.FirstName = "Steve";
+  // alert(person1.FirstName );
+
+  var person2 = new Person();
+  person2.FirstName = "Bill";
+</script>
+Javascript fundamentals
+HTML fundamentals
+DOM Events
+CSS (pre-processors, units...)
+Debugging
+Version control (Git)
+
+System/API Design
+Algorithms
+HTTP/Networking
+Databases
+REST/GraphQL
+Server Architecture Fundamentals
+Version Control (Git)
+
+four types of testing:
+
+Unit Testing =>test small unit of code
+Functional Testing => test may the code performs it function
+Integration Testing => test may be combination of unit work together
+Acceptance Testing => test the behavious of application from user side
+
+https://app.gemography.com/application/videoask
+object in JavaScript can be created using object literal, object constructor or constructor function
+
+Closure means that an inner function always has access to the vars and parameters of its outer function, even after the
+outer function has returned
+
+synchronization code > micro task > macro task
+
+
+We know that javascript is a Single-threaded programming language (In HTML5, Javascript can be multi-threaded through
+Web Workers), and a javascript program may be a lot of asynchronous tasks. Therefore, how the single main thread to
+handle them. To understand it, we need to understand the micro tasks and macro tasks first.
+
+micro tasks execute after the main thread is
+
+the main thread, micro tasks queue, and macro tasks queue
+
+
+The main thread is a thread that handles the synchronization task.
+Micro tasks queue and macro tasks queue are actually the queues for storing micro tasks and macro tasks( First in First
+out)
+
+As we know, synchronization code always executes first in the main thread. In addition, after the main thread is empty,
+the main thread will try to take tasks from micro tasks queue, and execute them. If both main thread and micro tasks
+queue are empty, the main thread will go to the macro tasks queue to find task that is ready to execute
+synchronization code > micro task > macro task
+
+Synchronization tasks usually are variable definitions, variable assignment, console.log(), etc.
+Micro task usually are Promise, MutationObserver, queueMicrotask, etc
+Marco tasks usually are setTimeout, setInterval, DOM, etc
+sftp://abp.com.ng
