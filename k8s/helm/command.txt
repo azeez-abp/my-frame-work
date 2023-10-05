@@ -1,0 +1,76 @@
+Here is a list of commonly used Helm commands for managing charts:
+
+1. **helm create**:
+   - Usage: `helm create <chart_name>`
+   - Creates a new chart scaffold with the specified name.
+
+2. **helm lint**:
+   - Usage: `helm lint <chart_path>`
+   - Checks a chart for potential issues.
+
+3. **helm install**:
+   - Usage: `helm install <release_name> <chart_name>`
+   - Installs a chart to your cluster.
+
+4. **helm upgrade**:
+   - Usage: `helm upgrade <release_name> <chart_name>`
+   - Upgrades a release to a new version of a chart.
+
+5. **helm uninstall**:
+   - Usage: `helm uninstall <release_name>`
+   - Uninstalls a release from your cluster.
+
+6. **helm list**:
+   - Usage: `helm list [flags]`
+   - Lists releases.
+
+7. **helm status**:
+   - Usage: `helm status <release_name>`
+   - Displays the status of the named release.
+
+8. **helm package**:
+   - Usage: `helm package <chart_path>`
+   - Packages a chart directory into a chart archive.
+
+9. **helm repo add**:
+   - Usage: `helm repo add <repo_name> <repo_url>`
+   - Adds a chart repository to your Helm configuration.
+
+10. **helm repo update**:
+    - Usage: `helm repo update`
+    - Updates the local repository cache.
+
+11. **helm dep build**:
+    - Usage: `helm dep build`
+    - Builds the dependencies of a chart.
+
+12. **helm dep update**:
+    - Usage: `helm dep update`
+    - Updates the dependencies of a chart.
+
+13. **helm get**:
+    - Usage: `helm get <info|values|all> <release_name>`
+    - Gets information about a release.
+
+14. **helm rollback**:
+    - Usage: `helm rollback <release_name> <revision>`
+    - Rolls back a release to a previous revision.
+
+15. **helm template**:
+    - Usage: `helm template <release_name> <chart_name>`
+    - Renders the Kubernetes manifests of a chart locally.
+
+16. **helm history**:
+    - Usage: `helm history <release_name>`
+    - Displays the release history.
+
+17. **helm plugin**:
+    - Usage: `helm plugin`
+    - Provides a framework for developing Helm plugins.
+
+18. **helm completion**:
+    - Usage: `helm completion [bash|zsh|fish|powershell]`
+    - Generates shell completion scripts.
+
+These are some of the most commonly used Helm commands for managing charts. For more detailed information about each command and its options, you can use `helm help <command>` (e.g., `helm help install`).
+

@@ -39,7 +39,7 @@ spec:
         command: 
           - /bin/sh
           - c
-          - touch /tmp/data/; sleeep 3; rm -rf /tmp/data/ sleep 6
+          - touch /tmp/data/; sleeep 3; rm -rf /tmp/data/ sleep 6;echo $(uname -i)
         resources:
           limits:
             memory: "128Mi"

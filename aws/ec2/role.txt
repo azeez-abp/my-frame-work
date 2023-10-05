@@ -1,0 +1,139 @@
+
+How can I set the policy, user stop Ec2 if the Ec2 has fullaccess to s3 buckte else dont allow user to stop
+
+To achieve this, you can create an IAM policy that allows users to stop EC2 instances only if the associated IAM role has full access to an S3 bucket. Here are the steps:
+
+1. **Create an IAM Policy**:
+
+   Go to the AWS IAM Console and create a policy with the following JSON:
+
+   ```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "StopEC2IfRoleHasFullS3AccessAndIsNotProduct",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:StopInstances",
+                "ec2:DescribeInstances" // allow to view
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEqualsIfExists": {
+                    "ec2:ResourceTag/s3_access": "full",
+                    "aws:TagKeys/environment": [
+                        "dev",
+                        "test",
+                        "tagging"
+                    ]
+                },
+                "StringNotEqualsIfExists": {
+                    "ec2:ResourceTag/dynamodb_access": "full"
+                }
+            }
+        }
+    ]
+}
+
+
+=======================================================================
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "StartStopEC2Instances",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:StartInstances",
+                "ec2:StopInstances"
+            ],
+            "Resource": "arn:aws:ec2:region:account-id:instance/instance-id"
+        }
+    ]
+}
+
+=========================================================================
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::example-bucket/*",
+                "arn:aws:s3:::example-bucket"
+            ]
+        }
+    ]
+}
+
+
+=============================================================================
+
+{
+   "Version": "2012-10-17",
+   "Statement": [
+
+       {
+           "Sid": "AllowReadIfRunning",
+           "Effect": "Allow",
+           "Action": "ec2:DescribeInstances",
+           "Resource": "*",
+           "Condition": {
+               "ec2:InstanceStatus": {
+                   "running": "true"
+               }
+           }
+       },
+       {
+           "Sid": "AllowStopIfTagged",
+           "Effect": "Allow",
+           "Action": "ec2:StopInstances",
+           "Resource": "*",
+           "Condition": {
+               "StringEqualsIfExists": {
+                   "aws:RequestTagKeys": [
+                       "environment"
+                   ],
+                   "aws:RequestTag/environment": [
+                       "dev",
+                       "stag",
+                       "testing"
+                   ]
+               }
+           }
+       }
+   ]
+}
+
+
+   ```
+
+   This policy allows users to stop EC2 instances (`ec2:StopInstances`) only if the EC2 instance has a tag named `s3_access` with the value `full`.
+
+2. **Apply the Policy to the User**:
+
+   Attach this policy to the IAM user who will be allowed to stop EC2 instances based on S3 access.
+
+3. **Tag the EC2 Instances**:
+
+   Tag the EC2 instances that should be allowed to be stopped with the key `s3_access` and the value `full`.
+
+   - Go to the EC2 Console.
+   - Select the instance.
+   - Click on "Tags" and then "Add/Edit Tags".
+   - Add a new tag with the key `s3_access` and the value `full`.
+
+   Make sure that only the EC2 instances that should be stopped have this tag.
+
+4. **Test the Policy**:
+
+   When a user attempts to stop an EC2 instance, AWS IAM will check if the instance has the `s3_access` tag set to `full`. If it does, the user will be allowed to stop the instance. Otherwise, they will be denied.
+
+Please note that you'll need to adjust the policy and tag names as necessary to match your specific use case. This approach ensures that users can only stop EC2 instances that have been appropriately tagged with the specified access level to the S3 bucket.

@@ -1,0 +1,28 @@
+helm create nginx (nginx-chart folder will be created)
+helm install nginx nginx-chart
+or 
+kubectl apply -f nginx-chart/templates
+check pods and services
+
+to access the application
+
+kubectl port-forward -n default svc/nginx-service 8080:80
+
+or edit the nginx-chart/templates/service.yaml file and chage it to NodePort
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30080 # This is the port you will use to access the service
+  selector:
+    app: nginx
+
+```
+
+

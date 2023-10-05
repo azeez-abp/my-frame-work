@@ -1,0 +1,44 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [ 
+                "ec2:StopInstances",
+                "ec2:TerminateInstances"
+        ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:ResourceTag/Environment": [
+                        "development",
+                        "staging",
+                        "testing"
+                    ]
+                }
+            }
+        }
+    ]
+}
+
+
+
+
+///////////////////////////////////////////////
+{
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Action": "some-action",
+                "Resource": "some-resource",
+                "Principal": {
+                    "AWS": [
+                        "arn:aws:iam::341212143265:root",
+                        "arn:aws:iam::341212143265:user/azeez-terra"
+                    ]
+                }
+            }
+        ]
+    }
+    

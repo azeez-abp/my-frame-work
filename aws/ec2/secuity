@@ -1,0 +1,4 @@
+Role: is an identity that has specific permissions
+only assignable to resource only. 
+it has nothing to with user or group
+

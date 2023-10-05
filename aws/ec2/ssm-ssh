@@ -1,0 +1,56 @@
+AWS Systems Manager (SSM) is a management service that enables users to automate the management of their EC2 instances and other AWS resources. SSM enables users to perform various tasks, including software installation, patching, and maintenance across a fleet of EC2 instances. It also provides a single interface to manage EC2 instances running in different regions and accounts.
+
+AWS Systems Manager (SSM) offers several advantages over traditional SSH access for managing EC2 instances. Here are some best practices for using SSM:
+
+1. **Secure and Centralized Access**:
+
+   - SSM provides secure and centralized access to instances without exposing SSH ports to the internet. Access is controlled through IAM roles and policies.
+
+2. **Role-Based Access Control (RBAC)**:
+
+   - Assign IAM roles to EC2 instances to grant specific SSM permissions. This follows the principle of least privilege.
+
+3. **Session Logging and Auditing**:
+
+   - SSM Session Manager logs all session activities, providing detailed records for auditing and compliance purposes.
+
+4. **Encrypted Communication**:
+
+   - SSM sessions are encrypted end-to-end, providing a secure channel for communication with instances.
+
+5. **Session Timeout and Termination**:
+
+   - SSM sessions have configurable timeouts, and they automatically terminate after a specified period, reducing the risk of leaving sessions open.
+
+6. **No Need for Managing SSH Keys**:
+
+   - With SSM, you don't need to manage and distribute SSH keys, simplifying key management.
+
+7. **Automated Patch Management**:
+
+   - SSM provides automation for patch management, making it easier to keep your instances up-to-date with the latest security patches.
+
+8. **Automation Runbooks**:
+
+   - Use SSM Automation documents to define, schedule, and track the execution of common maintenance and deployment tasks.
+
+9. **Run Commands at Scale**:
+
+   - SSM allows you to run commands or scripts across multiple instances, making it efficient for managing large fleets of instances.
+
+10. **Supports Windows and Linux Instances**:
+
+    - SSM is compatible with both Windows and Linux instances, providing a unified solution for managing heterogeneous environments.
+
+11. **Compliance and Security Scanning**:
+
+    - SSM supports integration with AWS Config and AWS Security Hub, allowing you to evaluate the compliance of your instances.
+
+12. **Cross-Platform Support**:
+
+    - SSM can be used to manage instances across different AWS services, including EC2, on-premises, and instances in other clouds.
+
+13. **Inventory and State Management**:
+    - SSM provides detailed information about instances, including software inventory, patch compliance, and instance state.
+
+By following these best practices, you can effectively leverage AWS Systems Manager for secure and efficient management of your EC2 instances.
