@@ -1,0 +1,57 @@
+#!/usr/bin/bash
+
+set -e  #  exit if error
+echo "MAN IN THE miffle attacH"
+
+terminate(){
+        readonly err_name="${1}"
+        local file="/file"
+        local msg="${err_name}" >&2 
+        echo $msg
+}
+
+my_string="hello world"
+for word in $my_string; do
+    echo $word
+done
+#Remember to be cautious when changing IFS, especially if it's used in scripts that might be called by other scripts, as it can affect how the shell interprets strings and can lead to unexpected behavior
+#IFS stands for Internal Field Separator
+original_IFS=$IFS
+
+
+# Do your operation
+
+
+
+#However, you can change the IFS to be any character you want
+IFS=','
+
+my_string="hello,world"
+
+for word in $my_string; do
+    echo $word
+done
+
+IFS=$original_IFS  # Restore IFS to its original value
+#when IFS  is chaneged return it bacj to it original value
+
+
+echo "All arguments passed as a single string: $*"
+
+echo "All arguments passed separately: $@"
+echo $$
+
+ls ../ -lamp
+
+echo $-
+
+LIST=("azeez","adio", "Adeyori")
+
+echo "${LIST[@]}"
+
+
+
+unset LIST[1]
+
+echo "${LIST[@]}"
+echo "${#LIST[@]}" #number of the element in the array
