@@ -564,3 +564,9 @@ hdparm can be used to display or set information and parameters about an ATA
    woman  < man
    woman take input from man
    
+   index.awk file 
+
+   BEGIN {
+print "Hello world awk"
+}
+   awk -f index.awk

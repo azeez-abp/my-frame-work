@@ -1,0 +1,91 @@
+Azure Basics
+
+1. Describe Azure regional, regional pairs, and sovereign regions
+2. Describe availability zones
+3. Describe Azure datacenters
+4. Describe Azure resources and resource groups
+5. Describe subscription
+6. escribe management groups
+7. Describe the hierarchy of resource groups, subscriptions, and management groups
+
+Azure Compute
+
+1. Azure Virtual Network
+2. Setting up Azure Virtual Network
+3. Load Balancer in Azure Virtual Network
+4. NSG in Azure Virtual Network
+5. Azure Virtual Network Summary
+6. Azure Networking Components Summary
+7. Azure Virtual Machines Outline
+8. Networking Components
+9. Azure Virtual Machines Agenda
+10. Different aspects of a Virtual Machine
+11. Creating a Virtual Network
+12. Creating a Virtual Machine
+13. Reviewing the Virtual Machine
+14. Configuring the IP Address
+
+Azure VM availability and autoscaling
+
+Topics Covered
+
+1. VM availability sets
+2. Availability Zones
+3. Extensions
+4. Manual Scaling
+5. Autoscaling
+
+Azure Networking
+
+1. Describe virtual networking, including the purpose of Azure Virtual Networks, Azure virtual subnets, peering, Azure DNS, Azure VPN Gateway, and Azure ExpressRoute
+2. Define public and private endpoints
+3. Describe high availability Azure deployments using load balancers
+
+Azure Storage
+
+1. Compare Azure storage services
+2. Describe storage tiers
+3. Describe redundancy options
+4. Describe storage account options and storage types
+5. Identify options for moving files, including AzCopy, Azure Storage Explorer, and Azure File Sync
+6. Describe migration options, including Azure Migrate and Azure Data Box
+
+Module 5 | Azure Identity, Access & Security and Azure Governance & Compliance
+Azure Identity, Access and Security
+
+1. Describe directory services in Azure, including Azure Active Directory (Azure AD) and
+   Azure Active Directory Domain Services (Azure AD DS)
+2. Describe authentication methods in Azure, including single sign-on (SSO), multifactor
+   authentication, and passwordless
+3. Describe external identities and guest access in Azure
+4. Describe Azure AD Conditional Access
+5. Describe Azure role-based access control (RBAC)
+6. Describe the concept of Zero Trust
+7. Describe the purpose of the defense in depth model
+8. Describe the purpose of Microsoft Defender for Cloud
+
+Azure Governance and Compliance
+
+1. Describe the purpose of Azure Blueprints
+2. Describe the purpose of Azure Policy
+3. Describe the purpose of resource locks
+4. Describe the purpose of the Service Trust Portal
+
+Azure Cost Management
+
+1. Describe factors that can affect costs in Azure
+2. Compare the Pricing calculator and the Total Cost of Ownership (TCO) calculator
+3. Describe the Azure Cost Management and Billing tool
+4. Describe the purpose of tags
+
+Azure Deployments
+
+1. Describe Azure Cloud Shell, including Azure CLI and Azure PowerShell
+2. Describe Azure Resource Manager and Azure Resource Manager templates (ARM templates)
+3. Describe the purpose of Azure Arc
+
+Azure Monitoring
+
+1. Describe the purpose of Azure Advisor
+2. Describe Azure Service Health
+3. describe Azure Monitor, including Log Analytics, Azure Monitor alerts, and Application Insights
