@@ -1,0 +1,29 @@
+sudo apt-get install clamav
+sudo apt-get install clamav clamav-update clamd
+sudo freshclam
+clamscan -r /path/to/directory
+clamscan -r --move=/path/to/move/to /path/to/scan
+clamscan -r --remove=yes /path/to/scan
+
+
+Schedule Regular Scans:
+You can schedule regular scans using cron jobs. For instance, to run a scan every Sunday at 2 AM, edit your crontab (crontab -e) and add a line like:
+
+bash
+Copy code
+0 2 * * 0 clamscan -r /path/to/directory
+sudo systemctl start clamav-freshclam.service
+sudo systemctl enable clamav-freshclam.service
+
+Fix “freshclam.log is locked by another process” Error in ClamAV
+
+sudo systemctl stop clamav-freshclam.service
+
+sudo freshclam
+
+sudo lsof /var/log/clamav/freshclam.log
+sudo pkill -15 -x freshclam
+
+sudo systemctl disable clamav-freshclam.service
+sudo freshclam
+

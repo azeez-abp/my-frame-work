@@ -1,3 +1,5 @@
 composer require psr/container
 
 https://calendly.com/ivana-kruhoberec/ntec/invitees/1381de86-b11f-4b3e-989f-0de373ffc5a9
+
+kubectl create secret docker-registry hattera-image-pull-secret5 --docker-server=1330900303.dkr.ecr.us-east-2.amazonaws.com --docker-username=AWS --docker-password=$(aws ecr get-login-password) --namespace=project2

@@ -1,0 +1,35 @@
+The `helm upgrade` command in Kubernetes is used to upgrade an existing release of a Helm chart. Let's break down the provided command:
+
+```bash
+helm upgrade --cleanup-on-fail install labelstudio/label-studio
+```
+
+- `helm upgrade`: This is the command itself, indicating that you want to perform an upgrade operation on an existing release.
+
+- `--cleanup-on-fail`: This flag specifies that if the upgrade process fails, any resources created during the failed upgrade should be cleaned up.
+
+- `install`: This is the action being performed. In this context, it's a bit misleading because it's actually an upgrade operation, not a fresh installation. The presence of the `install` keyword is likely a mistake.
+
+- `labelstudio/label-studio`: This is the Helm repository and chart being used for the upgrade operation. The format is `REPO_NAME/CHART_NAME`, where `labelstudio` is the repository name, and `label-studio` is the chart name.
+
+Here's what happens with this command:
+
+1. `helm upgrade`: Indicates that you're performing an upgrade operation.
+
+2. `--cleanup-on-fail`: If the upgrade process fails, any new resources created during the failed upgrade will be cleaned up.
+
+3. `install`: This seems to be a mistaken keyword in this context. It's possible that someone accidentally added it. It doesn't have any effect on the command.
+
+4. `labelstudio/label-studio`: Specifies the Helm repository (`labelstudio`) and the name of the chart (`label-studio`) being used for the upgrade.
+
+It's important to note that if you're trying to install a chart, you should use the `helm install` command, not `helm upgrade`. The presence of both `upgrade` and `install` in the same command is likely a typo or misunderstanding.
+
+If you're trying to perform an upgrade, make sure to provide the appropriate release name as well. For example:
+
+```bash
+helm upgrade RELEASE_NAME labelstudio/label-studio
+```
+
+Replace `RELEASE_NAME` with the name of the release you're upgrading.
+
+Repo-name/Chart-Name/Release-Name

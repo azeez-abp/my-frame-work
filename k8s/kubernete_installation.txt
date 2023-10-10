@@ -96,7 +96,7 @@ for callico run  `kubectl create -f https://raw.githubusercontent.com/projectcal
 watch kubectl get pods -n calico-system
 
    To initialize the control-plane node run:
-      kubeadm init --apiserver-advertise-address=<calico-ip> --control-plane-endpoint=<node-ip>
+      kubeadm init --apiserver-advertise-address=<master-ip> --control-plane-endpoint=<master-ip>
 
 Here's a basic outline of how to set up a Kubernetes cluster using `kubeadm`:
 

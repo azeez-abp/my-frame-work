@@ -32,8 +32,4 @@ Remember to replace `MY_VARIABLE` with the actual name of your environment varia
 
 After setting an environment variable, you can access it in your shell scripts or commands using `$MY_VARIABLE`.
 
-ip route show default | grep -oP 'via \K\S+'
 
-docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' f695cc394709
-
-netstat -tuln | grep 8080

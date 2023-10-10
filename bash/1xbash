@@ -45,7 +45,7 @@ ls ../ -lamp
 
 echo $-
 
-LIST=("azeez","adio", "Adeyori")
+declare -a LIST=("azeez","adio", "Adeyori","Biocchemis","Programmer")
 
 echo "${LIST[@]}"
 

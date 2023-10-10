@@ -11,9 +11,8 @@ http://opensource.org/
 https://www.octo.us/?fwp_home_news=insights%2Cnews%2Cpress%2Cawards
 https://www.scaler.com/topics/course/dsa-interviews-java/video/583/
 
-
 pipeline {
-    agent any
+agent any
 
     stages {
         stage("clean space") {
@@ -29,32 +28,42 @@ pipeline {
                 bat "cd node_project"
             }
         }
-        
+
         stage('install dependencies') {
             steps {
                 bat "npm install"
             }
         }
-        
+
         stage('build front end') {
             steps {
                 bat "npm run build"  // Corrected the npm build command
             }
         }
-        
+
         stage('run tests with mocha and chai') {
             steps {
                 bat "npm install pm2@latest -g"
             }
         }
-        
-       
+
+
         stage('deploy') {
             steps {
                 bat "pm2 startOrRestart server.js"  // Corrected the command
             }
         }
     }
+
 }
 
 https://kodekloud.com/learning-paths/
+
+Next Session Start Date: Thursday, 2nd November
+Saturday
+14:00
+
+- 18:00
+
+https://www.mygreatlearning.com/users/my-applications
+https://olympus.mygreatlearning.com/dashboard mit data & ML course

@@ -1,0 +1,12 @@
+create snapshop
+create volume from snapshop (While creating encrypt)
+Attach volume
+
+in the same zone as ec2\
+
+Use AWS CloudTrail to log activity in AWS account
+
+        AWS CloudTrail is a service that logs all activity in your AWS account. With AWS CloudTrail,users can see who made changes to AWS resources, when they made those changes, and what those changes were.
+
+
+npm install, build, then test

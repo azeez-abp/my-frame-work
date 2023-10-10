@@ -12,4 +12,28 @@
 from R->L 5->1
 friday April 3rd 2:1 AM
 
- 
+ The expression `0 2 * * 0` is a part of a cron job schedule in Unix-like systems. It defines when a specific task or command should be executed by the cron daemon. 
+
+Here's what each field represents:
+
+1. **Minute (0-59):** In this case, `0` means the cron job will run when the minute is `0`, which is the exact start of the hour.
+
+2. **Hour (0-23):** `2` indicates that the cron job is scheduled to run at the 2nd hour of the day, which is 2 AM.
+
+3. **Day of the Month (1-31):** An asterisk `*` here means any day of the month is acceptable.
+
+4. **Month (1-12):** Another asterisk `*` means any month is acceptable.
+
+5. **Day of the Week (0-7, where both 0 and 7 represent Sunday):** `0` in this position signifies Sunday.
+
+Putting it all together, `0 2 * * 0` means the cron job will run at 2 AM every Sunday.
+
+If you're setting up a cron job using this schedule, it will execute a specified command at 2 AM every Sunday. For example, if you wanted to run a script called `backup.sh`, you might set up your cron job like this:
+
+```bash
+0 2 * * 0 /path/to/backup.sh
+```
+
+This would execute `backup.sh` at 2 AM every Sunday.
+
+Keep in mind that each field is separated by spaces and the entire expression `0 2 * * 0` is used to specify the schedule. The fields represent minutes, hours, day of the month, month, and day of the week, in that order.

@@ -61,5 +61,6 @@ Sure! Let's go through the basics of using the Vi text editor.
 9. **Other Useful Commands:**
    - `:e filename`: Open a new file (`:e` stands for edit).
    - `:w filename`: Save as a new file.
-
+:set number => show line number
+:syntax on => show syntax
 Remember, Vi can be powerful but has a learning curve. It's worth investing time to become proficient. If you need more specific help, feel free to ask!

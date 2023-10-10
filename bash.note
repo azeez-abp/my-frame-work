@@ -54,6 +54,9 @@ $*: All of the command-line arguments passed to the script, as a single string.
 $#: The number of command-line arguments passed to the script.
 $$: The process ID (PID) of the current shell.
 $?: The exit status of the last command executed.
+$!: is a special variable in Bash that contains the process ID (PID) of the most recently executed background process.
+$_: variables of the last command
+$- is a special variable in Bash that contains the current shell's options and flags
 
 Some parameters
 
@@ -470,3 +473,94 @@ mtrace: (m =>malloc, trace=>call)
 
 sudo usermod -aG groupName username
 sudo chown newOwner:newGroup folderPath
+
+https://github.com/istio/istio/releases/download/1.16.5/istio-1.16.5-linux-amd64.tar.gz
+
+Use tools like lsof (list open files) or fuser (identify processes using files) to identify any processes that might be holding locks on the freshclam.log file.
+
+bash
+Copy code
+sudo lsof /var/log/clamav/freshclam.log
+sudo fuser /var/log/clamav/freshclam.log
+
+ps fax
+
+
+The `ps fax` command provides a hierarchical view of running processes in a Unix or Linux system. Let's break down the columns in the output:
+
+1. **PID (Process ID):** This is a unique numerical identifier assigned to each running process. It's used to refer to a specific process.
+
+2. **PPID (Parent Process ID):** This column shows the PID of the parent process that spawned the current process.
+
+3. **PGID (Process Group ID):** This represents the ID of the process group to which the process belongs. Processes in the same group can be controlled together.
+
+4. **SID (Session ID):** This is the ID of the session to which the process belongs. Sessions group processes together for certain purposes, like controlling terminal access.
+
+5. **TTY (Controlling Terminal):** If the process is associated with a specific terminal, this column shows the name of that terminal. If it's not associated with any terminal, you'll see a `?`.
+
+6. **STAT (Process State):** This column shows the current state of the process. Common states include:
+   - `R`: Running
+   - `S`: Sleeping
+   - `D`: Uninterruptible Sleep (usually waiting for I/O)
+   - `Z`: Zombie (terminated but parent process hasn't acknowledged its termination)
+
+7. **TIME (CPU Time):** This shows the total CPU time consumed by the process in the format `minutes:seconds`.
+
+8. **COMMAND (Command Line):** This column displays the name and arguments of the command that started the process.
+
+Now, let's look at an example line from the `ps fax` output:
+
+```
+1234 ?        Ssl    2:15 /usr/bin/Xorg :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+```
+
+- PID: 1234
+- PPID: ? (This process doesn't have a parent process ID listed, possibly because it's a system-level process.)
+- PGID: This information is not shown in the example.
+- SID: `S`
+- TTY: `l`
+- STAT: `2:15`
+- TIME: `/usr/bin/Xorg :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch`
+- COMMAND: `/usr/bin/Xorg :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch`
+
+In this example, we have a process associated with the X server (`Xorg`). It's running in the background, has consumed 2 minutes and 15 seconds of CPU time, and is associated with terminal `l`.
+
+Keep in mind that the specific values and meanings can vary depending on the system and its configuration. The `ps` command provides a snapshot of the current state of processes at the time it's executed.
+
+ps -C init
+
+ps fax | grep pts/0   process associate dwith my terminal
+
+top -p 
+
+fg command will bring a background job to the foreground
+bg =>start background process
+
+========================DISK MANAGEMENT===================
+ATA SCSI  Small Computer System Interface
+. platter, head, track, cylinder, sector
+What is ATA hard drive? ATA is the abbreviation of Advanced Technology Attachment can also be called IDE or PATA
+ find out what kind of disks are seen by the kernel
+ fdisk -l | grep Disk
+fdisk -l | grep 'Disk /dev/sd'
+fdisk -l => find partitions
+cat /proc/partitions
+ dmesg | grep 'sd[a-z]' | head   =>Kernel boot messages can be seen after boot with dmesg
+ dmesg | grep -i "ata disk"
+ dmesg | grep -i "scsi disk"
+ The lshw tool will list hardware. With the right options lshw can show a lot of information
+about disks (and partitions).
+ lshw -class volume | grep -A1 -B2 scsi
+The lsscsi command provides a nice readable output of all scsi
+ badblocks -ws /dev/sdb ==>deleting disk
+ permanently destroy all data on a block device
+  dd if=/dev/zero of=/dev/sdb
+hdparm can be used to display or set information and parameters about an ATA
+   hdparm /dev/sdb
+
+   command < input.txt > output.txt 2> error.txt
+   This runs command, takes input from input.txt, directs standard output to output.txt, 
+   and sends error messages to error.txt
+   woman  < man
+   woman take input from man
+   

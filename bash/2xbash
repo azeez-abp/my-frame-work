@@ -1,0 +1,44 @@
+#!/bin/bash
+
+set -e
+declare -a lunch_options
+work_dir=$(dirname "$(readlink -f "${0}")")
+food_place="${work_dir}/food_place.txt"
+
+readonly FILE_NOT_FOUND="150"
+readonly NO_OPTION_LEFT="180"
+
+terminate() {
+
+        local -r msg="${1}"
+        local -r code="${2:-150}"
+        echo "${msg}" >&2
+        exit "${code}"
+}
+
+if [[ ! -f "${food_place}" ]]; then
+        terminate "Error: food_place not found"
+fi
+
+function fileout_array(){
+        mapfile -t lunch_options < "${food_place}"
+
+        if [[ "${#lunch_options[@]}" -eq 0 ]]; then
+                terminate "Err: food option empty"
+        fi
+}
+fileout_array
+echo "${lunch_options[@]}"
+
+for  i in "${lunch_options[@]}"; do
+        echo $i
+done
+
+index=$((RANDOM % "${#lunch_options[@]}"))
+
+echo "index: $index"
+echo "${lunch_options[index]}"
+# Generate a random number between 1 and 100
+random_number=$((RANDOM % 100 + 1))
+
+echo "Random number: $random_number"
