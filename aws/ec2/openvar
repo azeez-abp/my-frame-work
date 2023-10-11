@@ -17,3 +17,8 @@ https://127.0.0.1:9392
 
 username: admin
 password: admin
+
+add host-agent
+
+login openvas-> assets->host->new host
+add client vm private id
