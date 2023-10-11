@@ -1,0 +1,9 @@
+Code Quality Tools
+Flake8: Linter
+Ruff: Linter
+Black: code formater
+isort: import manager
+mypy: static type cheker
+
+TESTING Tool
+mypy: framework for testing 
