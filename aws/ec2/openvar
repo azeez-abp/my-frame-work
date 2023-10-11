@@ -1,0 +1,19 @@
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install sqlite3
+sudo apt-get install python-service-properties
+sudo add-apt-repository ppi:mrazavi/openvas
+sudo apt-get update
+sudo apt-get install openvas
+/etc/init.d/openvas-scanner restart
+/etc/init.d/openvas-manager restart
+/etc/init.d/opearion-gsa restart
+openvas-nvt-sync
+
+login
+https://localhsot/login/login.html
+or
+https://127.0.0.1:9392
+
+username: admin
+password: admin
