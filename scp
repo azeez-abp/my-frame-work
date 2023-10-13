@@ -1,0 +1,66 @@
+Sure! `scp` (secure copy) is a command-line utility for securely copying files and directories between local and remote hosts. It uses the SSH protocol to encrypt data during transmission, making it a secure way to transfer files.
+
+Here's how you can use `scp`:
+
+### Copying a File from Local to Remote:
+
+```bash
+scp /path/to/local/file username@remote_host:/path/to/remote/directory/
+```
+
+- Replace `/path/to/local/file` with the path to the file you want to copy.
+- Replace `username` with your remote username.
+- Replace `remote_host` with the address or hostname of the remote machine.
+- Replace `/path/to/remote/directory/` with the path to the remote directory where you want to copy the file.
+
+### Copying a File from Remote to Local:
+
+```bash
+scp username@remote_host:/path/to/remote/file /path/to/local/directory/
+```
+
+- Replace `username` with your remote username.
+- Replace `remote_host` with the address or hostname of the remote machine.
+- Replace `/path/to/remote/file` with the path to the file on the remote machine.
+- Replace `/path/to/local/directory/` with the path to the local directory where you want to copy the file.
+
+### Copying a Directory Recursively:
+
+To copy a directory and its contents recursively, you'll need to use the `-r` option:
+
+```bash
+scp -r /path/to/local/directory username@remote_host:/path/to/remote/
+```
+
+- Replace `/path/to/local/directory` with the path to the local directory you want to copy.
+- Replace `username` with your remote username.
+- Replace `remote_host` with the address or hostname of the remote machine.
+- Replace `/path/to/remote/` with the path to the remote directory where you want to copy the contents.
+
+### Using Non-Standard SSH Port:
+
+If the remote SSH server is using a non-standard port (not 22), you can specify it using the `-P` option:
+
+```bash
+scp -P port_number /path/to/local/file username@remote_host:/path/to/remote/directory/
+```
+
+- Replace `port_number` with the actual port number.
+
+### Example:
+
+Copying a file from local to remote:
+
+```bash
+scp my_file.txt user@remote.example.com:/home/user/documents/
+```
+
+Copying a file from remote to local:
+
+```bash
+scp user@remote.example.com:/home/user/documents/my_file.txt /path/to/local/directory/
+```
+
+Remember to replace placeholders like `username`, `remote_host`, and file paths with your actual information.
+
+Make sure that you have the necessary permissions and access rights to perform these operations on both the local and remote systems.

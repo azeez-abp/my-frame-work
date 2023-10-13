@@ -430,7 +430,7 @@ For example, ${filename%.txt} removes the .txt extension from the filename.
 filename="example.tar.gz"
 echo "${filename%.*}" %==>remove
 Output: example.tar
-
+ 
 PATH=azeez.rat.gx
 RES=${PATH%%.*}
 RES  = azeez
@@ -570,3 +570,13 @@ hdparm can be used to display or set information and parameters about an ATA
 print "Hello world awk"
 }
    awk -f index.awk
+
+
+df -h | sed -n '3p' input_source(file or Pipe or keyboard)
+sed 'p'  => sed print  e.g sed -n '3p'  print third line
+sed 'd' => sed delete  e.g sed '3d'  delete third line , sed '3,5d' delete third to fifth line 
+
+sed 'i' => sed insert
+
+sed -n -e /\bIT\b/ -e /\bMa\b/ file
+
