@@ -199,24 +199,14 @@ let validate  = ()=>{
     try {
         pass  = document.querySelector(".pass").value
 
-        sig  = document.querySelector(".pass2").value
+        sig  = document.querySelector(".pass2").value.split(",")
          sig_len = sig.length;
          let start = 0;
          let sig_arr  = [];
          while (start != sig_len){
-            let cur =  sig[start]
-             
-            if( cur.match(/[0-9]/)){
-                console.log(cur, "yes")
                 sig_arr.push(parseInt(sig[start]))
-            }
-            start++;
-
+            start++
          }
-
-
-      
-        console.log(sig_arr)    
         return [pass, sig_arr]
     } catch (error) {
         document.querySelector(".err").innerText  = error
