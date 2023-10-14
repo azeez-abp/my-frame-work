@@ -1,0 +1,11 @@
+NODE(VM or COMPUTER) 
+        component 1
+                API (listen fro request from kubelet)
+                Controller (control or mange node)
+                Scheduler (capacity identifier)        ==>component 1 by Kubeadm or Minikube
+                etcd (Database)
+        component 2
+                kubelet (communicate with API)
+                kube-proxy (Enable NODE communication)
+                container run-time (run container)
+=====================================================================================

@@ -20,7 +20,8 @@ sudo kubeadm init
 
 Alternatively, if you are the root user, you can run:
 
-export KUBECONFIG=/etc/kubernetes/admin.conf
+export KUBECONFIG=/etc/kubernetes/admin.conf => only admn can run command
+export KUBECONFIG=~/.kube/conf => the user can run comand
 on worker
 
   kubeadm join 192.168.253.129:6443 --token d47s1b.b6zokab4uqiwe6qa \

@@ -58,6 +58,10 @@ sudo sysctl --system
 
 firewall for port opening # on master vm
 sudo apt install firewalld
+curl -X POST 192.168.253.129:6443/api/v1/namespace/pod => 192.168.253.129 is ip of master => hostname -i
+
+curl -X POST https://192.168.253.129:6443/api/v1/namespace/pod --cacert /etc/kubernetes/pki/apiserver.crt
+passing the certificates for authetication
 
 sudo firewall-cmd --permanent --add-port=6443/tcp --zone=docker ==>API
 sudo firewall-cmd --permanent --add-port=2379-2380/tcp (public) ==>ETCD
@@ -101,3 +105,8 @@ Verify that the net.bridge.bridge-nf-call-iptables, net.bridge.bridge-nf-call-ip
 system variables are set to 1
 
 sysctl net.bridge.bridge-nf-call-iptables net.bridge.bridge-nf-call-ip6tables net.ipv4.ip_forward
+
+
+kubectl config set-cluster master --server=https://192.168.253.129:6443 --insecure-skip-tls-verify=true
+kubectl config set-context my-context --cluster=my-cluster
+kubectl config use-context my-context

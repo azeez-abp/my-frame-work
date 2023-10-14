@@ -22,7 +22,7 @@ resource "aws_route_table" "public" {
   }
 
   tags = {
-    Name = "Abp-Nate"
+    Name = "Abp-Nate-Public"
   }
 }
 
