@@ -58,8 +58,10 @@ metadata:
 type: kubernetes.io/dockerconfigjson
 data:
   .dockerconfigjson: |
-    <path/to/base64-encode-file>
+     <the value of base64 in the encode file not the fie>
 
 kubectl apply -f docker-secret.yaml
 
 
+============================================================
+imagePullSecrets:
