@@ -1,0 +1,65 @@
+kubectl create secret docker-registry my-docker-secret \
+ --docker-username=adeoti \
+ --docker-password=@ade# \
+ --docker-server=registry.example.com
+
+This command will create a secret file named my-docker-secret
+
+or create it your self
+
+put it in deloyment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app-container
+        image: adoti/hatteras:latest
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: my-docker-secret  # Reference the secret created in Step 1
+
+
+
+============================================================
+or
+Create a file named docker-config.json with the following content
+{
+  "auths": {
+    "registry.example.com": {
+      "username": "adeoti",
+      "password": "@ade#",
+      "email": "adeoti@example.com",
+      "auth": "base64-encoded-auth-string"
+    }
+  }
+}
+
+Replace registry.example.com, adeoti, @ade#, and adeoti@example.com with your actual Docker registry URL, username, password, and email address.
+Encode the Docker Config JSON
+base64 -w0 docker-config.json > docker-config-base64.txt
+
+Create a file named docker-secret.yaml with the following content:
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my-docker-secret
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: |
+    <path/to/base64-encode-file>
+
+kubectl apply -f docker-secret.yaml
+
+

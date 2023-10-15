@@ -148,3 +148,14 @@ kubectl exec -it nginx-pod -- /bin/sh
 
 kubectl get cm -n default
 kubectl api-resources
+kubectl get pod --selecor key=value --no-headers 
+kubectl taint nodes <node-name>  key=value:effect
+kubectl taint node hattesa identity=blue:NoSchedule|PreferNoSchedule|NoExecute
+
+pod toloration = {
+  key : "identity",
+  operator:"Equal"
+  value:"blue"
+  effect:"NoSchedule|PreferNoSchedule|NoExecute"
+
+}
